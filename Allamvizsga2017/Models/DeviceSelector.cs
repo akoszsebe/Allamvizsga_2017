@@ -40,5 +40,7 @@ namespace Allamvizsga2017.Models
         public int value { get; set; }
         public int valuedelay { get; set; } = 1;
 
+        public int original_value { get; set; }
+
     }
 }

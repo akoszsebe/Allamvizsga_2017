@@ -19,6 +19,7 @@ namespace Allamvizsga2017
     {
         int houseid { get; set; } = 0;
         int devicevalue { get; set; } = 0;
+        int original_value { get; set; } = 0;
         int saveicon_id { get; set; } = 0;
         EditText etdevicename { get; set; }
         RecyclerView mRecyclerView { get; set; }
@@ -36,6 +37,7 @@ namespace Allamvizsga2017
             string devicename = Intent.GetStringExtra("device_name");
             devicevalue = Intent.GetIntExtra("device_value", 0);
             houseid = Intent.GetIntExtra("house_id", 0);
+            original_value = Intent.GetIntExtra("original_value", 0);
             int iconid = Intent.GetIntExtra("icon_id", 0);
 
             var tbhousename = FindViewById<TextView>(Resource.Id.textViewHouseName);
@@ -100,18 +102,22 @@ namespace Allamvizsga2017
                 Finish();
             if (item.ItemId == Resource.Id.menu_save)
             {
-                if (saveicon_id != 0) if (!etdevicename.Text.ToLower().Contains("unknown"))
+                if (!etdevicename.Text.ToLower().Contains("unknown"))
+                    if (saveicon_id != Resource.Drawable.unknownicon)
                     {
                         if (etdevicename.Text == "")
-                            RestClient.SetDeviceSetting(houseid, etdevicename.Hint, saveicon_id, devicevalue, 20);
+                        {
+                            if (!etdevicename.Hint.ToLower().Contains("unknown"))
+                                RestClient.SetDeviceSetting(houseid, etdevicename.Hint, saveicon_id, original_value, 20);
+                        }
                         else
-                            RestClient.SetDeviceSetting(houseid, etdevicename.Text, saveicon_id, devicevalue, 20);
+                            RestClient.SetDeviceSetting(houseid, etdevicename.Text, saveicon_id, original_value, 20);
                     }
                 Finish();
             }
             if (item.ItemId == Resource.Id.menu_delete)
             {
-                RestClient.DeleteDeviceSetting(houseid, devicevalue);
+                RestClient.DeleteDeviceSetting(houseid, original_value);
                 Finish();
             }
             return base.OnOptionsItemSelected(item);

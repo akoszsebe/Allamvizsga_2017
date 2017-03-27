@@ -79,6 +79,7 @@ namespace Allamvizsga2017.Models
                     settingsactivity.PutExtra("house_id", house_id);
                     settingsactivity.PutExtra("device_name", itemList[tmpposition].name);
                     settingsactivity.PutExtra("device_value", itemList[tmpposition].value);
+                    settingsactivity.PutExtra("original_value", itemList[tmpposition].original_value);
                     settingsactivity.PutExtra("icon_id", icon_id);
                     context.StartActivity(settingsactivity);
                 };
@@ -106,23 +107,27 @@ namespace Allamvizsga2017.Models
 
         public int value { get; set; }
 
+        public int original_value { get; set; }
+
         public bool active { get; set; } = false;
 
-        public ListViewItemDevice(long id, int iconid, string name,int value)
+        public ListViewItemDevice(long id, int iconid, string name,int value, int original_value)
         {
             this.Id = id;
             this.iconid = iconid;
             this.name = name;
             this.value = value;
+            this.original_value = original_value;
         }
 
-        public ListViewItemDevice(long id, int iconid, string name, int value,bool active)
+        public ListViewItemDevice(long id, int iconid, string name, int value,int original_value,bool active)
         {
             this.Id = id;
             this.iconid = iconid;
             this.name = name;
             this.value = value;
             this.active = active;
+            this.original_value = original_value;
         }
 
         public ListViewItemDevice(long id,Device d,bool active)
@@ -132,6 +137,7 @@ namespace Allamvizsga2017.Models
             this.name = d.name;
             this.value = d.value;
             this.active = active;
+            this.original_value = d.original_value;
         }
 
     }

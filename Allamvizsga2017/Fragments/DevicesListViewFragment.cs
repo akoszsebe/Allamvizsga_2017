@@ -22,7 +22,7 @@ namespace Allamvizsga2017.Fragments
         private ListView mlistviewall;
         private MyDeviceAdapter adapter;
         private MyDeviceAdapter adapterall;
-        private DeviceSelector d;
+
         public bool isSelected { get; set; } = true;
 
         Socket socket;// = IO.Socket("http://192.168.0.10:3000");
@@ -48,7 +48,6 @@ namespace Allamvizsga2017.Fragments
             house_name = Arguments.GetString("house_name");
             house_id = Arguments.GetInt("house_id", 0);
             socket = (Arguments.GetSerializable("Socket") as PassSocket).socket;
-            d = new DeviceSelector(new List<Device>());
         }
 
         public override View OnCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState)
@@ -103,7 +102,7 @@ namespace Allamvizsga2017.Fragments
                     else
                     {
                         items = new List<ListViewItemDevice>();
-                        items.Add(new ListViewItemDevice(0, Resource.Drawable.Loading_icon, "connection failed", -1));
+                        items.Add(new ListViewItemDevice(0, Resource.Drawable.Loading_icon, "connection failed", -1,-1));
                     }
                     Activity.RunOnUiThread(() =>
                     {
@@ -128,15 +127,13 @@ namespace Allamvizsga2017.Fragments
                 Thread.Sleep(1000);
                 device = RestClient.GetDeviceSetting(house_id);
             }
-            d = new DeviceSelector(device);
             List<ListViewItemDevice> items;
             items = new List<ListViewItemDevice>();
-            List<Device> devices = d.GetAllDevices();
-
+            
             if (device != null)
-                for (int i = 0; i < devices.Count; i++)
+                for (int i = 0; i < device.Count; i++)
                 {
-                    items.Add(new ListViewItemDevice(i, devices[i].icon_id, devices[i].name, devices[i].value));
+                    items.Add(new ListViewItemDevice(i, device[i].icon_id, device[i].name, device[i].value,device[i].value));
                 }
             Activity.RunOnUiThread(() =>
             {
@@ -168,40 +165,40 @@ namespace Allamvizsga2017.Fragments
             }
         }
 
-        private void NewAmperActualizator()
-        {
-            socket.On("actualdevices", data =>
-            {
-                // var jobject = data as Newtonsoft.Json.Linq.JToken;
-                // get the message data values
-                var amper = JsonConvert.DeserializeObject<List<Amper>>(data.ToString());//= jobject.Value<List<Amper>>("msg");
-                List<ListViewItemDevice> items;
-                //var usr = jobject.Value<string>("user");
-
-                if (amper != null)
-                {
-                    items = new List<ListViewItemDevice>();
-                    for (int i = 0; i < amper.Count; i++)
-                    {
-                        Device selector = d.GetDevice(System.Convert.ToInt32(amper[i].ampervalue));
-                        items.Add(new ListViewItemDevice(i, selector.icon_id, selector.name, selector.value, true));
-                    }
-
-
-                }
-                else
-                {
-                    items = new List<ListViewItemDevice>();
-                    items.Add(new ListViewItemDevice(0, Resource.Drawable.Loading_icon, "connection failed", -1));
-                }
-                Activity.RunOnUiThread(() =>
-                {
-                    adapter.AddData(items);
-                    adapter.NotifyDataSetChanged();
-                    ListUtils.setDynamicHeight(mlistview);
-                });
-            });
-        }
+        //private void NewAmperActualizator()
+        //{
+        //    socket.On("actualdevices", data =>
+        //    {
+        //        // var jobject = data as Newtonsoft.Json.Linq.JToken;
+        //        // get the message data values
+        //        var amper = JsonConvert.DeserializeObject<List<Amper>>(data.ToString());//= jobject.Value<List<Amper>>("msg");
+        //        List<ListViewItemDevice> items;
+        //        //var usr = jobject.Value<string>("user");
+        //
+        //        if (amper != null)
+        //        {
+        //            items = new List<ListViewItemDevice>();
+        //            for (int i = 0; i < amper.Count; i++)
+        //            {
+        //                Device selector = d.GetDevice(System.Convert.ToInt32(amper[i].ampervalue));
+        //                items.Add(new ListViewItemDevice(i, selector.icon_id, selector.name, selector.value, true));
+        //            }
+        //
+        //
+        //        }
+        //        else
+        //        {
+        //            items = new List<ListViewItemDevice>();
+        //            items.Add(new ListViewItemDevice(0, Resource.Drawable.Loading_icon, "connection failed", -1));
+        //        }
+        //        Activity.RunOnUiThread(() =>
+        //        {
+        //            adapter.AddData(items);
+        //            adapter.NotifyDataSetChanged();
+        //            ListUtils.setDynamicHeight(mlistview);
+        //        });
+        //    });
+        //}
 
         public override void OnStop()
         {
