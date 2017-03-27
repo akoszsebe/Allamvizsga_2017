@@ -1,0 +1,30 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<resources>
+  <!-- the theme applied to the application or activity -->
+
+  <style name = "NoActionBar" parent = "@android:style/Theme.Holo.Light">
+    <item name = "android:windowActionBar">false</item>
+    <item name = "android:windowNoTitle">true</item>
+  </style>
+
+  <style name="MyAlertDialogStyle" parent="Theme.AppCompat.Light.Dialog.Alert">
+    <item name="colorAccent">#4cc988</item>
+    <item name="android:textColorPrimary">#000000</item>
+    <item name="colorPrimary">#4cc988</item>
+  </style>
+
+  <style name="TabLayoutStyle" parent="Widget.Design.TabLayout">
+    <item name="tabIndicatorColor">#ffffff</item>
+    <item name="tabIndicatorHeight">2dp</item>
+    <item name="tabPaddingStart">8dp</item>
+    <item name="tabPaddingEnd">8dp</item>
+    <item name="tabBackground">?attr/selectableItemBackground</item>
+    <item name="tabTextAppearance">@style/TabTextAppearance</item>
+    <item name="tabSelectedTextColor">@android:color/white</item>
+  </style>
+
+  <style name="TabTextAppearance" parent="TextAppearance.Design.Tab">
+    <item name="android:textColor">#ffffff</item>
+    <item name="textAllCaps">true</item>
+  </style>
+</resources>

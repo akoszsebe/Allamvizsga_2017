@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:fab="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <android.support.v7.widget.Toolbar
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/toolbar1"
+        android:background="#4cc988" />
+    <TextView
+        android:text="Your Houses"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/textView1"
+        android:gravity="center_horizontal"
+        android:background="#d4ddd8"
+        android:layout_marginTop="15dp" />
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <ListView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:id="@+id/listViewHouses" />
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="end|bottom"
+            android:id="@+id/layoutfloatingbutton">
+            <com.refractored.fab.FloatingActionButton
+                android:id="@+id/fabforaddSmartWatch"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="end|top"
+                android:layout_margin="16dp"
+                android:src="@drawable/add_icon"
+                fab:fab_colorNormal="#55d693"
+                fab:fab_colorPressed="#4b1988"
+                fab:fab_colorRipple="#41c988" />
+            <com.refractored.fab.FloatingActionButton
+                android:id="@+id/fab"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="end|bottom"
+                android:layout_margin="16dp"
+                android:src="@drawable/add_icon"
+                fab:fab_colorNormal="#4cc988"
+                fab:fab_colorPressed="#4c1988"
+                fab:fab_colorRipple="#41c988" />
+        </LinearLayout>
+    </FrameLayout>
+</LinearLayout>

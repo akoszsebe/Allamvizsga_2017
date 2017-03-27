@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <android.support.v7.widget.Toolbar
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/toolbar1"
+        android:background="#4cc988" />
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/linearLayout1"
+        android:layout_marginLeft="15.0dp"
+        android:layout_marginTop="15.0dp"
+        android:layout_marginRight="15.0dp"
+        android:background="#d4ddd8">
+        <TextView
+            android:text="Hous Name :"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:id="@+id/textView11"
+            android:layout_marginLeft="10.0dp"
+            android:padding="1dp" />
+        <TextView
+            android:text="  Hous Name"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/textViewHouseName"
+            android:gravity="center"
+            android:layout_marginLeft="13.0dp"
+            android:padding="1dp" />
+    </LinearLayout>
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/linearLayout1"
+        android:layout_marginLeft="15.0dp"
+        android:layout_marginTop="15.0dp"
+        android:layout_marginRight="15.0dp"
+        android:background="#d4ddd8">
+        <TextView
+            android:text="Device Watt :"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:id="@+id/textView12"
+            android:layout_marginLeft="10.0dp"
+            android:padding="1dp" />
+        <TextView
+            android:text="  Device Watt"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/textViewDeviceWatt"
+            android:gravity="center"
+            android:layout_marginLeft="20.0dp"
+            android:padding="1dp" />
+    </LinearLayout>
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/linearLayout1"
+        android:layout_marginLeft="15.0dp"
+        android:layout_marginTop="15.0dp"
+        android:layout_marginRight="15.0dp"
+        android:layout_marginBottom="15.0dp"
+        android:background="#d4ddd8">
+        <TextView
+            android:text="Device Name :"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:id="@+id/textViewDeviceName"
+            android:gravity="center"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10.0dp"
+            android:paddingBottom="2dp"
+            android:paddingLeft="1dp" />
+        <EditText
+            android:id="@+id/textInputEditText1"
+            android:gravity="center"
+            android:cursorVisible="false"
+            android:layout_marginLeft="15.0dp"
+            android:background="#ffffff"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:singleLine="true"
+            android:maxLength="10"
+            android:inputType="textPersonName"
+            android:layout_marginRight="4.0dp"
+            android:layout_marginBottom="4.0dp"
+            android:padding="1dp" />
+    </LinearLayout>
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="2dp"
+        android:background="#000000"
+        android:layout_marginTop="15dp"
+        android:id="@+id/view1"
+        android:layout_marginLeft="15.0dp"
+        android:layout_marginRight="15.0dp" />
+    <ImageView
+        android:layout_width="140dp"
+        android:layout_height="140dp"
+        android:id="@+id/imageView1"
+        android:layout_gravity="center_horizontal"
+        android:src="@android:drawable/ic_menu_gallery"
+        android:layout_marginTop="33.0dp"
+        android:layout_marginBottom="16.0dp" />
+    <LinearLayout
+        android:orientation="horizontal"
+        android:minHeight="80px"
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:id="@+id/linearLayoutIcons">
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/recyclerView"
+            android:scrollbars="horizontal"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent" />
+    </LinearLayout>
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="2dp"
+        android:background="#000000"
+        android:layout_marginLeft="15.0dp"
+        android:layout_marginRight="15.0dp" />
+</LinearLayout>
