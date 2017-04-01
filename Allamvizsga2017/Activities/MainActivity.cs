@@ -37,7 +37,7 @@ namespace Allamvizsga2017
             SupportActionBar.Title = house_name;
             SupportActionBar.SetDisplayHomeAsUpEnabled(true);
             SupportActionBar.SetHomeButtonEnabled(true);
-
+            toolbar.SetTitleTextAppearance(this, Resource.Style.ActionBarTitle);
 
             adapter.SetTabTitles("Devices", "Statistics");
             adapter.SetTabIcons(Resource.Drawable.selector_devices,Resource.Drawable.selector_statistics);

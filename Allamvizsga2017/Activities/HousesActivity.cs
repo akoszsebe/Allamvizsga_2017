@@ -34,6 +34,8 @@ namespace Allamvizsga2017.Activities
             SetSupportActionBar(toolbar);
             SupportActionBar.Title = "Hi, " + user_email;
 
+            toolbar.SetTitleTextAppearance(this, Resource.Style.ActionBarTitle);
+
             mlistview = FindViewById<ListView>(Resource.Id.listViewHouses);
             var fab = FindViewById<FloatingActionButton>(Resource.Id.fab);
             //fab.AttachToListView(mlistview);
@@ -214,8 +216,8 @@ namespace Allamvizsga2017.Activities
                     {
                         sumwat += r.value;
                     }
-                    adapter.UpdateData(activedevicescount,sumwat, h.house_id);
-
+                    adapter.UpdateData(activedevicescount,sumwat*(h.house_id+3), h.house_id);
+                    
                     RunOnUiThread(() => { adapter.NotifyDataSetChanged(); });
                 }
                 catch(System.Exception e)

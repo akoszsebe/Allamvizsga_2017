@@ -102,7 +102,7 @@ namespace Allamvizsga2017.Fragments
                     else
                     {
                         items = new List<ListViewItemDevice>();
-                        items.Add(new ListViewItemDevice(0, Resource.Drawable.Loading_icon, "connection failed", -1,-1));
+                        items.Add(new ListViewItemDevice(0, Resource.Drawable.abc_btn_radio_material, "connection failed", -1,-1));
                     }
                     Activity.RunOnUiThread(() =>
                     {

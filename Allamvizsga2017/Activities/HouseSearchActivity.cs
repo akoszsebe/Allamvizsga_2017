@@ -39,6 +39,7 @@ namespace Allamvizsga2017.Activities
             SupportActionBar.Title = "Search For Houses";
             SupportActionBar.SetDisplayHomeAsUpEnabled(true);
             SupportActionBar.SetHomeButtonEnabled(true);
+            toolbar.SetTitleTextAppearance(this, Resource.Style.ActionBarTitle);
 
             adapter = new MyHouseSearchAdapter(this, user_email);
             mlistview.Adapter = adapter;

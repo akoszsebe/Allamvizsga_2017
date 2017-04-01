@@ -27,4 +27,14 @@
     <item name="android:textColor">#ffffff</item>
     <item name="textAllCaps">true</item>
   </style>
+
+
+  <style name="ActionBarTitle" parent="android:Widget.TextView">
+    <!-- Customizes the color of the action bar title-->
+    <item name="android:textColor">#ffffff</item>
+
+    <!-- Customizes the size of the action bar title-->
+    <item name="android:textSize">25sp</item>
+
+  </style>
 </resources>

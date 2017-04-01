@@ -46,6 +46,7 @@ namespace Allamvizsga2017
             etdevicename = FindViewById<EditText>(Resource.Id.textInputEditText1);
             var toolbar = FindViewById<Android.Support.V7.Widget.Toolbar>(Resource.Id.toolbar1);
 
+            toolbar.SetTitleTextAppearance(this, Resource.Style.ActionBarTitle);
             SetSupportActionBar(toolbar);
             SupportActionBar.Title = "Settings";
             SupportActionBar.SetDisplayHomeAsUpEnabled(true);

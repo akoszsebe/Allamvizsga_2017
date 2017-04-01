@@ -1920,139 +1920,157 @@ namespace Allamvizsga2017
 			public const int add_icon = 2130837580;
 			
 			// aapt resource value: 0x7f02004d
-			public const int Air_conditioner = 2130837581;
+			public const int add_icon_black = 2130837581;
 			
 			// aapt resource value: 0x7f02004e
-			public const int Audio_speakers = 2130837582;
+			public const int Air_conditioner = 2130837582;
 			
 			// aapt resource value: 0x7f02004f
-			public const int barchartlistviewitemstyle = 2130837583;
+			public const int Audio_speakers = 2130837583;
 			
 			// aapt resource value: 0x7f020050
-			public const int Blender = 2130837584;
+			public const int barchartlistviewitemstyle = 2130837584;
 			
 			// aapt resource value: 0x7f020051
-			public const int Coffee_machine = 2130837585;
+			public const int Blender = 2130837585;
 			
 			// aapt resource value: 0x7f020052
-			public const int Curling_iron = 2130837586;
+			public const int Coffee_machine = 2130837586;
 			
 			// aapt resource value: 0x7f020053
-			public const int delete = 2130837587;
+			public const int Curling_iron = 2130837587;
 			
 			// aapt resource value: 0x7f020054
-			public const int design_fab_background = 2130837588;
+			public const int delete = 2130837588;
 			
 			// aapt resource value: 0x7f020055
-			public const int design_snackbar_background = 2130837589;
+			public const int delete_black = 2130837589;
 			
 			// aapt resource value: 0x7f020056
-			public const int Devicetheme = 2130837590;
+			public const int design_fab_background = 2130837590;
 			
 			// aapt resource value: 0x7f020057
-			public const int Dishwashing_machine = 2130837591;
+			public const int design_snackbar_background = 2130837591;
 			
 			// aapt resource value: 0x7f020058
-			public const int Drilling_machine = 2130837592;
+			public const int Devicetheme = 2130837592;
 			
 			// aapt resource value: 0x7f020059
-			public const int electricmeter_black = 2130837593;
+			public const int Dishwashing_machine = 2130837593;
 			
 			// aapt resource value: 0x7f02005a
-			public const int electricmeter_white = 2130837594;
+			public const int Drilling_machine = 2130837594;
 			
 			// aapt resource value: 0x7f02005b
-			public const int fab_shadow = 2130837595;
+			public const int electricmeter_black = 2130837595;
 			
 			// aapt resource value: 0x7f02005c
-			public const int fab_shadow_mini = 2130837596;
+			public const int electricmeter_white = 2130837596;
 			
 			// aapt resource value: 0x7f02005d
-			public const int Fan = 2130837597;
+			public const int fab_shadow = 2130837597;
 			
 			// aapt resource value: 0x7f02005e
-			public const int Flex = 2130837598;
+			public const int fab_shadow_mini = 2130837598;
 			
 			// aapt resource value: 0x7f02005f
-			public const int Hailr_straightener = 2130837599;
+			public const int Fan = 2130837599;
 			
 			// aapt resource value: 0x7f020060
-			public const int Hair_dryer = 2130837600;
+			public const int Flex = 2130837600;
 			
 			// aapt resource value: 0x7f020061
-			public const int Hand_mixer = 2130837601;
+			public const int Hailr_straightener = 2130837601;
 			
 			// aapt resource value: 0x7f020062
-			public const int Icon = 2130837602;
+			public const int Hair_dryer = 2130837602;
 			
 			// aapt resource value: 0x7f020063
-			public const int Icon1 = 2130837603;
+			public const int Hand_mixer = 2130837603;
 			
 			// aapt resource value: 0x7f020064
-			public const int informationicon = 2130837604;
+			public const int house_blue = 2130837604;
 			
 			// aapt resource value: 0x7f020065
-			public const int Laptop = 2130837605;
+			public const int house_green = 2130837605;
 			
 			// aapt resource value: 0x7f020066
-			public const int Lightning_bulb = 2130837606;
+			public const int house_orange = 2130837606;
 			
 			// aapt resource value: 0x7f020067
-			public const int Loading_icon = 2130837607;
+			public const int house_red = 2130837607;
 			
 			// aapt resource value: 0x7f020068
-			public const int Microwave = 2130837608;
-			
-			// aapt resource value: 0x7f020079
-			public const int notification_template_icon_bg = 2130837625;
+			public const int house_yellow = 2130837608;
 			
 			// aapt resource value: 0x7f020069
-			public const int Radio = 2130837609;
+			public const int Icon = 2130837609;
 			
 			// aapt resource value: 0x7f02006a
-			public const int Refrigerator = 2130837610;
+			public const int Icon1 = 2130837610;
 			
 			// aapt resource value: 0x7f02006b
-			public const int Sandwich_maker = 2130837611;
+			public const int informationicon = 2130837611;
 			
 			// aapt resource value: 0x7f02006c
-			public const int save = 2130837612;
+			public const int Laptop = 2130837612;
 			
 			// aapt resource value: 0x7f02006d
-			public const int selector_devices = 2130837613;
+			public const int Lightning_bulb = 2130837613;
 			
 			// aapt resource value: 0x7f02006e
-			public const int selector_statistics = 2130837614;
+			public const int Microwave = 2130837614;
+			
+			// aapt resource value: 0x7f02007f
+			public const int notification_template_icon_bg = 2130837631;
 			
 			// aapt resource value: 0x7f02006f
-			public const int Smoke_extractor = 2130837615;
+			public const int Radio = 2130837615;
 			
 			// aapt resource value: 0x7f020070
-			public const int Stand_mixer = 2130837616;
+			public const int Refrigerator = 2130837616;
 			
 			// aapt resource value: 0x7f020071
-			public const int statistics_black = 2130837617;
+			public const int Sandwich_maker = 2130837617;
 			
 			// aapt resource value: 0x7f020072
-			public const int statistics_white = 2130837618;
+			public const int save = 2130837618;
 			
 			// aapt resource value: 0x7f020073
-			public const int Stove = 2130837619;
+			public const int selector_devices = 2130837619;
 			
 			// aapt resource value: 0x7f020074
-			public const int Television = 2130837620;
+			public const int selector_statistics = 2130837620;
 			
 			// aapt resource value: 0x7f020075
-			public const int Toaster = 2130837621;
+			public const int Smoke_extractor = 2130837621;
 			
 			// aapt resource value: 0x7f020076
-			public const int unknownicon = 2130837622;
+			public const int Stand_mixer = 2130837622;
 			
 			// aapt resource value: 0x7f020077
-			public const int Vacuum_cleaner = 2130837623;
+			public const int statistics_black = 2130837623;
 			
 			// aapt resource value: 0x7f020078
-			public const int Water_heater = 2130837624;
+			public const int statistics_white = 2130837624;
+			
+			// aapt resource value: 0x7f020079
+			public const int Stove = 2130837625;
+			
+			// aapt resource value: 0x7f02007a
+			public const int Television = 2130837626;
+			
+			// aapt resource value: 0x7f02007b
+			public const int Toaster = 2130837627;
+			
+			// aapt resource value: 0x7f02007c
+			public const int unknownicon = 2130837628;
+			
+			// aapt resource value: 0x7f02007d
+			public const int Vacuum_cleaner = 2130837629;
+			
+			// aapt resource value: 0x7f02007e
+			public const int Water_heater = 2130837630;
 			
 			static Drawable()
 			{
@@ -2076,8 +2094,8 @@ namespace Allamvizsga2017
 			// aapt resource value: 0x7f06007b
 			public const int DeviceSetting = 2131099771;
 			
-			// aapt resource value: 0x7f06009f
-			public const int action0 = 2131099807;
+			// aapt resource value: 0x7f0600a0
+			public const int action0 = 2131099808;
 			
 			// aapt resource value: 0x7f06005a
 			public const int action_bar = 2131099738;
@@ -2103,8 +2121,8 @@ namespace Allamvizsga2017
 			// aapt resource value: 0x7f06005b
 			public const int action_context_bar = 2131099739;
 			
-			// aapt resource value: 0x7f0600a3
-			public const int action_divider = 2131099811;
+			// aapt resource value: 0x7f0600a4
+			public const int action_divider = 2131099812;
 			
 			// aapt resource value: 0x7f060003
 			public const int action_menu_divider = 2131099651;
@@ -2136,14 +2154,14 @@ namespace Allamvizsga2017
 			// aapt resource value: 0x7f06002a
 			public const int bottom = 2131099690;
 			
-			// aapt resource value: 0x7f06009b
-			public const int buttonLogin = 2131099803;
+			// aapt resource value: 0x7f06009c
+			public const int buttonLogin = 2131099804;
 			
 			// aapt resource value: 0x7f060044
 			public const int buttonPanel = 2131099716;
 			
-			// aapt resource value: 0x7f0600a0
-			public const int cancel_action = 2131099808;
+			// aapt resource value: 0x7f0600a1
+			public const int cancel_action = 2131099809;
 			
 			// aapt resource value: 0x7f06002b
 			public const int center = 2131099691;
@@ -2163,8 +2181,8 @@ namespace Allamvizsga2017
 			// aapt resource value: 0x7f060052
 			public const int checkbox = 2131099730;
 			
-			// aapt resource value: 0x7f0600a6
-			public const int chronometer = 2131099814;
+			// aapt resource value: 0x7f0600a7
+			public const int chronometer = 2131099815;
 			
 			// aapt resource value: 0x7f060033
 			public const int clip_horizontal = 2131099699;
@@ -2184,8 +2202,8 @@ namespace Allamvizsga2017
 			// aapt resource value: 0x7f06004f
 			public const int customPanel = 2131099727;
 			
-			// aapt resource value: 0x7f0600ae
-			public const int datePicker1 = 2131099822;
+			// aapt resource value: 0x7f0600af
+			public const int datePicker1 = 2131099823;
 			
 			// aapt resource value: 0x7f060058
 			public const int decor_content_parent = 2131099736;
@@ -2217,8 +2235,8 @@ namespace Allamvizsga2017
 			// aapt resource value: 0x7f06001c
 			public const int end = 2131099676;
 			
-			// aapt resource value: 0x7f0600ab
-			public const int end_padder = 2131099819;
+			// aapt resource value: 0x7f0600ac
+			public const int end_padder = 2131099820;
 			
 			// aapt resource value: 0x7f060023
 			public const int enterAlways = 2131099683;
@@ -2235,11 +2253,11 @@ namespace Allamvizsga2017
 			// aapt resource value: 0x7f060051
 			public const int expanded_menu = 2131099729;
 			
-			// aapt resource value: 0x7f060093
-			public const int fab = 2131099795;
+			// aapt resource value: 0x7f060094
+			public const int fab = 2131099796;
 			
-			// aapt resource value: 0x7f060092
-			public const int fabforaddSmartWatch = 2131099794;
+			// aapt resource value: 0x7f060093
+			public const int fabforaddSmartWatch = 2131099795;
 			
 			// aapt resource value: 0x7f060035
 			public const int fill = 2131099701;
@@ -2271,35 +2289,38 @@ namespace Allamvizsga2017
 			// aapt resource value: 0x7f060085
 			public const int imageView1 = 2131099781;
 			
+			// aapt resource value: 0x7f060099
+			public const int imageViewForIcon = 2131099801;
+			
+			// aapt resource value: 0x7f060090
+			public const int imageviewDeleteUserHouse = 2131099792;
+			
+			// aapt resource value: 0x7f06008d
+			public const int imageviewHouseColoricon = 2131099789;
+			
 			// aapt resource value: 0x7f060098
-			public const int imageViewForIcon = 2131099800;
+			public const int imageviewHouseSearch = 2131099800;
 			
-			// aapt resource value: 0x7f06008f
-			public const int imageviewDeleteUserHouse = 2131099791;
-			
-			// aapt resource value: 0x7f060097
-			public const int imageviewHouseSearch = 2131099799;
-			
-			// aapt resource value: 0x7f0600aa
-			public const int info = 2131099818;
+			// aapt resource value: 0x7f0600ab
+			public const int info = 2131099819;
 			
 			// aapt resource value: 0x7f060000
 			public const int item_touch_helper_previous_elevation = 2131099648;
 			
-			// aapt resource value: 0x7f060091
-			public const int layoutfloatingbutton = 2131099793;
+			// aapt resource value: 0x7f060092
+			public const int layoutfloatingbutton = 2131099794;
 			
 			// aapt resource value: 0x7f06002f
 			public const int left = 2131099695;
 			
-			// aapt resource value: 0x7f060094
-			public const int lenearlay = 2131099796;
+			// aapt resource value: 0x7f060095
+			public const int lenearlay = 2131099797;
 			
-			// aapt resource value: 0x7f0600a4
-			public const int line1 = 2131099812;
+			// aapt resource value: 0x7f0600a5
+			public const int line1 = 2131099813;
 			
-			// aapt resource value: 0x7f0600a8
-			public const int line3 = 2131099816;
+			// aapt resource value: 0x7f0600a9
+			public const int line3 = 2131099817;
 			
 			// aapt resource value: 0x7f06007d
 			public const int linearLayout1 = 2131099773;
@@ -2316,29 +2337,29 @@ namespace Allamvizsga2017
 			// aapt resource value: 0x7f06008c
 			public const int listView2 = 2131099788;
 			
-			// aapt resource value: 0x7f0600b0
-			public const int listViewBarchart = 2131099824;
+			// aapt resource value: 0x7f0600b1
+			public const int listViewBarchart = 2131099825;
 			
-			// aapt resource value: 0x7f060090
-			public const int listViewHouses = 2131099792;
+			// aapt resource value: 0x7f060091
+			public const int listViewHouses = 2131099793;
 			
-			// aapt resource value: 0x7f060096
-			public const int listViewSearchHouse = 2131099798;
+			// aapt resource value: 0x7f060097
+			public const int listViewSearchHouse = 2131099799;
 			
 			// aapt resource value: 0x7f060041
 			public const int list_item = 2131099713;
 			
-			// aapt resource value: 0x7f0600a2
-			public const int media_actions = 2131099810;
-			
-			// aapt resource value: 0x7f0600b2
-			public const int menu_delete = 2131099826;
+			// aapt resource value: 0x7f0600a3
+			public const int media_actions = 2131099811;
 			
 			// aapt resource value: 0x7f0600b3
-			public const int menu_logout = 2131099827;
+			public const int menu_delete = 2131099827;
 			
-			// aapt resource value: 0x7f0600b1
-			public const int menu_save = 2131099825;
+			// aapt resource value: 0x7f0600b4
+			public const int menu_logout = 2131099828;
+			
+			// aapt resource value: 0x7f0600b2
+			public const int menu_save = 2131099826;
 			
 			// aapt resource value: 0x7f06001d
 			public const int middle = 2131099677;
@@ -2361,8 +2382,8 @@ namespace Allamvizsga2017
 			// aapt resource value: 0x7f06000c
 			public const int normal = 2131099660;
 			
-			// aapt resource value: 0x7f06009e
-			public const int pager = 2131099806;
+			// aapt resource value: 0x7f06009f
+			public const int pager = 2131099807;
 			
 			// aapt resource value: 0x7f060028
 			public const int parallax = 2131099688;
@@ -2415,8 +2436,8 @@ namespace Allamvizsga2017
 			// aapt resource value: 0x7f060039
 			public const int scrollable = 2131099705;
 			
-			// aapt resource value: 0x7f060095
-			public const int searchView1 = 2131099797;
+			// aapt resource value: 0x7f060096
+			public const int searchView1 = 2131099798;
 			
 			// aapt resource value: 0x7f06005e
 			public const int search_badge = 2131099742;
@@ -2463,8 +2484,8 @@ namespace Allamvizsga2017
 			// aapt resource value: 0x7f060013
 			public const int showTitle = 2131099667;
 			
-			// aapt resource value: 0x7f06009d
-			public const int sliding_tabs = 2131099805;
+			// aapt resource value: 0x7f06009e
+			public const int sliding_tabs = 2131099806;
 			
 			// aapt resource value: 0x7f060073
 			public const int snackbar_action = 2131099763;
@@ -2493,8 +2514,8 @@ namespace Allamvizsga2017
 			// aapt resource value: 0x7f060031
 			public const int start = 2131099697;
 			
-			// aapt resource value: 0x7f0600a1
-			public const int status_bar_latest_event_content = 2131099809;
+			// aapt resource value: 0x7f0600a2
+			public const int status_bar_latest_event_content = 2131099810;
 			
 			// aapt resource value: 0x7f060065
 			public const int submit_area = 2131099749;
@@ -2502,23 +2523,23 @@ namespace Allamvizsga2017
 			// aapt resource value: 0x7f06000d
 			public const int tabMode = 2131099661;
 			
-			// aapt resource value: 0x7f0600a9
-			public const int text = 2131099817;
+			// aapt resource value: 0x7f0600aa
+			public const int text = 2131099818;
 			
-			// aapt resource value: 0x7f0600a7
-			public const int text2 = 2131099815;
+			// aapt resource value: 0x7f0600a8
+			public const int text2 = 2131099816;
 			
-			// aapt resource value: 0x7f0600ac
-			public const int textInputConfirmPassword = 2131099820;
+			// aapt resource value: 0x7f0600ad
+			public const int textInputConfirmPassword = 2131099821;
 			
 			// aapt resource value: 0x7f060083
 			public const int textInputEditText1 = 2131099779;
 			
-			// aapt resource value: 0x7f060099
-			public const int textInputEmail = 2131099801;
-			
 			// aapt resource value: 0x7f06009a
-			public const int textInputPassword = 2131099802;
+			public const int textInputEmail = 2131099802;
+			
+			// aapt resource value: 0x7f06009b
+			public const int textInputPassword = 2131099803;
 			
 			// aapt resource value: 0x7f06004d
 			public const int textSpacerNoButtons = 2131099725;
@@ -2541,20 +2562,20 @@ namespace Allamvizsga2017
 			// aapt resource value: 0x7f060081
 			public const int textViewDeviceWatt = 2131099777;
 			
-			// aapt resource value: 0x7f0600ad
-			public const int textViewHaveAccount = 2131099821;
+			// aapt resource value: 0x7f0600ae
+			public const int textViewHaveAccount = 2131099822;
 			
 			// aapt resource value: 0x7f06007f
 			public const int textViewHouseName = 2131099775;
 			
-			// aapt resource value: 0x7f06009c
-			public const int textViewNoAccount = 2131099804;
+			// aapt resource value: 0x7f06009d
+			public const int textViewNoAccount = 2131099805;
 			
-			// aapt resource value: 0x7f0600af
-			public const int textViewTotalKW = 2131099823;
+			// aapt resource value: 0x7f0600b0
+			public const int textViewTotalKW = 2131099824;
 			
-			// aapt resource value: 0x7f0600a5
-			public const int time = 2131099813;
+			// aapt resource value: 0x7f0600a6
+			public const int time = 2131099814;
 			
 			// aapt resource value: 0x7f060043
 			public const int title = 2131099715;
@@ -2574,14 +2595,14 @@ namespace Allamvizsga2017
 			// aapt resource value: 0x7f060070
 			public const int touch_outside = 2131099760;
 			
-			// aapt resource value: 0x7f06008e
-			public const int tvActiveDevicesNumber = 2131099790;
+			// aapt resource value: 0x7f06008f
+			public const int tvActiveDevicesNumber = 2131099791;
 			
 			// aapt resource value: 0x7f060069
 			public const int tvDate = 2131099753;
 			
-			// aapt resource value: 0x7f06008d
-			public const int tvHouseName = 2131099789;
+			// aapt resource value: 0x7f06008e
+			public const int tvHouseName = 2131099790;
 			
 			// aapt resource value: 0x7f06006b
 			public const int tvValue = 2131099755;
@@ -2968,6 +2989,9 @@ namespace Allamvizsga2017
 		
 		public partial class Style
 		{
+			
+			// aapt resource value: 0x7f07015f
+			public const int ActionBarTitle = 2131165535;
 			
 			// aapt resource value: 0x7f07008a
 			public const int AlertDialog_AppCompat = 2131165322;

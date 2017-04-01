@@ -49,10 +49,13 @@ namespace Allamvizsga2017.Models
             var tvactivedevicenumber = view.FindViewById<TextView>(Resource.Id.tvActiveDevicesNumber);
             var tvValue = view.FindViewById<TextView>(Resource.Id.tvValue);
             var ivdelete = view.FindViewById<ImageView>(Resource.Id.imageviewDeleteUserHouse);
+            var ivhouseicon = view.FindViewById<ImageView>(Resource.Id.imageviewHouseColoricon);
 
             tvhousename.Text = itemList[position].house_name;
             tvactivedevicenumber.Text = "Active " + itemList[position].activedevices.ToString() + " devices";
             tvValue.Text = itemList[position].sumwat + "W";
+            ivhouseicon.SetImageResource(HouseSelector.GetIconId(itemList[position].sumwat));
+
             var backgroundcolor = view.Background;
 
             view.Touch += (s, e) =>
@@ -130,7 +133,33 @@ namespace Allamvizsga2017.Models
             itemList.Find(x => x.house_id == h_id).activedevices = devicenumber;
             itemList.Find(x => x.house_id == h_id).sumwat = s_wat;
         }
+
+
+
     }
+
+    class HouseSelector
+    {
+
+        public static int GetIconId(int value)
+        {
+            if (value <= 1000)
+            {
+                return Resource.Drawable.house_green;
+            }
+            if (value <= 5000)
+            {
+                return Resource.Drawable.house_yellow;
+            }
+            if (value <= 10000)
+            {
+                return Resource.Drawable.house_orange;
+            }
+            return Resource.Drawable.house_red;
+        }
+    }
+
+
     class ListViewItemHouse
     {
         public long Id { get; set; }
@@ -147,13 +176,14 @@ namespace Allamvizsga2017.Models
             this.password = password;
         }
 
-        public ListViewItemHouse(long id, int house_id, string house_name, string password, int activedevices)
+        public ListViewItemHouse(long id, int house_id, string house_name, string password, int activedevices,int sumwat)
         {
             this.Id = id;
             this.house_id = house_id;
             this.house_name = house_name;
             this.password = password;
             this.activedevices = activedevices;
+            this.sumwat = sumwat;
         }
     }
 }

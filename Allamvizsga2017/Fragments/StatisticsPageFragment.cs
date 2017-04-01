@@ -103,17 +103,17 @@ namespace Allamvizsga2017.Fragments
         {
             Calendar calendar = Calendar.GetInstance(Locale.Default);
             calendar.Set(year, monthOfYear,1,0,0);
-            long startTime = calendar.TimeInMillis;
+            startTime = calendar.TimeInMillis;
             calendar.Set(CalendarField.Date, calendar.GetActualMaximum(CalendarField.Date));
-            long endtime = calendar.TimeInMillis;
-            FeedFromDb(startTime, endtime);
+            endTime = calendar.TimeInMillis;
+            FeedFromDb(startTime, endTime);
         }
 
         public void SetIsSelected() { }
 
         public override void OnPause()
         {
-            Console.WriteLine("---------------------- Pause ------------------");
+            //Console.WriteLine("---------------------- Pause ------------------");
             if (thread != null)
                 thread.Abort();
             base.OnPause();
@@ -125,7 +125,7 @@ namespace Allamvizsga2017.Fragments
             if (isSelected)
             {
                 FeedFromDb(startTime, endTime);
-                Console.WriteLine("---------------------- Start ------------------");
+               // Console.WriteLine("---------------------- Start ------------------");
             }
             base.OnStart();
 
@@ -133,7 +133,7 @@ namespace Allamvizsga2017.Fragments
 
         public override void OnStop()
         {
-            Console.WriteLine("---------------------- Stop ------------------");
+            //Console.WriteLine("---------------------- Stop ------------------");
             if (thread != null)
                 thread.Abort();
             base.OnStop();
@@ -144,7 +144,7 @@ namespace Allamvizsga2017.Fragments
         {
             if (isSelected)
             {
-                Console.WriteLine("---------------------- Resume ------------------");
+                //Console.WriteLine("---------------------- Resume ------------------");
             }
             base.OnResume();
         } 

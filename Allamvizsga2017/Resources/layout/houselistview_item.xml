@@ -2,12 +2,19 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
         android:layout_width="fill_parent"
         android:layout_height="fill_parent">
+  <ImageView
+      android:id="@+id/imageviewHouseColoricon"
+      android:layout_width="60dp"
+      android:layout_height="60dp"
+      android:layout_marginRight="5dp"
+      android:layout_marginLeft="10dp"
+      android:layout_gravity="center"
+      android:gravity="center" />
   <TextView
       android:id="@+id/tvHouseName"
       android:layout_width="wrap_content"
       android:layout_height="80dp"
       android:textAppearance="?android:attr/textAppearanceLarge"
-      android:layout_marginLeft="30dp"
       android:gravity="center_vertical"
       />
   <View
@@ -15,10 +22,11 @@
        android:layout_weight="1"
        android:layout_height="match_parent"/>
   <LinearLayout
-         android:orientation="vertical"
+        android:orientation="vertical"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:gravity="center">
+        android:layout_marginRight="10dp"
+        android:gravity="end">
     <TextView
         android:id="@+id/tvActiveDevicesNumber"
         android:layout_width="wrap_content"
@@ -26,22 +34,32 @@
         android:textAppearance="?android:attr/textAppearanceMedium"
         android:layout_marginLeft="20dp"
         android:layout_marginTop="12dp"
-        android:layout_marginBottom="12dp"
+        android:layout_marginRight="15dp"
+        android:layout_marginBottom="5dp"
         android:gravity="center"/>
-    <TextView
-      android:id="@+id/tvValue"
-      android:text=""
-      android:layout_width="wrap_content"
-      android:layout_height="wrap_content"
-      android:gravity="center"/>
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center">
+      <TextView
+        android:id="@+id/tvValue"
+        android:text=""
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:layout_marginRight="5dp"/>
+      <ImageView
+        android:id="@+id/imageviewDeleteUserHouse"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginBottom="2dp"
+        android:layout_marginTop="2dp"
+        android:layout_gravity="center"
+        android:gravity="center"
+        android:src="@drawable/delete_black"/>
+    </LinearLayout>
   </LinearLayout>
-  <ImageView
-      android:id="@+id/imageviewDeleteUserHouse"
-      android:layout_width="30dp"
-      android:layout_height="30dp"
-      android:layout_marginRight="15dp"
-      android:layout_marginLeft="15dp"
-      android:layout_gravity="center"
-      android:gravity="center"
-      android:src="@drawable/delete"/>
+
 </LinearLayout>
