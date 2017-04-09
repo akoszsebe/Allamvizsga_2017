@@ -39,11 +39,12 @@ namespace Allamvizsga2017.Activities
             mlistview = FindViewById<ListView>(Resource.Id.listViewHouses);
             var fab = FindViewById<FloatingActionButton>(Resource.Id.fab);
             //fab.AttachToListView(mlistview);
+            fab.SetPadding(35, 35, 35, 35);
 
             var fabsmartwatch = FindViewById<FloatingActionButton>(Resource.Id.fabforaddSmartWatch);
             //fabsmartwatch.AttachToListView(mlistview);
             fabsmartwatch.Size = FabSize.Mini;
-
+            fabsmartwatch.SetPadding(20, 20, 20, 20);
 
             fab.Click += delegate
             {

@@ -11,7 +11,7 @@ using Android.Content;
 
 namespace Allamvizsga2017
 {
-    [Activity(Label = "Allamvizsga",ScreenOrientation = Android.Content.PM.ScreenOrientation.Portrait)]
+    [Activity(Label = "Allamvizsga" , ScreenOrientation = Android.Content.PM.ScreenOrientation.Portrait)]
     public class MainActivity : AppCompatActivity
     {
         public Socket socket = IO.Socket("http://192.168.0.10:3000");

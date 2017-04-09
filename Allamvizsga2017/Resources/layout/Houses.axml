@@ -39,8 +39,10 @@
           android:layout_height="wrap_content"
           android:layout_gravity="center|top"
           android:layout_margin="16dp"
-          android:src="@drawable/add_icon"
-          fab:fab_colorNormal="#55d693"
+          android:src="@drawable/add_smartwatch_icon"
+          android:scaleType="centerInside"
+         
+          fab:fab_colorNormal="#dd4252"
           fab:fab_colorPressed="#4b1988"
           fab:fab_colorRipple="#41c988" />
       <com.refractored.fab.FloatingActionButton
@@ -49,7 +51,9 @@
           android:layout_height="wrap_content"
           android:layout_gravity="end|bottom"
           android:layout_margin="16dp"
-          android:src="@drawable/add_icon"
+          android:src="@drawable/add_house_icon"
+          android:scaleType="centerInside"
+          
           fab:fab_colorNormal="#4cc988"
           fab:fab_colorPressed="#4c1988"
           fab:fab_colorRipple="#41c988" />

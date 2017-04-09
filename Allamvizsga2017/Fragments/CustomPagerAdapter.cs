@@ -77,7 +77,6 @@ namespace Allamvizsga2017
             var iv = (ImageView)LayoutInflater.From(context).Inflate(Resource.Layout.custom_tab, null);
             iv.SetImageResource(tabicons[position]);
             return iv;
-            
         }
 
         public void StopThreads(int fragemntindex)

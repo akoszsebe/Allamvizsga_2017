@@ -66,7 +66,10 @@ namespace Allamvizsga2017.Models
             if (itemList[position].value == -1)
             {
                 deviceName.Text = itemList[position].name;
+
                 deviceSetting.SetImageResource(Resource.Drawable.abc_tab_indicator_material);
+
+
             }
             else
             {

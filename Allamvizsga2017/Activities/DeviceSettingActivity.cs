@@ -159,6 +159,7 @@ namespace Allamvizsga2017
             Iconids.Add(Resource.Drawable.Sandwich_maker);
             Iconids.Add(Resource.Drawable.Smoke_extractor);
             Iconids.Add(Resource.Drawable.Television);
+            Iconids.Add(Resource.Drawable.Teamashine);
             Iconids.Add(Resource.Drawable.Stand_mixer);
             Iconids.Add(Resource.Drawable.Vacuum_cleaner);
             Iconids.Add(Resource.Drawable.Water_heater);
