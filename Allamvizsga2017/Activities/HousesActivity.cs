@@ -23,6 +23,10 @@ namespace Allamvizsga2017.Activities
         protected override void OnCreate(Bundle savedInstanceState)
         {
             base.OnCreate(savedInstanceState);
+            //Intent serviceIntent = new Intent();
+            //serviceIntent.SetAction("com.xamarin.NotificationService");
+            //StartService(serviceIntent);
+            StartService(new Intent(Application.Context, NotificationService.GetType()));
 
             // Create your application here
             SetContentView(Resource.Layout.Houses);

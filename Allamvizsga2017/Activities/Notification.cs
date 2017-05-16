@@ -10,7 +10,7 @@ using System.Collections.Generic;
 
 namespace Allamvizsga2017.Activities
 {
-    [Activity(Label = "Notification", MainLauncher = true)]
+    [Activity(Label = "Notification")]
     public class Notification : Activity
     {
         public Socket socket = IO.Socket("http://allamvizsga-akoszsebe.c9users.io");

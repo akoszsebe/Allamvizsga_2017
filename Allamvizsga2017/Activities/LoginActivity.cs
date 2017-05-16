@@ -11,7 +11,7 @@ using Allamvizsga2017.Models;
 
 namespace Allamvizsga2017.Activities
 {
-    [Activity(Label = "Allamvizsga", Icon = "@drawable/icon", ScreenOrientation = ScreenOrientation.Portrait)]
+    [Activity(Label = "Allamvizsga", Icon = "@drawable/icon", MainLauncher = true, ScreenOrientation = ScreenOrientation.Portrait)]
     public class LoginActivity : AppCompatActivity
     {
         EditText tiemail;
