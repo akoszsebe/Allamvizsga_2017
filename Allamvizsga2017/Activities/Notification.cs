@@ -25,32 +25,28 @@ namespace Allamvizsga2017.Activities
             {
                 socket.Connect().Emit("register", "{ \"id\" : \"12\" , \"house_ids\" : [ \"1\" ]}");
             };
+            
 
-            int notificationId = 0;
             socket.On("notification", data =>
             {
-                var d = JsonConvert.DeserializeObject<List<Device>>(data.ToString());
                 RunOnUiThread(()=> {
-                    //text.Text = data.ToString() + '\n';
-                    // Instantiate the builder and set notification elements:
+                    var e = JsonConvert.DeserializeObject<List<Device>>(data.ToString());
                     Android.App.Notification.Builder builder = new Android.App.Notification.Builder(this)
                         .SetContentTitle("Turned On")
-                        .SetContentText(d[0].name + " " + d[0].value + " W")
-                        .SetSmallIcon(d[0].icon_id)
-                        .SetDefaults(NotificationDefaults.Sound);
+                        .SetContentText(e[0].name +" " + e[0].value + " W")
+                        .SetDefaults(NotificationDefaults.Sound)
+                        .SetSmallIcon(e[0].icon_id);
 
                     // Build the notification:
                     Android.App.Notification notification = builder.Build();
 
                     // Get the notification manager:
-                    NotificationManager notificationManager =
+                    Android.App.NotificationManager notificationManager =
                         GetSystemService(Context.NotificationService) as NotificationManager;
 
                     // Publish the notification:
-                    
+                    const int notificationId = 0;
                     notificationManager.Notify(notificationId, notification);
-                    notificationId++;
-                    if (notificationId == 10) notificationId = 0;
                 });
                 
             });

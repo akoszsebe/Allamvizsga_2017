@@ -50,48 +50,59 @@ namespace Allamvizsga2017.Models
             tvhousename.Text = itemList[position].house_name;
          
             int tmp = position;
-            btadd.Click += delegate
-            {
-                ProgressDialog progress = new ProgressDialog(context);
-                progress.Indeterminate = true;
-                progress.SetProgressStyle(ProgressDialogStyle.Spinner);
-                progress.SetMessage("Adding House...");
-                progress.SetCancelable(true);
-                progress.Show();
-                new Thread(new ThreadStart(() =>
-                {
-                    var successed = RestClient.AddUserHouse(user_email, itemList[position].house_id);
-                    if (successed)
-                    {
-                        activity.RunOnUiThread(() =>
-                        {
-                            progress.Dismiss();
-                            Android.Support.V7.App.AlertDialog.Builder alert = new Android.Support.V7.App.AlertDialog.Builder(context, Resource.Style.MyAlertDialogStyle);
-                            alert.SetTitle("House successfully added");
-                            alert.SetPositiveButton("OK", (senderAlert, args) =>
-                            {
-                            }); 
-                            Dialog dialog = alert.Create();
-                            dialog.Show();      
-                        });
-                    }
-                    else
-                    {
-                        activity.RunOnUiThread(() =>
-                        {
-                            progress.Dismiss();
-                            Android.Support.V7.App.AlertDialog.Builder alert = new Android.Support.V7.App.AlertDialog.Builder(context, Resource.Style.MyAlertDialogStyle);
-                            alert.SetTitle("House was added");
-                            alert.SetPositiveButton("OK", (senderAlert, args) =>
-                            {
-                            });
-                            Dialog dialog = alert.Create();
-                            dialog.Show();
-                        });
-                    }
-                })).Start();
-            };
 
+            if (!itemList[position].users_house)
+            {
+                btadd.Click += delegate
+                {
+                    ProgressDialog progress = new ProgressDialog(context);
+                    progress.Indeterminate = true;
+                    progress.SetProgressStyle(ProgressDialogStyle.Spinner);
+                    progress.SetMessage("Adding House...");
+                    progress.SetCancelable(true);
+                    progress.Show();
+                    new Thread(new ThreadStart(() =>
+                    {
+                        var successed = RestClient.AddUserHouse(user_email, itemList[position].house_id);
+                        if (successed)
+                        {
+                            activity.RunOnUiThread(() =>
+                            {
+                                progress.Dismiss();
+                                Android.Support.V7.App.AlertDialog.Builder alert = new Android.Support.V7.App.AlertDialog.Builder(context, Resource.Style.MyAlertDialogStyle);
+                                alert.SetTitle("House successfully added");
+                                alert.SetPositiveButton("OK", (senderAlert, args) =>
+                                {
+                                    btadd.LayoutParameters.Width += 10;
+                                    btadd.SetImageResource(Resource.Drawable.done_green);
+                                });
+                                Dialog dialog = alert.Create();
+                                dialog.Show();
+                            });
+                        }
+                        else
+                        {
+                            activity.RunOnUiThread(() =>
+                            {
+                                progress.Dismiss();
+                                Android.Support.V7.App.AlertDialog.Builder alert = new Android.Support.V7.App.AlertDialog.Builder(context, Resource.Style.MyAlertDialogStyle);
+                                alert.SetTitle("House was added");
+                                alert.SetPositiveButton("OK", (senderAlert, args) =>
+                                {
+                                });
+                                Dialog dialog = alert.Create();
+                                dialog.Show();
+                            });
+                        }
+                    })).Start();
+                };
+            }
+            else
+            {
+                btadd.LayoutParameters.Width += 10;
+                btadd.Left  += 10;
+                btadd.SetImageResource(Resource.Drawable.done_green);
+            }
             return view;
         }
 

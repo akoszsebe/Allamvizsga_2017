@@ -18,11 +18,13 @@ namespace Allamvizsga2017.Activities
     [Activity(Label = "HouseSearchActivity", ScreenOrientation = Android.Content.PM.ScreenOrientation.Portrait)]
     public class HouseSearchActivity : AppCompatActivity
     {
-        ListView mlistview;
-        MyHouseSearchAdapter adapter;
-        string user_email;
+        ListView mlistview { get; set; }
+        MyHouseSearchAdapter adapter { get; set; }
+        string user_email { get; set; }
+        List<House> user_houses { get; set; } = null;
 
-        protected override void OnCreate(Bundle savedInstanceState)
+
+    protected override void OnCreate(Bundle savedInstanceState)
         {
             base.OnCreate(savedInstanceState);
 
@@ -44,6 +46,8 @@ namespace Allamvizsga2017.Activities
             adapter = new MyHouseSearchAdapter(this, user_email);
             mlistview.Adapter = adapter;
 
+            GetUserHouses();
+
             searchbar.Click += delegate
             {
                 searchbar.OnActionViewExpanded();
@@ -54,6 +58,9 @@ namespace Allamvizsga2017.Activities
                 SearchHouse(searchbar.Query);
             };
         }
+
+
+
 
         public override bool OnCreateOptionsMenu(IMenu menu)
         {
@@ -79,7 +86,7 @@ namespace Allamvizsga2017.Activities
             return base.OnOptionsItemSelected(item);
         }
 
-        void SearchHouse(string house_name)
+        private void SearchHouse(string house_name)
         {
             List<ListViewItemHouse> items;
             new Thread(new ThreadStart(() =>
@@ -92,9 +99,39 @@ namespace Allamvizsga2017.Activities
                     {
                         for (int i = 0; i < houses.Count; i++)
                         {
-                            items.Add(new ListViewItemHouse(i, houses[i].house_id, houses[i].house_name, houses[i].password));
+                            if (user_houses.Exists(x => x.house_id == houses[i].house_id))
+                            {
+                                items.Add(new ListViewItemHouse(i, houses[i].house_id, houses[i].house_name, houses[i].password,true));
+                            }
+                            else
+                            {
+                                items.Add(new ListViewItemHouse(i, houses[i].house_id, houses[i].house_name, houses[i].password,false));
+                            }
                         }
 
+                        adapter.AddData(items);
+                        adapter.NotifyDataSetChanged();
+                    });
+                }
+            })).Start();
+        }
+
+
+        private void GetUserHouses()
+        {
+            new Thread(new ThreadStart(() =>
+            {
+                List<ListViewItemHouse> items;
+                user_houses = RestClient.GetUserHouses(user_email);
+                if (user_houses != null)
+                {
+                    items = new List<ListViewItemHouse>();
+                    RunOnUiThread(() =>
+                    {
+                        for (int i = 0; i < user_houses.Count; i++)
+                        {
+                            items.Add(new ListViewItemHouse(i, user_houses[i].house_id, user_houses[i].house_name, user_houses[i].password, true)); 
+                        }
                         adapter.AddData(items);
                         adapter.NotifyDataSetChanged();
                     });

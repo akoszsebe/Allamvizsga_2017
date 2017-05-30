@@ -168,12 +168,24 @@ namespace Allamvizsga2017.Models
         public int activedevices { get; set; } = 0;
         public int sumwat { get; set; } = 0;
         public string password { get; set; }
+        public bool users_house { get; set; } = false;
+
         public ListViewItemHouse(long id, int house_id, string house_name, string password)
         {
             this.Id = id;
             this.house_id = house_id;
             this.house_name = house_name;
             this.password = password;
+        }
+
+
+        public ListViewItemHouse(long id, int house_id, string house_name, string password, bool users_house)
+        {
+            this.Id = id;
+            this.house_id = house_id;
+            this.house_name = house_name;
+            this.password = password;
+            this.users_house = users_house;
         }
 
         public ListViewItemHouse(long id, int house_id, string house_name, string password, int activedevices,int sumwat)
