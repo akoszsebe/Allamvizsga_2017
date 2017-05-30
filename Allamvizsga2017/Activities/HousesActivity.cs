@@ -37,6 +37,14 @@ namespace Allamvizsga2017.Activities
             toolbar.SetTitleTextAppearance(this, Resource.Style.ActionBarTitle);
 
             mlistview = FindViewById<ListView>(Resource.Id.listViewHouses);
+
+            var refresher = FindViewById<Android.Support.V4.Widget.SwipeRefreshLayout>(Resource.Id.refresher);
+            refresher.Refresh += delegate {
+                FeedFromDb();
+                refresher.Refreshing = false;
+            };
+
+
             var fab = FindViewById<FloatingActionButton>(Resource.Id.fab);
             //fab.AttachToListView(mlistview);
             fab.SetPadding(35, 35, 35, 35);
