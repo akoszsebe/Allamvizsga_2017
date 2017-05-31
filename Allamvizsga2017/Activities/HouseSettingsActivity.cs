@@ -48,15 +48,18 @@ namespace Allamvizsga2017.Activities
 
 
             //
-            var button = FindViewById<SatelliteMenuButton>(Resource.Id.floating_menu);
+            var menu = FindViewById<SatelliteMenuButton>(Resource.Id.floating_menu);
 
-            button.AddItems(new[] {
-                new SatelliteMenuButtonItem (1, Resource.Drawable.add_house_icon),
-                new SatelliteMenuButtonItem (2, Resource.Drawable.add_icon_black),
-                new SatelliteMenuButtonItem (3, Resource.Drawable.add_smartwatch_icon)
+            menu.AddItems(new[] {
+                new SatelliteMenuButtonItem (1, Resource.Drawable.Blender),
+                new SatelliteMenuButtonItem (2, Resource.Drawable.Blender),
+                new SatelliteMenuButtonItem (3, Resource.Drawable.Blender),
+                new SatelliteMenuButtonItem (4, Resource.Drawable.Blender),
+                new SatelliteMenuButtonItem (5, Resource.Drawable.Blender),
+                new SatelliteMenuButtonItem (6, Resource.Drawable.Blender)
             });
 
-            button.MenuItemClick += (sender, e) => {
+            menu.MenuItemClick += (sender, e) => {
                 Toast.MakeText(this, e.MenuItem.ToString(), ToastLength.Long).Show();
             };
 

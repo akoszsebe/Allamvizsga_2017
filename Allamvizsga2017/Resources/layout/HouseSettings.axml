@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              xmlns:pop="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
@@ -35,10 +36,9 @@
             android:gravity="center"
             android:layout_marginLeft="13.0dp"
             android:padding="1dp" />
-    </LinearLayout>
     <satellitemenu.SatelliteMenuButton
-        android:speed="250"
-        android:radius="200dp"
+        pop:speed="250"
+        pop:radius="200dp"
         android:id="@+id/floating_menu"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -48,8 +48,10 @@
             android:id="@+id/popoutMenu"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:src="@drawable/menu"
+            android:src="@drawable/Blender"
             android:layout_gravity="bottom|left"
-            android:contentDescription="@string/empty" />
+            android:contentDescription="enyoi" />
     </satellitemenu.SatelliteMenuButton>
+    </LinearLayout>
+    
 </LinearLayout>
