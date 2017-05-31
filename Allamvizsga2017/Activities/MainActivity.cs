@@ -34,7 +34,11 @@ namespace Allamvizsga2017
             var adapter = new CustomPagerAdapter(this, SupportFragmentManager, house_name, house_id, socket);
             //Toolbar will now take on default actionbar characteristics
             SetSupportActionBar(toolbar);
-            SupportActionBar.Title = house_name;
+
+            if (house_name == "")
+                SupportActionBar.Title = "Id: "+house_id.ToString();
+            else
+                SupportActionBar.Title = house_name;
             SupportActionBar.SetDisplayHomeAsUpEnabled(true);
             SupportActionBar.SetHomeButtonEnabled(true);
             toolbar.SetTitleTextAppearance(this, Resource.Style.ActionBarTitle);

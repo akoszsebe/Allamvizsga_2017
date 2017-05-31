@@ -16,11 +16,14 @@ namespace Allamvizsga2017.Activities
     [Activity(Label = "HousesActivity", ScreenOrientation = Android.Content.PM.ScreenOrientation.Portrait)]
     public class HousesActivity : AppCompatActivity
     {
-        private Thread thread;
-        ListView mlistview;
-        MyHouseListAdapter adapter;
-        string user_email;
-        protected override void OnCreate(Bundle savedInstanceState)
+        private Thread thread { get; set; }
+        private ListView mlistview { get; set; }
+        private MyHouseListAdapter adapter { get; set; }
+        private string user_email { get; set; }
+        private Android.Support.V4.Widget.SwipeRefreshLayout refresher { get; set; }
+
+
+protected override void OnCreate(Bundle savedInstanceState)
         {
             base.OnCreate(savedInstanceState);
 
@@ -38,10 +41,9 @@ namespace Allamvizsga2017.Activities
 
             mlistview = FindViewById<ListView>(Resource.Id.listViewHouses);
 
-            var refresher = FindViewById<Android.Support.V4.Widget.SwipeRefreshLayout>(Resource.Id.refresher);
+            refresher = FindViewById<Android.Support.V4.Widget.SwipeRefreshLayout>(Resource.Id.refresher);
             refresher.Refresh += delegate {
                 FeedFromDb();
-                refresher.Refreshing = false;
             };
 
 
@@ -97,14 +99,7 @@ namespace Allamvizsga2017.Activities
                         {
                             RunOnUiThread(() =>
                             {
-                                progress.Dismiss();
-                                Android.Support.V7.App.AlertDialog.Builder alertdilaog = new Android.Support.V7.App.AlertDialog.Builder(this, Resource.Style.MyAlertDialogStyle);
-                                alertdilaog.SetTitle("SmartWatch successfully added");
-                                alertdilaog.SetPositiveButton("OK", (s, a) =>
-                                {
-                                });
-                                Dialog _dialog = alertdilaog.Create();
-                                _dialog.Show();
+                                progress.Dismiss();                              
                             });
                         }
                         else
@@ -113,7 +108,7 @@ namespace Allamvizsga2017.Activities
                             {
                                 progress.Dismiss();
                                 Android.Support.V7.App.AlertDialog.Builder alertdilaog = new Android.Support.V7.App.AlertDialog.Builder(this, Resource.Style.MyAlertDialogStyle);
-                                alertdilaog.SetTitle("Failed");
+                                alertdilaog.SetTitle("Failed Try Again");
                                 alertdilaog.SetPositiveButton("OK", (s, a) =>
                                 {
                                 });
@@ -213,6 +208,10 @@ namespace Allamvizsga2017.Activities
                 }
                 adapter.AddData(items);
                 adapter.NotifyDataSetChanged();
+                if (refresher != null)
+                {
+                    refresher.Refreshing = false;
+                }
             });
             foreach (var h in houses)
             {

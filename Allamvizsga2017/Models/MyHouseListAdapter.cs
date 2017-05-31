@@ -51,7 +51,11 @@ namespace Allamvizsga2017.Models
             var ivdelete = view.FindViewById<ImageView>(Resource.Id.imageviewDeleteUserHouse);
             var ivhouseicon = view.FindViewById<ImageView>(Resource.Id.imageviewHouseColoricon);
 
-            tvhousename.Text = itemList[position].house_name;
+            if (itemList[position].house_name == "")
+                tvhousename.Text = "Id: " + itemList[position].house_id.ToString();
+            else
+                tvhousename.Text = itemList[position].house_name;
+
             tvactivedevicenumber.Text = "Active " + itemList[position].activedevices.ToString() + " devices";
             tvValue.Text = itemList[position].sumwat + "W";
             ivhouseicon.SetImageResource(HouseSelector.GetIconId(itemList[position].sumwat));
@@ -93,13 +97,6 @@ namespace Allamvizsga2017.Models
                             itemList.Remove(itemList[position]);
                             NotifyDataSetChanged();
                             progress.Dismiss();
-                            Android.Support.V7.App.AlertDialog.Builder alert = new Android.Support.V7.App.AlertDialog.Builder(context,Resource.Style.MyAlertDialogStyle);
-                            alert.SetTitle("House Successfully Deleted");
-                            alert.SetPositiveButton("OK", (senderAlert, args) =>
-                            {
-                            });
-                            Dialog dialog = alert.Create();
-                            dialog.Show();
                         });
                     }
                     else

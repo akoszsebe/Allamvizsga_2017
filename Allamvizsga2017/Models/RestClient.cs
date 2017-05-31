@@ -291,10 +291,10 @@ namespace Allamvizsga2017.Models
             }
         }
 
-        public static List<House> GetHousesByName(string house_name)
+        public static List<House> GetHousesById(string house_id)
         {
-            var request = WebRequest.Create(@"http://" + ip + "" + port + "/gethousesbyname" +
-                "?house_name="+house_name);
+            var request = WebRequest.Create(@"http://" + ip + "" + port + "/gethousesbyid" +
+                "?house_id=" + house_id);
             request.ContentType = "application/json";
             request.Method = "GET";
             request.Timeout = 3000;

@@ -44,11 +44,13 @@ namespace Allamvizsga2017.Models
             LayoutInflater inflater = (LayoutInflater)context
                 .GetSystemService(Context.LayoutInflaterService);
             var view = inflater.Inflate(Resource.Layout.housesearchlistview_item, parent, false);
-            var tvhousename = view.FindViewById<TextView>(Resource.Id.tvHouseName);
+            var tvhouse_name = view.FindViewById<TextView>(Resource.Id.tvHouseName);
+            var tvhouse_id = view.FindViewById<TextView>(Resource.Id.tvHouseId);
             var btadd = view.FindViewById<ImageView>(Resource.Id.imageviewHouseSearch);
 
-            tvhousename.Text = itemList[position].house_name;
-         
+            tvhouse_name.Text = itemList[position].house_name;
+            tvhouse_id.Text += itemList[position].house_id.ToString();
+
             int tmp = position;
 
             if (!itemList[position].users_house)
@@ -68,16 +70,9 @@ namespace Allamvizsga2017.Models
                         {
                             activity.RunOnUiThread(() =>
                             {
-                                progress.Dismiss();
-                                Android.Support.V7.App.AlertDialog.Builder alert = new Android.Support.V7.App.AlertDialog.Builder(context, Resource.Style.MyAlertDialogStyle);
-                                alert.SetTitle("House successfully added");
-                                alert.SetPositiveButton("OK", (senderAlert, args) =>
-                                {
-                                    btadd.LayoutParameters.Width += 10;
-                                    btadd.SetImageResource(Resource.Drawable.done_green);
-                                });
-                                Dialog dialog = alert.Create();
-                                dialog.Show();
+                                progress.Dismiss();                     
+                                btadd.LayoutParameters.Width += 10;
+                                btadd.SetImageResource(Resource.Drawable.done_green);
                             });
                         }
                         else

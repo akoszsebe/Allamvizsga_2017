@@ -86,12 +86,12 @@ namespace Allamvizsga2017.Activities
             return base.OnOptionsItemSelected(item);
         }
 
-        private void SearchHouse(string house_name)
+        private void SearchHouse(string house_id)
         {
             List<ListViewItemHouse> items;
             new Thread(new ThreadStart(() =>
             {
-                List<House> houses = RestClient.GetHousesByName(house_name);
+                List<House> houses = RestClient.GetHousesById(house_id);
                 if (houses != null)
                 {
                     items = new List<ListViewItemHouse>();
