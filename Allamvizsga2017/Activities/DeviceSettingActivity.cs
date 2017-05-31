@@ -48,7 +48,7 @@ namespace Allamvizsga2017
 
             toolbar.SetTitleTextAppearance(this, Resource.Style.ActionBarTitle);
             SetSupportActionBar(toolbar);
-            SupportActionBar.Title = "Settings";
+            SupportActionBar.Title = "Device Settings";
             SupportActionBar.SetDisplayHomeAsUpEnabled(true);
             SupportActionBar.SetHomeButtonEnabled(true);
 

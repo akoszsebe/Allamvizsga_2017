@@ -2036,8 +2036,8 @@ namespace Allamvizsga2017
 			// aapt resource value: 0x7f020073
 			public const int Microwave = 2130837619;
 			
-			// aapt resource value: 0x7f020086
-			public const int notification_template_icon_bg = 2130837638;
+			// aapt resource value: 0x7f020087
+			public const int notification_template_icon_bg = 2130837639;
 			
 			// aapt resource value: 0x7f020074
 			public const int Radio = 2130837620;
@@ -2061,37 +2061,40 @@ namespace Allamvizsga2017
 			public const int selector_statistics = 2130837626;
 			
 			// aapt resource value: 0x7f02007b
-			public const int Smoke_extractor = 2130837627;
+			public const int settings_128 = 2130837627;
 			
 			// aapt resource value: 0x7f02007c
-			public const int Stand_mixer = 2130837628;
+			public const int Smoke_extractor = 2130837628;
 			
 			// aapt resource value: 0x7f02007d
-			public const int statistics_black = 2130837629;
+			public const int Stand_mixer = 2130837629;
 			
 			// aapt resource value: 0x7f02007e
-			public const int statistics_white = 2130837630;
+			public const int statistics_black = 2130837630;
 			
 			// aapt resource value: 0x7f02007f
-			public const int Stove = 2130837631;
+			public const int statistics_white = 2130837631;
 			
 			// aapt resource value: 0x7f020080
-			public const int Teamashine = 2130837632;
+			public const int Stove = 2130837632;
 			
 			// aapt resource value: 0x7f020081
-			public const int Television = 2130837633;
+			public const int Teamashine = 2130837633;
 			
 			// aapt resource value: 0x7f020082
-			public const int Toaster = 2130837634;
+			public const int Television = 2130837634;
 			
 			// aapt resource value: 0x7f020083
-			public const int unknownicon = 2130837635;
+			public const int Toaster = 2130837635;
 			
 			// aapt resource value: 0x7f020084
-			public const int Vacuum_cleaner = 2130837636;
+			public const int unknownicon = 2130837636;
 			
 			// aapt resource value: 0x7f020085
-			public const int Water_heater = 2130837637;
+			public const int Vacuum_cleaner = 2130837637;
+			
+			// aapt resource value: 0x7f020086
+			public const int Water_heater = 2130837638;
 			
 			static Drawable()
 			{
@@ -2316,14 +2319,14 @@ namespace Allamvizsga2017
 			// aapt resource value: 0x7f06009b
 			public const int imageViewForIcon = 2131099803;
 			
-			// aapt resource value: 0x7f060090
-			public const int imageviewDeleteUserHouse = 2131099792;
-			
 			// aapt resource value: 0x7f06008d
 			public const int imageviewHouseColoricon = 2131099789;
 			
 			// aapt resource value: 0x7f06009a
 			public const int imageviewHouseSearch = 2131099802;
+			
+			// aapt resource value: 0x7f060090
+			public const int imageviewUserHouseSettings = 2131099792;
 			
 			// aapt resource value: 0x7f0600ae
 			public const int info = 2131099822;
@@ -2850,58 +2853,61 @@ namespace Allamvizsga2017
 			public const int housesearchlistview_item = 2130903087;
 			
 			// aapt resource value: 0x7f030030
-			public const int iconCardView_item = 2130903088;
+			public const int HouseSettings = 2130903088;
 			
 			// aapt resource value: 0x7f030031
-			public const int Login = 2130903089;
+			public const int iconCardView_item = 2130903089;
 			
 			// aapt resource value: 0x7f030032
-			public const int Main = 2130903090;
+			public const int Login = 2130903090;
 			
 			// aapt resource value: 0x7f030033
-			public const int Notification = 2130903091;
+			public const int Main = 2130903091;
 			
 			// aapt resource value: 0x7f030034
-			public const int notification_media_action = 2130903092;
+			public const int Notification = 2130903092;
 			
 			// aapt resource value: 0x7f030035
-			public const int notification_media_cancel_action = 2130903093;
+			public const int notification_media_action = 2130903093;
 			
 			// aapt resource value: 0x7f030036
-			public const int notification_template_big_media = 2130903094;
+			public const int notification_media_cancel_action = 2130903094;
 			
 			// aapt resource value: 0x7f030037
-			public const int notification_template_big_media_narrow = 2130903095;
+			public const int notification_template_big_media = 2130903095;
 			
 			// aapt resource value: 0x7f030038
-			public const int notification_template_lines = 2130903096;
+			public const int notification_template_big_media_narrow = 2130903096;
 			
 			// aapt resource value: 0x7f030039
-			public const int notification_template_media = 2130903097;
+			public const int notification_template_lines = 2130903097;
 			
 			// aapt resource value: 0x7f03003a
-			public const int notification_template_part_chronometer = 2130903098;
+			public const int notification_template_media = 2130903098;
 			
 			// aapt resource value: 0x7f03003b
-			public const int notification_template_part_time = 2130903099;
+			public const int notification_template_part_chronometer = 2130903099;
 			
 			// aapt resource value: 0x7f03003c
-			public const int Registration = 2130903100;
+			public const int notification_template_part_time = 2130903100;
 			
 			// aapt resource value: 0x7f03003d
-			public const int select_dialog_item_material = 2130903101;
+			public const int Registration = 2130903101;
 			
 			// aapt resource value: 0x7f03003e
-			public const int select_dialog_multichoice_material = 2130903102;
+			public const int select_dialog_item_material = 2130903102;
 			
 			// aapt resource value: 0x7f03003f
-			public const int select_dialog_singlechoice_material = 2130903103;
+			public const int select_dialog_multichoice_material = 2130903103;
 			
 			// aapt resource value: 0x7f030040
-			public const int Statisticslayout = 2130903104;
+			public const int select_dialog_singlechoice_material = 2130903104;
 			
 			// aapt resource value: 0x7f030041
-			public const int support_simple_spinner_dropdown_item = 2130903105;
+			public const int Statisticslayout = 2130903105;
+			
+			// aapt resource value: 0x7f030042
+			public const int support_simple_spinner_dropdown_item = 2130903106;
 			
 			static Layout()
 			{

@@ -25,7 +25,7 @@ namespace Allamvizsga2017.Fragments
 
         public bool isSelected { get; set; } = true;
 
-        Socket socket;// = IO.Socket("http://192.168.0.10:3000");
+        //Socket socket;// = IO.Socket("http://192.168.0.10:3000");
 
 
         public static DevicesListViewFragment newInstance(string house_name, int house_id, Socket socket)
@@ -47,7 +47,7 @@ namespace Allamvizsga2017.Fragments
             base.OnCreate(savedInstanceState);
             house_name = Arguments.GetString("house_name");
             house_id = Arguments.GetInt("house_id", 0);
-            socket = (Arguments.GetSerializable("Socket") as PassSocket).socket;
+            //socket = (Arguments.GetSerializable("Socket") as PassSocket).socket;
         }
 
         public override View OnCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState)
@@ -86,7 +86,6 @@ namespace Allamvizsga2017.Fragments
             {
                 while (true)
                 {
-                    //List<Amper> amper = RestClient.GetActualDevices(house_id);
                     List<Device> amper = RestClient.GetActualDevicesWithSetting(house_id);
 
                     if (amper != null)
@@ -94,8 +93,6 @@ namespace Allamvizsga2017.Fragments
                         items = new List<ListViewItemDevice>();
                         for (int i = 0; i < amper.Count; i++)
                         {
-                            //Device selector = d.GetDevice(System.Convert.ToInt32(amper[i].ampervalue));
-                            //items.Add(new ListViewItemDevice(i, selector.icon_id, selector.name, selector.value, true));
                             items.Add(new ListViewItemDevice(i, amper[i],true));
                         }
                     }

@@ -19,7 +19,7 @@
         android:layout_marginRight="15.0dp"
         android:background="#d4ddd8">
         <TextView
-            android:text="Hous Name :"
+            android:text="House Name :"
             android:textAppearance="?android:attr/textAppearanceLarge"
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
@@ -27,7 +27,7 @@
             android:layout_marginLeft="10.0dp"
             android:padding="1dp" />
         <TextView
-            android:text="  Hous Name"
+            android:text="  House Name"
             android:textAppearance="?android:attr/textAppearanceLarge"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"

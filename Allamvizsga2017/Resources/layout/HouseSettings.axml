@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <android.support.v7.widget.Toolbar
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
+        android:id="@+id/toolbar1"
+        android:background="#4cc988" />
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/linearLayout1"
+        android:layout_marginLeft="15.0dp"
+        android:layout_marginTop="15.0dp"
+        android:layout_marginRight="15.0dp"
+        android:background="#d4ddd8">
+        <TextView
+            android:text="House Name :"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:id="@+id/textView11"
+            android:layout_marginLeft="10.0dp"
+            android:padding="1dp" />
+        <TextView
+            android:text="  House Name"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/textViewHouseName"
+            android:gravity="center"
+            android:layout_marginLeft="13.0dp"
+            android:padding="1dp" />
+    </LinearLayout>
+    <satellitemenu.SatelliteMenuButton
+        android:speed="250"
+        android:radius="200dp"
+        android:id="@+id/floating_menu"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom|left"
+        android:layout_margin="8dp">
+        <ImageView
+            android:id="@+id/popoutMenu"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/menu"
+            android:layout_gravity="bottom|left"
+            android:contentDescription="@string/empty" />
+    </satellitemenu.SatelliteMenuButton>
+</LinearLayout>

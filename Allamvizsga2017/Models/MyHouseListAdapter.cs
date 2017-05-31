@@ -48,7 +48,8 @@ namespace Allamvizsga2017.Models
             var tvhousename = view.FindViewById<TextView>(Resource.Id.tvHouseName);
             var tvactivedevicenumber = view.FindViewById<TextView>(Resource.Id.tvActiveDevicesNumber);
             var tvValue = view.FindViewById<TextView>(Resource.Id.tvValue);
-            var ivdelete = view.FindViewById<ImageView>(Resource.Id.imageviewDeleteUserHouse);
+            //var ivdelete = view.FindViewById<ImageView>(Resource.Id.imageviewDeleteUserHouse);
+            var ivsettings = view.FindViewById<ImageView>(Resource.Id.imageviewUserHouseSettings);
             var ivhouseicon = view.FindViewById<ImageView>(Resource.Id.imageviewHouseColoricon);
 
             if (itemList[position].house_name == "")
@@ -79,41 +80,13 @@ namespace Allamvizsga2017.Models
                 }
             };
 
-            ivdelete.Click += delegate
+            ivsettings.Click += delegate
             {
-                ProgressDialog progress = new ProgressDialog(context);
-                progress.Indeterminate = true;
-                progress.SetProgressStyle(ProgressDialogStyle.Spinner);
-                progress.SetMessage("Deleting House...");
-                progress.SetCancelable(true);
-                progress.Show();
-                new Thread(new ThreadStart(() =>
-                {
-                    var successed = RestClient.DeleteUserHouse(user_email, itemList[position].house_id);
-                    if (successed)
-                    {
-                        activity.RunOnUiThread(() =>
-                        {
-                            itemList.Remove(itemList[position]);
-                            NotifyDataSetChanged();
-                            progress.Dismiss();
-                        });
-                    }
-                    else
-                    {
-                        activity.RunOnUiThread(() =>
-                        {
-                            progress.Dismiss();
-                            Android.Support.V7.App.AlertDialog.Builder alert = new Android.Support.V7.App.AlertDialog.Builder(context, Resource.Style.MyAlertDialogStyle);
-                            alert.SetTitle("Please Try Again");
-                            alert.SetPositiveButton("OK", (senderAlert, args) =>
-                            {
-                            });
-                            Dialog dialog = alert.Create();
-                            dialog.Show();
-                        });
-                    }
-                })).Start();
+                var housessettingsactivity = new Intent(context, typeof(HouseSettingsActivity));
+                housessettingsactivity.PutExtra("house_name", itemList[position].house_name);
+                housessettingsactivity.PutExtra("user_email", user_email);
+                housessettingsactivity.PutExtra("house_id", itemList[position].house_id);
+                context.StartActivity(housessettingsactivity);
             };
 
             return view;
