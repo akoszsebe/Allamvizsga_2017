@@ -49,28 +49,6 @@ namespace Allamvizsga2017
 			global::com.refractored.fab.Resource.Styleable.FloatingActionButton_fab_colorRipple = global::Allamvizsga2017.Resource.Styleable.FloatingActionButton_fab_colorRipple;
 			global::com.refractored.fab.Resource.Styleable.FloatingActionButton_fab_shadow = global::Allamvizsga2017.Resource.Styleable.FloatingActionButton_fab_shadow;
 			global::com.refractored.fab.Resource.Styleable.FloatingActionButton_fab_size = global::Allamvizsga2017.Resource.Styleable.FloatingActionButton_fab_size;
-			global::SatelliteMenu.Resource.Animation.popoutMenuItemAnticipateInterpolator = global::Allamvizsga2017.Resource.Animation.popoutMenuItemAnticipateInterpolator;
-			global::SatelliteMenu.Resource.Animation.popoutMenuItemClickAnim = global::Allamvizsga2017.Resource.Animation.popoutMenuItemClickAnim;
-			global::SatelliteMenu.Resource.Animation.popoutMenuItemClickInterpolator = global::Allamvizsga2017.Resource.Animation.popoutMenuItemClickInterpolator;
-			global::SatelliteMenu.Resource.Animation.popoutMenuItemInRotateInterpolator = global::Allamvizsga2017.Resource.Animation.popoutMenuItemInRotateInterpolator;
-			global::SatelliteMenu.Resource.Animation.popoutMenuItemOutRotateInterpolator = global::Allamvizsga2017.Resource.Animation.popoutMenuItemOutRotateInterpolator;
-			global::SatelliteMenu.Resource.Animation.popoutMenuItemOvershootInterpolator = global::Allamvizsga2017.Resource.Animation.popoutMenuItemOvershootInterpolator;
-			global::SatelliteMenu.Resource.Animation.popoutMenuRotateLeftAnim = global::Allamvizsga2017.Resource.Animation.popoutMenuRotateLeftAnim;
-			global::SatelliteMenu.Resource.Animation.popoutMenuRotateRight = global::Allamvizsga2017.Resource.Animation.popoutMenuRotateRight;
-			global::SatelliteMenu.Resource.Attribute.closeOnClick = global::Allamvizsga2017.Resource.Attribute.closeOnClick;
-			global::SatelliteMenu.Resource.Attribute.itemsAngle = global::Allamvizsga2017.Resource.Attribute.itemsAngle;
-			global::SatelliteMenu.Resource.Attribute.mainImage = global::Allamvizsga2017.Resource.Attribute.mainImage;
-			global::SatelliteMenu.Resource.Attribute.radius = global::Allamvizsga2017.Resource.Attribute.radius;
-			global::SatelliteMenu.Resource.Attribute.speed = global::Allamvizsga2017.Resource.Attribute.speed;
-			global::SatelliteMenu.Resource.Id.popoutMenuItem = global::Allamvizsga2017.Resource.Id.popoutMenuItem;
-			global::SatelliteMenu.Resource.Layout.popoutMenuItem = global::Allamvizsga2017.Resource.Layout.popoutMenuItem;
-			global::SatelliteMenu.Resource.String.empty = global::Allamvizsga2017.Resource.String.empty;
-			global::SatelliteMenu.Resource.Styleable.SatelliteMenu = global::Allamvizsga2017.Resource.Styleable.SatelliteMenu;
-			global::SatelliteMenu.Resource.Styleable.SatelliteMenu_closeOnClick = global::Allamvizsga2017.Resource.Styleable.SatelliteMenu_closeOnClick;
-			global::SatelliteMenu.Resource.Styleable.SatelliteMenu_itemsAngle = global::Allamvizsga2017.Resource.Styleable.SatelliteMenu_itemsAngle;
-			global::SatelliteMenu.Resource.Styleable.SatelliteMenu_mainImage = global::Allamvizsga2017.Resource.Styleable.SatelliteMenu_mainImage;
-			global::SatelliteMenu.Resource.Styleable.SatelliteMenu_radius = global::Allamvizsga2017.Resource.Styleable.SatelliteMenu_radius;
-			global::SatelliteMenu.Resource.Styleable.SatelliteMenu_speed = global::Allamvizsga2017.Resource.Styleable.SatelliteMenu_speed;
 		}
 		
 		public partial class Animation
@@ -125,28 +103,22 @@ namespace Allamvizsga2017
 			public const int design_snackbar_out = 2130968591;
 			
 			// aapt resource value: 0x7f040010
-			public const int popoutMenuItemAnticipateInterpolator = 2130968592;
+			public const int fab_close = 2130968592;
 			
 			// aapt resource value: 0x7f040011
-			public const int popoutMenuItemClickAnim = 2130968593;
+			public const int fab_open = 2130968593;
 			
 			// aapt resource value: 0x7f040012
-			public const int popoutMenuItemClickInterpolator = 2130968594;
+			public const int fab_open_startoffset_200 = 2130968594;
 			
 			// aapt resource value: 0x7f040013
-			public const int popoutMenuItemInRotateInterpolator = 2130968595;
+			public const int fab_open_startoffset_400 = 2130968595;
 			
 			// aapt resource value: 0x7f040014
-			public const int popoutMenuItemOutRotateInterpolator = 2130968596;
+			public const int fab_rotate_backward = 2130968596;
 			
 			// aapt resource value: 0x7f040015
-			public const int popoutMenuItemOvershootInterpolator = 2130968597;
-			
-			// aapt resource value: 0x7f040016
-			public const int popoutMenuRotateLeftAnim = 2130968598;
-			
-			// aapt resource value: 0x7f040017
-			public const int popoutMenuRotateRight = 2130968599;
+			public const int fab_rotate_forward = 2130968597;
 			
 			static Animation()
 			{
@@ -386,9 +358,6 @@ namespace Allamvizsga2017
 			// aapt resource value: 0x7f01002b
 			public const int closeItemLayout = 2130772011;
 			
-			// aapt resource value: 0x7f010128
-			public const int closeOnClick = 2130772264;
-			
 			// aapt resource value: 0x7f0100d5
 			public const int collapseContentDescription = 2130772181;
 			
@@ -563,23 +532,23 @@ namespace Allamvizsga2017
 			// aapt resource value: 0x7f0100fe
 			public const int fabSize = 2130772222;
 			
-			// aapt resource value: 0x7f01012c
-			public const int fab_colorDisabled = 2130772268;
+			// aapt resource value: 0x7f010127
+			public const int fab_colorDisabled = 2130772263;
 			
-			// aapt resource value: 0x7f01012b
-			public const int fab_colorNormal = 2130772267;
+			// aapt resource value: 0x7f010126
+			public const int fab_colorNormal = 2130772262;
+			
+			// aapt resource value: 0x7f010125
+			public const int fab_colorPressed = 2130772261;
+			
+			// aapt resource value: 0x7f010128
+			public const int fab_colorRipple = 2130772264;
+			
+			// aapt resource value: 0x7f010129
+			public const int fab_shadow = 2130772265;
 			
 			// aapt resource value: 0x7f01012a
-			public const int fab_colorPressed = 2130772266;
-			
-			// aapt resource value: 0x7f01012d
-			public const int fab_colorRipple = 2130772269;
-			
-			// aapt resource value: 0x7f01012e
-			public const int fab_shadow = 2130772270;
-			
-			// aapt resource value: 0x7f01012f
-			public const int fab_size = 2130772271;
+			public const int fab_size = 2130772266;
 			
 			// aapt resource value: 0x7f010102
 			public const int foregroundInsidePadding = 2130772226;
@@ -650,9 +619,6 @@ namespace Allamvizsga2017
 			// aapt resource value: 0x7f010105
 			public const int itemTextColor = 2130772229;
 			
-			// aapt resource value: 0x7f010126
-			public const int itemsAngle = 2130772262;
-			
 			// aapt resource value: 0x7f0100f4
 			public const int keylines = 2130772212;
 			
@@ -721,9 +687,6 @@ namespace Allamvizsga2017
 			
 			// aapt resource value: 0x7f0100d8
 			public const int logoDescription = 2130772184;
-			
-			// aapt resource value: 0x7f010129
-			public const int mainImage = 2130772265;
 			
 			// aapt resource value: 0x7f01010b
 			public const int maxActionInlineWidth = 2130772235;
@@ -797,9 +760,6 @@ namespace Allamvizsga2017
 			// aapt resource value: 0x7f01009c
 			public const int radioButtonStyle = 2130772124;
 			
-			// aapt resource value: 0x7f010127
-			public const int radius = 2130772263;
-			
 			// aapt resource value: 0x7f01009d
 			public const int ratingBarStyle = 2130772125;
 			
@@ -847,9 +807,6 @@ namespace Allamvizsga2017
 			
 			// aapt resource value: 0x7f010001
 			public const int spanCount = 2130771969;
-			
-			// aapt resource value: 0x7f010125
-			public const int speed = 2130772261;
 			
 			// aapt resource value: 0x7f0100a7
 			public const int spinBars = 2130772135;
@@ -2097,8 +2054,8 @@ namespace Allamvizsga2017
 			// aapt resource value: 0x7f020073
 			public const int Microwave = 2130837619;
 			
-			// aapt resource value: 0x7f020087
-			public const int notification_template_icon_bg = 2130837639;
+			// aapt resource value: 0x7f020088
+			public const int notification_template_icon_bg = 2130837640;
 			
 			// aapt resource value: 0x7f020074
 			public const int Radio = 2130837620;
@@ -2116,46 +2073,49 @@ namespace Allamvizsga2017
 			public const int save = 2130837624;
 			
 			// aapt resource value: 0x7f020079
-			public const int selector_devices = 2130837625;
+			public const int search_icon = 2130837625;
 			
 			// aapt resource value: 0x7f02007a
-			public const int selector_statistics = 2130837626;
+			public const int selector_devices = 2130837626;
 			
 			// aapt resource value: 0x7f02007b
-			public const int settings_128 = 2130837627;
+			public const int selector_statistics = 2130837627;
 			
 			// aapt resource value: 0x7f02007c
-			public const int Smoke_extractor = 2130837628;
+			public const int settings_128 = 2130837628;
 			
 			// aapt resource value: 0x7f02007d
-			public const int Stand_mixer = 2130837629;
+			public const int Smoke_extractor = 2130837629;
 			
 			// aapt resource value: 0x7f02007e
-			public const int statistics_black = 2130837630;
+			public const int Stand_mixer = 2130837630;
 			
 			// aapt resource value: 0x7f02007f
-			public const int statistics_white = 2130837631;
+			public const int statistics_black = 2130837631;
 			
 			// aapt resource value: 0x7f020080
-			public const int Stove = 2130837632;
+			public const int statistics_white = 2130837632;
 			
 			// aapt resource value: 0x7f020081
-			public const int Teamashine = 2130837633;
+			public const int Stove = 2130837633;
 			
 			// aapt resource value: 0x7f020082
-			public const int Television = 2130837634;
+			public const int Teamashine = 2130837634;
 			
 			// aapt resource value: 0x7f020083
-			public const int Toaster = 2130837635;
+			public const int Television = 2130837635;
 			
 			// aapt resource value: 0x7f020084
-			public const int unknownicon = 2130837636;
+			public const int Toaster = 2130837636;
 			
 			// aapt resource value: 0x7f020085
-			public const int Vacuum_cleaner = 2130837637;
+			public const int unknownicon = 2130837637;
 			
 			// aapt resource value: 0x7f020086
-			public const int Water_heater = 2130837638;
+			public const int Vacuum_cleaner = 2130837638;
+			
+			// aapt resource value: 0x7f020087
+			public const int Water_heater = 2130837639;
 			
 			static Drawable()
 			{
@@ -2290,8 +2250,8 @@ namespace Allamvizsga2017
 			// aapt resource value: 0x7f06004f
 			public const int customPanel = 2131099727;
 			
-			// aapt resource value: 0x7f0600b4
-			public const int datePicker1 = 2131099828;
+			// aapt resource value: 0x7f0600b3
+			public const int datePicker1 = 2131099827;
 			
 			// aapt resource value: 0x7f060058
 			public const int decor_content_parent = 2131099736;
@@ -2428,8 +2388,8 @@ namespace Allamvizsga2017
 			// aapt resource value: 0x7f06008c
 			public const int listView2 = 2131099788;
 			
-			// aapt resource value: 0x7f0600b6
-			public const int listViewBarchart = 2131099830;
+			// aapt resource value: 0x7f0600b5
+			public const int listViewBarchart = 2131099829;
 			
 			// aapt resource value: 0x7f060092
 			public const int listViewHouses = 2131099794;
@@ -2443,14 +2403,14 @@ namespace Allamvizsga2017
 			// aapt resource value: 0x7f0600a7
 			public const int media_actions = 2131099815;
 			
-			// aapt resource value: 0x7f0600b7
-			public const int menu_delete = 2131099831;
-			
-			// aapt resource value: 0x7f0600b9
-			public const int menu_logout = 2131099833;
+			// aapt resource value: 0x7f0600b6
+			public const int menu_delete = 2131099830;
 			
 			// aapt resource value: 0x7f0600b8
-			public const int menu_save = 2131099832;
+			public const int menu_logout = 2131099832;
+			
+			// aapt resource value: 0x7f0600b7
+			public const int menu_save = 2131099831;
 			
 			// aapt resource value: 0x7f06001d
 			public const int middle = 2131099677;
@@ -2484,9 +2444,6 @@ namespace Allamvizsga2017
 			
 			// aapt resource value: 0x7f060029
 			public const int pin = 2131099689;
-			
-			// aapt resource value: 0x7f0600b1
-			public const int popoutMenuItem = 2131099825;
 			
 			// aapt resource value: 0x7f060006
 			public const int progress_circular = 2131099654;
@@ -2626,8 +2583,8 @@ namespace Allamvizsga2017
 			// aapt resource value: 0x7f0600ac
 			public const int text2 = 2131099820;
 			
-			// aapt resource value: 0x7f0600b2
-			public const int textInputConfirmPassword = 2131099826;
+			// aapt resource value: 0x7f0600b1
+			public const int textInputConfirmPassword = 2131099825;
 			
 			// aapt resource value: 0x7f060083
 			public const int textInputEditText1 = 2131099779;
@@ -2659,8 +2616,8 @@ namespace Allamvizsga2017
 			// aapt resource value: 0x7f060081
 			public const int textViewDeviceWatt = 2131099777;
 			
-			// aapt resource value: 0x7f0600b3
-			public const int textViewHaveAccount = 2131099827;
+			// aapt resource value: 0x7f0600b2
+			public const int textViewHaveAccount = 2131099826;
 			
 			// aapt resource value: 0x7f06007f
 			public const int textViewHouseName = 2131099775;
@@ -2668,8 +2625,8 @@ namespace Allamvizsga2017
 			// aapt resource value: 0x7f0600a0
 			public const int textViewNoAccount = 2131099808;
 			
-			// aapt resource value: 0x7f0600b5
-			public const int textViewTotalKW = 2131099829;
+			// aapt resource value: 0x7f0600b4
+			public const int textViewTotalKW = 2131099828;
 			
 			// aapt resource value: 0x7f0600aa
 			public const int time = 2131099818;
@@ -2959,25 +2916,22 @@ namespace Allamvizsga2017
 			public const int notification_template_part_time = 2130903100;
 			
 			// aapt resource value: 0x7f03003d
-			public const int popoutMenuItem = 2130903101;
+			public const int Registration = 2130903101;
 			
 			// aapt resource value: 0x7f03003e
-			public const int Registration = 2130903102;
+			public const int select_dialog_item_material = 2130903102;
 			
 			// aapt resource value: 0x7f03003f
-			public const int select_dialog_item_material = 2130903103;
+			public const int select_dialog_multichoice_material = 2130903103;
 			
 			// aapt resource value: 0x7f030040
-			public const int select_dialog_multichoice_material = 2130903104;
+			public const int select_dialog_singlechoice_material = 2130903104;
 			
 			// aapt resource value: 0x7f030041
-			public const int select_dialog_singlechoice_material = 2130903105;
+			public const int Statisticslayout = 2130903105;
 			
 			// aapt resource value: 0x7f030042
-			public const int Statisticslayout = 2130903106;
-			
-			// aapt resource value: 0x7f030043
-			public const int support_simple_spinner_dropdown_item = 2130903107;
+			public const int support_simple_spinner_dropdown_item = 2130903106;
 			
 			static Layout()
 			{
@@ -3011,11 +2965,11 @@ namespace Allamvizsga2017
 		public partial class String
 		{
 			
-			// aapt resource value: 0x7f090019
-			public const int ApplicationName = 2131296281;
-			
 			// aapt resource value: 0x7f090018
-			public const int Hello = 2131296280;
+			public const int ApplicationName = 2131296280;
+			
+			// aapt resource value: 0x7f090017
+			public const int Hello = 2131296279;
 			
 			// aapt resource value: 0x7f090000
 			public const int abc_action_bar_home_description = 2131296256;
@@ -3082,9 +3036,6 @@ namespace Allamvizsga2017
 			
 			// aapt resource value: 0x7f090016
 			public const int character_counter_pattern = 2131296278;
-			
-			// aapt resource value: 0x7f090017
-			public const int empty = 2131296279;
 			
 			// aapt resource value: 0x7f090013
 			public const int status_bar_notification_info_overflow = 2131296275;
@@ -5092,12 +5043,12 @@ namespace Allamvizsga2017
 					2130772223,
 					2130772224,
 					2130772225,
-					2130772266,
-					2130772267,
-					2130772268,
-					2130772269,
-					2130772270,
-					2130772271};
+					2130772261,
+					2130772262,
+					2130772263,
+					2130772264,
+					2130772265,
+					2130772266};
 			
 			// aapt resource value: 1
 			public const int FloatingActionButton_backgroundTint = 1;
@@ -5430,28 +5381,6 @@ namespace Allamvizsga2017
 			
 			// aapt resource value: 4
 			public const int RecyclerView_stackFromEnd = 4;
-			
-			public static int[] SatelliteMenu = new int[] {
-					2130772261,
-					2130772262,
-					2130772263,
-					2130772264,
-					2130772265};
-			
-			// aapt resource value: 3
-			public const int SatelliteMenu_closeOnClick = 3;
-			
-			// aapt resource value: 1
-			public const int SatelliteMenu_itemsAngle = 1;
-			
-			// aapt resource value: 4
-			public const int SatelliteMenu_mainImage = 4;
-			
-			// aapt resource value: 2
-			public const int SatelliteMenu_radius = 2;
-			
-			// aapt resource value: 0
-			public const int SatelliteMenu_speed = 0;
 			
 			public static int[] ScrimInsetsFrameLayout = new int[] {
 					2130772233};

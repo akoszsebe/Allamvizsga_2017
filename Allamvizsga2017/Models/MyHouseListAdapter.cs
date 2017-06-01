@@ -48,7 +48,6 @@ namespace Allamvizsga2017.Models
             var tvhousename = view.FindViewById<TextView>(Resource.Id.tvHouseName);
             var tvactivedevicenumber = view.FindViewById<TextView>(Resource.Id.tvActiveDevicesNumber);
             var tvValue = view.FindViewById<TextView>(Resource.Id.tvValue);
-            //var ivdelete = view.FindViewById<ImageView>(Resource.Id.imageviewDeleteUserHouse);
             var ivsettings = view.FindViewById<ImageView>(Resource.Id.imageviewUserHouseSettings);
             var ivhouseicon = view.FindViewById<ImageView>(Resource.Id.imageviewHouseColoricon);
 

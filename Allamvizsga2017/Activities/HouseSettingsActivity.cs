@@ -12,7 +12,7 @@ using Android.Widget;
 using Android.Support.V7.App;
 using Allamvizsga2017.Models;
 using System.Threading;
-using SatelliteMenu;
+
 
 namespace Allamvizsga2017.Activities
 {
@@ -34,7 +34,7 @@ namespace Allamvizsga2017.Activities
             var tbhousename = FindViewById<TextView>(Resource.Id.textViewHouseName);
 
             tbhousename.Text = house_name + " " + user_email + " " + house_id;
-
+            
             var toolbar = FindViewById<Android.Support.V7.Widget.Toolbar>(Resource.Id.toolbar1);
 
 

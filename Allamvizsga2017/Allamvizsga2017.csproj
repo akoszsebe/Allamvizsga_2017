@@ -71,9 +71,6 @@
       <HintPath>..\packages\Refractored.FloatingActionButton.1.3.0\lib\MonoAndroid10\Refractored.FloatingActionButton.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="SatelliteMenu">
-      <HintPath>..\Components\satellite-menu-1.2.1.0\lib\android\SatelliteMenu.dll</HintPath>
-    </Reference>
     <Reference Include="SocketIoClientDotNet, Version=0.9.13.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\SocketIoClientDotNet.0.9.13\lib\monoandroid10\SocketIoClientDotNet.dll</HintPath>
       <Private>True</Private>
@@ -371,6 +368,27 @@
   </ItemGroup>
   <ItemGroup>
     <AndroidResource Include="Resources\drawable\settings_128.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\anim\fab_open.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\anim\fab_rotate_forward.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\anim\fab_rotate_backward.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\anim\fab_close.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\anim\fab_open_startoffset_200.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable\search_icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\anim\fab_open_startoffset_400.xml" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\Android\Xamarin.Android.CSharp.targets" />
   <Import Project="..\packages\Xamarin.Android.Support.Vector.Drawable.23.4.0.1\build\Xamarin.Android.Support.Vector.Drawable.targets" Condition="Exists('..\packages\Xamarin.Android.Support.Vector.Drawable.23.4.0.1\build\Xamarin.Android.Support.Vector.Drawable.targets')" />

@@ -8,9 +8,9 @@ using Android.Widget;
 using Android.Support.V7.App;
 using Allamvizsga2017.Models;
 using System.Threading;
-//using com.refractored.fab;
 using Android.Graphics;
 using Android.Support.Design.Widget;
+using Android.Views.Animations;
 
 namespace Allamvizsga2017.Activities
 {
@@ -23,6 +23,7 @@ namespace Allamvizsga2017.Activities
         private string user_email { get; set; }
         private Android.Support.V4.Widget.SwipeRefreshLayout refresher { get; set; }
 
+        private bool isfabopend = false;
 
 protected override void OnCreate(Bundle savedInstanceState)
         {
@@ -47,84 +48,91 @@ protected override void OnCreate(Bundle savedInstanceState)
                 FeedFromDb();
             };
 
-
-            var fabhouse = FindViewById<FloatingActionButton>(Resource.Id.fab_2);
-            //fab.AttachToListView(mlistview);
-            //fab.SetPadding(35, 35, 35, 35);
-
+            var fabopen = FindViewById<FloatingActionButton>(Resource.Id.fab_1);
+            var fabsearchhouse = FindViewById<FloatingActionButton>(Resource.Id.fab_2);
             var fabsmartwatch = FindViewById<FloatingActionButton>(Resource.Id.fab_3);
-            //fabsmartwatch.AttachToListView(mlistview);
-            //fabsmartwatch.Size = FabSize.Mini;
-            //fabsmartwatch.SetPadding(20, 20, 20, 20);
+            var fabregisterhouse = FindViewById<FloatingActionButton>(Resource.Id.fab_4);
 
-            fabhouse.Click += delegate
+            var tvfabadd = FindViewById<TextView>(Resource.Id.textView_fab_add);
+            var tvfabsearch = FindViewById<TextView>(Resource.Id.textView_fab_search);
+            var tvfabregister = FindViewById<TextView>(Resource.Id.textView_fab_registerhouse);
+
+
+            var openFab = AnimationUtils.LoadAnimation(this, Resource.Animation.fab_open);
+            var openFab_startoffset200 = AnimationUtils.LoadAnimation(this, Resource.Animation.fab_open_startoffset_200);
+            var openFab_startoffset400 = AnimationUtils.LoadAnimation(this, Resource.Animation.fab_open_startoffset_400);
+            var closeFab = AnimationUtils.LoadAnimation(this, Resource.Animation.fab_close);
+            var rotateFab = AnimationUtils.LoadAnimation(this, Resource.Animation.fab_rotate_forward);
+            var rotatebackFab = AnimationUtils.LoadAnimation(this, Resource.Animation.fab_rotate_backward);
+
+            var layouttransparent = FindViewById<LinearLayout>(Resource.Id.layouttransparent);
+            var layoutcontainer = FindViewById<LinearLayout>(Resource.Id.layoutcontainer);
+
+            fabopen.Click += delegate 
             {
-                var searchactivity = new Android.Content.Intent(this, typeof(HouseSearchActivity));
-                searchactivity.PutExtra("User_email", user_email);
-                this.StartActivity(searchactivity);
+                if (isfabopend)
+                {                
+                    fabopen.StartAnimation(rotatebackFab);
+                    fabsearchhouse.StartAnimation(closeFab);
+                    fabsmartwatch.StartAnimation(closeFab);
+                    fabregisterhouse.StartAnimation(closeFab);
+                    tvfabadd.StartAnimation(closeFab);
+                    tvfabsearch.StartAnimation(closeFab);
+                    tvfabregister.StartAnimation(closeFab);
+                    fabsearchhouse.Clickable = false;
+                    fabsmartwatch.Clickable = false;
+                    fabregisterhouse.Clickable = false;
+                    tvfabadd.Clickable = false;
+                    tvfabsearch.Clickable = false;
+                    tvfabregister.Clickable = false;
+                    isfabopend = false;
+                    layouttransparent.SetBackgroundColor(Color.ParseColor("#00000000"));
+                    mlistview.Clickable = true;
+                    //EnableVieWElements(layoutcontainer);          
+                }
+                else
+                {                 
+                    fabopen.StartAnimation(rotateFab);
+                    fabsearchhouse.StartAnimation(openFab);
+                    fabsmartwatch.StartAnimation(openFab_startoffset200);
+                    fabregisterhouse.StartAnimation(openFab_startoffset400);
+                    tvfabsearch.StartAnimation(openFab);
+                    tvfabadd.StartAnimation(openFab_startoffset200);
+                    tvfabregister.StartAnimation(openFab_startoffset400);
+                    fabsearchhouse.Clickable = true;
+                    fabsmartwatch.Clickable = true;
+                    fabregisterhouse.Clickable = true;
+                    tvfabadd.Clickable = true;
+                    tvfabsearch.Clickable = true;
+                    tvfabregister.Clickable = true;
+                    isfabopend = true;
+                    layouttransparent.SetBackgroundColor(Color.ParseColor("#AA000000"));
+                    mlistview.Clickable = false;
+                    //DisableVieWElements(layoutcontainer);
+                }
             };
 
+            tvfabsearch.Click += delegate
+            {
+                fabopen.CallOnClick();
+                SearchAddHouse();
+            };
+            fabsearchhouse.Click += delegate
+            {
+                fabopen.CallOnClick();
+                SearchAddHouse();
+            };
+
+            tvfabadd.Click += delegate
+            {
+                fabopen.CallOnClick();
+                AddSmarWatch();
+            };
             fabsmartwatch.Click += delegate
             {
-                Android.Support.V7.App.AlertDialog.Builder alert = new Android.Support.V7.App.AlertDialog.Builder(this,Resource.Style.MyAlertDialogStyle);
-                alert.SetTitle("Add SmartWatch");
-                TextView tvid = new TextView(this);
-                tvid.Text = "Id :";
-                tvid.PaintFlags = Android.Graphics.PaintFlags.FakeBoldText;
-                tvid.TextSize = 20;
-                EditText input = new EditText(this);
-                input.Background.SetColorFilter(Color.Rgb(76, 201, 136), PorterDuff.Mode.SrcIn);
-                LinearLayout container = new LinearLayout(this);
-                LinearLayout.LayoutParams ll = new LinearLayout.LayoutParams(ViewGroup.LayoutParams.MatchParent, ViewGroup.LayoutParams.WrapContent);
-                ll.SetMargins(5, 0, 5, 0);
-                input.LayoutParameters = ll;
-                container.AddView(tvid);
-                container.AddView(input);
-                alert.SetView(container);
-                alert.SetPositiveButton("Add", (senderAlert, args) =>
-                {
-                    ProgressDialog progress = new ProgressDialog(this);
-                    progress.Indeterminate = true;
-                    progress.SetProgressStyle(ProgressDialogStyle.Spinner);
-                    progress.SetMessage("Adding SmartWatch...");
-                    progress.SetCancelable(true);
-                    progress.Show();
-                    new Thread(new ThreadStart(() =>
-                    {
-                        var successed = false;
-                        if (input.Text != "")
-                        {
-                            successed = RestClient.AddUserSmartWatch(user_email, input.Text);
-                        }
-                        if (successed)
-                        {
-                            RunOnUiThread(() =>
-                            {
-                                progress.Dismiss();                              
-                            });
-                        }
-                        else
-                        {
-                            RunOnUiThread(() =>
-                            {
-                                progress.Dismiss();
-                                Android.Support.V7.App.AlertDialog.Builder alertdilaog = new Android.Support.V7.App.AlertDialog.Builder(this, Resource.Style.MyAlertDialogStyle);
-                                alertdilaog.SetTitle("Failed Try Again");
-                                alertdilaog.SetPositiveButton("OK", (s, a) =>
-                                {
-                                });
-                                Dialog _dialog = alertdilaog.Create();
-                                _dialog.Show();
-                            });
-                        }
-                    })).Start();
-                });
-                alert.SetNeutralButton("Cancel", (senderAlert, args) =>
-                {
-                });
-                Dialog dialog = alert.Create();
-                dialog.Show();
-            };          
+                fabopen.CallOnClick();
+                AddSmarWatch();
+            };
 
             adapter = new MyHouseListAdapter(this,user_email);
             mlistview.Adapter = adapter;
@@ -154,6 +162,95 @@ protected override void OnCreate(Bundle savedInstanceState)
             return base.OnOptionsItemSelected(item);
         }
 
+
+        private void DisableVieWElements(LinearLayout layout)
+        {
+            for (int i = 0; i < layout.ChildCount; i++)
+            {
+                View child = layout.GetChildAt(i);
+                child.Enabled = false;
+            }
+        }
+
+        private void EnableVieWElements(LinearLayout layout)
+        {
+            for (int i = 0; i < layout.ChildCount; i++)
+            {
+                View child = layout.GetChildAt(i);
+                child.Enabled = true;
+            }
+        }
+
+
+        private void SearchAddHouse()
+        {
+            var searchactivity = new Android.Content.Intent(this, typeof(HouseSearchActivity));
+            searchactivity.PutExtra("User_email", user_email);
+            this.StartActivity(searchactivity);
+            OverridePendingTransition(Resource.Animation.abc_slide_in_bottom, Resource.Animation.abc_slide_out_bottom);
+        }
+
+        private void AddSmarWatch()
+        {
+            Android.Support.V7.App.AlertDialog.Builder alert = new Android.Support.V7.App.AlertDialog.Builder(this, Resource.Style.MyAlertDialogStyle);
+            alert.SetTitle("Add SmartWatch");
+            TextView tvid = new TextView(this);
+            tvid.Text = "Id :";
+            tvid.PaintFlags = Android.Graphics.PaintFlags.FakeBoldText;
+            tvid.TextSize = 20;
+            EditText input = new EditText(this);
+            input.Background.SetColorFilter(Color.Rgb(76, 201, 136), PorterDuff.Mode.SrcIn);
+            LinearLayout container = new LinearLayout(this);
+            LinearLayout.LayoutParams ll = new LinearLayout.LayoutParams(ViewGroup.LayoutParams.MatchParent, ViewGroup.LayoutParams.WrapContent);
+            ll.SetMargins(5, 0, 5, 0);
+            input.LayoutParameters = ll;
+            container.AddView(tvid);
+            container.AddView(input);
+            alert.SetView(container);
+            alert.SetPositiveButton("Add", (senderAlert, args) =>
+            {
+                ProgressDialog progress = new ProgressDialog(this);
+                progress.Indeterminate = true;
+                progress.SetProgressStyle(ProgressDialogStyle.Spinner);
+                progress.SetMessage("Adding SmartWatch...");
+                progress.SetCancelable(true);
+                progress.Show();
+                new Thread(new ThreadStart(() =>
+                {
+                    var successed = false;
+                    if (input.Text != "")
+                    {
+                        successed = RestClient.AddUserSmartWatch(user_email, input.Text);
+                    }
+                    if (successed)
+                    {
+                        RunOnUiThread(() =>
+                        {
+                            progress.Dismiss();
+                        });
+                    }
+                    else
+                    {
+                        RunOnUiThread(() =>
+                        {
+                            progress.Dismiss();
+                            Android.Support.V7.App.AlertDialog.Builder alertdilaog = new Android.Support.V7.App.AlertDialog.Builder(this, Resource.Style.MyAlertDialogStyle);
+                            alertdilaog.SetTitle("Failed Try Again");
+                            alertdilaog.SetPositiveButton("OK", (s, a) =>
+                            {
+                            });
+                            Dialog _dialog = alertdilaog.Create();
+                            _dialog.Show();
+                        });
+                    }
+                })).Start();
+            });
+            alert.SetNeutralButton("Cancel", (senderAlert, args) =>
+            {
+            });
+            Dialog dialog = alert.Create();
+            dialog.Show();
+        }
 
         protected override void OnPause()
         {
