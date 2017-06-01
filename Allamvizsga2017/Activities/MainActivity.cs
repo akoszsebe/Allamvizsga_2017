@@ -25,7 +25,7 @@ namespace Allamvizsga2017
             SetContentView(Resource.Layout.Main);
 
             var house_name = Intent.GetStringExtra("House_name");
-            var house_id = Intent.GetIntExtra("House_id", 0);
+            long house_id = Intent.GetLongExtra("House_id", 0);
 
 
             var tabLayout = FindViewById<TabLayout>(Resource.Id.sliding_tabs);

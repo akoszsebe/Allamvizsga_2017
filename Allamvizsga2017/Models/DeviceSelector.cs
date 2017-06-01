@@ -34,7 +34,7 @@ namespace Allamvizsga2017.Models
     }
     class Device
     {
-        public int house_id { get; set; }
+        public long house_id { get; set; }
         public string name { get; set; }
         public int icon_id { get; set; }
         public int value { get; set; }

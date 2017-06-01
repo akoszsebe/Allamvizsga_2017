@@ -9,10 +9,10 @@ namespace Allamvizsga2017.Models
     {
         List<ListViewItemDevice> itemList;
         Context context;
-        int house_id;
+        long house_id;
         string house_name = "";
 
-        public MyDeviceAdapter(Context context,int house_id,string house_name)
+        public MyDeviceAdapter(Context context, long house_id,string house_name)
         {
             this.context = context;
             this.house_id = house_id;

@@ -8,8 +8,9 @@ using Android.Widget;
 using Android.Support.V7.App;
 using Allamvizsga2017.Models;
 using System.Threading;
-using com.refractored.fab;
+//using com.refractored.fab;
 using Android.Graphics;
+using Android.Support.Design.Widget;
 
 namespace Allamvizsga2017.Activities
 {
@@ -47,16 +48,16 @@ protected override void OnCreate(Bundle savedInstanceState)
             };
 
 
-            var fab = FindViewById<FloatingActionButton>(Resource.Id.fab);
+            var fabhouse = FindViewById<FloatingActionButton>(Resource.Id.fab_2);
             //fab.AttachToListView(mlistview);
-            fab.SetPadding(35, 35, 35, 35);
+            //fab.SetPadding(35, 35, 35, 35);
 
-            var fabsmartwatch = FindViewById<FloatingActionButton>(Resource.Id.fabforaddSmartWatch);
+            var fabsmartwatch = FindViewById<FloatingActionButton>(Resource.Id.fab_3);
             //fabsmartwatch.AttachToListView(mlistview);
-            fabsmartwatch.Size = FabSize.Mini;
-            fabsmartwatch.SetPadding(20, 20, 20, 20);
+            //fabsmartwatch.Size = FabSize.Mini;
+            //fabsmartwatch.SetPadding(20, 20, 20, 20);
 
-            fab.Click += delegate
+            fabhouse.Click += delegate
             {
                 var searchactivity = new Android.Content.Intent(this, typeof(HouseSearchActivity));
                 searchactivity.PutExtra("User_email", user_email);

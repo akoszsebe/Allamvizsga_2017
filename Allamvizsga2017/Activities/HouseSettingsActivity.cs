@@ -21,7 +21,7 @@ namespace Allamvizsga2017.Activities
     {
         string house_name { get; set; }
         string user_email { get; set; }
-        int house_id { get; set; }
+        long house_id { get; set; }
 
         protected override void OnCreate(Bundle savedInstanceState)
         {
@@ -30,7 +30,7 @@ namespace Allamvizsga2017.Activities
             SetContentView(Resource.Layout.HouseSettings);
             house_name = Intent.GetStringExtra("house_name");
             user_email = Intent.GetStringExtra("user_email");
-            house_id = Intent.GetIntExtra("house_id", 0);
+            house_id = Intent.GetLongExtra("house_id", 0);
             var tbhousename = FindViewById<TextView>(Resource.Id.textViewHouseName);
 
             tbhousename.Text = house_name + " " + user_email + " " + house_id;
@@ -43,28 +43,6 @@ namespace Allamvizsga2017.Activities
             SupportActionBar.Title = "House Settings";
             SupportActionBar.SetDisplayHomeAsUpEnabled(true);
             SupportActionBar.SetHomeButtonEnabled(true);
-
-
-
-
-            //
-            var menu = FindViewById<SatelliteMenuButton>(Resource.Id.floating_menu);
-
-            menu.AddItems(new[] {
-                new SatelliteMenuButtonItem (1, Resource.Drawable.Blender),
-                new SatelliteMenuButtonItem (2, Resource.Drawable.Blender),
-                new SatelliteMenuButtonItem (3, Resource.Drawable.Blender),
-                new SatelliteMenuButtonItem (4, Resource.Drawable.Blender),
-                new SatelliteMenuButtonItem (5, Resource.Drawable.Blender),
-                new SatelliteMenuButtonItem (6, Resource.Drawable.Blender)
-            });
-
-            menu.MenuItemClick += (sender, e) => {
-                Toast.MakeText(this, e.MenuItem.ToString(), ToastLength.Long).Show();
-            };
-
-            //
-
         }
 
 

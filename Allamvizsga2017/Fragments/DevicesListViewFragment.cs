@@ -15,7 +15,7 @@ namespace Allamvizsga2017.Fragments
     public class DevicesListViewFragment : Fragment
     {
         private string house_name = "";
-        private int house_id = 0;
+        private long house_id = 0;
         private Thread thread;
         private Thread devicethread;
         private ListView mlistview;
@@ -28,13 +28,13 @@ namespace Allamvizsga2017.Fragments
         //Socket socket;// = IO.Socket("http://192.168.0.10:3000");
 
 
-        public static DevicesListViewFragment newInstance(string house_name, int house_id, Socket socket)
+        public static DevicesListViewFragment newInstance(string house_name, long house_id, Socket socket)
         {
             PassSocket psocket = new PassSocket();
             psocket.socket = socket;
             var args = new Bundle();
             args.PutString("house_name", house_name);
-            args.PutInt("house_id", house_id);
+            args.PutLong("house_id", house_id);
             args.PutSerializable("Socket", psocket);
             var fragment = new DevicesListViewFragment();
             fragment.Arguments = args;
@@ -46,7 +46,7 @@ namespace Allamvizsga2017.Fragments
         {
             base.OnCreate(savedInstanceState);
             house_name = Arguments.GetString("house_name");
-            house_id = Arguments.GetInt("house_id", 0);
+            house_id = Arguments.GetLong("house_id", 0);
             //socket = (Arguments.GetSerializable("Socket") as PassSocket).socket;
         }
 

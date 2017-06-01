@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-              xmlns:pop="http://schemas.android.com/apk/res-auto"
+    xmlns:pop="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
@@ -23,7 +23,7 @@
             android:text="House Name :"
             android:textAppearance="?android:attr/textAppearanceLarge"
             android:layout_width="wrap_content"
-            android:layout_height="match_parent"
+            android:layout_height="wrap_content"
             android:id="@+id/textView11"
             android:layout_marginLeft="10.0dp"
             android:padding="1dp" />
@@ -36,22 +36,5 @@
             android:gravity="center"
             android:layout_marginLeft="13.0dp"
             android:padding="1dp" />
-    <satellitemenu.SatelliteMenuButton
-        pop:speed="250"
-        pop:radius="200dp"
-        android:id="@+id/floating_menu"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="bottom|left"
-        android:layout_margin="8dp">
-        <ImageView
-            android:id="@+id/popoutMenu"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:src="@drawable/Blender"
-            android:layout_gravity="bottom|left"
-            android:contentDescription="enyoi" />
-    </satellitemenu.SatelliteMenuButton>
     </LinearLayout>
-    
 </LinearLayout>

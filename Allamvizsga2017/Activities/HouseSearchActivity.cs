@@ -86,7 +86,7 @@ namespace Allamvizsga2017.Activities
             return base.OnOptionsItemSelected(item);
         }
 
-        private void SearchHouse(string house_id)
+        public void SearchHouse(string house_id)
         {
             List<ListViewItemHouse> items;
             new Thread(new ThreadStart(() =>
@@ -108,7 +108,6 @@ namespace Allamvizsga2017.Activities
                                 items.Add(new ListViewItemHouse(i, houses[i].house_id, houses[i].house_name, houses[i].password,false));
                             }
                         }
-
                         adapter.AddData(items);
                         adapter.NotifyDataSetChanged();
                     });

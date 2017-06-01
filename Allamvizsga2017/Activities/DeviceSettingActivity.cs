@@ -17,7 +17,7 @@ namespace Allamvizsga2017
         ScreenOrientation = Android.Content.PM.ScreenOrientation.Portrait)]
     public class DeviceSettingActivity : AppCompatActivity
     {
-        int houseid { get; set; } = 0;
+        long houseid { get; set; } = 0;
         int devicevalue { get; set; } = 0;
         int original_value { get; set; } = 0;
         int saveicon_id { get; set; } = 0;
