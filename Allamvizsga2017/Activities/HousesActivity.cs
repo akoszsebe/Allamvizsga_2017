@@ -59,8 +59,8 @@ protected override void OnCreate(Bundle savedInstanceState)
 
 
             var openFab = AnimationUtils.LoadAnimation(this, Resource.Animation.fab_open);
+            var openFab_startoffset100 = AnimationUtils.LoadAnimation(this, Resource.Animation.fab_open_startoffset_100);
             var openFab_startoffset200 = AnimationUtils.LoadAnimation(this, Resource.Animation.fab_open_startoffset_200);
-            var openFab_startoffset400 = AnimationUtils.LoadAnimation(this, Resource.Animation.fab_open_startoffset_400);
             var closeFab = AnimationUtils.LoadAnimation(this, Resource.Animation.fab_close);
             var rotateFab = AnimationUtils.LoadAnimation(this, Resource.Animation.fab_rotate_forward);
             var rotatebackFab = AnimationUtils.LoadAnimation(this, Resource.Animation.fab_rotate_backward);
@@ -94,11 +94,11 @@ protected override void OnCreate(Bundle savedInstanceState)
                 {                 
                     fabopen.StartAnimation(rotateFab);
                     fabsearchhouse.StartAnimation(openFab);
-                    fabsmartwatch.StartAnimation(openFab_startoffset200);
-                    fabregisterhouse.StartAnimation(openFab_startoffset400);
+                    fabsmartwatch.StartAnimation(openFab_startoffset100);
+                    fabregisterhouse.StartAnimation(openFab_startoffset200);
                     tvfabsearch.StartAnimation(openFab);
-                    tvfabadd.StartAnimation(openFab_startoffset200);
-                    tvfabregister.StartAnimation(openFab_startoffset400);
+                    tvfabadd.StartAnimation(openFab_startoffset100);
+                    tvfabregister.StartAnimation(openFab_startoffset200);
                     fabsearchhouse.Clickable = true;
                     fabsmartwatch.Clickable = true;
                     fabregisterhouse.Clickable = true;

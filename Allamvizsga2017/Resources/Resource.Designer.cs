@@ -109,10 +109,10 @@ namespace Allamvizsga2017
 			public const int fab_open = 2130968593;
 			
 			// aapt resource value: 0x7f040012
-			public const int fab_open_startoffset_200 = 2130968594;
+			public const int fab_open_startoffset_100 = 2130968594;
 			
 			// aapt resource value: 0x7f040013
-			public const int fab_open_startoffset_400 = 2130968595;
+			public const int fab_open_startoffset_200 = 2130968595;
 			
 			// aapt resource value: 0x7f040014
 			public const int fab_rotate_backward = 2130968596;
