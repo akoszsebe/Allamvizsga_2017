@@ -87,7 +87,7 @@ protected override void OnCreate(Bundle savedInstanceState)
                     tvfabregister.Clickable = false;
                     isfabopend = false;
                     layouttransparent.SetBackgroundColor(Color.ParseColor("#00000000"));
-                    mlistview.Clickable = true;
+                    mlistview.Enabled = true;
                     //EnableVieWElements(layoutcontainer);          
                 }
                 else
@@ -107,7 +107,7 @@ protected override void OnCreate(Bundle savedInstanceState)
                     tvfabregister.Clickable = true;
                     isfabopend = true;
                     layouttransparent.SetBackgroundColor(Color.ParseColor("#AA000000"));
-                    mlistview.Clickable = false;
+                    mlistview.Enabled = false;
                     //DisableVieWElements(layoutcontainer);
                 }
             };
