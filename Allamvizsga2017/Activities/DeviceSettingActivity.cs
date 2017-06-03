@@ -36,7 +36,7 @@ namespace Allamvizsga2017
             string housename = Intent.GetStringExtra("house_name");
             string devicename = Intent.GetStringExtra("device_name");
             devicevalue = Intent.GetIntExtra("device_value", 0);
-            houseid = Intent.GetIntExtra("house_id", 0);
+            houseid = Intent.GetLongExtra("house_id", 0);
             original_value = Intent.GetIntExtra("original_value", 0);
             int iconid = Intent.GetIntExtra("icon_id", 0);
 

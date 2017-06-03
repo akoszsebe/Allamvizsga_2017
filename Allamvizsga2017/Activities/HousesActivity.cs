@@ -66,6 +66,7 @@ protected override void OnCreate(Bundle savedInstanceState)
             var rotatebackFab = AnimationUtils.LoadAnimation(this, Resource.Animation.fab_rotate_backward);
 
             var layouttransparent = FindViewById<LinearLayout>(Resource.Id.layouttransparent);
+            
             var layoutcontainer = FindViewById<LinearLayout>(Resource.Id.layoutcontainer);
 
             fabopen.Click += delegate 
@@ -87,8 +88,7 @@ protected override void OnCreate(Bundle savedInstanceState)
                     tvfabregister.Clickable = false;
                     isfabopend = false;
                     layouttransparent.SetBackgroundColor(Color.ParseColor("#00000000"));
-                    mlistview.Enabled = true;
-                    //EnableVieWElements(layoutcontainer);          
+                    layouttransparent.Clickable = false;
                 }
                 else
                 {                 
@@ -107,10 +107,15 @@ protected override void OnCreate(Bundle savedInstanceState)
                     tvfabregister.Clickable = true;
                     isfabopend = true;
                     layouttransparent.SetBackgroundColor(Color.ParseColor("#AA000000"));
-                    mlistview.Enabled = false;
-                    //DisableVieWElements(layoutcontainer);
+                    layouttransparent.Clickable = true;
                 }
             };
+
+            layouttransparent.Click += delegate
+            {
+                fabopen.CallOnClick();
+            };
+            layouttransparent.Clickable = false;
 
             tvfabsearch.Click += delegate
             {
