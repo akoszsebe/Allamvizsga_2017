@@ -34,7 +34,6 @@ namespace Allamvizsga2017
             // Create your application here
             SetContentView(Resource.Layout.DeviceSetting);
 
-            string housename = Intent.GetStringExtra("house_name");
             string devicename = Intent.GetStringExtra("device_name");
             devicevalue = Intent.GetIntExtra("device_value", 0);
             value_delay = Intent.GetIntExtra("value_delay", 0);
@@ -48,6 +47,8 @@ namespace Allamvizsga2017
             etdevicename = FindViewById<EditText>(Resource.Id.textInputEditText1);
             var toolbar = FindViewById<Android.Support.V7.Widget.Toolbar>(Resource.Id.toolbar1);
             var numberpicker = FindViewById<NumberPicker>(Resource.Id.numberPickerValueDelay);
+            var btediticon = FindViewById<Button>(Resource.Id.buttonediticon);
+            var layouticons = FindViewById<LinearLayout>(Resource.Id.linearLayoutIcons);
 
             toolbar.SetTitleTextAppearance(this, Resource.Style.ActionBarTitle);
             SetSupportActionBar(toolbar);
@@ -55,7 +56,6 @@ namespace Allamvizsga2017
             SupportActionBar.SetDisplayHomeAsUpEnabled(true);
             SupportActionBar.SetHomeButtonEnabled(true);
 
-            tbhousename.Text = housename;
             ivicon.SetImageResource(iconid);
             etdevicename.Hint = devicename;
 
@@ -87,7 +87,6 @@ namespace Allamvizsga2017
             IconList icons = new IconList();
             mAdapter = new MyIconListAdapter(icons);
             mRecyclerView.SetLayoutManager(mLayoutManager);
-            mRecyclerView.SetAdapter(mAdapter);
 
             saveicon_id = iconid;
 
@@ -100,6 +99,14 @@ namespace Allamvizsga2017
             numberpicker.ValueChanged += delegate
             {
                  value_delay = numberpicker.Value;
+            };
+
+            var buttonin = Android.Views.Animations.AnimationUtils.LoadAnimation(this, Resource.Animation.abc_fade_in);
+            btediticon.Click += delegate
+            {
+                btediticon.StartAnimation(buttonin);
+                layouticons.LayoutParameters.Height = (int)Android.Util.TypedValue.ApplyDimension(Android.Util.ComplexUnitType.Dip, 60, Resources.DisplayMetrics);
+                mRecyclerView.SetAdapter(mAdapter);
             };
         }
 
