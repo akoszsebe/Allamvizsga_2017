@@ -139,6 +139,18 @@ protected override void OnCreate(Bundle savedInstanceState)
                 AddSmarWatch();
             };
 
+            fabregisterhouse.Click += delegate
+            {
+                fabopen.CallOnClick();
+                RegisterHouse();
+            };
+
+            tvfabregister.Click += delegate
+            {
+                fabopen.CallOnClick();
+                RegisterHouse();
+            };
+
             adapter = new MyHouseListAdapter(this,user_email);
             mlistview.Adapter = adapter;
         }
@@ -168,30 +180,19 @@ protected override void OnCreate(Bundle savedInstanceState)
         }
 
 
-        private void DisableVieWElements(LinearLayout layout)
-        {
-            for (int i = 0; i < layout.ChildCount; i++)
-            {
-                View child = layout.GetChildAt(i);
-                child.Enabled = false;
-            }
-        }
-
-        private void EnableVieWElements(LinearLayout layout)
-        {
-            for (int i = 0; i < layout.ChildCount; i++)
-            {
-                View child = layout.GetChildAt(i);
-                child.Enabled = true;
-            }
-        }
-
-
         private void SearchAddHouse()
         {
             var searchactivity = new Android.Content.Intent(this, typeof(HouseSearchActivity));
             searchactivity.PutExtra("User_email", user_email);
             this.StartActivity(searchactivity);
+            OverridePendingTransition(Resource.Animation.abc_slide_in_bottom, Resource.Animation.abc_slide_out_bottom);
+        }
+
+        private void RegisterHouse()
+        {
+            var houseregistration = new Android.Content.Intent(this, typeof(HouseRegistrationActivity));
+            houseregistration.PutExtra("User_email", user_email);
+            this.StartActivity(houseregistration);
             OverridePendingTransition(Resource.Animation.abc_slide_in_bottom, Resource.Animation.abc_slide_out_bottom);
         }
 

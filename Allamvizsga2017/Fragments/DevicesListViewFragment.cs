@@ -15,26 +15,27 @@ namespace Allamvizsga2017.Fragments
     public class DevicesListViewFragment : Fragment
     {
         private string house_name = "";
-        private long house_id = 0;
+        private string house_id = "";
         private Thread thread;
         private Thread devicethread;
         private ListView mlistview;
         private ListView mlistviewall;
         private MyDeviceAdapter adapter;
         private MyDeviceAdapter adapterall;
+        private ProgressBar progressbar_loading;
 
         public bool isSelected { get; set; } = true;
 
         //Socket socket;// = IO.Socket("http://192.168.0.10:3000");
 
 
-        public static DevicesListViewFragment newInstance(string house_name, long house_id, Socket socket)
+        public static DevicesListViewFragment newInstance(string house_name, string house_id, Socket socket)
         {
             PassSocket psocket = new PassSocket();
             psocket.socket = socket;
             var args = new Bundle();
             args.PutString("house_name", house_name);
-            args.PutLong("house_id", house_id);
+            args.PutString("house_id", house_id);
             args.PutSerializable("Socket", psocket);
             var fragment = new DevicesListViewFragment();
             fragment.Arguments = args;
@@ -46,7 +47,7 @@ namespace Allamvizsga2017.Fragments
         {
             base.OnCreate(savedInstanceState);
             house_name = Arguments.GetString("house_name");
-            house_id = Arguments.GetLong("house_id", 0);
+            house_id = Arguments.GetString("house_id");
             //socket = (Arguments.GetSerializable("Socket") as PassSocket).socket;
         }
 
@@ -57,8 +58,10 @@ namespace Allamvizsga2017.Fragments
             mlistviewall = view.FindViewById<ListView>(Resource.Id.listView2);
             adapter = new MyDeviceAdapter(this.Context, house_id,house_name);
             adapterall = new MyDeviceAdapter(this.Context, house_id, house_name);
+            progressbar_loading = view.FindViewById<ProgressBar>(Resource.Id.progressbar_loading);
             mlistview.Adapter = adapter;
             mlistviewall.Adapter = adapterall;
+            progressbar_loading.Visibility = ViewStates.Gone;
             return view;
         }
 
@@ -95,18 +98,28 @@ namespace Allamvizsga2017.Fragments
                         {
                             items.Add(new ListViewItemDevice(i, amper[i],true));
                         }
+                        Activity.RunOnUiThread(() =>
+                        {
+                            progressbar_loading.Visibility = ViewStates.Gone;
+                            adapter.AddData(items);
+                            adapter.NotifyDataSetChanged();
+                            ListUtils.setDynamicHeight(mlistview);
+                        });
                     }
                     else
                     {
                         items = new List<ListViewItemDevice>();
-                        items.Add(new ListViewItemDevice(0, Resource.Drawable.abc_btn_radio_material, "connection failed", -1,-1));
+                        Activity.RunOnUiThread(() =>
+                        {
+                           
+                            progressbar_loading.Visibility = ViewStates.Visible;
+                           
+                            adapter.AddData(items);
+                            adapter.NotifyDataSetChanged();
+                            ListUtils.setDynamicHeight(mlistview);
+                        });
                     }
-                    Activity.RunOnUiThread(() =>
-                    {
-                        adapter.AddData(items);
-                        adapter.NotifyDataSetChanged();
-                        ListUtils.setDynamicHeight(mlistview);
-                    });
+                   
                     Thread.Sleep(3000);
                 }
             }
@@ -130,7 +143,7 @@ namespace Allamvizsga2017.Fragments
             if (device != null)
                 for (int i = 0; i < device.Count; i++)
                 {
-                    items.Add(new ListViewItemDevice(i, device[i].icon_id, device[i].name, device[i].value,device[i].value));
+                    items.Add(new ListViewItemDevice(i, device[i].icon_id, device[i].name, device[i].value,device[i].value,device[i].valuedelay));
                 }
             Activity.RunOnUiThread(() =>
             {

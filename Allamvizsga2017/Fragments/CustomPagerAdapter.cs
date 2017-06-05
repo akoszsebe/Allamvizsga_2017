@@ -15,7 +15,7 @@ namespace Allamvizsga2017
         const int PAGE_COUNT = 2;
         readonly Context context;
         readonly string house_name;
-        readonly long house_id;
+        readonly string house_id;
         //private Fragment[] fragment = new Fragment[2];
         DevicesListViewFragment devicesfragment;
         StatisticsPageFragment statisticsfragemnt;
@@ -26,7 +26,7 @@ namespace Allamvizsga2017
         {
         }
 
-        public CustomPagerAdapter(Context context, FragmentManager fm,string house_name, long house_id, Socket socket) : base(fm)
+        public CustomPagerAdapter(Context context, FragmentManager fm,string house_name, string house_id, Socket socket) : base(fm)
         {
             this.context = context;
             this.house_name = house_name;

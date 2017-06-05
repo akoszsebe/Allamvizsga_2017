@@ -9,10 +9,10 @@ namespace Allamvizsga2017.Models
     {
         List<ListViewItemDevice> itemList;
         Context context;
-        long house_id;
+        string house_id;
         string house_name = "";
 
-        public MyDeviceAdapter(Context context, long house_id,string house_name)
+        public MyDeviceAdapter(Context context, string house_id,string house_name)
         {
             this.context = context;
             this.house_id = house_id;
@@ -82,6 +82,7 @@ namespace Allamvizsga2017.Models
                     settingsactivity.PutExtra("house_id", house_id);
                     settingsactivity.PutExtra("device_name", itemList[tmpposition].name);
                     settingsactivity.PutExtra("device_value", itemList[tmpposition].value);
+                    settingsactivity.PutExtra("value_delay", itemList[tmpposition].valuedelay);
                     settingsactivity.PutExtra("original_value", itemList[tmpposition].original_value);
                     settingsactivity.PutExtra("icon_id", icon_id);
                     context.StartActivity(settingsactivity);
@@ -110,6 +111,8 @@ namespace Allamvizsga2017.Models
 
         public int value { get; set; }
 
+        public int valuedelay { get; set; }
+
         public int original_value { get; set; }
 
         public bool active { get; set; } = false;
@@ -133,6 +136,16 @@ namespace Allamvizsga2017.Models
             this.original_value = original_value;
         }
 
+        public ListViewItemDevice(long id, int iconid, string name, int value, int original_value, int valuedelay)
+        {
+            this.Id = id;
+            this.iconid = iconid;
+            this.name = name;
+            this.value = value;
+            this.valuedelay = valuedelay;
+            this.original_value = original_value;
+        }
+
         public ListViewItemDevice(long id,Device d,bool active)
         {
             this.Id = id;
@@ -141,6 +154,7 @@ namespace Allamvizsga2017.Models
             this.value = d.value;
             this.active = active;
             this.original_value = d.original_value;
+            this.valuedelay = d.valuedelay;
         }
 
     }

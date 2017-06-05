@@ -21,7 +21,7 @@ namespace Allamvizsga2017.Activities
     {
         string house_name { get; set; }
         string user_email { get; set; }
-        long house_id { get; set; }
+        string house_id { get; set; }
 
         protected override void OnCreate(Bundle savedInstanceState)
         {
@@ -30,7 +30,7 @@ namespace Allamvizsga2017.Activities
             SetContentView(Resource.Layout.HouseSettings);
             house_name = Intent.GetStringExtra("house_name");
             user_email = Intent.GetStringExtra("user_email");
-            house_id = Intent.GetLongExtra("house_id", 0);
+            house_id = Intent.GetStringExtra("house_id");
             var tbhousename = FindViewById<TextView>(Resource.Id.textViewHouseName);
 
             tbhousename.Text = house_name + " " + user_email + " " + house_id;

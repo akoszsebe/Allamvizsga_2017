@@ -19,6 +19,11 @@
             android:gravity="center"
             android:background="#d4ddd8"
             android:layout_marginTop="15dp" />
+        <ProgressBar
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            style="@style/Widget.AppCompat.ProgressBar"
+            android:id="@+id/progressbar_loading" />
         <ListView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"

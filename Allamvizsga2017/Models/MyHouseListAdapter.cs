@@ -97,7 +97,7 @@ namespace Allamvizsga2017.Models
             itemList.AddRange(items);
         }
 
-        public void UpdateData(int devicenumber, int s_wat, long h_id)
+        public void UpdateData(int devicenumber, int s_wat, string h_id)
         {
             itemList.Find(x => x.house_id == h_id).activedevices = devicenumber;
             itemList.Find(x => x.house_id == h_id).sumwat = s_wat;
@@ -132,14 +132,14 @@ namespace Allamvizsga2017.Models
     class ListViewItemHouse
     {
         public long Id { get; set; }
-        public long house_id { get; set; }
+        public string house_id { get; set; }
         public string house_name { get; set; }
         public int activedevices { get; set; } = 0;
         public int sumwat { get; set; } = 0;
         public string password { get; set; }
         public bool users_house { get; set; } = false;
 
-        public ListViewItemHouse(long id, long house_id, string house_name, string password)
+        public ListViewItemHouse(long id, string house_id, string house_name, string password)
         {
             this.Id = id;
             this.house_id = house_id;
@@ -148,7 +148,7 @@ namespace Allamvizsga2017.Models
         }
 
 
-        public ListViewItemHouse(long id, long house_id, string house_name, string password, bool users_house)
+        public ListViewItemHouse(long id, string house_id, string house_name, string password, bool users_house)
         {
             this.Id = id;
             this.house_id = house_id;
@@ -157,7 +157,7 @@ namespace Allamvizsga2017.Models
             this.users_house = users_house;
         }
 
-        public ListViewItemHouse(long id, long house_id, string house_name, string password, int activedevices,int sumwat)
+        public ListViewItemHouse(long id, string house_id, string house_name, string password, int activedevices,int sumwat)
         {
             this.Id = id;
             this.house_id = house_id;

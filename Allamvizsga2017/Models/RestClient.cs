@@ -92,7 +92,7 @@ namespace Allamvizsga2017.Models
             }
         }
 
-        public static bool AddUserHouse(string user_email, long house_id)
+        public static bool AddUserHouse(string user_email, string house_id)
         {
             var request = WebRequest.Create(@"http://" + ip + "" + port + "/setuserhouse?user_email=" + user_email +
                 "&house_id=" + house_id);
@@ -172,7 +172,7 @@ namespace Allamvizsga2017.Models
             }
         }
 
-        public static bool DeleteUserHouse(string user_email, long house_id)
+        public static bool DeleteUserHouse(string user_email, string house_id)
         {
             var request = WebRequest.Create(@"http://" + ip + "" + port + "/deleteuserhouse?user_email=" + user_email +
                 "&house_id=" + house_id);
@@ -331,7 +331,7 @@ namespace Allamvizsga2017.Models
             }
         }
 
-        public static List<Amper> GetActualDevices(long house_id)
+        public static List<Amper> GetActualDevices(string house_id)
         {
             var request = WebRequest.Create("http://" + ip + "" + port + "/getamper?" +
             //var request = WebRequest.Create("http://" + "192.168.1.210" + "" + ":8081" + "/getamper?" +
@@ -371,7 +371,7 @@ namespace Allamvizsga2017.Models
             }
         }
 
-        public static List<Amper> GetAmpers(long house_id, long datefrom, long dateto)
+        public static List<Amper> GetAmpers(string house_id, long datefrom, long dateto)
         {
             var request = WebRequest.Create("http://" + ip + "" + port + "/getAmpers?" +
                 "house_id=" + house_id.ToString() +
@@ -413,7 +413,7 @@ namespace Allamvizsga2017.Models
             }
         }
 
-        public static bool SetDeviceSetting(long house_id,string name, int icon_id,int value,int valuedelay)
+        public static bool SetDeviceSetting(string house_id,string name, int icon_id,int value,int valuedelay)
         {
             var request = WebRequest.Create("http://" + ip + "" + port + "/setdevicesetting?" +
                 "house_id=" + house_id +
@@ -455,7 +455,7 @@ namespace Allamvizsga2017.Models
             }
         }
 
-        public static bool DeleteDeviceSetting(long house_id, int value)
+        public static bool DeleteDeviceSetting(string house_id, int value)
         {
             var request = WebRequest.Create("http://" + ip + "" + port + "/deletedevicesetting?" +
                 "house_id=" + house_id +
@@ -496,7 +496,7 @@ namespace Allamvizsga2017.Models
             }
         }
 
-        public static List<Device> GetDeviceSetting(long house_id)
+        public static List<Device> GetDeviceSetting(string house_id)
         {
             var request = WebRequest.Create("http://" + ip + "" + port + "/getdevicesetting?" +
                 "house_id=" + house_id.ToString());
@@ -536,7 +536,7 @@ namespace Allamvizsga2017.Models
             }
         }
 
-        public static List<Device> GetActualDevicesWithSetting(long house_id)
+        public static List<Device> GetActualDevicesWithSetting(string house_id)
         {
             var request = WebRequest.Create("http://" + ip + "" + port + "/getdeviceswithsettings?" +
                 "house_id=" + house_id.ToString());
@@ -573,6 +573,46 @@ namespace Allamvizsga2017.Models
             catch (Exception ex)
             {
                 return null;
+            }
+        }
+
+        public static bool RegisterHouse(string house_id, string house_name)
+        {
+            var request = WebRequest.Create(@"http://" + ip + "" + port + "/sethouse?house_id=" + house_id +
+                "&house_name=" + house_name);
+            request.ContentType = "application/json";
+            request.Method = "GET";
+            request.Timeout = 12000;
+
+            try
+            {
+                using (HttpWebResponse response = request.GetResponse() as HttpWebResponse)
+                {
+                    if (response.StatusCode != HttpStatusCode.OK)
+                    {
+                        return false;
+                    }
+
+                    using (StreamReader reader = new StreamReader(response.GetResponseStream()))
+                    {
+                        var content = reader.ReadToEnd();
+                        if (string.IsNullOrWhiteSpace(content))
+                        {
+                            response.Close();
+                            return false;
+                        }
+                        else
+                        {
+                            response.Close();
+                            return JsonConvert.DeserializeObject<bool>(content);
+                        }
+                    }
+                }
+
+            }
+            catch (Exception ex)
+            {
+                return false;
             }
         }
     }

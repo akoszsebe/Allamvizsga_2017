@@ -15,7 +15,7 @@ namespace Allamvizsga2017.Fragments
     public class StatisticsPageFragment : Fragment, DatePicker.IOnDateChangedListener
     {
         private string house_name = "";
-        private long house_id = 0;
+        private string house_id = "";
         private Thread thread;
         private ListView mlistview;
         private MyBarChartAdapter adapter;
@@ -24,11 +24,11 @@ namespace Allamvizsga2017.Fragments
         public bool isSelected { get; set; } = false;
 
 
-        public static StatisticsPageFragment newInstance(string house_name, long house_id)
+        public static StatisticsPageFragment newInstance(string house_name, string house_id)
         {
             var args = new Bundle();
             args.PutString("User_name", house_name);
-            args.PutLong("house_id", house_id);
+            args.PutString("house_id", house_id);
             var fragment = new StatisticsPageFragment();
             fragment.Arguments = args;
             return fragment;
@@ -38,7 +38,7 @@ namespace Allamvizsga2017.Fragments
         {
             base.OnCreate(savedInstanceState);
             house_name = Arguments.GetString("house_name");
-            house_id = Arguments.GetLong("house_id", 0);
+            house_id = Arguments.GetString("house_id");
         }
 
         long startTime;

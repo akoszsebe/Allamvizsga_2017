@@ -17,9 +17,10 @@ namespace Allamvizsga2017
         ScreenOrientation = Android.Content.PM.ScreenOrientation.Portrait)]
     public class DeviceSettingActivity : AppCompatActivity
     {
-        long houseid { get; set; } = 0;
+        string houseid { get; set; } = "";
         int devicevalue { get; set; } = 0;
         int original_value { get; set; } = 0;
+        int value_delay { get; set; } = 0;
         int saveicon_id { get; set; } = 0;
         EditText etdevicename { get; set; }
         RecyclerView mRecyclerView { get; set; }
@@ -36,7 +37,8 @@ namespace Allamvizsga2017
             string housename = Intent.GetStringExtra("house_name");
             string devicename = Intent.GetStringExtra("device_name");
             devicevalue = Intent.GetIntExtra("device_value", 0);
-            houseid = Intent.GetLongExtra("house_id", 0);
+            value_delay = Intent.GetIntExtra("value_delay", 0);
+            houseid = Intent.GetStringExtra("house_id");
             original_value = Intent.GetIntExtra("original_value", 0);
             int iconid = Intent.GetIntExtra("icon_id", 0);
 
@@ -45,6 +47,7 @@ namespace Allamvizsga2017
             var ivicon = FindViewById<ImageView>(Resource.Id.imageView1);
             etdevicename = FindViewById<EditText>(Resource.Id.textInputEditText1);
             var toolbar = FindViewById<Android.Support.V7.Widget.Toolbar>(Resource.Id.toolbar1);
+            var numberpicker = FindViewById<NumberPicker>(Resource.Id.numberPickerValueDelay);
 
             toolbar.SetTitleTextAppearance(this, Resource.Style.ActionBarTitle);
             SetSupportActionBar(toolbar);
@@ -55,6 +58,12 @@ namespace Allamvizsga2017
             tbhousename.Text = housename;
             ivicon.SetImageResource(iconid);
             etdevicename.Hint = devicename;
+
+            numberpicker.MinValue = 0;
+            numberpicker.MaxValue = 1000;
+            numberpicker.Value = value_delay;
+
+
             etdevicename.Selected = false;
             etdevicename.Click += delegate { etdevicename.SetCursorVisible(true); };
             etdevicename.KeyPress += (s, e) =>
@@ -88,6 +97,10 @@ namespace Allamvizsga2017
                 saveicon_id = icons.Iconids[position];
             };
 
+            numberpicker.ValueChanged += delegate
+            {
+                 value_delay = numberpicker.Value;
+            };
         }
 
         public override bool OnCreateOptionsMenu(IMenu menu)
@@ -109,10 +122,10 @@ namespace Allamvizsga2017
                         if (etdevicename.Text == "")
                         {
                             if (!etdevicename.Hint.ToLower().Contains("unknown"))
-                                RestClient.SetDeviceSetting(houseid, etdevicename.Hint, saveicon_id, original_value, 20);
+                                RestClient.SetDeviceSetting(houseid, etdevicename.Hint, saveicon_id, original_value, value_delay);
                         }
                         else
-                            RestClient.SetDeviceSetting(houseid, etdevicename.Text, saveicon_id, original_value, 20);
+                            RestClient.SetDeviceSetting(houseid, etdevicename.Text, saveicon_id, original_value, value_delay);
                     }
                 Finish();
             }

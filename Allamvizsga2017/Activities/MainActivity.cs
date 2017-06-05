@@ -25,7 +25,7 @@ namespace Allamvizsga2017
             SetContentView(Resource.Layout.Main);
 
             var house_name = Intent.GetStringExtra("House_name");
-            long house_id = Intent.GetLongExtra("House_id", 0);
+            string house_id = Intent.GetStringExtra("House_id");
 
 
             var tabLayout = FindViewById<TabLayout>(Resource.Id.sliding_tabs);
@@ -36,7 +36,7 @@ namespace Allamvizsga2017
             SetSupportActionBar(toolbar);
 
             if (house_name == "")
-                SupportActionBar.Title = "Id: "+house_id.ToString();
+                SupportActionBar.Title = "Id: "+house_id;
             else
                 SupportActionBar.Title = house_name;
             SupportActionBar.SetDisplayHomeAsUpEnabled(true);
