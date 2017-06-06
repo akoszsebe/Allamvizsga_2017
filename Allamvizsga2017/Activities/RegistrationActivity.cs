@@ -28,6 +28,37 @@ namespace Allamvizsga2017.Activities
             tipasswd = FindViewById<EditText>(Resource.Id.textInputPassword);
             var tvhaveaccount = FindViewById<TextView>(Resource.Id.textViewHaveAccount);
 
+            var passwordtrnsform = tipasswd.TransformationMethod;
+            bool longclicked = false;
+            tipasswd.LongClick += (v, e) =>
+            {
+                if (longclicked)
+                {
+                    tipasswd.TransformationMethod = passwordtrnsform;
+                    tipasswd.SetSelection(tipasswd.Text.Length);
+                    tipasswd.SetCompoundDrawablesWithIntrinsicBounds(null, null, Resources.GetDrawable(Resource.Drawable.Lock_24), null);
+                    longclicked = false;
+                }
+                else
+                {
+                    tipasswd.TransformationMethod = null;
+                    tipasswd.SetSelection(tipasswd.Text.Length);
+                    tipasswd.SetCompoundDrawablesWithIntrinsicBounds(null, null, Resources.GetDrawable(Resource.Drawable.Unlock_24), null);
+                    longclicked = true;
+                }
+
+            };
+
+            tipasswd.FocusChange += (e, s) =>
+            {
+                if (!s.HasFocus)
+                {
+                    tipasswd.TransformationMethod = passwordtrnsform;
+                    tipasswd.SetCompoundDrawablesWithIntrinsicBounds(null, null, Resources.GetDrawable(Resource.Drawable.Lock_24), null);
+                }
+            };
+
+
             btlogin.Click += delegate
             {
                 ProgressDialog progress = new ProgressDialog(this);
@@ -53,7 +84,7 @@ namespace Allamvizsga2017.Activities
                                 this.Finish();
                             });
                             Dialog dialog = alert.Create();
-                            dialog.Show();                   
+                            dialog.Show();
                         });
                     }
                     else
@@ -71,7 +102,7 @@ namespace Allamvizsga2017.Activities
                 })).Start();
             };
 
-            tvhaveaccount.Click += delegate 
+            tvhaveaccount.Click += delegate
             {
                 this.Finish();
             };

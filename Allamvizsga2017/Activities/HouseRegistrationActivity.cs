@@ -59,12 +59,14 @@ namespace Allamvizsga2017.Activities
                 {
                     tihouse_password.TransformationMethod = passwordtransform;
                     tihouse_password.SetSelection(tihouse_password.Text.Length);
+                    tihouse_password.SetCompoundDrawablesWithIntrinsicBounds(null, null, Resources.GetDrawable(Resource.Drawable.Lock_24), null);
                     longclicked = false;
                 }
                 else
                 {
                     tihouse_password.TransformationMethod = null;
                     tihouse_password.SetSelection(tihouse_password.Text.Length);
+                    tihouse_password.SetCompoundDrawablesWithIntrinsicBounds(null, null, Resources.GetDrawable(Resource.Drawable.Unlock_24), null);
                     longclicked = true;
                 }
 
@@ -75,6 +77,7 @@ namespace Allamvizsga2017.Activities
                 if (!s.HasFocus)
                 {
                     tihouse_password.TransformationMethod = passwordtransform;
+                    tihouse_password.SetCompoundDrawablesWithIntrinsicBounds(null, null, Resources.GetDrawable(Resource.Drawable.Lock_24), null);
                 }
             };
 

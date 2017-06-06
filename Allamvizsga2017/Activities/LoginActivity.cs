@@ -29,26 +29,30 @@ namespace Allamvizsga2017.Activities
             tipasswd = FindViewById<EditText>(Resource.Id.textInputPassword);
             var tvnoaccount = FindViewById<TextView>(Resource.Id.textViewNoAccount);
 
+            var passwordtrnsform = tipasswd.TransformationMethod;
+            bool longclicked = false;
+
             btlogin.Click += delegate
             {
+                tipasswd.TransformationMethod = passwordtrnsform;
+                tipasswd.SetCompoundDrawablesWithIntrinsicBounds(null, null, Resources.GetDrawable(Resource.Drawable.Lock_24), null);
                 Login();
             };
 
-
-            var passwordtrnsform = tipasswd.TransformationMethod;
-            bool longclicked = false;
             tipasswd.LongClick += (v,e) =>
             {
                 if (longclicked)
                 {
                     tipasswd.TransformationMethod = passwordtrnsform;
                     tipasswd.SetSelection(tipasswd.Text.Length);
+                    tipasswd.SetCompoundDrawablesWithIntrinsicBounds(null,null,Resources.GetDrawable(Resource.Drawable.Lock_24),null);
                     longclicked = false;
                 }
                 else
                 {
                     tipasswd.TransformationMethod = null;
                     tipasswd.SetSelection(tipasswd.Text.Length);
+                    tipasswd.SetCompoundDrawablesWithIntrinsicBounds(null, null, Resources.GetDrawable(Resource.Drawable.Unlock_24), null);
                     longclicked = true;
                 }
                 
@@ -59,6 +63,7 @@ namespace Allamvizsga2017.Activities
                 if (!s.HasFocus)
                 {
                     tipasswd.TransformationMethod = passwordtrnsform;
+                    tipasswd.SetCompoundDrawablesWithIntrinsicBounds(null, null, Resources.GetDrawable(Resource.Drawable.Lock_24), null);
                 }
             };
 
@@ -66,6 +71,8 @@ namespace Allamvizsga2017.Activities
             {
                 if (e.Event.Action == KeyEventActions.Down &&  e.Event.KeyCode == Keycode.Enter)
                 {
+                    tipasswd.TransformationMethod = passwordtrnsform;
+                    tipasswd.SetCompoundDrawablesWithIntrinsicBounds(null, null, Resources.GetDrawable(Resource.Drawable.Lock_24), null);
                     Login();
                     e.Handled = true;
                 }

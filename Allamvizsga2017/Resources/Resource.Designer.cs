@@ -2031,109 +2031,121 @@ namespace Allamvizsga2017
 			public const int Hand_mixer = 2130837611;
 			
 			// aapt resource value: 0x7f02006c
-			public const int house_blue = 2130837612;
+			public const int Home_24 = 2130837612;
 			
 			// aapt resource value: 0x7f02006d
-			public const int house_green = 2130837613;
+			public const int house_blue = 2130837613;
 			
 			// aapt resource value: 0x7f02006e
-			public const int house_orange = 2130837614;
+			public const int house_green = 2130837614;
 			
 			// aapt resource value: 0x7f02006f
-			public const int house_red = 2130837615;
+			public const int house_orange = 2130837615;
 			
 			// aapt resource value: 0x7f020070
-			public const int house_yellow = 2130837616;
+			public const int house_red = 2130837616;
 			
 			// aapt resource value: 0x7f020071
-			public const int Icon = 2130837617;
+			public const int house_yellow = 2130837617;
 			
 			// aapt resource value: 0x7f020072
-			public const int Icon1 = 2130837618;
+			public const int Icon = 2130837618;
 			
 			// aapt resource value: 0x7f020073
-			public const int Icon_black = 2130837619;
+			public const int Icon1 = 2130837619;
 			
 			// aapt resource value: 0x7f020074
-			public const int informationicon = 2130837620;
+			public const int Icon_black = 2130837620;
 			
 			// aapt resource value: 0x7f020075
-			public const int Laptop = 2130837621;
+			public const int informationicon = 2130837621;
 			
 			// aapt resource value: 0x7f020076
-			public const int Lightning_bulb = 2130837622;
+			public const int Key_24 = 2130837622;
 			
 			// aapt resource value: 0x7f020077
-			public const int Microwave = 2130837623;
-			
-			// aapt resource value: 0x7f02008e
-			public const int notification_template_icon_bg = 2130837646;
+			public const int Laptop = 2130837623;
 			
 			// aapt resource value: 0x7f020078
-			public const int Radio = 2130837624;
+			public const int Lightning_bulb = 2130837624;
 			
 			// aapt resource value: 0x7f020079
-			public const int Refrigerator = 2130837625;
+			public const int Lock_24 = 2130837625;
 			
 			// aapt resource value: 0x7f02007a
-			public const int ripple_oval = 2130837626;
+			public const int Microwave = 2130837626;
+			
+			// aapt resource value: 0x7f020092
+			public const int notification_template_icon_bg = 2130837650;
 			
 			// aapt resource value: 0x7f02007b
-			public const int Sandwich_maker = 2130837627;
+			public const int Radio = 2130837627;
 			
 			// aapt resource value: 0x7f02007c
-			public const int save = 2130837628;
+			public const int Refrigerator = 2130837628;
 			
 			// aapt resource value: 0x7f02007d
-			public const int search_icon = 2130837629;
+			public const int ripple_oval = 2130837629;
 			
 			// aapt resource value: 0x7f02007e
-			public const int selector_devices = 2130837630;
+			public const int Sandwich_maker = 2130837630;
 			
 			// aapt resource value: 0x7f02007f
-			public const int selector_statistics = 2130837631;
+			public const int save = 2130837631;
 			
 			// aapt resource value: 0x7f020080
-			public const int settings_128 = 2130837632;
+			public const int search_icon = 2130837632;
 			
 			// aapt resource value: 0x7f020081
-			public const int show_password = 2130837633;
+			public const int selector_devices = 2130837633;
 			
 			// aapt resource value: 0x7f020082
-			public const int Smoke_extractor = 2130837634;
+			public const int selector_statistics = 2130837634;
 			
 			// aapt resource value: 0x7f020083
-			public const int Stand_mixer = 2130837635;
+			public const int settings_128 = 2130837635;
 			
 			// aapt resource value: 0x7f020084
-			public const int statistics_black = 2130837636;
+			public const int Smoke_extractor = 2130837636;
 			
 			// aapt resource value: 0x7f020085
-			public const int statistics_white = 2130837637;
+			public const int Stand_mixer = 2130837637;
 			
 			// aapt resource value: 0x7f020086
-			public const int Stove = 2130837638;
+			public const int statistics_black = 2130837638;
 			
 			// aapt resource value: 0x7f020087
-			public const int Teamashine = 2130837639;
+			public const int statistics_white = 2130837639;
 			
 			// aapt resource value: 0x7f020088
-			public const int Television = 2130837640;
+			public const int Stove = 2130837640;
 			
 			// aapt resource value: 0x7f020089
-			public const int Toaster = 2130837641;
+			public const int Teamashine = 2130837641;
 			
 			// aapt resource value: 0x7f02008a
-			public const int toolbar_dropshadow = 2130837642;
+			public const int Television = 2130837642;
 			
 			// aapt resource value: 0x7f02008b
-			public const int unknownicon = 2130837643;
+			public const int Toaster = 2130837643;
 			
 			// aapt resource value: 0x7f02008c
-			public const int Vacuum_cleaner = 2130837644;
+			public const int toolbar_dropshadow = 2130837644;
 			
 			// aapt resource value: 0x7f02008d
-			public const int Water_heater = 2130837645;
+			public const int unknownicon = 2130837645;
+			
+			// aapt resource value: 0x7f02008e
+			public const int Unlock_24 = 2130837646;
+			
+			// aapt resource value: 0x7f02008f
+			public const int User_24 = 2130837647;
+			
+			// aapt resource value: 0x7f020090
+			public const int Vacuum_cleaner = 2130837648;
+			
+			// aapt resource value: 0x7f020091
+			public const int Water_heater = 2130837649;
 			
 			static Drawable()
 			{
