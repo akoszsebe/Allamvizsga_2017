@@ -50,8 +50,42 @@ namespace Allamvizsga2017.Activities
                 }
             };
 
+
+            var passwordtransform = tihouse_password.TransformationMethod;
+            bool longclicked = false;
+            tihouse_password.LongClick += (v, e) =>
+            {
+                if (longclicked)
+                {
+                    tihouse_password.TransformationMethod = passwordtransform;
+                    tihouse_password.SetSelection(tihouse_password.Text.Length);
+                    longclicked = false;
+                }
+                else
+                {
+                    tihouse_password.TransformationMethod = null;
+                    tihouse_password.SetSelection(tihouse_password.Text.Length);
+                    longclicked = true;
+                }
+
+            };
+
+            tihouse_password.FocusChange += (e, s) =>
+            {
+                if (!s.HasFocus)
+                {
+                    tihouse_password.TransformationMethod = passwordtransform;
+                }
+            };
+
+
             btregistration.Click += delegate
             {
+                if (tihouse_password.Text.ToString().Trim().Equals(""))
+                {
+                    tihouse_password.Error = "Password is required";
+                }
+                else 
                 if (tihouse_id.Text.ToString().Trim().Equals(""))
                 {
                     tihouse_id.Error = "House id is required!";

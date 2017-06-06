@@ -48,7 +48,7 @@
         android:layout_marginBottom="20.5dp"
         android:layout_marginLeft="30.5dp"
         android:layout_marginRight="30.5dp"
-        android:background="#1ec665" />
+        android:background="#4cc988" />
     <TextView
         android:textAppearance="?android:attr/textAppearanceMedium"
         android:layout_width="match_parent"

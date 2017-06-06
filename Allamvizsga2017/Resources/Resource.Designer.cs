@@ -2066,8 +2066,8 @@ namespace Allamvizsga2017
 			// aapt resource value: 0x7f020077
 			public const int Microwave = 2130837623;
 			
-			// aapt resource value: 0x7f02008d
-			public const int notification_template_icon_bg = 2130837645;
+			// aapt resource value: 0x7f02008e
+			public const int notification_template_icon_bg = 2130837646;
 			
 			// aapt resource value: 0x7f020078
 			public const int Radio = 2130837624;
@@ -2097,40 +2097,43 @@ namespace Allamvizsga2017
 			public const int settings_128 = 2130837632;
 			
 			// aapt resource value: 0x7f020081
-			public const int Smoke_extractor = 2130837633;
+			public const int show_password = 2130837633;
 			
 			// aapt resource value: 0x7f020082
-			public const int Stand_mixer = 2130837634;
+			public const int Smoke_extractor = 2130837634;
 			
 			// aapt resource value: 0x7f020083
-			public const int statistics_black = 2130837635;
+			public const int Stand_mixer = 2130837635;
 			
 			// aapt resource value: 0x7f020084
-			public const int statistics_white = 2130837636;
+			public const int statistics_black = 2130837636;
 			
 			// aapt resource value: 0x7f020085
-			public const int Stove = 2130837637;
+			public const int statistics_white = 2130837637;
 			
 			// aapt resource value: 0x7f020086
-			public const int Teamashine = 2130837638;
+			public const int Stove = 2130837638;
 			
 			// aapt resource value: 0x7f020087
-			public const int Television = 2130837639;
+			public const int Teamashine = 2130837639;
 			
 			// aapt resource value: 0x7f020088
-			public const int Toaster = 2130837640;
+			public const int Television = 2130837640;
 			
 			// aapt resource value: 0x7f020089
-			public const int toolbar_dropshadow = 2130837641;
+			public const int Toaster = 2130837641;
 			
 			// aapt resource value: 0x7f02008a
-			public const int unknownicon = 2130837642;
+			public const int toolbar_dropshadow = 2130837642;
 			
 			// aapt resource value: 0x7f02008b
-			public const int Vacuum_cleaner = 2130837643;
+			public const int unknownicon = 2130837643;
 			
 			// aapt resource value: 0x7f02008c
-			public const int Water_heater = 2130837644;
+			public const int Vacuum_cleaner = 2130837644;
+			
+			// aapt resource value: 0x7f02008d
+			public const int Water_heater = 2130837645;
 			
 			static Drawable()
 			{

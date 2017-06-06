@@ -40,6 +40,7 @@
       android:layout_marginRight="30.0dp"
       android:password="true"
       android:inputType="textPassword"
+      android:drawableRight="@drawable/show_password"
       android:maxLength="15" />
   <FrameLayout
       android:minWidth="25px"
@@ -56,7 +57,7 @@
         android:layout_marginBottom="50dp"
         android:layout_marginLeft="30.5dp"
         android:layout_marginRight="30.5dp"
-        android:background="#1ec665"
+        android:background="#4cc988"
         android:gravity="center"
         android:layout_gravity="bottom" />
   </FrameLayout>
