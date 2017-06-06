@@ -192,7 +192,7 @@ namespace Allamvizsga2017.Activities
 
         public bool IsMatchIdPattern(string test)
         {
-            return System.Text.RegularExpressions.Regex.IsMatch(test, @"([0-9a-zA-Z]{4}-[0-9a-zA-Z]{4}-[0-9a-zA-Z]{6})");
+            return System.Text.RegularExpressions.Regex.IsMatch(test, @"([0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{6})");
         }
     }
 }

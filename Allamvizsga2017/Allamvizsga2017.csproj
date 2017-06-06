@@ -113,6 +113,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Activities\AddSmartWatchActivity.cs" />
     <Compile Include="Activities\HouseRegistrationActivity.cs" />
     <Compile Include="Activities\HousesActivity.cs" />
     <Compile Include="Activities\HouseSearchActivity.cs" />
@@ -137,8 +138,10 @@
     <Compile Include="Models\MyDeviceAdapter.cs" />
     <Compile Include="Models\MyHouseListAdapter.cs" />
     <Compile Include="Models\MyHouseSearchAdapter.cs" />
+    <Compile Include="Models\MySmartWatchListAdapter.cs" />
     <Compile Include="Models\PassSocket.cs" />
     <Compile Include="Models\RestClient.cs" />
+    <Compile Include="Models\SmartWatch.cs" />
     <Compile Include="Resources\Resource.Designer.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Services\NotificationService.cs" />
@@ -214,6 +217,9 @@
       <SubType>Designer</SubType>
     </AndroidResource>
     <AndroidResource Include="Resources\layout\HouseRegistration.axml">
+      <SubType>Designer</SubType>
+    </AndroidResource>
+    <AndroidResource Include="Resources\layout\AddSmartWatch.axml">
       <SubType>Designer</SubType>
     </AndroidResource>
   </ItemGroup>

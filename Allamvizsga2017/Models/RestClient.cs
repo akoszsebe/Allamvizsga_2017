@@ -615,5 +615,46 @@ namespace Allamvizsga2017.Models
                 return false;
             }
         }
+
+        public static List<SmartWatch> GetUserSmartWatches(string user_email)
+        {
+            var request = WebRequest.Create(@"http://" + ip + "" + port + "/getusersmartwatch"
+            + "?user_email=" + user_email);
+            request.ContentType = "application/json";
+            request.Method = "GET";
+            request.Timeout = 3000;
+
+            try
+            {
+                using (HttpWebResponse response = request.GetResponse() as HttpWebResponse)
+                {
+                    if (response.StatusCode != HttpStatusCode.OK)
+                    {
+                        return null;
+                    }
+
+                    using (StreamReader reader = new StreamReader(response.GetResponseStream()))
+                    {
+                        var content = reader.ReadToEnd();
+                        if (string.IsNullOrWhiteSpace(content))
+                        {
+                            response.Close();
+                            return null;
+                        }
+                        else
+                        {
+                            response.Close();
+                            return JsonConvert.DeserializeObject<List<SmartWatch>>(content);
+                        }
+                    }
+                }
+
+            }
+            catch (Exception ex)
+            {
+                return null;
+            }
+        }
+
     }
 }

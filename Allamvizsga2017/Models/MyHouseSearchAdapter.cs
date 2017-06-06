@@ -82,7 +82,8 @@ namespace Allamvizsga2017.Models
                             {
                                 progress.Dismiss();
                                 Android.Support.V7.App.AlertDialog.Builder alert = new Android.Support.V7.App.AlertDialog.Builder(context, Resource.Style.MyAlertDialogStyle);
-                                alert.SetTitle("House was added");
+                                alert.SetTitle("House adding error");
+                                alert.SetMessage("Try again later");
                                 alert.SetPositiveButton("OK", (senderAlert, args) =>
                                 {
                                 });

@@ -25,7 +25,7 @@ namespace Allamvizsga2017.Activities
 
         private bool isfabopend = false;
 
-protected override void OnCreate(Bundle savedInstanceState)
+        protected override void OnCreate(Bundle savedInstanceState)
         {
             base.OnCreate(savedInstanceState);
 
@@ -35,7 +35,7 @@ protected override void OnCreate(Bundle savedInstanceState)
             user_email = Intent.GetStringExtra("User_email");
 
             var toolbar = FindViewById<Android.Support.V7.Widget.Toolbar>(Resource.Id.toolbar1);
-           
+
             SetSupportActionBar(toolbar);
             SupportActionBar.Title = "Hi, " + user_email;
 
@@ -44,7 +44,8 @@ protected override void OnCreate(Bundle savedInstanceState)
             mlistview = FindViewById<ListView>(Resource.Id.listViewHouses);
 
             refresher = FindViewById<Android.Support.V4.Widget.SwipeRefreshLayout>(Resource.Id.refresher);
-            refresher.Refresh += delegate {
+            refresher.Refresh += delegate
+            {
                 FeedFromDb();
             };
 
@@ -66,13 +67,13 @@ protected override void OnCreate(Bundle savedInstanceState)
             var rotatebackFab = AnimationUtils.LoadAnimation(this, Resource.Animation.fab_rotate_backward);
 
             var layouttransparent = FindViewById<LinearLayout>(Resource.Id.layouttransparent);
-            
+
             var layoutcontainer = FindViewById<LinearLayout>(Resource.Id.layoutcontainer);
 
-            fabopen.Click += delegate 
+            fabopen.Click += delegate
             {
                 if (isfabopend)
-                {                
+                {
                     fabopen.StartAnimation(rotatebackFab);
                     fabsearchhouse.StartAnimation(closeFab);
                     fabsmartwatch.StartAnimation(closeFab);
@@ -91,7 +92,7 @@ protected override void OnCreate(Bundle savedInstanceState)
                     layouttransparent.Clickable = false;
                 }
                 else
-                {                 
+                {
                     fabopen.StartAnimation(rotateFab);
                     fabsearchhouse.StartAnimation(openFab);
                     fabsmartwatch.StartAnimation(openFab_startoffset100);
@@ -151,7 +152,7 @@ protected override void OnCreate(Bundle savedInstanceState)
                 RegisterHouse();
             };
 
-            adapter = new MyHouseListAdapter(this,user_email);
+            adapter = new MyHouseListAdapter(this, user_email);
             mlistview.Adapter = adapter;
         }
 
@@ -162,7 +163,7 @@ protected override void OnCreate(Bundle savedInstanceState)
         }
 
         public override bool OnOptionsItemSelected(IMenuItem item)
-        {  
+        {
             if (item.ItemId == Android.Resource.Id.Home)
                 Finish();
             if (item.ItemId == Resource.Id.menu_logout)
@@ -198,64 +199,10 @@ protected override void OnCreate(Bundle savedInstanceState)
 
         private void AddSmarWatch()
         {
-            Android.Support.V7.App.AlertDialog.Builder alert = new Android.Support.V7.App.AlertDialog.Builder(this, Resource.Style.MyAlertDialogStyle);
-            alert.SetTitle("Add SmartWatch");
-            TextView tvid = new TextView(this);
-            tvid.Text = "Id :";
-            tvid.PaintFlags = Android.Graphics.PaintFlags.FakeBoldText;
-            tvid.TextSize = 20;
-            EditText input = new EditText(this);
-            input.Background.SetColorFilter(Color.Rgb(76, 201, 136), PorterDuff.Mode.SrcIn);
-            LinearLayout container = new LinearLayout(this);
-            LinearLayout.LayoutParams ll = new LinearLayout.LayoutParams(ViewGroup.LayoutParams.MatchParent, ViewGroup.LayoutParams.WrapContent);
-            ll.SetMargins(5, 0, 5, 0);
-            input.LayoutParameters = ll;
-            container.AddView(tvid);
-            container.AddView(input);
-            alert.SetView(container);
-            alert.SetPositiveButton("Add", (senderAlert, args) =>
-            {
-                ProgressDialog progress = new ProgressDialog(this);
-                progress.Indeterminate = true;
-                progress.SetProgressStyle(ProgressDialogStyle.Spinner);
-                progress.SetMessage("Adding SmartWatch...");
-                progress.SetCancelable(true);
-                progress.Show();
-                new Thread(new ThreadStart(() =>
-                {
-                    var successed = false;
-                    if (input.Text != "")
-                    {
-                        successed = RestClient.AddUserSmartWatch(user_email, input.Text);
-                    }
-                    if (successed)
-                    {
-                        RunOnUiThread(() =>
-                        {
-                            progress.Dismiss();
-                        });
-                    }
-                    else
-                    {
-                        RunOnUiThread(() =>
-                        {
-                            progress.Dismiss();
-                            Android.Support.V7.App.AlertDialog.Builder alertdilaog = new Android.Support.V7.App.AlertDialog.Builder(this, Resource.Style.MyAlertDialogStyle);
-                            alertdilaog.SetTitle("Failed Try Again");
-                            alertdilaog.SetPositiveButton("OK", (s, a) =>
-                            {
-                            });
-                            Dialog _dialog = alertdilaog.Create();
-                            _dialog.Show();
-                        });
-                    }
-                })).Start();
-            });
-            alert.SetNeutralButton("Cancel", (senderAlert, args) =>
-            {
-            });
-            Dialog dialog = alert.Create();
-            dialog.Show();
+            var addsmartwatch = new Android.Content.Intent(this, typeof(AddSmartWatchActivity));
+            addsmartwatch.PutExtra("User_email", user_email);
+            this.StartActivity(addsmartwatch);
+            OverridePendingTransition(Resource.Animation.abc_slide_in_bottom, Resource.Animation.abc_slide_out_bottom);
         }
 
         protected override void OnPause()
@@ -328,11 +275,11 @@ protected override void OnCreate(Bundle savedInstanceState)
                     {
                         sumwat += r.value;
                     }
-                    adapter.UpdateData(activedevicescount,sumwat, h.house_id);
-                    
+                    adapter.UpdateData(activedevicescount, sumwat, h.house_id);
+
                     RunOnUiThread(() => { adapter.NotifyDataSetChanged(); });
                 }
-                catch(System.Exception e)
+                catch (System.Exception e)
                 {
 
                 }
