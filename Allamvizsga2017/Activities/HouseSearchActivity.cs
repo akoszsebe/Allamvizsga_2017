@@ -12,6 +12,7 @@ using Android.Widget;
 using Android.Support.V7.App;
 using Allamvizsga2017.Models;
 using System.Threading;
+using Android.Views.InputMethods;
 
 namespace Allamvizsga2017.Activities
 {
@@ -23,8 +24,9 @@ namespace Allamvizsga2017.Activities
         string user_email { get; set; }
         List<House> user_houses { get; set; } = null;
 
+        Android.Support.V7.Widget.SearchView searchbar { get; set; } = null;
 
-    protected override void OnCreate(Bundle savedInstanceState)
+        protected override void OnCreate(Bundle savedInstanceState)
         {
             base.OnCreate(savedInstanceState);
 
@@ -33,7 +35,7 @@ namespace Allamvizsga2017.Activities
             user_email = Intent.GetStringExtra("User_email");
 
             var toolbar = FindViewById<Android.Support.V7.Widget.Toolbar>(Resource.Id.toolbar1);
-            var searchbar = FindViewById<Android.Support.V7.Widget.SearchView>(Resource.Id.searchView1);
+            searchbar = FindViewById<Android.Support.V7.Widget.SearchView>(Resource.Id.searchView1);
             mlistview = FindViewById<ListView>(Resource.Id.listViewSearchHouse);
             searchbar.QueryHint = "search for houses";
 
@@ -67,6 +69,14 @@ namespace Allamvizsga2017.Activities
             MenuInflater.Inflate(Resource.Menu.toolbar_menu_devicespage, menu);
             return base.OnCreateOptionsMenu(menu);
         }
+
+        public override bool OnTouchEvent(MotionEvent e)
+        {
+            InputMethodManager imm = (InputMethodManager)GetSystemService(Context.InputMethodService);
+            imm.HideSoftInputFromWindow(this.CurrentFocus.WindowToken, 0);
+            return base.OnTouchEvent(e);
+        }
+
 
         public override bool OnOptionsItemSelected(IMenuItem item)
         {

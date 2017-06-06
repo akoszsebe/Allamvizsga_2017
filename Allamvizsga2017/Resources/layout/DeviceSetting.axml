@@ -3,159 +3,158 @@
     android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
-  <android.support.v7.widget.Toolbar
-      android:layout_width="match_parent"
-      android:layout_height="wrap_content"
-      android:id="@+id/toolbar1"
-      android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
-      android:background="#4cc988" />
-  <ScrollView
-      android:layout_width="fill_parent"
-      android:layout_height="match_parent"
-      android:scrollbars="none"
-      android:fillViewport="true"
-      android:id="@+id/scrollView1">
-    <LinearLayout
-        android:orientation="vertical"
+    <android.support.v7.widget.Toolbar
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
-      <LinearLayout
-           android:orientation="horizontal"
-           android:layout_width="match_parent"
-           android:layout_height="wrap_content"
-           android:id="@+id/linearLayout1"
-           android:layout_marginLeft="15.0dp"
-           android:layout_marginTop="15.0dp"
-           android:layout_marginRight="15.0dp">
-        <TextView
-            android:text="Device Watt:"
-            android:textAppearance="?android:attr/textAppearanceLarge"
-            android:layout_width="wrap_content"
-            android:layout_height="match_parent"
-            android:id="@+id/textView12"
-            android:layout_marginLeft="10.0dp"
-            android:padding="1dp" />
-        <TextView
-            android:text="  Device Watt"
-            android:textAppearance="?android:attr/textAppearanceLarge"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:id="@+id/textViewDeviceWatt"
-            android:gravity="center"
-            android:layout_marginLeft="20.0dp"
-            android:padding="1dp" />
-      </LinearLayout>
-      <LinearLayout
-          android:orientation="vertical"
-          android:layout_width="match_parent"
-          android:layout_height="wrap_content"
-          android:background="@drawable/abc_popup_background_mtrl_mult">
-        <FrameLayout
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:id="@+id/frameLayout1"
-            android:layout_gravity="center">
-          <ImageView
-              android:layout_width="170dp"
-              android:layout_height="170dp"
-              android:id="@+id/imageView1"
-              android:layout_gravity="center_horizontal"
-              android:src="@android:drawable/ic_menu_gallery"
-              android:layout_marginTop="33.0dp"
-              android:layout_marginBottom="16.0dp" />
-          <Button
-              android:layout_width="60dp"
-              android:layout_height="60dp"
-              android:id="@+id/buttonediticon"
-              android:layout_gravity="bottom|end"
-              android:background="@drawable/edit_icon"
-              android:layout_marginBottom="5dp" />
-        </FrameLayout>
+        android:layout_height="wrap_content"
+        android:id="@+id/toolbar1"
+        android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
+        android:background="#4cc988" />
+    <ScrollView
+        android:layout_width="fill_parent"
+        android:layout_height="match_parent"
+        android:scrollbars="none"
+        android:fillViewport="true"
+        android:id="@+id/scrollView1">
         <LinearLayout
-            android:orientation="horizontal"
-            android:minHeight="1px"
+            android:orientation="vertical"
             android:layout_width="match_parent"
-            android:layout_height="1dp"
-            android:layout_marginBottom="10.0dp"
-            android:id="@+id/linearLayoutIcons">
-          <android.support.v7.widget.RecyclerView
-              android:id="@+id/recyclerView"
-              android:scrollbars="horizontal"
-              android:layout_width="fill_parent"
-              android:layout_height="fill_parent" />
+            android:layout_height="match_parent">
+            <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/linearLayout1"
+                android:layout_marginLeft="15.0dp"
+                android:layout_marginTop="15.0dp"
+                android:layout_marginRight="15.0dp">
+                <TextView
+                    android:text="Device Watt:"
+                    android:textAppearance="?android:attr/textAppearanceLarge"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:id="@+id/textView12"
+                    android:layout_marginLeft="10.0dp"
+                    android:padding="1dp" />
+                <TextView
+                    android:text="  Device Watt"
+                    android:textAppearance="?android:attr/textAppearanceLarge"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/textViewDeviceWatt"
+                    android:gravity="center"
+                    android:layout_marginLeft="20.0dp"
+                    android:padding="1dp" />
+            </LinearLayout>
+            <LinearLayout
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/abc_popup_background_mtrl_mult">
+                <FrameLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/frameLayout1"
+                    android:layout_gravity="center">
+                    <ImageView
+                        android:layout_width="170dp"
+                        android:layout_height="170dp"
+                        android:id="@+id/imageView1"
+                        android:layout_gravity="center_horizontal"
+                        android:src="@android:drawable/ic_menu_gallery"
+                        android:layout_marginTop="33.0dp"
+                        android:layout_marginBottom="16.0dp" />
+                    <Button
+                        android:layout_width="60dp"
+                        android:layout_height="60dp"
+                        android:id="@+id/buttonediticon"
+                        android:layout_gravity="bottom|end"
+                        android:background="@drawable/edit_icon"
+                        android:layout_marginBottom="5dp" />
+                </FrameLayout>
+                <LinearLayout
+                    android:orientation="horizontal"
+                    android:minHeight="1px"
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:layout_marginBottom="10.0dp"
+                    android:id="@+id/linearLayoutIcons">
+                    <android.support.v7.widget.RecyclerView
+                        android:id="@+id/recyclerView"
+                        android:scrollbars="horizontal"
+                        android:layout_width="fill_parent"
+                        android:layout_height="fill_parent" />
+                </LinearLayout>
+            </LinearLayout>
+            <LinearLayout
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/abc_popup_background_mtrl_mult">
+                <LinearLayout
+                    android:orientation="horizontal"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/linearLayout1"
+                    android:layout_marginLeft="15.0dp"
+                    android:layout_marginTop="15.0dp"
+                    android:layout_marginRight="15.0dp"
+                    android:layout_marginBottom="15.0dp">
+                    <TextView
+                        android:text="Device Name:"
+                        android:textAppearance="?android:attr/textAppearanceLarge"
+                        android:id="@+id/textViewDeviceName"
+                        android:gravity="center"
+                        android:layout_width="150dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="10.0dp"
+                        android:paddingBottom="2dp"
+                        android:paddingLeft="1dp" />
+                    <EditText
+                        android:id="@+id/textInputEditText1"
+                        android:gravity="center"
+                        android:cursorVisible="false"
+                        android:layout_marginLeft="15.0dp"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:singleLine="true"
+                        android:maxLength="16"
+                        android:inputType="textPersonName"
+                        android:layout_marginRight="4.0dp"
+                        android:layout_marginBottom="4.0dp"
+                        android:padding="1dp"
+                        android:drawableRight="@drawable/edit_icon_invert_48x48" />
+                </LinearLayout>
+                <LinearLayout
+                    android:orientation="horizontal"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/linearLayout1"
+                    android:layout_marginLeft="15.0dp"
+                    android:layout_marginTop="0.0dp"
+                    android:layout_marginRight="15.0dp"
+                    android:layout_marginBottom="15.0dp">
+                    <TextView
+                        android:text="Value Delay:"
+                        android:textAppearance="?android:attr/textAppearanceLarge"
+                        android:id="@+id/textViewValueDelay"
+                        android:gravity="center"
+                        android:layout_width="150dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="15.0dp"
+                        android:paddingBottom="2dp"
+                        android:paddingLeft="1dp"
+                        android:layout_gravity="center" />
+                    <NumberPicker
+                        android:layout_width="match_parent"
+                        android:layout_height="97.0dp"
+                        android:id="@+id/numberPickerValueDelay"
+                        android:gravity="center"
+                        android:layout_marginRight="4.0dp"
+                        android:layout_marginBottom="4.0dp"
+                        android:padding="1dp"
+                        android:layout_marginLeft="20.0dp" />
+                </LinearLayout>
+            </LinearLayout>
         </LinearLayout>
-      </LinearLayout>
-
-      <LinearLayout
-          android:orientation="vertical"
-          android:layout_width="match_parent"
-          android:layout_height="wrap_content"
-          android:background="@drawable/abc_popup_background_mtrl_mult">
-        <LinearLayout
-            android:orientation="horizontal"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:id="@+id/linearLayout1"
-            android:layout_marginLeft="15.0dp"
-            android:layout_marginTop="15.0dp"
-            android:layout_marginRight="15.0dp"
-            android:layout_marginBottom="15.0dp">
-          <TextView
-              android:text="Device Name:"
-              android:textAppearance="?android:attr/textAppearanceLarge"
-              android:id="@+id/textViewDeviceName"
-              android:gravity="center"
-              android:layout_width="wrap_content"
-              android:layout_height="wrap_content"
-              android:layout_marginLeft="10.0dp"
-              android:paddingBottom="2dp"
-              android:paddingLeft="1dp" />
-          <EditText
-              android:id="@+id/textInputEditText1"
-              android:gravity="center"
-              android:cursorVisible="false"
-              android:layout_marginLeft="15.0dp"
-              android:layout_width="match_parent"
-              android:layout_height="wrap_content"
-              android:singleLine="true"
-              android:maxLength="16"
-              android:inputType="textPersonName"
-              android:layout_marginRight="4.0dp"
-              android:layout_marginBottom="4.0dp"
-              android:padding="1dp"
-              android:drawableRight="@drawable/edit_icon_invert_48x48" />
-        </LinearLayout>
-        <LinearLayout
-            android:orientation="horizontal"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:id="@+id/linearLayout1"
-            android:layout_marginLeft="15.0dp"
-            android:layout_marginTop="0.0dp"
-            android:layout_marginRight="15.0dp"
-            android:layout_marginBottom="15.0dp">
-          <TextView
-              android:text="Value Delay:"
-              android:textAppearance="?android:attr/textAppearanceLarge"
-              android:id="@+id/textViewValueDelay"
-              android:gravity="center"
-              android:layout_width="wrap_content"
-              android:layout_height="wrap_content"
-              android:layout_marginLeft="15.0dp"
-              android:paddingBottom="2dp"
-              android:paddingLeft="1dp"
-              android:layout_gravity="center" />
-          <NumberPicker
-              android:layout_width="match_parent"
-              android:layout_height="97.0dp"
-              android:id="@+id/numberPickerValueDelay"
-              android:gravity="center"
-              android:layout_marginRight="4.0dp"
-              android:layout_marginBottom="4.0dp"
-              android:padding="1dp"
-              android:layout_marginLeft="20.0dp" />
-        </LinearLayout>
-      </LinearLayout>
-    </LinearLayout>
-  </ScrollView>
+    </ScrollView>
 </LinearLayout>

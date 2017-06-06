@@ -13,7 +13,7 @@ using System.Collections.Generic;
 
 namespace Allamvizsga2017
 {
-    [Activity(Label = "DeviceSettingActivity", WindowSoftInputMode = SoftInput.StateHidden, 
+    [Activity(Label = "DeviceSettingActivity", WindowSoftInputMode = SoftInput.StateHidden  , 
         ScreenOrientation = Android.Content.PM.ScreenOrientation.Portrait)]
     public class DeviceSettingActivity : AppCompatActivity
     {
@@ -41,7 +41,6 @@ namespace Allamvizsga2017
             original_value = Intent.GetIntExtra("original_value", 0);
             int iconid = Intent.GetIntExtra("icon_id", 0);
 
-            var tbhousename = FindViewById<TextView>(Resource.Id.textViewHouseName);
             var tbdevicevalue = FindViewById<TextView>(Resource.Id.textViewDeviceWatt);
             var ivicon = FindViewById<ImageView>(Resource.Id.imageView1);
             etdevicename = FindViewById<EditText>(Resource.Id.textInputEditText1);
@@ -49,6 +48,7 @@ namespace Allamvizsga2017
             var numberpicker = FindViewById<NumberPicker>(Resource.Id.numberPickerValueDelay);
             var btediticon = FindViewById<Button>(Resource.Id.buttonediticon);
             var layouticons = FindViewById<LinearLayout>(Resource.Id.linearLayoutIcons);
+            var scrollview = FindViewById<ScrollView>(Resource.Id.scrollView1);
 
             toolbar.SetTitleTextAppearance(this, Resource.Style.ActionBarTitle);
             SetSupportActionBar(toolbar);
@@ -58,6 +58,7 @@ namespace Allamvizsga2017
 
             ivicon.SetImageResource(iconid);
             etdevicename.Hint = devicename;
+            etdevicename.Text = devicename;
 
             numberpicker.MinValue = 0;
             numberpicker.MaxValue = 1000;
@@ -108,6 +109,14 @@ namespace Allamvizsga2017
                 layouticons.LayoutParameters.Height = (int)Android.Util.TypedValue.ApplyDimension(Android.Util.ComplexUnitType.Dip, 60, Resources.DisplayMetrics);
                 mRecyclerView.SetAdapter(mAdapter);
             };
+
+            scrollview.Clickable = true;
+            scrollview.Click += (e,s) => 
+            {
+                InputMethodManager imm = (InputMethodManager)GetSystemService(Context.InputMethodService);
+                imm.HideSoftInputFromWindow(this.CurrentFocus.WindowToken, 0);
+                etdevicename.SetCursorVisible(false);
+            };
         }
 
         public override bool OnCreateOptionsMenu(IMenu menu)
@@ -115,7 +124,6 @@ namespace Allamvizsga2017
             MenuInflater.Inflate(Resource.Menu.toolbar_menu_devicesetting, menu);
             return base.OnCreateOptionsMenu(menu);
         }
-
 
         public override bool OnOptionsItemSelected(IMenuItem item)
         {
@@ -147,7 +155,7 @@ namespace Allamvizsga2017
         public override bool OnTouchEvent(MotionEvent e)
         {
             InputMethodManager imm = (InputMethodManager)GetSystemService(Context.InputMethodService);
-            imm.HideSoftInputFromWindow(etdevicename.WindowToken, 0);
+            imm.HideSoftInputFromWindow(this.CurrentFocus.WindowToken, 0);
             etdevicename.SetCursorVisible(false);
             return base.OnTouchEvent(e);
         }

@@ -80,7 +80,7 @@ namespace Allamvizsga2017.Activities
         public override bool OnTouchEvent(MotionEvent e)
         {
             InputMethodManager imm = (InputMethodManager)GetSystemService(Context.InputMethodService);
-            imm.HideSoftInputFromWindow(tiemail.WindowToken, 0);
+            imm.HideSoftInputFromWindow(this.CurrentFocus.WindowToken, 0);
             return base.OnTouchEvent(e);
         }
     }

@@ -12,6 +12,7 @@ using Android.Widget;
 using Android.Support.V7.App;
 using System.Threading;
 using Allamvizsga2017.Models;
+using Android.Views.InputMethods;
 
 namespace Allamvizsga2017.Activities
 {
@@ -19,6 +20,8 @@ namespace Allamvizsga2017.Activities
         ScreenOrientation = Android.Content.PM.ScreenOrientation.Portrait)]
     public class HouseRegistrationActivity : AppCompatActivity
     {
+        EditText tihouse_id;
+
         protected override void OnCreate(Bundle savedInstanceState)
         {
             base.OnCreate(savedInstanceState);
@@ -34,7 +37,7 @@ namespace Allamvizsga2017.Activities
             SupportActionBar.SetDisplayHomeAsUpEnabled(true);
             SupportActionBar.SetHomeButtonEnabled(true);
 
-            var tihouse_id = FindViewById<EditText>(Resource.Id.textInputHouseId);
+            tihouse_id = FindViewById<EditText>(Resource.Id.textInputHouseId);
             var tihouse_name = FindViewById<EditText>(Resource.Id.textInputHouseName);
             var tihouse_password = FindViewById<EditText>(Resource.Id.textInputPassword);
             var btregistration = FindViewById<Button>(Resource.Id.buttonHouseRegister);
@@ -123,6 +126,13 @@ namespace Allamvizsga2017.Activities
         {
             MenuInflater.Inflate(Resource.Menu.toolbar_menu_devicespage, menu);
             return base.OnCreateOptionsMenu(menu);
+        }
+
+        public override bool OnTouchEvent(MotionEvent e)
+        {
+            InputMethodManager imm = (InputMethodManager)GetSystemService(Context.InputMethodService);
+            imm.HideSoftInputFromWindow(tihouse_id.WindowToken, 0);
+            return base.OnTouchEvent(e);
         }
 
         public override bool OnOptionsItemSelected(IMenuItem item)
