@@ -9,6 +9,10 @@
         android:id="@+id/toolbar1"
         android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
         android:background="#4cc988" />
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="5dp"
+        android:background="@drawable/toolbar_dropshadow" />
     <ScrollView
         android:layout_width="fill_parent"
         android:layout_height="match_parent"
@@ -28,7 +32,7 @@
                 android:layout_marginTop="15.0dp"
                 android:layout_marginRight="15.0dp">
                 <TextView
-                    android:text="Device Watt:"
+                    android:text="Device Watt :"
                     android:textAppearance="?android:attr/textAppearanceLarge"
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
@@ -100,10 +104,10 @@
                     android:layout_marginRight="15.0dp"
                     android:layout_marginBottom="15.0dp">
                     <TextView
-                        android:text="Device Name:"
+                        android:text="Device Name :"
                         android:textAppearance="?android:attr/textAppearanceLarge"
                         android:id="@+id/textViewDeviceName"
-                        android:gravity="center"
+                        android:gravity="right"
                         android:layout_width="150dp"
                         android:layout_height="wrap_content"
                         android:layout_marginLeft="10.0dp"
@@ -134,10 +138,10 @@
                     android:layout_marginRight="15.0dp"
                     android:layout_marginBottom="15.0dp">
                     <TextView
-                        android:text="Value Delay:"
+                        android:text="Value Delay :"
                         android:textAppearance="?android:attr/textAppearanceLarge"
                         android:id="@+id/textViewValueDelay"
-                        android:gravity="center"
+                        android:gravity="right"
                         android:layout_width="150dp"
                         android:layout_height="wrap_content"
                         android:layout_marginLeft="15.0dp"
@@ -146,13 +150,14 @@
                         android:layout_gravity="center" />
                     <NumberPicker
                         android:layout_width="match_parent"
-                        android:layout_height="97.0dp"
+                        android:layout_height="80.0dp"
                         android:id="@+id/numberPickerValueDelay"
                         android:gravity="center"
                         android:layout_marginRight="4.0dp"
                         android:layout_marginBottom="4.0dp"
+                        android:theme="@style/MyAlertDialogStyle"
                         android:padding="1dp"
-                        android:layout_marginLeft="20.0dp" />
+                        android:layout_marginLeft="15.0dp" />
                 </LinearLayout>
             </LinearLayout>
         </LinearLayout>

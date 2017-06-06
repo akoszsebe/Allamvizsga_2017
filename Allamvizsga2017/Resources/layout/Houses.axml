@@ -3,140 +3,143 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
-    <LinearLayout
-        android:orientation="vertical"
+  <LinearLayout
+      android:orientation="vertical"
+      android:layout_width="match_parent"
+      android:layout_height="match_parent"
+      android:id="@+id/layoutcontainer">
+    <android.support.v7.widget.Toolbar
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:id="@+id/layoutcontainer">
-        <android.support.v7.widget.Toolbar
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:id="@+id/toolbar1"
-            android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
-            android:background="#4cc988" />
-        <TextView
-            android:text="Your Houses"
-            android:textAppearance="?android:attr/textAppearanceMedium"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:id="@+id/textView1"
-            android:gravity="center_horizontal"
-            android:background="#d4ddd8"
-            android:layout_marginTop="15dp" />
-        <android.support.v4.widget.SwipeRefreshLayout
-            android:id="@+id/refresher"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent">
-            <FrameLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content">
-                <ListView
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:id="@+id/listViewHouses" />
-            </FrameLayout>
-        </android.support.v4.widget.SwipeRefreshLayout>
-    </LinearLayout>
-    <LinearLayout
-        android:orientation="vertical"
+        android:layout_height="wrap_content"
+        android:id="@+id/toolbar1"
+        android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
+        android:background="#4cc988" />
+      <View android:layout_width="match_parent"
+            android:layout_height="5dp"
+            android:background="@drawable/toolbar_dropshadow"/>
+    <TextView
+        android:text="Your Houses"
+        android:textAppearance="?android:attr/textAppearanceMedium"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:id="@+id/layouttransparent">
+        android:layout_height="wrap_content"
+        android:id="@+id/textView1"
+        android:gravity="center_horizontal"
+        android:background="#d4ddd8"
+        android:layout_marginTop="15dp" />
+    <android.support.v4.widget.SwipeRefreshLayout
+        android:id="@+id/refresher"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+      <FrameLayout
+          android:layout_width="match_parent"
+          android:layout_height="wrap_content">
+        <ListView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:id="@+id/listViewHouses" />
+      </FrameLayout>
+    </android.support.v4.widget.SwipeRefreshLayout>
+  </LinearLayout>
+  <LinearLayout
+      android:orientation="vertical"
+      android:layout_width="match_parent"
+      android:layout_height="match_parent"
+      android:id="@+id/layouttransparent">
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+      <LinearLayout
+          android:orientation="vertical"
+          android:layout_width="match_parent"
+          android:layout_height="wrap_content"
+          android:layout_gravity="end|bottom"
+          android:id="@+id/layoutfloatingbutton">
         <FrameLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent">
-            <LinearLayout
-                android:orientation="vertical"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_gravity="end|bottom"
-                android:id="@+id/layoutfloatingbutton">
-                <FrameLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content">
-                    <android.support.design.widget.FloatingActionButton
-                        android:id="@+id/fab_4"
-                        android:layout_width="50dp"
-                        android:layout_height="50dp"
-                        android:layout_gravity="bottom|end"
-                        android:layout_marginRight="8dp"
-                        android:src="@drawable/add_house_icon"
-                        android:visibility="invisible"
-                        app:backgroundTint="#dd4252"
-                        app:fabSize="mini" />
-                    <TextView
-                        android:text="Register House"
-                        android:textAppearance="?android:attr/textAppearanceLarge"
-                        android:layout_width="wrap_content"
-                        android:layout_height="50dp"
-                        android:layout_gravity="center|end"
-                        android:gravity="center"
-                        android:visibility="invisible"
-                        android:textColor="#ffffff"
-                        android:id="@+id/textView_fab_registerhouse"
-                        android:layout_marginRight="50dp" />
-                </FrameLayout>
-                <FrameLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content">
-                    <android.support.design.widget.FloatingActionButton
-                        android:id="@+id/fab_3"
-                        android:layout_width="50dp"
-                        android:layout_height="50dp"
-                        android:layout_gravity="bottom|end"
-                        android:layout_marginRight="8dp"
-                        android:src="@drawable/add_smartwatch_icon"
-                        android:visibility="invisible"
-                        app:backgroundTint="#1d4252"
-                        app:fabSize="mini" />
-                    <TextView
-                        android:text="Add SmartWatch"
-                        android:textAppearance="?android:attr/textAppearanceLarge"
-                        android:layout_width="wrap_content"
-                        android:layout_height="50dp"
-                        android:layout_gravity="center|end"
-                        android:visibility="invisible"
-                        android:gravity="center"
-                        android:textColor="#ffffff"
-                        android:id="@+id/textView_fab_add"
-                        android:layout_marginRight="50dp" />
-                </FrameLayout>
-                <FrameLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content">
-                    <android.support.design.widget.FloatingActionButton
-                        android:id="@+id/fab_2"
-                        android:layout_width="50dp"
-                        android:layout_height="50dp"
-                        android:layout_gravity="bottom|end"
-                        android:layout_marginRight="8dp"
-                        android:src="@drawable/search_icon"
-                        android:visibility="invisible"
-                        app:backgroundTint="#4cc988"
-                        app:fabSize="mini" />
-                    <TextView
-                        android:text="Search House"
-                        android:textAppearance="?android:attr/textAppearanceLarge"
-                        android:layout_width="wrap_content"
-                        android:layout_height="50dp"
-                        android:layout_gravity="center|end"
-                        android:visibility="invisible"
-                        android:gravity="center"
-                        android:textColor="#ffffff"
-                        android:id="@+id/textView_fab_search"
-                        android:layout_marginRight="50dp" />
-                </FrameLayout>
-                <android.support.design.widget.FloatingActionButton
-                    android:id="@+id/fab_1"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="bottom|end"
-                    android:src="@drawable/add_icon"
-                    android:layout_marginBottom="16dp"
-                    android:layout_marginRight="8dp"
-                    app:backgroundTint="#d81a99"
-                    app:fabSize="normal" />
-            </LinearLayout>
+            android:layout_height="wrap_content">
+          <android.support.design.widget.FloatingActionButton
+              android:id="@+id/fab_4"
+              android:layout_width="50dp"
+              android:layout_height="50dp"
+              android:layout_gravity="bottom|end"
+              android:layout_marginRight="8dp"
+              android:src="@drawable/add_house_icon"
+              android:visibility="invisible"
+              app:backgroundTint="#dd4252"
+              app:fabSize="mini" />
+          <TextView
+              android:text="Register House"
+              android:textAppearance="?android:attr/textAppearanceLarge"
+              android:layout_width="wrap_content"
+              android:layout_height="50dp"
+              android:layout_gravity="center|end"
+              android:gravity="center"
+              android:visibility="invisible"
+              android:textColor="#ffffff"
+              android:id="@+id/textView_fab_registerhouse"
+              android:layout_marginRight="50dp" />
         </FrameLayout>
-    </LinearLayout>
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+          <android.support.design.widget.FloatingActionButton
+              android:id="@+id/fab_3"
+              android:layout_width="50dp"
+              android:layout_height="50dp"
+              android:layout_gravity="bottom|end"
+              android:layout_marginRight="8dp"
+              android:src="@drawable/add_smartwatch_icon"
+              android:visibility="invisible"
+              app:backgroundTint="#1d4252"
+              app:fabSize="mini" />
+          <TextView
+              android:text="Add SmartWatch"
+              android:textAppearance="?android:attr/textAppearanceLarge"
+              android:layout_width="wrap_content"
+              android:layout_height="50dp"
+              android:layout_gravity="center|end"
+              android:visibility="invisible"
+              android:gravity="center"
+              android:textColor="#ffffff"
+              android:id="@+id/textView_fab_add"
+              android:layout_marginRight="50dp" />
+        </FrameLayout>
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+          <android.support.design.widget.FloatingActionButton
+              android:id="@+id/fab_2"
+              android:layout_width="50dp"
+              android:layout_height="50dp"
+              android:layout_gravity="bottom|end"
+              android:layout_marginRight="8dp"
+              android:src="@drawable/search_icon"
+              android:visibility="invisible"
+              app:backgroundTint="#4cc988"
+              app:fabSize="mini" />
+          <TextView
+              android:text="Search House"
+              android:textAppearance="?android:attr/textAppearanceLarge"
+              android:layout_width="wrap_content"
+              android:layout_height="50dp"
+              android:layout_gravity="center|end"
+              android:visibility="invisible"
+              android:gravity="center"
+              android:textColor="#ffffff"
+              android:id="@+id/textView_fab_search"
+              android:layout_marginRight="50dp" />
+        </FrameLayout>
+        <android.support.design.widget.FloatingActionButton
+            android:id="@+id/fab_1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom|end"
+            android:src="@drawable/add_icon"
+            android:layout_marginBottom="16dp"
+            android:layout_marginRight="8dp"
+            app:backgroundTint="#d81a99"
+            app:fabSize="normal" />
+      </LinearLayout>
+    </FrameLayout>
+  </LinearLayout>
 </FrameLayout>

@@ -4,8 +4,8 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:minWidth="25px"
-    android:minHeight="25px"
-    android:background="#e9f9f0">
+    android:minHeight="25px">
+<!--android:background="#e9f9f0"-->
     <ImageView
         android:src="@drawable/icon"
         android:layout_width="match_parent"

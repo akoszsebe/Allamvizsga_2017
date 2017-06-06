@@ -8,7 +8,7 @@ using Android.App;
 
 namespace Allamvizsga2017.Models
 {
-    class MyHouseSearchAdapter: BaseAdapter
+    class MyHouseSearchAdapter : BaseAdapter
     {
 
         List<ListViewItemHouse> itemList;
@@ -16,7 +16,7 @@ namespace Allamvizsga2017.Models
         Activity activity;
         string user_email;
 
-        public MyHouseSearchAdapter(Activity context,string user_email)
+        public MyHouseSearchAdapter(Activity context, string user_email)
         {
             this.activity = context;
             this.context = context;
@@ -47,6 +47,7 @@ namespace Allamvizsga2017.Models
             var tvhouse_name = view.FindViewById<TextView>(Resource.Id.tvHouseName);
             var tvhouse_id = view.FindViewById<TextView>(Resource.Id.tvHouseId);
             var btadd = view.FindViewById<ImageView>(Resource.Id.imageviewHouseSearch);
+            var viewfordelete = view.FindViewById<ImageView>(Resource.Id.viewfordelete);
 
             tvhouse_name.Text = itemList[position].house_name;
             tvhouse_id.Text += itemList[position].house_id.ToString();
@@ -70,7 +71,7 @@ namespace Allamvizsga2017.Models
                         {
                             activity.RunOnUiThread(() =>
                             {
-                                progress.Dismiss();                     
+                                progress.Dismiss();
                                 btadd.LayoutParameters.Width += 10;
                                 btadd.SetImageResource(Resource.Drawable.done_green);
                             });
@@ -95,9 +96,37 @@ namespace Allamvizsga2017.Models
             else
             {
                 btadd.LayoutParameters.Width += 10;
-                btadd.Left  += 10;
+                btadd.Left += 10;
                 btadd.SetImageResource(Resource.Drawable.done_green);
             }
+
+            int width = 0;
+            int initialx = 0;
+            int currentx = 0;
+            Android.Support.Design.Widget.AppBarLayout.LayoutParams lparams = new Android.Support.Design.Widget.AppBarLayout.LayoutParams(width, ViewGroup.LayoutParams.MatchParent);
+            view.Touch += (v, e) =>
+                {
+                    if (e.Event.Action == MotionEventActions.Down)
+                    {
+                        width = 0;
+                        lparams.Width = width;
+                        viewfordelete.LayoutParameters = lparams;
+                        initialx = (int)e.Event.GetX();
+                        currentx = (int)e.Event.GetX();
+                    }
+                    if (e.Event.Action == MotionEventActions.Move)
+                    {
+                        currentx = (int)e.Event.GetX();
+                        width = -(currentx - initialx);
+                        if (width < 150)
+                            lparams.Width = width;
+                        viewfordelete.LayoutParameters = lparams;
+                    }
+                    if (e.Event.Action == MotionEventActions.Up)
+                    {
+
+                    }
+                };
             return view;
         }
 

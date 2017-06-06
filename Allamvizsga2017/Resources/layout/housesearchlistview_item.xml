@@ -37,4 +37,10 @@
       android:layout_gravity="center"
       android:gravity="center"
       android:src="@drawable/add_house"/>
+  <ImageView
+       android:layout_width="0dp"
+       android:id="@+id/viewfordelete"
+       android:background="#df3431"
+       android:layout_height="match_parent"
+       android:src="@drawable/delete_black"/>
 </LinearLayout>

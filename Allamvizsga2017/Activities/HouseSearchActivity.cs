@@ -109,13 +109,18 @@ namespace Allamvizsga2017.Activities
                     {
                         for (int i = 0; i < houses.Count; i++)
                         {
-                            if (user_houses.Exists(x => x.house_id == houses[i].house_id))
-                            {
-                                items.Add(new ListViewItemHouse(i, houses[i].house_id, houses[i].house_name, houses[i].password,true));
-                            }
+                            if (user_houses != null)
+                                if (user_houses.Exists(x => x.house_id == houses[i].house_id))
+                                {
+                                    items.Add(new ListViewItemHouse(i, houses[i].house_id, houses[i].house_name, houses[i].password, true));
+                                }
+                                else
+                                {
+                                    items.Add(new ListViewItemHouse(i, houses[i].house_id, houses[i].house_name, houses[i].password, false));
+                                }
                             else
                             {
-                                items.Add(new ListViewItemHouse(i, houses[i].house_id, houses[i].house_name, houses[i].password,false));
+                                items.Add(new ListViewItemHouse(i, houses[i].house_id, houses[i].house_name, houses[i].password, false));
                             }
                         }
                         adapter.AddData(items);

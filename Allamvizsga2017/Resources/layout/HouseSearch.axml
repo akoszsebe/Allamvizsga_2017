@@ -5,41 +5,44 @@
     android:layout_height="match_parent"
     android:minWidth="25px"
     android:minHeight="25px">
-    <android.support.v7.widget.Toolbar
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/toolbar1"
-        android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
-        android:background="#4cc988" />
+  <android.support.v7.widget.Toolbar
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:id="@+id/toolbar1"
+      android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
+      android:background="#4cc988" />
+  <LinearLayout
+      android:orientation="vertical"
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:minWidth="25px"
+      android:minHeight="25px"
+      android:background="#4cc988">
     <LinearLayout
         android:orientation="vertical"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:minWidth="25px"
         android:minHeight="25px"
-        android:background="#4cc988">
-        <LinearLayout
-            android:orientation="vertical"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:minWidth="25px"
-            android:minHeight="25px"
-            android:id="@+id/lenearlay"
-            android:layout_marginBottom="5dp"
-            android:layout_marginLeft="5dp"
-            android:layout_marginRight="5dp">
-            <android.support.v7.widget.SearchView
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:id="@+id/searchView1"
-                android:clickable="true"
-                android:background="#ffffff" />
-        </LinearLayout>
+        android:id="@+id/lenearlay"
+        android:layout_marginBottom="5dp"
+        android:layout_marginLeft="5dp"
+        android:layout_marginRight="5dp">
+      <android.support.v7.widget.SearchView
+          android:layout_width="match_parent"
+          android:layout_height="match_parent"
+          android:id="@+id/searchView1"
+          android:clickable="true"
+          android:background="@drawable/abc_popup_background_mtrl_mult" />
     </LinearLayout>
-    <ListView
-        android:minWidth="25px"
-        android:minHeight="25px"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:id="@+id/listViewSearchHouse" />
+  </LinearLayout>
+  <View android:layout_width="match_parent"
+            android:layout_height="5dp"
+            android:background="@drawable/toolbar_dropshadow"/>
+  <ListView
+      android:minWidth="25px"
+      android:minHeight="25px"
+      android:layout_width="match_parent"
+      android:layout_height="match_parent"
+      android:id="@+id/listViewSearchHouse" />
 </LinearLayout>
