@@ -7,14 +7,14 @@
   <!-- view background color -->
   <!--"#17ea53"-->
   <solid
-      android:color="#4ae27b"
+      android:color="@color/colorPrimary"
       >
   </solid>
 
   <!-- view border color and width -->
   <stroke
       android:width="2dp"
-      android:color="#4ae27b" >
+      android:color="@color/colorPrimary" >
   </stroke>
 
   <!-- Here is the corner radius -->

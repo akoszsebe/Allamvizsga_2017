@@ -119,8 +119,9 @@ namespace Allamvizsga2017.Activities
                                 RunOnUiThread(() =>
                                 {
                                     progress.Dismiss();
-                                    Android.App.AlertDialog.Builder alert = new Android.App.AlertDialog.Builder(this);
+                                    Android.Support.V7.App.AlertDialog.Builder alert = new Android.Support.V7.App.AlertDialog.Builder(this, Resource.Style.MyAlertDialogStyle);
                                     alert.SetTitle("Successful");
+                                    alert.SetCancelable(true);
                                     Dialog dialog = alert.Create();
                                     dialog.Show();
                                 });
@@ -130,9 +131,10 @@ namespace Allamvizsga2017.Activities
                                 RunOnUiThread(() =>
                                 {
                                     progress.Dismiss();
-                                    Android.App.AlertDialog.Builder alert = new Android.App.AlertDialog.Builder(this);
+                                    Android.Support.V7.App.AlertDialog.Builder alert = new Android.Support.V7.App.AlertDialog.Builder(this, Resource.Style.MyAlertDialogStyle);
                                     alert.SetTitle("Error");
                                     alert.SetMessage("Registerd but don`t added to yout house list");
+                                    alert.SetCancelable(true);
                                     Dialog dialog = alert.Create();
                                     dialog.Show();
                                 });
@@ -143,9 +145,10 @@ namespace Allamvizsga2017.Activities
                             RunOnUiThread(() =>
                             {
                                 progress.Dismiss();
-                                Android.App.AlertDialog.Builder alert = new Android.App.AlertDialog.Builder(this);
+                                Android.Support.V7.App.AlertDialog.Builder alert = new Android.Support.V7.App.AlertDialog.Builder(this, Resource.Style.MyAlertDialogStyle);
                                 alert.SetTitle("Can`t Registerd");
                                 alert.SetMessage("Try again");
+                                alert.SetCancelable(true);
                                 Dialog dialog = alert.Create();
                                 dialog.Show();
                             });
