@@ -10,7 +10,7 @@
       android:layout_height="wrap_content"
       android:id="@+id/toolbar1"
       android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
-      android:background="#4cc988" />
+      android:background="@color/colorPrimary" />
   <View
       android:layout_width="match_parent"
       android:layout_height="5dp"
@@ -57,7 +57,7 @@
             android:layout_marginBottom="30dp"
             android:layout_marginLeft="30.5dp"
             android:layout_marginRight="30.5dp"
-            android:background="#4cc988"
+            android:background="@color/colorPrimary"
             android:gravity="center"
             android:layout_gravity="bottom" />
       </LinearLayout>

@@ -13,7 +13,7 @@
         android:layout_height="wrap_content"
         android:id="@+id/toolbar1"
         android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
-        android:background="#4cc988" />
+        android:background="@color/colorPrimary" />
       <View android:layout_width="match_parent"
             android:layout_height="5dp"
             android:background="@drawable/toolbar_dropshadow"/>
@@ -65,7 +65,7 @@
               android:layout_marginRight="8dp"
               android:src="@drawable/add_house_icon"
               android:visibility="invisible"
-              app:backgroundTint="#dd4252"
+              app:backgroundTint="@color/fab4"
               app:fabSize="mini" />
           <TextView
               android:text="Register House"
@@ -90,7 +90,7 @@
               android:layout_marginRight="8dp"
               android:src="@drawable/add_smartwatch_icon"
               android:visibility="invisible"
-              app:backgroundTint="#1d4252"
+              app:backgroundTint="@color/fab3"
               app:fabSize="mini" />
           <TextView
               android:text="Add SmartWatch"
@@ -115,7 +115,7 @@
               android:layout_marginRight="8dp"
               android:src="@drawable/search_icon"
               android:visibility="invisible"
-              app:backgroundTint="#4cc988"
+              app:backgroundTint="@color/fab2"
               app:fabSize="mini" />
           <TextView
               android:text="Search House"
@@ -137,7 +137,7 @@
             android:src="@drawable/add_icon"
             android:layout_marginBottom="16dp"
             android:layout_marginRight="8dp"
-            app:backgroundTint="#d81a99"
+            app:backgroundTint="@color/fab1"
             app:fabSize="normal" />
       </LinearLayout>
     </FrameLayout>

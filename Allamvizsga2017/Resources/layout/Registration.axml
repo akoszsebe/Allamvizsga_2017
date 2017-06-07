@@ -51,7 +51,7 @@
         android:layout_marginBottom="20.5dp"
         android:layout_marginLeft="30.5dp"
         android:layout_marginRight="30.5dp"
-        android:background="#4cc988" />
+        android:background="@color/colorPrimary" />
     <TextView
         android:textAppearance="?android:attr/textAppearanceMedium"
         android:layout_width="match_parent"

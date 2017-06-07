@@ -1,0 +1,9 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<resources>
+  <color name="colorPrimary" type="color">#1abc9c</color>
+  <color name="colorPrimaryOld" type="color">#4cc988</color>
+  <color name="fab4" type="color">#dd4252</color>
+  <color name="fab3" type="color">#4cc988</color>
+  <color name="fab2" type="color">#d81a99</color>
+  <color name="fab1" type="color">#1abc9c</color>
+</resources>

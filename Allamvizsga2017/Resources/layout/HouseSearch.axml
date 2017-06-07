@@ -10,14 +10,14 @@
       android:layout_height="wrap_content"
       android:id="@+id/toolbar1"
       android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
-      android:background="#4cc988" />
+      android:background="@color/colorPrimary" />
   <LinearLayout
       android:orientation="vertical"
       android:layout_width="match_parent"
       android:layout_height="wrap_content"
       android:minWidth="25px"
       android:minHeight="25px"
-      android:background="#4cc988">
+      android:background="@color/colorPrimary">
     <LinearLayout
         android:orientation="vertical"
         android:layout_width="match_parent"
