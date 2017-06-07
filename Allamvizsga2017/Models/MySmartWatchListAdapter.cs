@@ -54,7 +54,7 @@ namespace Allamvizsga2017.Models
 
             tvhouse_name.Text = itemList[position].smartwatch_id;
 
-            int tmp = position;
+            
 
             btadd.LayoutParameters.Width += 10;
             btadd.Left += 10;
@@ -79,15 +79,19 @@ namespace Allamvizsga2017.Models
                 {
                     currentx = (int)e.Event.GetX();
                     width = -(currentx - initialx);
-                    if (width < 150)
+                    if (width < (int)Android.Util.TypedValue.ApplyDimension(Android.Util.ComplexUnitType.Dip, 50, parent.Resources.DisplayMetrics))
                         lparams.Width = width;
                     viewfordelete.LayoutParameters = lparams;
                 }
-                if (e.Event.Action == MotionEventActions.Up)
-                {
-
-                }
             };
+
+            int tmp = position;
+            viewfordelete.Click += delegate
+            {
+                itemList.RemoveAt(tmp);
+                this.NotifyDataSetChanged();
+            };
+
             return view;
         }
 

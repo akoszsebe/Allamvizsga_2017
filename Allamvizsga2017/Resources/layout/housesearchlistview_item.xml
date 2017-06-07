@@ -40,7 +40,7 @@
   <ImageView
        android:layout_width="0dp"
        android:id="@+id/viewfordelete"
-       android:background="#df3431"
+       android:background="#e74c3c"
        android:layout_height="match_parent"
        android:src="@drawable/delete_black"/>
 </LinearLayout>

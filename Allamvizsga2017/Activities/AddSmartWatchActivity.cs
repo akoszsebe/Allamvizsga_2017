@@ -54,7 +54,7 @@ namespace Allamvizsga2017.Activities
                     AddSmarWatch(tismartwatch_id.Text);
                 }
                 else
-                    tismartwatch_id.Error = "Id: xxxxx";
+                    tismartwatch_id.Error = "Id: XXXXX";
             };
         }
 
