@@ -121,6 +121,8 @@
     <Compile Include="Activities\LoginActivity.cs" />
     <Compile Include="Activities\Notification.cs" />
     <Compile Include="Activities\RegistrationActivity.cs" />
+    <Compile Include="Activities\ForgetPasswordActivity.cs" />
+    <Compile Include="Activities\ResetPasswordActivity.cs" />
     <Compile Include="Chart\MyLineChart.cs" />
     <Compile Include="Chart\MyLineChartComplex.cs" />
     <Compile Include="Chart\MyPieChart.cs" />
@@ -220,6 +222,12 @@
       <SubType>Designer</SubType>
     </AndroidResource>
     <AndroidResource Include="Resources\layout\AddSmartWatch.axml">
+      <SubType>Designer</SubType>
+    </AndroidResource>
+    <AndroidResource Include="Resources\layout\ForgetPassword.axml">
+      <SubType>Designer</SubType>
+    </AndroidResource>
+    <AndroidResource Include="Resources\layout\ResetPassword.axml">
       <SubType>Designer</SubType>
     </AndroidResource>
   </ItemGroup>
@@ -431,7 +439,15 @@
     <AndroidResource Include="Resources\drawable\User_24.png" />
   </ItemGroup>
   <ItemGroup>
-    <AndroidResource Include="Resources\values\colors.xml" />
+    <AndroidResource Include="Resources\values\colors.xml">
+      <SubType>Designer</SubType>
+    </AndroidResource>
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable\False_24.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable\True_24.png" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\Android\Xamarin.Android.CSharp.targets" />
   <Import Project="..\packages\Xamarin.Android.Support.Vector.Drawable.23.4.0.1\build\Xamarin.Android.Support.Vector.Drawable.targets" Condition="Exists('..\packages\Xamarin.Android.Support.Vector.Drawable.23.4.0.1\build\Xamarin.Android.Support.Vector.Drawable.targets')" />

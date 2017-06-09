@@ -31,18 +31,21 @@ namespace Allamvizsga2017.Activities
             house_name = Intent.GetStringExtra("house_name");
             user_email = Intent.GetStringExtra("user_email");
             house_id = Intent.GetStringExtra("house_id");
-            var tbhousename = FindViewById<TextView>(Resource.Id.textViewHouseName);
-
-            tbhousename.Text = house_name + " " + user_email + " " + house_id;
             
             var toolbar = FindViewById<Android.Support.V7.Widget.Toolbar>(Resource.Id.toolbar1);
-
-
             toolbar.SetTitleTextAppearance(this, Resource.Style.ActionBarTitle);
             SetSupportActionBar(toolbar);
             SupportActionBar.Title = "House Settings";
             SupportActionBar.SetDisplayHomeAsUpEnabled(true);
             SupportActionBar.SetHomeButtonEnabled(true);
+
+
+            var tehouseid = FindViewById<TextView>(Resource.Id.textViewHouseId);
+            var tihousename = FindViewById<EditText>(Resource.Id.textInputHouseName);
+
+            tehouseid.Text = house_id;
+            tihousename.Text = house_name;
+            tihousename.Hint = house_name;
         }
 
 

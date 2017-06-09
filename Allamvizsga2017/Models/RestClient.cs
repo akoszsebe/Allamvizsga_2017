@@ -8,7 +8,7 @@ namespace Allamvizsga2017.Models
 {
     class RestClient
     {
-        static string ip = "allamvizsga-akoszsebe.c9users.io";//"192.168.1.101";//
+        static string ip = "allamvizsga-akoszsebe.c9users.io";//"192.168.0.106"//fekete feher szurke
         static string port = "";//":8080";
 
 
@@ -656,5 +656,86 @@ namespace Allamvizsga2017.Models
             }
         }
 
+        public static bool RequestResetCode(string user_email)
+        {
+            var request = WebRequest.Create(@"http://" + ip + "" + port + "/resetuserpassword"
+            + "?user_email=" + user_email);
+            request.ContentType = "application/json";
+            request.Method = "GET";
+            request.Timeout = 3000;
+
+            try
+            {
+                using (HttpWebResponse response = request.GetResponse() as HttpWebResponse)
+                {
+                    if (response.StatusCode != HttpStatusCode.OK)
+                    {
+                        return false;
+                    }
+
+                    using (StreamReader reader = new StreamReader(response.GetResponseStream()))
+                    {
+                        var content = reader.ReadToEnd();
+                        if (string.IsNullOrWhiteSpace(content))
+                        {
+                            response.Close();
+                            return false;
+                        }
+                        else
+                        {
+                            response.Close();
+                            return JsonConvert.DeserializeObject<bool>(content);
+                        }
+                    }
+                }
+
+            }
+            catch (Exception ex)
+            {
+                return false;
+            }
+        }
+
+
+        public static bool VerifyResetCode(string user_email,string reset_code)
+        {
+            var request = WebRequest.Create(@"http://" + ip + "" + port + "/getresetuserpassword"
+            + "?user_email=" + user_email
+            + "&reset_code=" + reset_code);
+            request.ContentType = "application/json";
+            request.Method = "GET";
+            request.Timeout = 4000;
+
+            try
+            {
+                using (HttpWebResponse response = request.GetResponse() as HttpWebResponse)
+                {
+                    if (response.StatusCode != HttpStatusCode.OK)
+                    {
+                        return false;
+                    }
+
+                    using (StreamReader reader = new StreamReader(response.GetResponseStream()))
+                    {
+                        var content = reader.ReadToEnd();
+                        if (string.IsNullOrWhiteSpace(content))
+                        {
+                            response.Close();
+                            return false;
+                        }
+                        else
+                        {
+                            response.Close();
+                            return JsonConvert.DeserializeObject<bool>(content);
+                        }
+                    }
+                }
+
+            }
+            catch (Exception ex)
+            {
+                return false;
+            }
+        }
     }
 }

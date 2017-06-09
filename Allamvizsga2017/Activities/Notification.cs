@@ -10,7 +10,7 @@ using System.Collections.Generic;
 
 namespace Allamvizsga2017.Activities
 {
-    [Activity(Label = "Notification")]
+    [Activity(Label = "Notification", MainLauncher = true, Icon = "@drawable/icon", ScreenOrientation = ScreenOrientation.Portrait)]
     public class Notification : Activity
     {
         public Socket socket = IO.Socket("http://allamvizsga-akoszsebe.c9users.io");
@@ -23,7 +23,7 @@ namespace Allamvizsga2017.Activities
             TextView text = FindViewById<TextView>(Resource.Id.textView1);
             connect.Click += delegate
             {
-                socket.Connect().Emit("register", "{ \"id\" : \"12\" , \"house_ids\" : [ \"1\" ]}");
+                
             };
             
 
@@ -50,6 +50,15 @@ namespace Allamvizsga2017.Activities
                 });
                 
             });
+
+
+
+        }
+
+        protected override void OnStart()
+        {
+            base.OnStart();
+            socket.Connect().Emit("register", "{ \"id\" : \"12\" , \"house_ids\" : [ \"43ad-1234-5432\" ]}");
         }
     }
 }

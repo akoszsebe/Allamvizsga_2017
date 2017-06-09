@@ -264,6 +264,7 @@ namespace Allamvizsga2017.Activities
                     refresher.Refreshing = false;
                 }
             });
+            int inc = 0;
             foreach (var h in houses)
             {
                 try
@@ -275,8 +276,9 @@ namespace Allamvizsga2017.Activities
                     {
                         sumwat += r.value;
                     }
-                    adapter.UpdateData(activedevicescount, sumwat, h.house_id);
 
+                    adapter.UpdateData(activedevicescount* inc, sumwat*inc, h.house_id);
+                    inc++;
                     RunOnUiThread(() => { adapter.NotifyDataSetChanged(); });
                 }
                 catch (System.Exception e)

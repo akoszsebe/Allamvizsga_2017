@@ -12,7 +12,7 @@ using System;
 
 namespace Allamvizsga2017.Activities
 {
-    [Activity(Label = "Allamvizsga", MainLauncher = true, Icon = "@drawable/icon", ScreenOrientation = ScreenOrientation.Portrait)]
+    [Activity(Label = "Allamvizsga")]//, MainLauncher = true, Icon = "@drawable/icon", ScreenOrientation = ScreenOrientation.Portrait)]
     public class LoginActivity : AppCompatActivity
     {
         EditText tiemail;
@@ -28,6 +28,7 @@ namespace Allamvizsga2017.Activities
             tiemail = FindViewById<EditText>(Resource.Id.textInputEmail);
             tipasswd = FindViewById<EditText>(Resource.Id.textInputPassword);
             var tvnoaccount = FindViewById<TextView>(Resource.Id.textViewNoAccount);
+            var tvforgetpassword = FindViewById<TextView>(Resource.Id.textViewForgetPassword);
 
             var passwordtrnsform = tipasswd.TransformationMethod;
             bool longclicked = false;
@@ -85,6 +86,13 @@ namespace Allamvizsga2017.Activities
             {
                 var registeractivity = new Intent(this, typeof(RegistrationActivity));
                 this.StartActivity(registeractivity);
+               
+            };
+
+            tvforgetpassword.Click += delegate
+            {
+                var forgetpassword = new Intent(this, typeof(ForgetPasswordActivity));
+                this.StartActivity(forgetpassword);
             };
         }
 

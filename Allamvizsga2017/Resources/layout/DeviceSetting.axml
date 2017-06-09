@@ -34,7 +34,8 @@
                 <TextView
                     android:text="Device Watt :"
                     android:textAppearance="?android:attr/textAppearanceLarge"
-                    android:layout_width="wrap_content"
+                    android:gravity="right"
+                    android:layout_width="150dp"
                     android:layout_height="match_parent"
                     android:id="@+id/textView12"
                     android:layout_marginLeft="10.0dp"
@@ -125,7 +126,6 @@
                         android:inputType="textPersonName"
                         android:layout_marginRight="4.0dp"
                         android:layout_marginBottom="4.0dp"
-                        android:padding="1dp"
                         android:drawableRight="@drawable/edit_icon_invert_48x48" />
                 </LinearLayout>
                 <LinearLayout

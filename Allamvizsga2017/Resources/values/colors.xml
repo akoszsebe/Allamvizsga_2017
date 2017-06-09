@@ -2,8 +2,8 @@
 <resources>
   <color name="colorPrimary" type="color">#1abc9c</color>
   <color name="colorPrimaryOld" type="color">#4cc988</color>
-  <color name="fab4" type="color">#3965A2</color>
-  <color name="fab3" type="color">#F68748</color>
-  <color name="fab2" type="color">#2FA182</color>
+  <color name="fab4" type="color">#E14363</color>
+  <color name="fab3" type="color">#314647</color>
+  <color name="fab2" type="color">#2aaf8b</color>
   <color name="fab1" type="color">#E54363</color>
 </resources>
