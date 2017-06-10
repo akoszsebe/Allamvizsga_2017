@@ -11,6 +11,9 @@ using System.Threading;
 using Android.Graphics;
 using Android.Support.Design.Widget;
 using Android.Views.Animations;
+using Allamvizsga2017.Services;
+using System.Collections;
+using System.Linq;
 
 namespace Allamvizsga2017.Activities
 {
@@ -175,11 +178,11 @@ namespace Allamvizsga2017.Activities
                 editor.Commit();
                 FinishAffinity();
                 this.StartActivity(loginactivity);
+                NotificationStarter.StopNotificationService();
                 Finish();
             }
             return base.OnOptionsItemSelected(item);
         }
-
 
         private void SearchAddHouse()
         {
@@ -216,8 +219,12 @@ namespace Allamvizsga2017.Activities
         protected override void OnStart()
         {
             base.OnStart();
+            NotificationStarter.SetContext(this);        
+            NotificationStarter.StartNotificationService();
             FeedFromDb();
         }
+
+        
 
         protected override void OnStop()
         {

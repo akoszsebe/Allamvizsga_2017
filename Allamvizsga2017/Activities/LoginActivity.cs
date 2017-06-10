@@ -9,10 +9,11 @@ using Android.Views.InputMethods;
 using Android.Content.PM;
 using Allamvizsga2017.Models;
 using System;
+using Allamvizsga2017.Services;
 
 namespace Allamvizsga2017.Activities
 {
-    [Activity(Label = "Allamvizsga")]//, MainLauncher = true, Icon = "@drawable/icon", ScreenOrientation = ScreenOrientation.Portrait)]
+    [Activity(Label = "Allamvizsga", MainLauncher = true, Icon = "@drawable/icon", ScreenOrientation = ScreenOrientation.Portrait)]
     public class LoginActivity : AppCompatActivity
     {
         EditText tiemail;

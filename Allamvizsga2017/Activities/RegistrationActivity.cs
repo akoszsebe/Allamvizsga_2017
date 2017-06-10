@@ -55,9 +55,18 @@ namespace Allamvizsga2017.Activities
                 {
                     tipasswd.TransformationMethod = passwordtrnsform;
                     tipasswd.SetCompoundDrawablesWithIntrinsicBounds(null, null, Resources.GetDrawable(Resource.Drawable.Lock_24), null);
+                    tipasswd.SetCursorVisible(false);
                 }
+                else tipasswd.SetCursorVisible(true);
             };
 
+            tiemail.FocusChange += (s, e) =>
+            {
+                if (e.HasFocus)
+                    tiemail.SetCursorVisible(true);
+                else
+                    tiemail.SetCursorVisible(false);
+            };
 
             btlogin.Click += delegate
             {

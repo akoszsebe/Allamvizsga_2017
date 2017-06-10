@@ -2,6 +2,7 @@
 using Allamvizsga2017.Models;
 using Android.App;
 using Android.Content;
+using Android.Content.PM;
 using Android.OS;
 using Android.Widget;
 using Newtonsoft.Json;
@@ -10,10 +11,12 @@ using System.Collections.Generic;
 
 namespace Allamvizsga2017.Activities
 {
-    [Activity(Label = "Notification", MainLauncher = true, Icon = "@drawable/icon", ScreenOrientation = ScreenOrientation.Portrait)]
+    [Activity(Label = "Notification")]//, MainLauncher = true, Icon = "@drawable/icon", ScreenOrientation = ScreenOrientation.Portrait)]
     public class Notification : Activity
     {
-        public Socket socket = IO.Socket("http://allamvizsga-akoszsebe.c9users.io");
+        private Socket socket = IO.Socket("http://allamvizsga-akoszsebe.c9users.io");
+        private string guid = System.Guid.NewGuid().ToString();
+
         protected override void OnCreate(Bundle savedInstanceState)
         {
             base.OnCreate(savedInstanceState);
@@ -58,7 +61,7 @@ namespace Allamvizsga2017.Activities
         protected override void OnStart()
         {
             base.OnStart();
-            socket.Connect().Emit("register", "{ \"id\" : \"12\" , \"house_ids\" : [ \"43ad-1234-5432\" ]}");
+            socket.Connect().Emit("register", "{ \"guid\" : \"" + guid + "\" , \"house_ids\" : [ \"43ad-1234-5432\" ]}");
         }
     }
 }

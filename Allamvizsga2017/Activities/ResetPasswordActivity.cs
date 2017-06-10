@@ -78,6 +78,14 @@ namespace Allamvizsga2017.Activities
                     }
             };
 
+            tiresetcode.FocusChange += (s, e) =>
+            {
+                if (e.HasFocus)
+                    tiresetcode.SetCursorVisible(true);
+                else
+                    tiresetcode.SetCursorVisible(false);
+            };
+
             tinewpassword.LongClick += (v, e) =>
             {
                 if (longclicked)
@@ -103,7 +111,10 @@ namespace Allamvizsga2017.Activities
                 {
                     tinewpassword.TransformationMethod = passwordtrnsform;
                     tinewpassword.SetCompoundDrawablesWithIntrinsicBounds(null, null, Resources.GetDrawable(Resource.Drawable.Lock_24), null);
+                    tinewpassword.SetCursorVisible(false);
                 }
+                else tinewpassword.SetCursorVisible(true); 
+            
             };
 
             btnewpassword.Click += delegate

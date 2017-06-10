@@ -141,6 +141,7 @@
     <Compile Include="Models\MyHouseListAdapter.cs" />
     <Compile Include="Models\MyHouseSearchAdapter.cs" />
     <Compile Include="Models\MySmartWatchListAdapter.cs" />
+    <Compile Include="Models\NotificationStarter.cs" />
     <Compile Include="Models\PassSocket.cs" />
     <Compile Include="Models\RestClient.cs" />
     <Compile Include="Models\SmartWatch.cs" />

@@ -31,7 +31,7 @@ namespace Allamvizsga2017.Activities
             house_name = Intent.GetStringExtra("house_name");
             user_email = Intent.GetStringExtra("user_email");
             house_id = Intent.GetStringExtra("house_id");
-            
+
             var toolbar = FindViewById<Android.Support.V7.Widget.Toolbar>(Resource.Id.toolbar1);
             toolbar.SetTitleTextAppearance(this, Resource.Style.ActionBarTitle);
             SetSupportActionBar(toolbar);
@@ -42,10 +42,57 @@ namespace Allamvizsga2017.Activities
 
             var tehouseid = FindViewById<TextView>(Resource.Id.textViewHouseId);
             var tihousename = FindViewById<EditText>(Resource.Id.textInputHouseName);
+            var btswitchnotificationthishouse = FindViewById<Switch>(Resource.Id.switch1);
+            var rbtswitch_n_f_all_off = FindViewById<RadioButton>(Resource.Id.radio_off);
+            var rbtswitch_n_f_all_n = FindViewById<RadioButton>(Resource.Id.radio_neutral);
+            var rbtswitch_n_f_all_on = FindViewById<RadioButton>(Resource.Id.radio_on);
+
+            tihousename.FocusChange += (s, e) =>
+             {
+                 if (e.HasFocus)
+                 {
+                     tihousename.SetCursorVisible(true);
+                 }
+                 else
+                 {
+                     tihousename.SetCursorVisible(false);
+                 }
+             };
 
             tehouseid.Text = house_id;
             tihousename.Text = house_name;
             tihousename.Hint = house_name;
+
+            ISharedPreferences sharedPref = GetSharedPreferences("house_ids", FileCreationMode.Private);
+            string house_ids = sharedPref.GetString("house_ids", null);
+            List<string> house_idarray = new List<string>();
+            if (house_ids!=null && house_ids!="")
+                house_idarray = house_ids.Split(',').ToList();
+
+            if (house_idarray.Count== 0)
+            {
+                btswitchnotificationthishouse.Checked = false;
+                rbtswitch_n_f_all_off.Checked = true;
+            }
+            else
+                if (house_idarray.ToList().Exists(x => x == ("\"" + house_id + "\"")))
+            {
+                btswitchnotificationthishouse.Checked = true;
+                rbtswitch_n_f_all_n.Checked = true;
+            }
+
+            btswitchnotificationthishouse.CheckedChange += (s, e) =>
+            {
+                if (e.IsChecked)
+                {
+                    house_idarray.Add("\"" + house_id + "\"");
+                }
+                else house_idarray.Remove("\"" + house_id + "\"");
+                ISharedPreferencesEditor editor = sharedPref.Edit();
+                editor.PutString("house_ids", string.Join(",",house_idarray));
+                editor.Commit();
+            };
+
         }
 
 
@@ -61,7 +108,8 @@ namespace Allamvizsga2017.Activities
             if (item.ItemId == Android.Resource.Id.Home)
                 Finish();
             if (item.ItemId == Resource.Id.menu_save)
-            {             
+            {
+                NotificationStarter.StartNotificationService();
                 Finish();
             }
             if (item.ItemId == Resource.Id.menu_delete)
@@ -78,7 +126,7 @@ namespace Allamvizsga2017.Activities
                     if (successed)
                     {
                         RunOnUiThread(() =>
-                        {                    
+                        {
                             progress.Dismiss();
                             Finish();
                         });
@@ -98,7 +146,7 @@ namespace Allamvizsga2017.Activities
                             dialog.Show();
                         });
                     }
-                })).Start();           
+                })).Start();
             }
             return base.OnOptionsItemSelected(item);
         }
