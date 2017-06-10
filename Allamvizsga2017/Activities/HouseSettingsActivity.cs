@@ -43,9 +43,7 @@ namespace Allamvizsga2017.Activities
             var tehouseid = FindViewById<TextView>(Resource.Id.textViewHouseId);
             var tihousename = FindViewById<EditText>(Resource.Id.textInputHouseName);
             var btswitchnotificationthishouse = FindViewById<Switch>(Resource.Id.switch1);
-            var rbtswitch_n_f_all_off = FindViewById<RadioButton>(Resource.Id.radio_off);
-            var rbtswitch_n_f_all_n = FindViewById<RadioButton>(Resource.Id.radio_neutral);
-            var rbtswitch_n_f_all_on = FindViewById<RadioButton>(Resource.Id.radio_on);
+            var btswitchenable = FindViewById<Switch>(Resource.Id.switchEnable);
 
             tihousename.FocusChange += (s, e) =>
              {
@@ -62,24 +60,30 @@ namespace Allamvizsga2017.Activities
             tehouseid.Text = house_id;
             tihousename.Text = house_name;
             tihousename.Hint = house_name;
-
+            List<string> house_idarray = new List<string>();
             ISharedPreferences sharedPref = GetSharedPreferences("house_ids", FileCreationMode.Private);
             string house_ids = sharedPref.GetString("house_ids", null);
-            List<string> house_idarray = new List<string>();
-            if (house_ids!=null && house_ids!="")
+            if (house_ids != null && house_ids != "")
                 house_idarray = house_ids.Split(',').ToList();
 
-            if (house_idarray.Count== 0)
+            if (!NotificationStarter.GetNotification_Enabled())
+            {
+                btswitchnotificationthishouse.Clickable = false;
+                btswitchnotificationthishouse.Enabled = false;
+            }
+
+            btswitchenable.Checked = true;
+
+            if (house_idarray.Count == 0)
             {
                 btswitchnotificationthishouse.Checked = false;
-                rbtswitch_n_f_all_off.Checked = true;
             }
             else
                 if (house_idarray.ToList().Exists(x => x == ("\"" + house_id + "\"")))
             {
                 btswitchnotificationthishouse.Checked = true;
-                rbtswitch_n_f_all_n.Checked = true;
             }
+            
 
             btswitchnotificationthishouse.CheckedChange += (s, e) =>
             {
@@ -91,6 +95,22 @@ namespace Allamvizsga2017.Activities
                 ISharedPreferencesEditor editor = sharedPref.Edit();
                 editor.PutString("house_ids", string.Join(",",house_idarray));
                 editor.Commit();
+            };
+
+            btswitchenable.CheckedChange += (s, e) =>
+            {
+                if (e.IsChecked)
+                {
+                    NotificationStarter.SetNotification_Enabled(true);
+                    btswitchnotificationthishouse.Clickable = true;
+                    btswitchnotificationthishouse.Enabled = true;
+                }
+                else
+                {
+                    NotificationStarter.SetNotification_Enabled(false);
+                    btswitchnotificationthishouse.Clickable = false;
+                    btswitchnotificationthishouse.Enabled = false;
+                }
             };
 
         }

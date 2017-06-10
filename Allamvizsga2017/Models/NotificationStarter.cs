@@ -17,7 +17,7 @@ namespace Allamvizsga2017.Models
     {
         static Context context;
         public static string guid { get; } = System.Guid.NewGuid().ToString();
-        static Intent notificationsevice;// = new Intent(context, typeof(NotificationService));
+        static Intent notificationsevice;
 
         public static void SetContext(Context c)
         {
@@ -37,6 +37,21 @@ namespace Allamvizsga2017.Models
                 return true;
             }
             else return false;
+        }
+
+        public static bool GetNotification_Enabled()
+        {
+            ISharedPreferences sharedPref = context.GetSharedPreferences("notification_enable", FileCreationMode.Private);
+            bool r = sharedPref.GetBoolean("notification_enable", false);
+            return r;
+        }
+
+        public static void SetNotification_Enabled(bool enabled)
+        {
+            ISharedPreferences sharedPref = context.GetSharedPreferences("notification_enable", FileCreationMode.Private);
+            ISharedPreferencesEditor editor = sharedPref.Edit();
+            editor.PutBoolean("notification_enable", enabled);
+            editor.Commit();
         }
 
         public static void StopNotificationService()

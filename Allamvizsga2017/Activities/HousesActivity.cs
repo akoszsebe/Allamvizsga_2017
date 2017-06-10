@@ -168,7 +168,10 @@ namespace Allamvizsga2017.Activities
         public override bool OnOptionsItemSelected(IMenuItem item)
         {
             if (item.ItemId == Android.Resource.Id.Home)
+            {
+                NotificationStarter.SetNotification_Enabled(false);
                 Finish();
+            }
             if (item.ItemId == Resource.Id.menu_logout)
             {
                 var loginactivity = new Android.Content.Intent(this, typeof(LoginActivity));
@@ -219,8 +222,10 @@ namespace Allamvizsga2017.Activities
         protected override void OnStart()
         {
             base.OnStart();
-            NotificationStarter.SetContext(this);        
-            NotificationStarter.StartNotificationService();
+            NotificationStarter.SetContext(this);
+            if (NotificationStarter.GetNotification_Enabled())
+                NotificationStarter.StartNotificationService();
+            else NotificationStarter.StopNotificationService(); 
             FeedFromDb();
         }
 

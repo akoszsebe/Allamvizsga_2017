@@ -78,7 +78,10 @@ namespace Allamvizsga2017
         public override bool OnOptionsItemSelected(IMenuItem item)
         {
             if (item.ItemId == Android.Resource.Id.Home)
+            {
+                Models.NotificationStarter.SetNotification_Enabled(false);
                 Finish();
+            }
             if (item.ItemId == Resource.Id.menu_logout)
             {
                 ISharedPreferences sharedPref = GetSharedPreferences("user_email", FileCreationMode.Private);

@@ -128,7 +128,10 @@ namespace Allamvizsga2017
         public override bool OnOptionsItemSelected(IMenuItem item)
         {
             if (item.ItemId == Android.Resource.Id.Home)
+            {
+                NotificationStarter.SetNotification_Enabled(false);
                 Finish();
+            }
             if (item.ItemId == Resource.Id.menu_save)
             {
                 if (!etdevicename.Text.ToLower().Contains("unknown"))
