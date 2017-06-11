@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+  <string name="Hello">Hello World, Click Me!</string>
+  <string name="ApplicationName">Allamvizsga</string>
+  <string name="input_email">Email</string>
+  <string name="input_password">Jelszó</string>
+  <string name="input_confirmpassword">Jelszó újra</string>
+  <string name="input_confirmcode">Kód Megerősítése</string>
+  <string name="input_newpassword">Új Jelszó</string>
+  <string name="input_oldpassword">Régi Jelszó</string>
+  <string name="input_housename">Ház Név</string>
+  <string name="button_login">Bejelentkezés</string>
+  <string name="button_register">Regisztrálás</string>
+  <string name="button_changepassword">Jelszó Csere</string>
+  <string name="button_resetpassword">Jelszó Viszaálitás</string>
+  <string name="button_add">Hozzáad</string>
+  <string name="textview_forgetpassword">Elfelejtette jelszavát?</string>
+  <string name="textview_notaccountyet">Új Fiok készítése</string>
+  <string name="textview_haveaccount">Bejelentkezés</string>
+  <string name="textview_or"> vagy </string>
+  <string name="textview_total"> Össz: </string>
+  <string name="textview_resetpassword">Jelszó visszaállítása?</string>
+  <string name="textview_houseidentity"> Ház Identitás  </string>
+  <string name="textview_houseid"> Ház Id:</string>
+  <string name="textview_housename"> Ház Név:  </string>
+  <string name="textview_notifications"> Értesítések  </string>
+  <string name="textview_enable"> Engedélyezze  </string>
+  <string name="textview_forthishouse">Ehhez a házhoz </string>
+  <string name="textview_yourhouses"> A házaid </string>
+  <string name="textview_registerhouse"> Ház Regisztrálása </string>
+  <string name="textview_addsmartwatch">Okos Óra Hozzáadás </string>
+  <string name="textview_searchhouse"> Ház Keresése </string>
+  <string name="textview_resetpasswordinfo"> Csak regisztrált e-mail azonosítónkra van szüksége, hogy jelszó-visszaállító kódot küldjünk </string>
+  <string name="textview_active"> Aktív </string>
+  <string name="textview_all"> Minden </string>
+  <string name="textview_devicewatt"> Eszköz Watt: </string>
+  <string name="textview_devicename"> Eszköz Név: </string>
+  <string name="textview_devicedelata"> Eszköz Delta: </string>
+</resources>
