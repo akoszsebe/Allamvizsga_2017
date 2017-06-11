@@ -52,7 +52,7 @@ namespace Allamvizsga2017
 
             toolbar.SetTitleTextAppearance(this, Resource.Style.ActionBarTitle);
             SetSupportActionBar(toolbar);
-            SupportActionBar.Title = "Device Settings";
+            SupportActionBar.SetTitle(Resource.String.toolbar_devicesettings);
             SupportActionBar.SetDisplayHomeAsUpEnabled(true);
             SupportActionBar.SetHomeButtonEnabled(true);
 

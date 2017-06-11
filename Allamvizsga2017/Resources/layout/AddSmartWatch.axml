@@ -10,7 +10,7 @@
         android:layout_height="wrap_content"
         android:id="@+id/toolbar1"
         android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
-        android:background="@color/colorPrimary" />
+        android:background="@color/colorPrimary"/>
     <View
         android:layout_width="match_parent"
         android:layout_height="5dp"

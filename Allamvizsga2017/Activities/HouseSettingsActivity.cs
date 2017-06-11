@@ -35,7 +35,7 @@ namespace Allamvizsga2017.Activities
             var toolbar = FindViewById<Android.Support.V7.Widget.Toolbar>(Resource.Id.toolbar1);
             toolbar.SetTitleTextAppearance(this, Resource.Style.ActionBarTitle);
             SetSupportActionBar(toolbar);
-            SupportActionBar.Title = "House Settings";
+            SupportActionBar.SetTitle(Resource.String.toolbar_housesettings);
             SupportActionBar.SetDisplayHomeAsUpEnabled(true);
             SupportActionBar.SetHomeButtonEnabled(true);
 

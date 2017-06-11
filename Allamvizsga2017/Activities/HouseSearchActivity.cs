@@ -37,14 +37,15 @@ namespace Allamvizsga2017.Activities
             var toolbar = FindViewById<Android.Support.V7.Widget.Toolbar>(Resource.Id.toolbar1);
             searchbar = FindViewById<Android.Support.V7.Widget.SearchView>(Resource.Id.searchView1);
             mlistview = FindViewById<ListView>(Resource.Id.listViewSearchHouse);
-            searchbar.QueryHint = "search for houses";
+            
 
             SetSupportActionBar(toolbar);
-            SupportActionBar.Title = "Search For Houses";
+            SupportActionBar.SetTitle(Resource.String.toolbar_housesearch);
             SupportActionBar.SetDisplayHomeAsUpEnabled(true);
             SupportActionBar.SetHomeButtonEnabled(true);
             toolbar.SetTitleTextAppearance(this, Resource.Style.ActionBarTitle);
 
+            searchbar.QueryHint = toolbar.Title;
             adapter = new MyHouseSearchAdapter(this, user_email);
             mlistview.Adapter = adapter;
 

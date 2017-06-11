@@ -36,4 +36,10 @@
   <string name="textview_devicewatt"> Eszköz Watt: </string>
   <string name="textview_devicename"> Eszköz Név: </string>
   <string name="textview_devicedelata"> Eszköz Delta: </string>
+  <string name="toolbar_hi"> Szia, </string>
+  <string name="toolbar_housesettings"> Ház Beálításai </string>
+  <string name="toolbar_devicesettings"> Eszköz Beálításai </string>
+  <string name="toolbar_houseregistartion"> Ház Regisztálás </string>
+  <string name="toolbar_housesearch"> Ház Keresése </string>
+  <string name="menuitem_logout"> Kijelentkezés </string>
 </resources>

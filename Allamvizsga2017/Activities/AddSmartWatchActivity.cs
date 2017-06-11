@@ -37,7 +37,7 @@ namespace Allamvizsga2017.Activities
             var btadd = FindViewById<Button>(Resource.Id.buttonAddSmartWatch); 
 
             SetSupportActionBar(toolbar);
-            SupportActionBar.Title = "Add SmartWatch";
+            SupportActionBar.SetTitle(Resource.String.textview_addsmartwatch);
             SupportActionBar.SetDisplayHomeAsUpEnabled(true);
             SupportActionBar.SetHomeButtonEnabled(true);
             toolbar.SetTitleTextAppearance(this, Resource.Style.ActionBarTitle);

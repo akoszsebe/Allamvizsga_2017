@@ -40,7 +40,8 @@ namespace Allamvizsga2017.Activities
             var toolbar = FindViewById<Android.Support.V7.Widget.Toolbar>(Resource.Id.toolbar1);
 
             SetSupportActionBar(toolbar);
-            SupportActionBar.Title = "Hi, " + user_email;
+            SupportActionBar.SetTitle(Resource.String.toolbar_hi);
+            SupportActionBar.Title += " " + user_email;
 
             toolbar.SetTitleTextAppearance(this, Resource.Style.ActionBarTitle);
 

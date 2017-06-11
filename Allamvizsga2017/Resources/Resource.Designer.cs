@@ -3214,6 +3214,9 @@ namespace Allamvizsga2017
 			// aapt resource value: 0x7f09001a
 			public const int input_password = 2131296282;
 			
+			// aapt resource value: 0x7f090040
+			public const int menuitem_logout = 2131296320;
+			
 			// aapt resource value: 0x7f090013
 			public const int status_bar_notification_info_overflow = 2131296275;
 			
@@ -3282,6 +3285,21 @@ namespace Allamvizsga2017
 			
 			// aapt resource value: 0x7f090031
 			public const int textview_yourhouses = 2131296305;
+			
+			// aapt resource value: 0x7f09003d
+			public const int toolbar_devicesettings = 2131296317;
+			
+			// aapt resource value: 0x7f09003b
+			public const int toolbar_hi = 2131296315;
+			
+			// aapt resource value: 0x7f09003e
+			public const int toolbar_houseregistartion = 2131296318;
+			
+			// aapt resource value: 0x7f09003f
+			public const int toolbar_housesearch = 2131296319;
+			
+			// aapt resource value: 0x7f09003c
+			public const int toolbar_housesettings = 2131296316;
 			
 			static String()
 			{

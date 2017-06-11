@@ -36,4 +36,10 @@
   <string name="textview_devicewatt"> Device Watt: </string>
   <string name="textview_devicename"> Device Name: </string>
   <string name="textview_devicedelata"> Device Delta: </string>
+  <string name="toolbar_hi"> Hi, </string>
+  <string name="toolbar_housesettings"> House Settings </string>
+  <string name="toolbar_devicesettings"> Device Settings </string>
+  <string name="toolbar_houseregistartion"> House Registration </string>
+  <string name="toolbar_housesearch"> Search For Houses </string>
+  <string name="menuitem_logout"> LogOut </string>
 </resources>

@@ -31,7 +31,7 @@ namespace Allamvizsga2017.Activities
             var toolbar = FindViewById<Android.Support.V7.Widget.Toolbar>(Resource.Id.toolbar1);
 
             SetSupportActionBar(toolbar);
-            SupportActionBar.Title = "House Registration";
+            SupportActionBar.SetTitle(Resource.String.toolbar_houseregistartion);
 
             toolbar.SetTitleTextAppearance(this, Resource.Style.ActionBarTitle);
             SupportActionBar.SetDisplayHomeAsUpEnabled(true);
