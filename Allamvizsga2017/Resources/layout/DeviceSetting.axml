@@ -32,7 +32,7 @@
                 android:layout_marginTop="15.0dp"
                 android:layout_marginRight="15.0dp">
                 <TextView
-                    android:text="Device Watt :"
+                    android:text="@string/textview_devicewatt"
                     android:textAppearance="?android:attr/textAppearanceLarge"
                     android:gravity="right"
                     android:layout_width="150dp"
@@ -105,7 +105,7 @@
                     android:layout_marginRight="15.0dp"
                     android:layout_marginBottom="15.0dp">
                     <TextView
-                        android:text="Device Name :"
+                        android:text="@string/textview_devicename"
                         android:textAppearance="?android:attr/textAppearanceLarge"
                         android:id="@+id/textViewDeviceName"
                         android:gravity="right"
@@ -138,7 +138,7 @@
                     android:layout_marginRight="15.0dp"
                     android:layout_marginBottom="15.0dp">
                     <TextView
-                        android:text="Value Delay :"
+                        android:text="@string/textview_devicedelata"
                         android:textAppearance="?android:attr/textAppearanceLarge"
                         android:id="@+id/textViewValueDelay"
                         android:gravity="right"

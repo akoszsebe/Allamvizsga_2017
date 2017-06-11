@@ -119,7 +119,6 @@
     <Compile Include="Activities\HouseSearchActivity.cs" />
     <Compile Include="Activities\HouseSettingsActivity.cs" />
     <Compile Include="Activities\LoginActivity.cs" />
-    <Compile Include="Activities\Notification.cs" />
     <Compile Include="Activities\RegistrationActivity.cs" />
     <Compile Include="Activities\ForgetPasswordActivity.cs" />
     <Compile Include="Activities\ResetPasswordActivity.cs" />
@@ -211,9 +210,6 @@
       <SubType>Designer</SubType>
     </AndroidResource>
     <AndroidResource Include="Resources\layout\Registration.axml">
-      <SubType>Designer</SubType>
-    </AndroidResource>
-    <AndroidResource Include="Resources\layout\Notification.axml">
       <SubType>Designer</SubType>
     </AndroidResource>
     <AndroidResource Include="Resources\layout\HouseSettings.axml">

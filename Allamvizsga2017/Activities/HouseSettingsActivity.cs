@@ -71,8 +71,8 @@ namespace Allamvizsga2017.Activities
                 btswitchnotificationthishouse.Clickable = false;
                 btswitchnotificationthishouse.Enabled = false;
             }
-
-            btswitchenable.Checked = true;
+            else
+                btswitchenable.Checked = true;
 
             if (house_idarray.Count == 0)
             {

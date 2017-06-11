@@ -1,5 +1,39 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="Hello">Hello World, Click Me!</string>
-    <string name="ApplicationName">Allamvizsga</string>
+  <string name="Hello">Hello World, Click Me!</string>
+  <string name="ApplicationName">Allamvizsga</string>
+  <string name="input_email">Email</string>
+  <string name="input_password">Password</string>
+  <string name="input_confirmpassword">Confirm Password</string>
+  <string name="input_confirmcode">Confirm Code</string>
+  <string name="input_newpassword">New Password</string>
+  <string name="input_oldpassword">Old Password</string>
+  <string name="input_housename">House Name</string>
+  <string name="button_login">Login</string>
+  <string name="button_register">Register</string>
+  <string name="button_changepassword">Change Password</string>
+  <string name="button_resetpassword">Reset Password</string>
+  <string name="button_add">Add</string>
+  <string name="textview_forgetpassword">Forget password?</string>
+  <string name="textview_notaccountyet">No account yet? Create one</string>
+  <string name="textview_haveaccount">You have account? LogIn</string>
+  <string name="textview_or"> or </string>
+  <string name="textview_total"> Total: </string>
+  <string name="textview_resetpassword">Reset password?</string>
+  <string name="textview_houseidentity"> House Identity  </string>
+  <string name="textview_houseid"> House Id:</string>
+  <string name="textview_housename"> House Name:  </string>
+  <string name="textview_notifications"> Notifications  </string>
+  <string name="textview_enable"> Enable  </string>
+  <string name="textview_forthishouse"> For This House </string>
+  <string name="textview_yourhouses"> Your Houses </string>
+  <string name="textview_registerhouse"> Register House </string>
+  <string name="textview_addsmartwatch">Add SmartWatch </string>
+  <string name="textview_searchhouse"> Search House </string>
+  <string name="textview_resetpasswordinfo"> We just need your registered Email Id to sent you password reset code. </string>
+  <string name="textview_active"> Active </string>
+  <string name="textview_all"> All </string>
+  <string name="textview_devicewatt"> Device Watt: </string>
+  <string name="textview_devicename"> Device Name: </string>
+  <string name="textview_devicedelata"> Device Delta: </string>
 </resources>

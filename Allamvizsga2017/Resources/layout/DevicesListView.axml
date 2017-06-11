@@ -11,7 +11,7 @@
         android:layout_height="wrap_content"
         android:id="@+id/linearLayout1">
         <TextView
-            android:text="Active"
+            android:text="@string/textview_active"
             android:textAppearance="?android:attr/textAppearanceMedium"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -31,7 +31,7 @@
             android:id="@+id/listView1"
             android:divider="#00000000" />
         <TextView
-            android:text="All"
+            android:text="@string/textview_all"
             android:textAppearance="?android:attr/textAppearanceMedium"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"

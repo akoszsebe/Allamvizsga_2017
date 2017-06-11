@@ -4,195 +4,194 @@
     android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
-  <android.support.v7.widget.Toolbar
-      android:layout_width="match_parent"
-      android:layout_height="wrap_content"
-      android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
-      android:id="@+id/toolbar1"
-      android:background="@color/colorPrimary" />
-  <View
-      android:layout_width="match_parent"
-      android:layout_height="5dp"
-      android:background="@drawable/toolbar_dropshadow" />
-  <TextView
-      android:text="House Identity "
-      android:textAppearance="?android:attr/textAppearanceMedium"
-      android:gravity="left"
-      android:layout_width="match_parent"
-      android:layout_height="wrap_content"
-      android:id="@+id/textView11"
-      android:layout_marginTop="5.0dp"
-      android:layout_marginLeft="10.0dp"
-      android:padding="1dp"
-      android:textColor="@color/colorPrimary" />
-  <LinearLayout
-      android:orientation="horizontal"
-      android:layout_width="match_parent"
-      android:layout_height="wrap_content"
-      android:id="@+id/linearLayout1"
-      android:layout_marginLeft="15.0dp"
-      android:layout_marginTop="5.0dp"
-      android:layout_marginRight="15.0dp">
+    <android.support.v7.widget.Toolbar
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
+        android:id="@+id/toolbar1"
+        android:background="@color/colorPrimary" />
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="5dp"
+        android:background="@drawable/toolbar_dropshadow" />
     <TextView
-        android:text="House Id :"
-        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="@string/textview_houseidentity"
+        android:textAppearance="?android:attr/textAppearanceMedium"
         android:gravity="left"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/textView11"
+        android:layout_marginTop="5.0dp"
+        android:layout_marginLeft="10.0dp"
+        android:padding="1dp"
+        android:textColor="@color/colorPrimary" />
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/linearLayout1"
         android:layout_marginLeft="15.0dp"
-        android:padding="1dp" />
-    <View
-        android:layout_width="0dp"
-        android:layout_weight="1"
-        android:layout_height="match_parent" />
+        android:layout_marginTop="5.0dp"
+        android:layout_marginRight="15.0dp">
+        <TextView
+            android:text="@string/textview_houseid"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:gravity="left"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/textView11"
+            android:layout_marginLeft="15.0dp"
+            android:padding="1dp" />
+        <View
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="match_parent" />
+        <TextView
+            android:text=" House Id"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/textViewHouseId"
+            android:gravity="center"
+            android:layout_marginLeft="13.0dp"
+            android:padding="1dp" />
+    </LinearLayout>
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/abc_popup_background_mtrl_mult">
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/linearLayout1"
+            android:layout_marginLeft="15.0dp"
+            android:layout_marginTop="15.0dp"
+            android:layout_marginRight="15.0dp"
+            android:layout_marginBottom="15.0dp">
+            <TextView
+                android:text="@string/textview_housename"
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:id="@+id/textViewHouseName"
+                android:gravity="left"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10.0dp"
+                android:paddingBottom="2dp"
+                android:paddingLeft="1dp" />
+            <View
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="match_parent" />
+            <EditText
+                android:id="@+id/textInputHouseName"
+                android:gravity="center"
+                android:cursorVisible="false"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:singleLine="true"
+                android:maxLength="16"
+                android:inputType="textPersonName"
+                android:layout_marginRight="4.0dp"
+                android:layout_marginBottom="4.0dp"
+                android:drawableRight="@drawable/edit_icon_invert_48x48" />
+        </LinearLayout>
+        <android.support.design.widget.TextInputEditText
+            android:layout_width="match_parent"
+            android:layout_height="60.0dp"
+            android:id="@+id/textInputOldPassword"
+            android:hint="@string/input_oldpassword"
+            android:layout_marginLeft="25.0dp"
+            android:layout_marginRight="25.0dp"
+            android:password="true"
+            android:inputType="textPassword"
+            android:drawableRight="@drawable/lock_24"
+            android:maxLength="15" />
+        <android.support.design.widget.TextInputEditText
+            android:layout_width="match_parent"
+            android:layout_height="60.0dp"
+            android:id="@+id/textInputNewPassword"
+            android:hint="@string/input_newpassword"
+            android:layout_marginLeft="25.0dp"
+            android:layout_marginRight="25.0dp"
+            android:password="true"
+            android:inputType="textPassword"
+            android:drawableRight="@drawable/lock_24"
+            android:maxLength="15" />
+    </LinearLayout>
     <TextView
-        android:text=" House Id"
-        android:textAppearance="?android:attr/textAppearanceLarge"
-        android:layout_width="wrap_content"
+        android:text="@string/textview_notifications"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:gravity="left"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/textViewHouseId"
-        android:gravity="center"
-        android:layout_marginLeft="13.0dp"
+        android:id="@+id/textView11"
+        android:layout_marginLeft="10.0dp"
+        android:textColor="@color/colorPrimary"
         android:padding="1dp" />
-  </LinearLayout>
-  <LinearLayout
-      android:orientation="vertical"
-      android:layout_width="match_parent"
-      android:layout_height="wrap_content"
-      android:background="@drawable/abc_popup_background_mtrl_mult">
     <LinearLayout
-        android:orientation="horizontal"
+        android:orientation="vertical"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/linearLayout1"
-        android:layout_marginLeft="15.0dp"
-        android:layout_marginTop="15.0dp"
-        android:layout_marginRight="15.0dp"
-        android:layout_marginBottom="15.0dp">
-      <TextView
-          android:text="House Name :"
-          android:textAppearance="?android:attr/textAppearanceLarge"
-          android:id="@+id/textViewHouseName"
-          android:gravity="left"
-          android:layout_width="wrap_content"
-          android:layout_height="wrap_content"
-          android:layout_marginLeft="10.0dp"
-          android:paddingBottom="2dp"
-          android:paddingLeft="1dp" />
-      <View
-          android:layout_width="0dp"
-          android:layout_weight="1"
-          android:layout_height="match_parent" />
-      <EditText
-          android:id="@+id/textInputHouseName"
-          android:gravity="center"
-          android:cursorVisible="false"
-          android:layout_width="wrap_content"
-          android:layout_height="wrap_content"
-          android:singleLine="true"
-          android:maxLength="16"
-          android:inputType="textPersonName"
-          android:layout_marginRight="4.0dp"
-          android:layout_marginBottom="4.0dp"
-          android:drawableRight="@drawable/edit_icon_invert_48x48" />
+        android:background="@drawable/abc_popup_background_mtrl_mult">
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/linearLayout1"
+            android:layout_marginLeft="15.0dp"
+            android:layout_marginTop="15.0dp"
+            android:layout_marginRight="15.0dp"
+            android:layout_marginBottom="15.0dp">
+            <TextView
+                android:text="@string/textview_enable"
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:id="@+id/textViewHouseNotification"
+                android:gravity="right"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10.0dp"
+                android:paddingBottom="2dp"
+                android:paddingLeft="1dp" />
+            <View
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="match_parent" />
+            <Switch
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:gravity="left"
+                android:id="@+id/switchEnable" />
+        </LinearLayout>
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/linearLayout1"
+            android:layout_marginLeft="15.0dp"
+            android:layout_marginTop="15.0dp"
+            android:layout_marginRight="15.0dp"
+            android:layout_marginBottom="15.0dp">
+            <TextView
+                android:text="@string/textview_forthishouse"
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:id="@+id/textViewHouseNotification"
+                android:gravity="right"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10.0dp"
+                android:paddingBottom="2dp"
+                android:paddingLeft="1dp" />
+            <View
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="match_parent" />
+            <Switch
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:gravity="left"
+                android:id="@+id/switch1" />
+        </LinearLayout>
     </LinearLayout>
-    <android.support.design.widget.TextInputEditText
-        android:layout_width="match_parent"
-        android:layout_height="60.0dp"
-        android:id="@+id/textInputOldPassword"
-        android:hint="Old Password"
-        android:layout_marginLeft="25.0dp"
-        android:layout_marginRight="25.0dp"
-        android:password="true"
-        android:inputType="textPassword"
-        android:drawableRight="@drawable/lock_24"
-        android:maxLength="15" />
-    <android.support.design.widget.TextInputEditText
-        android:layout_width="match_parent"
-        android:layout_height="60.0dp"
-        android:id="@+id/textInputNewPassword"
-        android:hint="New Password"
-        android:layout_marginLeft="25.0dp"
-        android:layout_marginRight="25.0dp"
-        android:password="true"
-        android:inputType="textPassword"
-        android:drawableRight="@drawable/lock_24"
-        android:maxLength="15" />
-  </LinearLayout>
-  <TextView
-      android:text="Notifications "
-      android:textAppearance="?android:attr/textAppearanceMedium"
-      android:gravity="left"
-      android:layout_width="match_parent"
-      android:layout_height="wrap_content"
-      android:id="@+id/textView11"
-      android:layout_marginLeft="10.0dp"
-      android:textColor="@color/colorPrimary"
-      android:padding="1dp" />
-  <LinearLayout
-      android:orientation="vertical"
-      android:layout_width="match_parent"
-      android:layout_height="wrap_content"
-      android:background="@drawable/abc_popup_background_mtrl_mult">
-    <LinearLayout
-          android:orientation="horizontal"
-          android:layout_width="match_parent"
-          android:layout_height="wrap_content"
-          android:id="@+id/linearLayout1"
-          android:layout_marginLeft="15.0dp"
-          android:layout_marginTop="15.0dp"
-          android:layout_marginRight="15.0dp"
-          android:layout_marginBottom="15.0dp">
-      <TextView
-          android:text="Enable"
-          android:textAppearance="?android:attr/textAppearanceLarge"
-          android:id="@+id/textViewHouseNotification"
-          android:gravity="right"
-          android:layout_width="wrap_content"
-          android:layout_height="wrap_content"
-          android:layout_marginLeft="10.0dp"
-          android:paddingBottom="2dp"
-          android:paddingLeft="1dp" />
-      <View
-          android:layout_width="0dp"
-          android:layout_weight="1"
-          android:layout_height="match_parent" />
-      <Switch
-         android:layout_width="wrap_content"
-         android:layout_height="match_parent"
-         android:gravity="left"
-         android:id="@+id/switchEnable" />
-    </LinearLayout>
-    <LinearLayout
-        android:orientation="horizontal"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/linearLayout1"
-        android:layout_marginLeft="15.0dp"
-        android:layout_marginTop="15.0dp"
-        android:layout_marginRight="15.0dp"
-        android:layout_marginBottom="15.0dp">
-      <TextView
-          android:text="For This House "
-          android:textAppearance="?android:attr/textAppearanceLarge"
-          android:id="@+id/textViewHouseNotification"
-          android:gravity="right"
-          android:layout_width="wrap_content"
-          android:layout_height="wrap_content"
-          android:layout_marginLeft="10.0dp"
-          android:paddingBottom="2dp"
-          android:paddingLeft="1dp" />
-      <View
-          android:layout_width="0dp"
-          android:layout_weight="1"
-          android:layout_height="match_parent" />
-      <Switch
-          android:layout_width="wrap_content"
-          android:layout_height="match_parent"
-          android:gravity="left"
-          android:id="@+id/switch1" />
-    </LinearLayout>
-
-  </LinearLayout>
 </LinearLayout>
