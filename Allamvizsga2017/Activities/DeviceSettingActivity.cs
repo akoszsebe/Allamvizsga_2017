@@ -103,11 +103,22 @@ namespace Allamvizsga2017
             };
 
             var buttonin = Android.Views.Animations.AnimationUtils.LoadAnimation(this, Resource.Animation.abc_fade_in);
+            var expanded = false;
             btediticon.Click += delegate
             {
                 btediticon.StartAnimation(buttonin);
-                layouticons.LayoutParameters.Height = (int)Android.Util.TypedValue.ApplyDimension(Android.Util.ComplexUnitType.Dip, 60, Resources.DisplayMetrics);
-                mRecyclerView.SetAdapter(mAdapter);
+                if (!expanded)
+                {
+                    layouticons.LayoutParameters.Height = (int)Android.Util.TypedValue.ApplyDimension(Android.Util.ComplexUnitType.Dip, 60, Resources.DisplayMetrics);
+                    mRecyclerView.SetAdapter(mAdapter);
+                    expanded = true;
+                }
+                else
+                {
+                    layouticons.LayoutParameters.Height = (int)Android.Util.TypedValue.ApplyDimension(Android.Util.ComplexUnitType.Dip, 1, Resources.DisplayMetrics);
+                    mRecyclerView.SetAdapter(null);
+                    expanded = false;
+                }
             };
 
             scrollview.Clickable = true;
