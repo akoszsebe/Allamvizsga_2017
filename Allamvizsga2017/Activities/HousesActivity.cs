@@ -31,7 +31,7 @@ namespace Allamvizsga2017.Activities
         protected override void OnCreate(Bundle savedInstanceState)
         {
             base.OnCreate(savedInstanceState);
-
+            NotificationStarter.SetContext(this);
             // Create your application here
             SetContentView(Resource.Layout.Houses);
 
@@ -223,7 +223,8 @@ namespace Allamvizsga2017.Activities
         protected override void OnStart()
         {
             base.OnStart();
-            NotificationStarter.SetContext(this);
+            NotificationStarter.StopNotificationService();
+//            NotificationStarter.SetContext(this);
             if (NotificationStarter.GetNotification_Enabled())
                 NotificationStarter.StartNotificationService();
             else NotificationStarter.StopNotificationService(); 

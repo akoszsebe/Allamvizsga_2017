@@ -129,7 +129,6 @@ namespace Allamvizsga2017.Activities
                 Finish();
             if (item.ItemId == Resource.Id.menu_save)
             {
-                NotificationStarter.StartNotificationService();
                 Finish();
             }
             if (item.ItemId == Resource.Id.menu_delete)
