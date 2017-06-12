@@ -78,6 +78,7 @@ namespace Allamvizsga2017.Activities
                 Finish();
             if (item.ItemId == Resource.Id.menu_logout)
             {
+                NotificationStarter.SetNotification_Enabled(false);
                 var loginactivity = new Android.Content.Intent(this, typeof(LoginActivity));
                 ISharedPreferences sharedPref = GetSharedPreferences("user_email", FileCreationMode.Private);
                 ISharedPreferencesEditor editor = sharedPref.Edit();

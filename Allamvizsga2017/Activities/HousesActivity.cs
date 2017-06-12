@@ -170,19 +170,19 @@ namespace Allamvizsga2017.Activities
         {
             if (item.ItemId == Android.Resource.Id.Home)
             {
-                NotificationStarter.SetNotification_Enabled(false);
                 Finish();
             }
             if (item.ItemId == Resource.Id.menu_logout)
             {
+                NotificationStarter.StopNotificationService();
+                NotificationStarter.SetNotification_Enabled(false);
                 var loginactivity = new Android.Content.Intent(this, typeof(LoginActivity));
                 ISharedPreferences sharedPref = GetSharedPreferences("user_email", FileCreationMode.Private);
                 ISharedPreferencesEditor editor = sharedPref.Edit();
                 editor.PutString("user_email", null);
                 editor.Commit();
                 FinishAffinity();
-                this.StartActivity(loginactivity);
-                NotificationStarter.StopNotificationService();
+                this.StartActivity(loginactivity);                
                 Finish();
             }
             return base.OnOptionsItemSelected(item);

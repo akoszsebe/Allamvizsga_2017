@@ -79,11 +79,11 @@ namespace Allamvizsga2017
         {
             if (item.ItemId == Android.Resource.Id.Home)
             {
-                Models.NotificationStarter.SetNotification_Enabled(false);
                 Finish();
             }
             if (item.ItemId == Resource.Id.menu_logout)
             {
+                Models.NotificationStarter.SetNotification_Enabled(false);
                 ISharedPreferences sharedPref = GetSharedPreferences("user_email", FileCreationMode.Private);
                 ISharedPreferencesEditor editor = sharedPref.Edit();
                 editor.PutString("user_email", null);
