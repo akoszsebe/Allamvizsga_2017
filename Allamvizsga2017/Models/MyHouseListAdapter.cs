@@ -56,7 +56,7 @@ namespace Allamvizsga2017.Models
             else
                 tvhousename.Text = itemList[position].house_name;
 
-            tvactivedevicenumber.Text = "Active " + itemList[position].activedevices.ToString() + " devices";
+            tvactivedevicenumber.Text = context.Resources.GetString(Resource.String.textview_active) + " " + itemList[position].activedevices.ToString() + " " + context.Resources.GetString(Resource.String.textview_device);
             tvValue.Text = itemList[position].sumwat + "W";
             ivhouseicon.SetImageResource(HouseSelector.GetIconId(itemList[position].sumwat));
 
@@ -157,7 +157,7 @@ namespace Allamvizsga2017.Models
             this.users_house = users_house;
         }
 
-        public ListViewItemHouse(long id, string house_id, string house_name, string password, int activedevices,int sumwat)
+        public ListViewItemHouse(long id, string house_id, string house_name, string password, int activedevices, int sumwat)
         {
             this.Id = id;
             this.house_id = house_id;

@@ -42,4 +42,5 @@
   <string name="toolbar_houseregistartion"> House Registration </string>
   <string name="toolbar_housesearch"> Search For Houses </string>
   <string name="menuitem_logout"> LogOut </string>
+  <string name="textview_device"> device </string>
 </resources>

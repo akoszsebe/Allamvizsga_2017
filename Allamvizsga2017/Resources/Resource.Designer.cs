@@ -3229,6 +3229,9 @@ namespace Allamvizsga2017
 			// aapt resource value: 0x7f090037
 			public const int textview_all = 2131296311;
 			
+			// aapt resource value: 0x7f090041
+			public const int textview_device = 2131296321;
+			
 			// aapt resource value: 0x7f09003a
 			public const int textview_devicedelata = 2131296314;
 			

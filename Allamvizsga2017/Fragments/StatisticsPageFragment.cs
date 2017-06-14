@@ -195,7 +195,7 @@ namespace Allamvizsga2017.Fragments
                 }
                 Activity.RunOnUiThread(() =>
                 {
-                    tvtotalkw.Text = "Total : "+ totalkw + " KW";
+                    tvtotalkw.Text = Context.Resources.GetString(Resource.String.textview_total)+" "+ totalkw + " kWh";
                     adapter.AddData(items, max);
                     adapter.NotifyDataSetChanged();
                     ListUtils.setDynamicHeight(mlistview);

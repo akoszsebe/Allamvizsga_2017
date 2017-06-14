@@ -48,7 +48,7 @@ namespace Allamvizsga2017.Models
             tvdate.Text = itemList[position].date;
             tvvalueline.SetWidth(itemList[position].value/ linewidth + 10);
             tvvalueline.SetBackgroundResource(Resource.Drawable.Devicetheme);
-            tvvalue.Text = itemList[position].value.ToString() + " KW ";
+            tvvalue.Text = itemList[position].value.ToString() + "KWh";
             return view;
         }
 

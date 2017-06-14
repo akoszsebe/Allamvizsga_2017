@@ -42,4 +42,5 @@
   <string name="toolbar_houseregistartion"> Ház Regisztálás </string>
   <string name="toolbar_housesearch"> Ház Keresése </string>
   <string name="menuitem_logout"> Kijelentkezés </string>
+  <string name="textview_device"> eszköz </string>
 </resources>
