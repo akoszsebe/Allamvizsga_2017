@@ -26,29 +26,6 @@ namespace Allamvizsga2017
 		
 		public static void UpdateIdValues()
 		{
-			global::com.refractored.fab.Resource.Attribute.fab_colorDisabled = global::Allamvizsga2017.Resource.Attribute.fab_colorDisabled;
-			global::com.refractored.fab.Resource.Attribute.fab_colorNormal = global::Allamvizsga2017.Resource.Attribute.fab_colorNormal;
-			global::com.refractored.fab.Resource.Attribute.fab_colorPressed = global::Allamvizsga2017.Resource.Attribute.fab_colorPressed;
-			global::com.refractored.fab.Resource.Attribute.fab_colorRipple = global::Allamvizsga2017.Resource.Attribute.fab_colorRipple;
-			global::com.refractored.fab.Resource.Attribute.fab_shadow = global::Allamvizsga2017.Resource.Attribute.fab_shadow;
-			global::com.refractored.fab.Resource.Attribute.fab_size = global::Allamvizsga2017.Resource.Attribute.fab_size;
-			global::com.refractored.fab.Resource.Color.fab_material_blue_500 = global::Allamvizsga2017.Resource.Color.fab_material_blue_500;
-			global::com.refractored.fab.Resource.Dimension.fab_elevation_lollipop = global::Allamvizsga2017.Resource.Dimension.fab_elevation_lollipop;
-			global::com.refractored.fab.Resource.Dimension.fab_scroll_threshold = global::Allamvizsga2017.Resource.Dimension.fab_scroll_threshold;
-			global::com.refractored.fab.Resource.Dimension.fab_shadow_size = global::Allamvizsga2017.Resource.Dimension.fab_shadow_size;
-			global::com.refractored.fab.Resource.Dimension.fab_size_mini = global::Allamvizsga2017.Resource.Dimension.fab_size_mini;
-			global::com.refractored.fab.Resource.Dimension.fab_size_normal = global::Allamvizsga2017.Resource.Dimension.fab_size_normal;
-			global::com.refractored.fab.Resource.Drawable.fab_shadow = global::Allamvizsga2017.Resource.Drawable.fab_shadow;
-			global::com.refractored.fab.Resource.Drawable.fab_shadow_mini = global::Allamvizsga2017.Resource.Drawable.fab_shadow_mini;
-			global::com.refractored.fab.Resource.Id.mini = global::Allamvizsga2017.Resource.Id.mini;
-			global::com.refractored.fab.Resource.Id.normal = global::Allamvizsga2017.Resource.Id.normal;
-			global::com.refractored.fab.Resource.Styleable.FloatingActionButton = global::Allamvizsga2017.Resource.Styleable.FloatingActionButton;
-			global::com.refractored.fab.Resource.Styleable.FloatingActionButton_fab_colorDisabled = global::Allamvizsga2017.Resource.Styleable.FloatingActionButton_fab_colorDisabled;
-			global::com.refractored.fab.Resource.Styleable.FloatingActionButton_fab_colorNormal = global::Allamvizsga2017.Resource.Styleable.FloatingActionButton_fab_colorNormal;
-			global::com.refractored.fab.Resource.Styleable.FloatingActionButton_fab_colorPressed = global::Allamvizsga2017.Resource.Styleable.FloatingActionButton_fab_colorPressed;
-			global::com.refractored.fab.Resource.Styleable.FloatingActionButton_fab_colorRipple = global::Allamvizsga2017.Resource.Styleable.FloatingActionButton_fab_colorRipple;
-			global::com.refractored.fab.Resource.Styleable.FloatingActionButton_fab_shadow = global::Allamvizsga2017.Resource.Styleable.FloatingActionButton_fab_shadow;
-			global::com.refractored.fab.Resource.Styleable.FloatingActionButton_fab_size = global::Allamvizsga2017.Resource.Styleable.FloatingActionButton_fab_size;
 		}
 		
 		public partial class Animation
@@ -531,24 +508,6 @@ namespace Allamvizsga2017
 			
 			// aapt resource value: 0x7f0100fe
 			public const int fabSize = 2130772222;
-			
-			// aapt resource value: 0x7f010127
-			public const int fab_colorDisabled = 2130772263;
-			
-			// aapt resource value: 0x7f010126
-			public const int fab_colorNormal = 2130772262;
-			
-			// aapt resource value: 0x7f010125
-			public const int fab_colorPressed = 2130772261;
-			
-			// aapt resource value: 0x7f010128
-			public const int fab_colorRipple = 2130772264;
-			
-			// aapt resource value: 0x7f010129
-			public const int fab_shadow = 2130772265;
-			
-			// aapt resource value: 0x7f01012a
-			public const int fab_size = 2130772266;
 			
 			// aapt resource value: 0x7f010102
 			public const int foregroundInsidePadding = 2130772226;
@@ -1080,32 +1039,32 @@ namespace Allamvizsga2017
 		public partial class Color
 		{
 			
+			// aapt resource value: 0x7f08004e
+			public const int abc_background_cache_hint_selector_material_dark = 2131230798;
+			
 			// aapt resource value: 0x7f08004f
-			public const int abc_background_cache_hint_selector_material_dark = 2131230799;
+			public const int abc_background_cache_hint_selector_material_light = 2131230799;
 			
 			// aapt resource value: 0x7f080050
-			public const int abc_background_cache_hint_selector_material_light = 2131230800;
-			
-			// aapt resource value: 0x7f080051
-			public const int abc_color_highlight_material = 2131230801;
+			public const int abc_color_highlight_material = 2131230800;
 			
 			// aapt resource value: 0x7f080004
 			public const int abc_input_method_navigation_guard = 2131230724;
 			
+			// aapt resource value: 0x7f080051
+			public const int abc_primary_text_disable_only_material_dark = 2131230801;
+			
 			// aapt resource value: 0x7f080052
-			public const int abc_primary_text_disable_only_material_dark = 2131230802;
+			public const int abc_primary_text_disable_only_material_light = 2131230802;
 			
 			// aapt resource value: 0x7f080053
-			public const int abc_primary_text_disable_only_material_light = 2131230803;
+			public const int abc_primary_text_material_dark = 2131230803;
 			
 			// aapt resource value: 0x7f080054
-			public const int abc_primary_text_material_dark = 2131230804;
+			public const int abc_primary_text_material_light = 2131230804;
 			
 			// aapt resource value: 0x7f080055
-			public const int abc_primary_text_material_light = 2131230805;
-			
-			// aapt resource value: 0x7f080056
-			public const int abc_search_url_text = 2131230806;
+			public const int abc_search_url_text = 2131230805;
 			
 			// aapt resource value: 0x7f080005
 			public const int abc_search_url_text_normal = 2131230725;
@@ -1116,11 +1075,11 @@ namespace Allamvizsga2017
 			// aapt resource value: 0x7f080007
 			public const int abc_search_url_text_selected = 2131230727;
 			
-			// aapt resource value: 0x7f080057
-			public const int abc_secondary_text_material_dark = 2131230807;
+			// aapt resource value: 0x7f080056
+			public const int abc_secondary_text_material_dark = 2131230806;
 			
-			// aapt resource value: 0x7f080058
-			public const int abc_secondary_text_material_light = 2131230808;
+			// aapt resource value: 0x7f080057
+			public const int abc_secondary_text_material_light = 2131230807;
 			
 			// aapt resource value: 0x7f080008
 			public const int accent_material_dark = 2131230728;
@@ -1176,11 +1135,11 @@ namespace Allamvizsga2017
 			// aapt resource value: 0x7f080003
 			public const int cardview_shadow_start_color = 2131230723;
 			
-			// aapt resource value: 0x7f080049
-			public const int colorPrimary = 2131230793;
+			// aapt resource value: 0x7f080048
+			public const int colorPrimary = 2131230792;
 			
-			// aapt resource value: 0x7f08004a
-			public const int colorPrimaryOld = 2131230794;
+			// aapt resource value: 0x7f080049
+			public const int colorPrimaryOld = 2131230793;
 			
 			// aapt resource value: 0x7f08003e
 			public const int design_fab_shadow_end_color = 2131230782;
@@ -1224,20 +1183,17 @@ namespace Allamvizsga2017
 			// aapt resource value: 0x7f080019
 			public const int dim_foreground_material_light = 2131230745;
 			
-			// aapt resource value: 0x7f08004e
-			public const int fab1 = 2131230798;
-			
 			// aapt resource value: 0x7f08004d
-			public const int fab2 = 2131230797;
+			public const int fab1 = 2131230797;
 			
 			// aapt resource value: 0x7f08004c
-			public const int fab3 = 2131230796;
+			public const int fab2 = 2131230796;
 			
 			// aapt resource value: 0x7f08004b
-			public const int fab4 = 2131230795;
+			public const int fab3 = 2131230795;
 			
-			// aapt resource value: 0x7f080048
-			public const int fab_material_blue_500 = 2131230792;
+			// aapt resource value: 0x7f08004a
+			public const int fab4 = 2131230794;
 			
 			// aapt resource value: 0x7f08001a
 			public const int foreground_material_dark = 2131230746;
@@ -1341,11 +1297,11 @@ namespace Allamvizsga2017
 			// aapt resource value: 0x7f08003b
 			public const int switch_thumb_disabled_material_light = 2131230779;
 			
-			// aapt resource value: 0x7f080059
-			public const int switch_thumb_material_dark = 2131230809;
+			// aapt resource value: 0x7f080058
+			public const int switch_thumb_material_dark = 2131230808;
 			
-			// aapt resource value: 0x7f08005a
-			public const int switch_thumb_material_light = 2131230810;
+			// aapt resource value: 0x7f080059
+			public const int switch_thumb_material_light = 2131230809;
 			
 			// aapt resource value: 0x7f08003c
 			public const int switch_thumb_normal_material_dark = 2131230780;
@@ -1668,21 +1624,6 @@ namespace Allamvizsga2017
 			
 			// aapt resource value: 0x7f05004a
 			public const int disabled_alpha_material_light = 2131034186;
-			
-			// aapt resource value: 0x7f050072
-			public const int fab_elevation_lollipop = 2131034226;
-			
-			// aapt resource value: 0x7f050071
-			public const int fab_scroll_threshold = 2131034225;
-			
-			// aapt resource value: 0x7f050070
-			public const int fab_shadow_size = 2131034224;
-			
-			// aapt resource value: 0x7f05006f
-			public const int fab_size_mini = 2131034223;
-			
-			// aapt resource value: 0x7f05006e
-			public const int fab_size_normal = 2131034222;
 			
 			// aapt resource value: 0x7f05004b
 			public const int highlight_alpha_material_colored = 2131034187;
@@ -2028,148 +1969,142 @@ namespace Allamvizsga2017
 			public const int electricmeter_white = 2130837604;
 			
 			// aapt resource value: 0x7f020065
-			public const int fab_shadow = 2130837605;
+			public const int False_24 = 2130837605;
 			
 			// aapt resource value: 0x7f020066
-			public const int fab_shadow_mini = 2130837606;
+			public const int Fan = 2130837606;
 			
 			// aapt resource value: 0x7f020067
-			public const int False_24 = 2130837607;
+			public const int Flex = 2130837607;
 			
 			// aapt resource value: 0x7f020068
-			public const int Fan = 2130837608;
+			public const int Hailr_straightener = 2130837608;
 			
 			// aapt resource value: 0x7f020069
-			public const int Flex = 2130837609;
+			public const int Hair_dryer = 2130837609;
 			
 			// aapt resource value: 0x7f02006a
-			public const int Hailr_straightener = 2130837610;
+			public const int Hand_mixer = 2130837610;
 			
 			// aapt resource value: 0x7f02006b
-			public const int Hair_dryer = 2130837611;
+			public const int Home_24 = 2130837611;
 			
 			// aapt resource value: 0x7f02006c
-			public const int Hand_mixer = 2130837612;
+			public const int house_blue = 2130837612;
 			
 			// aapt resource value: 0x7f02006d
-			public const int Home_24 = 2130837613;
+			public const int house_green = 2130837613;
 			
 			// aapt resource value: 0x7f02006e
-			public const int house_blue = 2130837614;
+			public const int house_orange = 2130837614;
 			
 			// aapt resource value: 0x7f02006f
-			public const int house_green = 2130837615;
+			public const int house_red = 2130837615;
 			
 			// aapt resource value: 0x7f020070
-			public const int house_orange = 2130837616;
+			public const int house_yellow = 2130837616;
 			
 			// aapt resource value: 0x7f020071
-			public const int house_red = 2130837617;
+			public const int Icon = 2130837617;
 			
 			// aapt resource value: 0x7f020072
-			public const int house_yellow = 2130837618;
+			public const int Icon1 = 2130837618;
 			
 			// aapt resource value: 0x7f020073
-			public const int Icon = 2130837619;
+			public const int Icon_black = 2130837619;
 			
 			// aapt resource value: 0x7f020074
-			public const int Icon1 = 2130837620;
+			public const int informationicon = 2130837620;
 			
 			// aapt resource value: 0x7f020075
-			public const int Icon_black = 2130837621;
+			public const int Key_24 = 2130837621;
 			
 			// aapt resource value: 0x7f020076
-			public const int informationicon = 2130837622;
+			public const int Laptop = 2130837622;
 			
 			// aapt resource value: 0x7f020077
-			public const int Key_24 = 2130837623;
+			public const int Lightning_bulb = 2130837623;
 			
 			// aapt resource value: 0x7f020078
-			public const int Laptop = 2130837624;
+			public const int Lock_24 = 2130837624;
 			
 			// aapt resource value: 0x7f020079
-			public const int Lightning_bulb = 2130837625;
-			
-			// aapt resource value: 0x7f02007a
-			public const int Lock_24 = 2130837626;
-			
-			// aapt resource value: 0x7f02007b
-			public const int Microwave = 2130837627;
-			
-			// aapt resource value: 0x7f020094
-			public const int notification_template_icon_bg = 2130837652;
-			
-			// aapt resource value: 0x7f02007c
-			public const int Radio = 2130837628;
-			
-			// aapt resource value: 0x7f02007d
-			public const int Refrigerator = 2130837629;
-			
-			// aapt resource value: 0x7f02007e
-			public const int ripple_oval = 2130837630;
-			
-			// aapt resource value: 0x7f02007f
-			public const int Sandwich_maker = 2130837631;
-			
-			// aapt resource value: 0x7f020080
-			public const int save = 2130837632;
-			
-			// aapt resource value: 0x7f020081
-			public const int search_icon = 2130837633;
-			
-			// aapt resource value: 0x7f020082
-			public const int selector_devices = 2130837634;
-			
-			// aapt resource value: 0x7f020083
-			public const int selector_statistics = 2130837635;
-			
-			// aapt resource value: 0x7f020084
-			public const int settings_128 = 2130837636;
-			
-			// aapt resource value: 0x7f020085
-			public const int Smoke_extractor = 2130837637;
-			
-			// aapt resource value: 0x7f020086
-			public const int Stand_mixer = 2130837638;
-			
-			// aapt resource value: 0x7f020087
-			public const int statistics_black = 2130837639;
-			
-			// aapt resource value: 0x7f020088
-			public const int statistics_white = 2130837640;
-			
-			// aapt resource value: 0x7f020089
-			public const int Stove = 2130837641;
-			
-			// aapt resource value: 0x7f02008a
-			public const int Teamashine = 2130837642;
-			
-			// aapt resource value: 0x7f02008b
-			public const int Television = 2130837643;
-			
-			// aapt resource value: 0x7f02008c
-			public const int Toaster = 2130837644;
-			
-			// aapt resource value: 0x7f02008d
-			public const int toolbar_dropshadow = 2130837645;
-			
-			// aapt resource value: 0x7f02008e
-			public const int True_24 = 2130837646;
-			
-			// aapt resource value: 0x7f02008f
-			public const int unknownicon = 2130837647;
-			
-			// aapt resource value: 0x7f020090
-			public const int Unlock_24 = 2130837648;
-			
-			// aapt resource value: 0x7f020091
-			public const int User_24 = 2130837649;
+			public const int Microwave = 2130837625;
 			
 			// aapt resource value: 0x7f020092
-			public const int Vacuum_cleaner = 2130837650;
+			public const int notification_template_icon_bg = 2130837650;
 			
-			// aapt resource value: 0x7f020093
-			public const int Water_heater = 2130837651;
+			// aapt resource value: 0x7f02007a
+			public const int Radio = 2130837626;
+			
+			// aapt resource value: 0x7f02007b
+			public const int Refrigerator = 2130837627;
+			
+			// aapt resource value: 0x7f02007c
+			public const int ripple_oval = 2130837628;
+			
+			// aapt resource value: 0x7f02007d
+			public const int Sandwich_maker = 2130837629;
+			
+			// aapt resource value: 0x7f02007e
+			public const int save = 2130837630;
+			
+			// aapt resource value: 0x7f02007f
+			public const int search_icon = 2130837631;
+			
+			// aapt resource value: 0x7f020080
+			public const int selector_devices = 2130837632;
+			
+			// aapt resource value: 0x7f020081
+			public const int selector_statistics = 2130837633;
+			
+			// aapt resource value: 0x7f020082
+			public const int settings_128 = 2130837634;
+			
+			// aapt resource value: 0x7f020083
+			public const int Smoke_extractor = 2130837635;
+			
+			// aapt resource value: 0x7f020084
+			public const int Stand_mixer = 2130837636;
+			
+			// aapt resource value: 0x7f020085
+			public const int statistics_black = 2130837637;
+			
+			// aapt resource value: 0x7f020086
+			public const int statistics_white = 2130837638;
+			
+			// aapt resource value: 0x7f020087
+			public const int Stove = 2130837639;
+			
+			// aapt resource value: 0x7f020088
+			public const int Teamashine = 2130837640;
+			
+			// aapt resource value: 0x7f020089
+			public const int Television = 2130837641;
+			
+			// aapt resource value: 0x7f02008a
+			public const int Toaster = 2130837642;
+			
+			// aapt resource value: 0x7f02008b
+			public const int toolbar_dropshadow = 2130837643;
+			
+			// aapt resource value: 0x7f02008c
+			public const int True_24 = 2130837644;
+			
+			// aapt resource value: 0x7f02008d
+			public const int unknownicon = 2130837645;
+			
+			// aapt resource value: 0x7f02008e
+			public const int Unlock_24 = 2130837646;
+			
+			// aapt resource value: 0x7f02008f
+			public const int User_24 = 2130837647;
+			
+			// aapt resource value: 0x7f020090
+			public const int Vacuum_cleaner = 2130837648;
+			
+			// aapt resource value: 0x7f020091
+			public const int Water_heater = 2130837649;
 			
 			static Drawable()
 			{
@@ -5291,13 +5226,7 @@ namespace Allamvizsga2017
 					2130772222,
 					2130772223,
 					2130772224,
-					2130772225,
-					2130772261,
-					2130772262,
-					2130772263,
-					2130772264,
-					2130772265,
-					2130772266};
+					2130772225};
 			
 			// aapt resource value: 1
 			public const int FloatingActionButton_backgroundTint = 1;
@@ -5313,24 +5242,6 @@ namespace Allamvizsga2017
 			
 			// aapt resource value: 4
 			public const int FloatingActionButton_fabSize = 4;
-			
-			// aapt resource value: 10
-			public const int FloatingActionButton_fab_colorDisabled = 10;
-			
-			// aapt resource value: 9
-			public const int FloatingActionButton_fab_colorNormal = 9;
-			
-			// aapt resource value: 8
-			public const int FloatingActionButton_fab_colorPressed = 8;
-			
-			// aapt resource value: 11
-			public const int FloatingActionButton_fab_colorRipple = 11;
-			
-			// aapt resource value: 12
-			public const int FloatingActionButton_fab_shadow = 12;
-			
-			// aapt resource value: 13
-			public const int FloatingActionButton_fab_size = 13;
 			
 			// aapt resource value: 5
 			public const int FloatingActionButton_pressedTranslationZ = 5;
