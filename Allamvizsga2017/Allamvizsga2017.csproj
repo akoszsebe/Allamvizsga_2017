@@ -122,16 +122,12 @@
     <Compile Include="Activities\RegistrationActivity.cs" />
     <Compile Include="Activities\ForgetPasswordActivity.cs" />
     <Compile Include="Activities\ResetPasswordActivity.cs" />
-    <Compile Include="Chart\MyLineChart.cs" />
-    <Compile Include="Chart\MyLineChartComplex.cs" />
-    <Compile Include="Chart\MyPieChart.cs" />
     <Compile Include="Fragments\CustomPagerAdapter.cs" />
     <Compile Include="Activities\DeviceSettingActivity.cs" />
     <Compile Include="Fragments\DevicesListViewFragment.cs" />
     <Compile Include="Fragments\StatisticsPageFragment.cs" />
     <Compile Include="Activities\MainActivity.cs" />
     <Compile Include="Models\Amper.cs" />
-    <Compile Include="Models\AxisValueFormatter.cs" />
     <Compile Include="Models\CredentialsProvider.cs" />
     <Compile Include="Models\DeviceSelector.cs" />
     <Compile Include="Models\House.cs" />
@@ -178,9 +174,6 @@
     <AndroidResource Include="Resources\drawable\Television.png" />
     <AndroidResource Include="Resources\drawable\Vacuum_cleaner.png" />
     <AndroidResource Include="Resources\drawable\Water_heater.png" />
-    <AndroidResource Include="Resources\layout\Chartlayout.axml">
-      <SubType>Designer</SubType>
-    </AndroidResource>
     <AndroidResource Include="Resources\layout\custom_tab.axml">
       <SubType>Designer</SubType>
     </AndroidResource>
