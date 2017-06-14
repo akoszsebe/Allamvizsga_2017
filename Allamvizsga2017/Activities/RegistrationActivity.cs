@@ -9,6 +9,7 @@ using System.Threading;
 using Android.Views.InputMethods;
 using Android.Content.PM;
 using Allamvizsga2017.Models;
+using Android.Support.V4.Content;
 
 namespace Allamvizsga2017.Activities
 {
@@ -36,14 +37,14 @@ namespace Allamvizsga2017.Activities
                 {
                     tipasswd.TransformationMethod = passwordtrnsform;
                     tipasswd.SetSelection(tipasswd.Text.Length);
-                    tipasswd.SetCompoundDrawablesWithIntrinsicBounds(null, null, Resources.GetDrawable(Resource.Drawable.Lock_24), null);
+                    tipasswd.SetCompoundDrawablesWithIntrinsicBounds(null, null, ContextCompat.GetDrawable(this, Resource.Drawable.Lock_24), null);
                     longclicked = false;
                 }
                 else
                 {
                     tipasswd.TransformationMethod = null;
                     tipasswd.SetSelection(tipasswd.Text.Length);
-                    tipasswd.SetCompoundDrawablesWithIntrinsicBounds(null, null, Resources.GetDrawable(Resource.Drawable.Unlock_24), null);
+                    tipasswd.SetCompoundDrawablesWithIntrinsicBounds(null, null, ContextCompat.GetDrawable(this, Resource.Drawable.Unlock_24), null);
                     longclicked = true;
                 }
 
@@ -54,7 +55,7 @@ namespace Allamvizsga2017.Activities
                 if (!s.HasFocus)
                 {
                     tipasswd.TransformationMethod = passwordtrnsform;
-                    tipasswd.SetCompoundDrawablesWithIntrinsicBounds(null, null, Resources.GetDrawable(Resource.Drawable.Lock_24), null);
+                    tipasswd.SetCompoundDrawablesWithIntrinsicBounds(null, null, ContextCompat.GetDrawable(this, Resource.Drawable.Lock_24), null);
                     tipasswd.SetCursorVisible(false);
                 }
                 else tipasswd.SetCursorVisible(true);

@@ -297,7 +297,7 @@ namespace Allamvizsga2017.Activities
                 }
                 catch (System.Exception e)
                 {
-
+                    Android.Util.Log.Error("MYAPP", "exception", e);
                 }
             }
 

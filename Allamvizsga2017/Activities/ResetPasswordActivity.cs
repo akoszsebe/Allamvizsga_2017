@@ -14,6 +14,7 @@ using Android.Support.V7.App;
 using Android.Views.InputMethods;
 using System.Threading;
 using Allamvizsga2017.Models;
+using Android.Support.V4.Content;
 
 namespace Allamvizsga2017.Activities
 {
@@ -53,7 +54,7 @@ namespace Allamvizsga2017.Activities
                             {
                                 RunOnUiThread(() =>
                                 {
-                                    tiresetcode.SetCompoundDrawablesWithIntrinsicBounds(null, null, Resources.GetDrawable(Resource.Drawable.True_24), null);
+                                    tiresetcode.SetCompoundDrawablesWithIntrinsicBounds(null, null, ContextCompat.GetDrawable(this, Resource.Drawable.True_24), null);
                                     tinewpassword.Enabled = true;
                                     btnewpassword.Enabled = true;
                                 });
@@ -62,7 +63,7 @@ namespace Allamvizsga2017.Activities
                             {
                                 RunOnUiThread(() =>
                                 {
-                                    tiresetcode.SetCompoundDrawablesWithIntrinsicBounds(null, null, Resources.GetDrawable(Resource.Drawable.False_24), null);
+                                    tiresetcode.SetCompoundDrawablesWithIntrinsicBounds(null, null, ContextCompat.GetDrawable(this, Resource.Drawable.False_24), null);
                                     tinewpassword.Enabled = false;
                                     btnewpassword.Enabled = false;
                                 });
@@ -72,7 +73,7 @@ namespace Allamvizsga2017.Activities
                     }
                 else
                     {
-                        tiresetcode.SetCompoundDrawablesWithIntrinsicBounds(null, null, Resources.GetDrawable(Resource.Drawable.False_24), null);
+                        tiresetcode.SetCompoundDrawablesWithIntrinsicBounds(null, null, ContextCompat.GetDrawable(this, Resource.Drawable.False_24), null);
                         tinewpassword.Enabled = false;
                         btnewpassword.Enabled = false;
                     }
@@ -92,14 +93,14 @@ namespace Allamvizsga2017.Activities
                 {
                     tinewpassword.TransformationMethod = passwordtrnsform;
                     tinewpassword.SetSelection(tinewpassword.Text.Length);
-                    tinewpassword.SetCompoundDrawablesWithIntrinsicBounds(null, null, Resources.GetDrawable(Resource.Drawable.Lock_24), null);
+                    tinewpassword.SetCompoundDrawablesWithIntrinsicBounds(null, null, ContextCompat.GetDrawable(this, Resource.Drawable.Lock_24), null);
                     longclicked = false;
                 }
                 else
                 {
                     tinewpassword.TransformationMethod = null;
                     tinewpassword.SetSelection(tinewpassword.Text.Length);
-                    tinewpassword.SetCompoundDrawablesWithIntrinsicBounds(null, null, Resources.GetDrawable(Resource.Drawable.Unlock_24), null);
+                    tinewpassword.SetCompoundDrawablesWithIntrinsicBounds(null, null, ContextCompat.GetDrawable(this, Resource.Drawable.Unlock_24), null);
                     longclicked = true;
                 }
 
@@ -110,7 +111,7 @@ namespace Allamvizsga2017.Activities
                 if (!s.HasFocus)
                 {
                     tinewpassword.TransformationMethod = passwordtrnsform;
-                    tinewpassword.SetCompoundDrawablesWithIntrinsicBounds(null, null, Resources.GetDrawable(Resource.Drawable.Lock_24), null);
+                    tinewpassword.SetCompoundDrawablesWithIntrinsicBounds(null, null, ContextCompat.GetDrawable(this, Resource.Drawable.Lock_24), null);
                     tinewpassword.SetCursorVisible(false);
                 }
                 else tinewpassword.SetCursorVisible(true); 
@@ -121,7 +122,7 @@ namespace Allamvizsga2017.Activities
             {
 
                 tinewpassword.TransformationMethod = passwordtrnsform;
-                tinewpassword.SetCompoundDrawablesWithIntrinsicBounds(null, null, Resources.GetDrawable(Resource.Drawable.Lock_24), null);
+                tinewpassword.SetCompoundDrawablesWithIntrinsicBounds(null, null, ContextCompat.GetDrawable(this, Resource.Drawable.Lock_24), null);
                 longclicked = false;
                 if (tinewpassword.Text != "")
                 {

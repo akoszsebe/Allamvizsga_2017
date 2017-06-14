@@ -13,6 +13,7 @@ using Android.Support.V7.App;
 using System.Threading;
 using Allamvizsga2017.Models;
 using Android.Views.InputMethods;
+using Android.Support.V4.Content;
 
 namespace Allamvizsga2017.Activities
 {
@@ -59,14 +60,14 @@ namespace Allamvizsga2017.Activities
                 {
                     tihouse_password.TransformationMethod = passwordtransform;
                     tihouse_password.SetSelection(tihouse_password.Text.Length);
-                    tihouse_password.SetCompoundDrawablesWithIntrinsicBounds(null, null, Resources.GetDrawable(Resource.Drawable.Lock_24), null);
+                    tihouse_password.SetCompoundDrawablesWithIntrinsicBounds(null, null, ContextCompat.GetDrawable(this, Resource.Drawable.Lock_24), null);
                     longclicked = false;
                 }
                 else
                 {
                     tihouse_password.TransformationMethod = null;
                     tihouse_password.SetSelection(tihouse_password.Text.Length);
-                    tihouse_password.SetCompoundDrawablesWithIntrinsicBounds(null, null, Resources.GetDrawable(Resource.Drawable.Unlock_24), null);
+                    tihouse_password.SetCompoundDrawablesWithIntrinsicBounds(null, null, ContextCompat.GetDrawable(this, Resource.Drawable.Unlock_24), null);
                     longclicked = true;
                 }
 
@@ -77,7 +78,7 @@ namespace Allamvizsga2017.Activities
                 if (!s.HasFocus)
                 {
                     tihouse_password.TransformationMethod = passwordtransform;
-                    tihouse_password.SetCompoundDrawablesWithIntrinsicBounds(null, null, Resources.GetDrawable(Resource.Drawable.Lock_24), null);
+                    tihouse_password.SetCompoundDrawablesWithIntrinsicBounds(null, null, ContextCompat.GetDrawable(this, Resource.Drawable.Lock_24), null);
                 }
             };
 

@@ -123,9 +123,9 @@ namespace Allamvizsga2017.Fragments
                     Thread.Sleep(3000);
                 }
             }
-            catch (ThreadInterruptedException e)
+            catch (ThreadInterruptedException ex)
             {
-
+                Android.Util.Log.Error("MYAPP", "exception", ex);
             }
         }
 

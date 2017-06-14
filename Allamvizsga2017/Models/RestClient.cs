@@ -49,6 +49,7 @@ namespace Allamvizsga2017.Models
             }
             catch (Exception ex)
             {
+                Android.Util.Log.Error("MYAPP", "exception", ex);
                 return false;
             }
         }
@@ -89,6 +90,7 @@ namespace Allamvizsga2017.Models
             }
             catch (Exception ex)
             {
+                Android.Util.Log.Error("MYAPP", "exception", ex);
                 return false;
             }
         }
@@ -129,6 +131,7 @@ namespace Allamvizsga2017.Models
             }
             catch (Exception ex)
             {
+                Android.Util.Log.Error("MYAPP", "exception", ex);
                 return false;
             }
         }
@@ -169,6 +172,7 @@ namespace Allamvizsga2017.Models
             }
             catch (Exception ex)
             {
+                Android.Util.Log.Error("MYAPP", "exception", ex);
                 return false;
             }
         }
@@ -209,6 +213,7 @@ namespace Allamvizsga2017.Models
             }
             catch (Exception ex)
             {
+                Android.Util.Log.Error("MYAPP", "exception", ex);
                 return false;
             }
         }
@@ -248,6 +253,7 @@ namespace Allamvizsga2017.Models
             }
             catch (Exception ex)
             {
+                Android.Util.Log.Error("MYAPP", "exception", ex);
                 return null;
             }
         }
@@ -288,6 +294,7 @@ namespace Allamvizsga2017.Models
             }
             catch (Exception ex)
             {
+                Android.Util.Log.Error("MYAPP", "exception", ex);
                 return null;
             }
         }
@@ -328,6 +335,7 @@ namespace Allamvizsga2017.Models
             }
             catch (Exception ex)
             {
+                Android.Util.Log.Error("MYAPP", "exception", ex);
                 return null;
             }
         }
@@ -368,6 +376,7 @@ namespace Allamvizsga2017.Models
             }
             catch (Exception ex)
             {
+                Android.Util.Log.Error("MYAPP", "exception", ex);
                 return null;
             }
         }
@@ -410,6 +419,7 @@ namespace Allamvizsga2017.Models
             }
             catch (Exception ex)
             {
+                Android.Util.Log.Error("MYAPP", "exception", ex);
                 return null;
             }
         }
@@ -452,6 +462,7 @@ namespace Allamvizsga2017.Models
             }
             catch (Exception ex)
             {
+                Android.Util.Log.Error("MYAPP", "exception", ex);
                 return false;
             }
         }
@@ -493,6 +504,7 @@ namespace Allamvizsga2017.Models
             }
             catch (Exception ex)
             {
+                Android.Util.Log.Error("MYAPP", "exception", ex);
                 return false;
             }
         }
@@ -533,6 +545,7 @@ namespace Allamvizsga2017.Models
             }
             catch (Exception ex)
             {
+                Android.Util.Log.Error("MYAPP", "exception", ex);
                 return null;
             }
         }
@@ -573,6 +586,7 @@ namespace Allamvizsga2017.Models
             }
             catch (Exception ex)
             {
+                Android.Util.Log.Error("MYAPP", "exception", ex);
                 return null;
             }
         }
@@ -611,8 +625,9 @@ namespace Allamvizsga2017.Models
                 }
 
             }
-            catch (Exception ex)
+            catch (Exception e)
             {
+                Android.Util.Log.Error("MYAPP", "exception", e);
                 return false;
             }
         }
@@ -653,6 +668,7 @@ namespace Allamvizsga2017.Models
             }
             catch (Exception ex)
             {
+                Android.Util.Log.Error("MYAPP", "exception", ex);
                 return null;
             }
         }
@@ -693,6 +709,7 @@ namespace Allamvizsga2017.Models
             }
             catch (Exception ex)
             {
+                Android.Util.Log.Error("MYAPP", "exception", ex);
                 return false;
             }
         }
@@ -734,6 +751,7 @@ namespace Allamvizsga2017.Models
             }
             catch (Exception ex)
             {
+                Android.Util.Log.Error("MYAPP", "exception", ex);
                 return false;
             }
         }

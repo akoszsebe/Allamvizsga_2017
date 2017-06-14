@@ -60,8 +60,8 @@ namespace Allamvizsga2017.Chart
 
             YAxis leftAxis = mChart.AxisRight;
             leftAxis.TextColor = Color.White;
-            leftAxis.SetAxisMaxValue(100f);
-            leftAxis.SetAxisMinValue(0f);
+            //leftAxis.SetAxisMaxValue(100f);
+            //leftAxis.SetAxisMinValue(0f);
             leftAxis.SetDrawGridLines(true);
 
             YAxis rightAxis = mChart.AxisRight;

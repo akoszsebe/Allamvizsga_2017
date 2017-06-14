@@ -216,7 +216,7 @@ namespace Allamvizsga2017
         public IconViewHolder(View itemView, Action<int> listener) : base(itemView)
         {
             Image = itemView.FindViewById<ImageView>(Resource.Id.imageViewForIcon);
-            itemView.Click += (sender, e) => listener(Position);
+            itemView.Click += (sender, e) => listener(LayoutPosition);
         }
     }
 
