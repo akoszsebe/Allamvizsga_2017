@@ -26,6 +26,7 @@ namespace Allamvizsga2017
         RecyclerView mRecyclerView { get; set; }
         RecyclerView.LayoutManager mLayoutManager { get; set; }
         MyIconListAdapter mAdapter { get; set; }
+        Button btediticon { get; set; }
 
         protected override void OnCreate(Bundle savedInstanceState)
         {
@@ -46,8 +47,9 @@ namespace Allamvizsga2017
             etdevicename = FindViewById<EditText>(Resource.Id.textInputEditText1);
             var toolbar = FindViewById<Android.Support.V7.Widget.Toolbar>(Resource.Id.toolbar1);
             var numberpicker = FindViewById<NumberPicker>(Resource.Id.numberPickerValueDelay);
-            var btediticon = FindViewById<Button>(Resource.Id.buttonediticon);
+            btediticon = FindViewById<Button>(Resource.Id.buttonediticon);
             var layouticons = FindViewById<LinearLayout>(Resource.Id.linearLayoutIcons);
+            var layoutallcontent = FindViewById<LinearLayout>(Resource.Id.linearLayoutallcontent);
             var scrollview = FindViewById<ScrollView>(Resource.Id.scrollView1);
 
             toolbar.SetTitleTextAppearance(this, Resource.Style.ActionBarTitle);
@@ -121,11 +123,13 @@ namespace Allamvizsga2017
                 }
             };
 
-            scrollview.Clickable = true;
-            scrollview.Click += (e,s) => 
+            layoutallcontent.Click += delegate
             {
+                layouticons.LayoutParameters.Height = (int)Android.Util.TypedValue.ApplyDimension(Android.Util.ComplexUnitType.Dip, 1, Resources.DisplayMetrics);
+                mRecyclerView.SetAdapter(null);
+                expanded = false;
                 InputMethodManager imm = (InputMethodManager)GetSystemService(Context.InputMethodService);
-                imm.HideSoftInputFromWindow(this.CurrentFocus.WindowToken, 0);
+                imm.HideSoftInputFromWindow(etdevicename.WindowToken, 0);
                 etdevicename.SetCursorVisible(false);
             };
         }

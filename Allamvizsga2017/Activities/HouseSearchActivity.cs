@@ -37,7 +37,7 @@ namespace Allamvizsga2017.Activities
             var toolbar = FindViewById<Android.Support.V7.Widget.Toolbar>(Resource.Id.toolbar1);
             searchbar = FindViewById<Android.Support.V7.Widget.SearchView>(Resource.Id.searchView1);
             mlistview = FindViewById<ListView>(Resource.Id.listViewSearchHouse);
-            
+            var layoutallcontent = FindViewById<LinearLayout>(Resource.Id.linearLayoutallcontent);
 
             SetSupportActionBar(toolbar);
             SupportActionBar.SetTitle(Resource.String.toolbar_housesearch);
@@ -60,6 +60,23 @@ namespace Allamvizsga2017.Activities
             {
                 SearchHouse(searchbar.Query);
             };
+
+            searchbar.FocusChange += (e, s) => 
+            {
+                if (!s.HasFocus)
+                {
+                    InputMethodManager imm = (InputMethodManager)GetSystemService(Context.InputMethodService);
+                    imm.HideSoftInputFromWindow(this.searchbar.WindowToken, 0);
+                }
+            };
+
+            
+
+            layoutallcontent.Click += delegate
+            { 
+                InputMethodManager imm = (InputMethodManager)GetSystemService(Context.InputMethodService);
+                imm.HideSoftInputFromWindow(this.searchbar.WindowToken, 0);
+            };
         }
 
 
@@ -70,14 +87,6 @@ namespace Allamvizsga2017.Activities
             MenuInflater.Inflate(Resource.Menu.toolbar_menu_devicespage, menu);
             return base.OnCreateOptionsMenu(menu);
         }
-
-        public override bool OnTouchEvent(MotionEvent e)
-        {
-            InputMethodManager imm = (InputMethodManager)GetSystemService(Context.InputMethodService);
-            imm.HideSoftInputFromWindow(this.CurrentFocus.WindowToken, 0);
-            return base.OnTouchEvent(e);
-        }
-
 
         public override bool OnOptionsItemSelected(IMenuItem item)
         {

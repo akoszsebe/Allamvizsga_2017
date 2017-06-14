@@ -12,7 +12,7 @@ using Android.Widget;
 using Android.Support.V7.App;
 using Allamvizsga2017.Models;
 using System.Threading;
-
+using Android.Views.InputMethods;
 
 namespace Allamvizsga2017.Activities
 {
@@ -113,6 +113,15 @@ namespace Allamvizsga2017.Activities
                 }
             };
 
+            //layoutallcontent.Click += delegate
+            //{
+            //    layouticons.LayoutParameters.Height = (int)Android.Util.TypedValue.ApplyDimension(Android.Util.ComplexUnitType.Dip, 1, Resources.DisplayMetrics);
+            //    mRecyclerView.SetAdapter(null);
+            //    expanded = false;
+            //    InputMethodManager imm = (InputMethodManager)GetSystemService(Context.InputMethodService);
+            //    imm.HideSoftInputFromWindow(etdevicename.WindowToken, 0);
+            //    etdevicename.SetCursorVisible(false);
+            //};
         }
 
 
@@ -122,6 +131,12 @@ namespace Allamvizsga2017.Activities
             return base.OnCreateOptionsMenu(menu);
         }
 
+        public override bool OnTouchEvent(MotionEvent e)
+        {
+            InputMethodManager imm = (InputMethodManager)GetSystemService(Context.InputMethodService);
+            imm.HideSoftInputFromWindow(this.CurrentFocus.WindowToken, 0);
+            return base.OnTouchEvent(e);
+        }
 
         public override bool OnOptionsItemSelected(IMenuItem item)
         {
