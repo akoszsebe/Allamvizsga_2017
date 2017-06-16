@@ -28,23 +28,25 @@ namespace Allamvizsga2017.Activities
             tiemail = FindViewById<EditText>(Resource.Id.textInputEmail);
             tipasswd = FindViewById<EditText>(Resource.Id.textInputPassword);
             var tvhaveaccount = FindViewById<TextView>(Resource.Id.textViewHaveAccount);
+            var btpasswdicon = FindViewById<Button>(Resource.Id.buttonpasswdicon);
+            var btpasswd2icon = FindViewById<Button>(Resource.Id.buttonpasswd2icon);
 
             var passwordtrnsform = tipasswd.TransformationMethod;
             bool longclicked = false;
-            tipasswd.LongClick += (v, e) =>
+            btpasswdicon.Click += (v, e) =>
             {
                 if (longclicked)
                 {
                     tipasswd.TransformationMethod = passwordtrnsform;
                     tipasswd.SetSelection(tipasswd.Text.Length);
-                    tipasswd.SetCompoundDrawablesWithIntrinsicBounds(null, null, ContextCompat.GetDrawable(this, Resource.Drawable.Lock_24), null);
+                    btpasswdicon.SetBackgroundResource(Resource.Drawable.Lock_24);
                     longclicked = false;
                 }
                 else
                 {
                     tipasswd.TransformationMethod = null;
                     tipasswd.SetSelection(tipasswd.Text.Length);
-                    tipasswd.SetCompoundDrawablesWithIntrinsicBounds(null, null, ContextCompat.GetDrawable(this, Resource.Drawable.Unlock_24), null);
+                    btpasswdicon.SetBackgroundResource(Resource.Drawable.Unlock_24);
                     longclicked = true;
                 }
 
@@ -55,7 +57,8 @@ namespace Allamvizsga2017.Activities
                 if (!s.HasFocus)
                 {
                     tipasswd.TransformationMethod = passwordtrnsform;
-                    tipasswd.SetCompoundDrawablesWithIntrinsicBounds(null, null, ContextCompat.GetDrawable(this, Resource.Drawable.Lock_24), null);
+                    btpasswdicon.SetBackgroundResource(Resource.Drawable.Lock_24);
+                    longclicked = false;
                     tipasswd.SetCursorVisible(false);
                 }
                 else tipasswd.SetCursorVisible(true);

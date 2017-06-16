@@ -29,6 +29,9 @@ namespace Allamvizsga2017.Activities
             tipasswd = FindViewById<EditText>(Resource.Id.textInputPassword);
             var tvnoaccount = FindViewById<TextView>(Resource.Id.textViewNoAccount);
             var tvforgetpassword = FindViewById<TextView>(Resource.Id.textViewForgetPassword);
+            var tvemail = FindViewById<TextView>(Resource.Id.textViewEmail);
+            var tvpassword = FindViewById<TextView>(Resource.Id.textViewPassword);
+            var btusericon = FindViewById<Button>(Resource.Id.buttonusericon);
 
             var passwordtrnsform = tipasswd.TransformationMethod;
             bool longclicked = false;
@@ -36,24 +39,39 @@ namespace Allamvizsga2017.Activities
             btlogin.Click += delegate
             {
                 tipasswd.TransformationMethod = passwordtrnsform;
-                tipasswd.SetCompoundDrawablesWithIntrinsicBounds(null, null, ContextCompat.GetDrawable(this, Resource.Drawable.Lock_24), null);
+                btusericon.SetBackgroundResource(Resource.Drawable.Lock_24);
                 Login();
             };
 
-            tipasswd.LongClick += (v,e) =>
+            tiemail.FocusChange += (s,e)=>
+            {
+                if (e.HasFocus && tiemail.Text=="")
+                {
+                    tvemail.Visibility = ViewStates.Visible;
+                    tiemail.Hint = "";
+                }
+                else
+                {
+                    tvemail.Visibility = ViewStates.Invisible;
+                    tiemail.SetHint(Resource.String.input_email);
+                }
+            };
+
+
+            btusericon.Click += (v,e) =>
             {
                 if (longclicked)
                 {
                     tipasswd.TransformationMethod = passwordtrnsform;
                     tipasswd.SetSelection(tipasswd.Text.Length);
-                    tipasswd.SetCompoundDrawablesWithIntrinsicBounds(null,null, ContextCompat.GetDrawable(this, Resource.Drawable.Lock_24),null);
+                    btusericon.SetBackgroundResource(Resource.Drawable.Lock_24);
                     longclicked = false;
                 }
                 else
                 {
                     tipasswd.TransformationMethod = null;
                     tipasswd.SetSelection(tipasswd.Text.Length);
-                    tipasswd.SetCompoundDrawablesWithIntrinsicBounds(null, null, ContextCompat.GetDrawable(this, Resource.Drawable.Unlock_24), null);
+                    btusericon.SetBackgroundResource(Resource.Drawable.Unlock_24);
                     longclicked = true;
                 }
                 
@@ -64,7 +82,17 @@ namespace Allamvizsga2017.Activities
                 if (!s.HasFocus)
                 {
                     tipasswd.TransformationMethod = passwordtrnsform;
-                    tipasswd.SetCompoundDrawablesWithIntrinsicBounds(null, null, ContextCompat.GetDrawable(this, Resource.Drawable.Lock_24), null);
+                    btusericon.SetBackgroundResource(Resource.Drawable.Lock_24);
+                }
+                if (s.HasFocus && tipasswd.Text == "")
+                {
+                    tvpassword.Visibility = ViewStates.Visible;
+                    tipasswd.Hint = "";
+                }
+                else
+                {
+                    tvpassword.Visibility = ViewStates.Invisible;
+                    tipasswd.SetHint(Resource.String.input_password);
                 }
             };
 
@@ -73,7 +101,7 @@ namespace Allamvizsga2017.Activities
                 if (e.Event.Action == KeyEventActions.Down &&  e.Event.KeyCode == Keycode.Enter)
                 {
                     tipasswd.TransformationMethod = passwordtrnsform;
-                    tipasswd.SetCompoundDrawablesWithIntrinsicBounds(null, null, ContextCompat.GetDrawable(this, Resource.Drawable.Lock_24), null);
+                    btusericon.SetBackgroundResource(Resource.Drawable.Lock_24);
                     Login();
                     e.Handled = true;
                 }

@@ -20,6 +20,12 @@
         android:inputType="textEmailAddress"
         android:drawableRight="@drawable/user_24"
         android:maxLength="30" />
+  <FrameLayout
+     android:minWidth="25px"
+     android:minHeight="25px"
+     android:layout_width="match_parent"
+     android:layout_height="wrap_content"
+     android:id="@+id/frameLayout1">
     <android.support.design.widget.TextInputEditText
         android:layout_width="match_parent"
         android:layout_height="60.0dp"
@@ -29,8 +35,23 @@
         android:layout_marginRight="30.0dp"
         android:password="true"
         android:inputType="textPassword"
-        android:drawableRight="@drawable/lock_24"
         android:maxLength="15" />
+    <Button
+            android:text=""
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:id="@+id/buttonpasswdicon"
+            android:background="@drawable/lock_24"
+            android:gravity="center"
+            android:layout_gravity="right|center"
+            android:layout_marginRight="32.0dp" />
+  </FrameLayout>
+  <FrameLayout
+       android:minWidth="25px"
+       android:minHeight="25px"
+       android:layout_width="match_parent"
+       android:layout_height="wrap_content"
+       android:id="@+id/frameLayout1">
     <android.support.design.widget.TextInputEditText
         android:layout_width="match_parent"
         android:layout_height="60.0dp"
@@ -40,8 +61,17 @@
         android:layout_marginRight="30.0dp"
         android:password="true"
         android:inputType="textPassword"
-        android:drawableRight="@drawable/lock_24"
         android:maxLength="15" />
+    <Button
+            android:text=""
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:id="@+id/buttonpasswd2icon"
+            android:background="@drawable/lock_24"
+            android:gravity="center"
+            android:layout_gravity="right|center"
+            android:layout_marginRight="32.0dp" />
+  </FrameLayout>
     <Button
         android:text="@string/button_register"
         android:layout_width="match_parent"

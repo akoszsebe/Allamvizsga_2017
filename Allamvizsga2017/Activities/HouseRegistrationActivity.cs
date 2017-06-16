@@ -42,32 +42,56 @@ namespace Allamvizsga2017.Activities
             var tihouse_name = FindViewById<EditText>(Resource.Id.textInputHouseName);
             var tihouse_password = FindViewById<EditText>(Resource.Id.textInputPassword);
             var btregistration = FindViewById<Button>(Resource.Id.buttonHouseRegister);
+            var btpasswdicon = FindViewById<Button>(Resource.Id.buttonpasswdicon);
 
+            var line1 = false;
+            var line2 = false;
             tihouse_id.TextChanged += (e, s) =>
             {
-                if (tihouse_id.Text.Length == 4 || tihouse_id.Text.Length == 9)
+                if (tihouse_id.Text.Length == 4 && !line1)
+                {                 
+                    tihouse_id.Append("-");
+                    line1 = true;
+                }
+                if (tihouse_id.Text.Length == 9 && !line2)
                 {
                     tihouse_id.Append("-");
+                    line2 = true;
+                }
+                if (tihouse_id.Text.Length < 4)
+                {
+                    line1 = false;
+                    line2 = false;
+                }
+                else if (tihouse_id.Text.Length < 9)
+                {
+                    line1 = true;
+                    line2 = false;
+                }
+                else
+                {
+                    line1 = true;
+                    line2 = true;
                 }
             };
 
 
             var passwordtransform = tihouse_password.TransformationMethod;
             bool longclicked = false;
-            tihouse_password.LongClick += (v, e) =>
+            btpasswdicon.Click += (v, e) =>
             {
                 if (longclicked)
                 {
                     tihouse_password.TransformationMethod = passwordtransform;
                     tihouse_password.SetSelection(tihouse_password.Text.Length);
-                    tihouse_password.SetCompoundDrawablesWithIntrinsicBounds(null, null, ContextCompat.GetDrawable(this, Resource.Drawable.Lock_24), null);
+                    btpasswdicon.SetBackgroundResource(Resource.Drawable.Lock_24);
                     longclicked = false;
                 }
                 else
                 {
                     tihouse_password.TransformationMethod = null;
                     tihouse_password.SetSelection(tihouse_password.Text.Length);
-                    tihouse_password.SetCompoundDrawablesWithIntrinsicBounds(null, null, ContextCompat.GetDrawable(this, Resource.Drawable.Unlock_24), null);
+                    btpasswdicon.SetBackgroundResource(Resource.Drawable.Unlock_24);
                     longclicked = true;
                 }
 
@@ -78,7 +102,8 @@ namespace Allamvizsga2017.Activities
                 if (!s.HasFocus)
                 {
                     tihouse_password.TransformationMethod = passwordtransform;
-                    tihouse_password.SetCompoundDrawablesWithIntrinsicBounds(null, null, ContextCompat.GetDrawable(this, Resource.Drawable.Lock_24), null);
+                    btpasswdicon.SetBackgroundResource(Resource.Drawable.Lock_24);
+                    longclicked = false;
                 }
             };
 

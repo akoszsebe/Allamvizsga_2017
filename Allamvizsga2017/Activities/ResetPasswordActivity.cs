@@ -36,10 +36,13 @@ namespace Allamvizsga2017.Activities
             tiresetcode = FindViewById<EditText>(Resource.Id.textInputResetCode);
             tinewpassword = FindViewById<EditText>(Resource.Id.textInputNewPassword);
             btnewpassword = FindViewById<Button>(Resource.Id.buttonNewPassword);
+            var btpasswdicon = FindViewById<Button>(Resource.Id.buttonpasswdicon);
 
             tinewpassword.Enabled = false;
             btnewpassword.Enabled = false;
+            btpasswdicon.Enabled = false;
             var passwordtrnsform = tinewpassword.TransformationMethod;
+           
             bool longclicked = false;
 
             tiresetcode.TextChanged += (e, s) =>
@@ -57,6 +60,7 @@ namespace Allamvizsga2017.Activities
                                     tiresetcode.SetCompoundDrawablesWithIntrinsicBounds(null, null, ContextCompat.GetDrawable(this, Resource.Drawable.True_24), null);
                                     tinewpassword.Enabled = true;
                                     btnewpassword.Enabled = true;
+                                    btpasswdicon.Enabled = true;
                                 });
                             }
                             else
@@ -66,6 +70,7 @@ namespace Allamvizsga2017.Activities
                                     tiresetcode.SetCompoundDrawablesWithIntrinsicBounds(null, null, ContextCompat.GetDrawable(this, Resource.Drawable.False_24), null);
                                     tinewpassword.Enabled = false;
                                     btnewpassword.Enabled = false;
+                                    btpasswdicon.Enabled = false;
                                 });
                             }
                         })).Start();
@@ -76,6 +81,7 @@ namespace Allamvizsga2017.Activities
                         tiresetcode.SetCompoundDrawablesWithIntrinsicBounds(null, null, ContextCompat.GetDrawable(this, Resource.Drawable.False_24), null);
                         tinewpassword.Enabled = false;
                         btnewpassword.Enabled = false;
+                        btpasswdicon.Enabled = false;
                     }
             };
 
@@ -87,20 +93,20 @@ namespace Allamvizsga2017.Activities
                     tiresetcode.SetCursorVisible(false);
             };
 
-            tinewpassword.LongClick += (v, e) =>
+            btpasswdicon.Click += (v, e) =>
             {
                 if (longclicked)
                 {
                     tinewpassword.TransformationMethod = passwordtrnsform;
                     tinewpassword.SetSelection(tinewpassword.Text.Length);
-                    tinewpassword.SetCompoundDrawablesWithIntrinsicBounds(null, null, ContextCompat.GetDrawable(this, Resource.Drawable.Lock_24), null);
+                    btpasswdicon.SetBackgroundResource(Resource.Drawable.Lock_24);
                     longclicked = false;
                 }
                 else
                 {
                     tinewpassword.TransformationMethod = null;
                     tinewpassword.SetSelection(tinewpassword.Text.Length);
-                    tinewpassword.SetCompoundDrawablesWithIntrinsicBounds(null, null, ContextCompat.GetDrawable(this, Resource.Drawable.Unlock_24), null);
+                    btpasswdicon.SetBackgroundResource(Resource.Drawable.Unlock_24);
                     longclicked = true;
                 }
 
@@ -111,7 +117,7 @@ namespace Allamvizsga2017.Activities
                 if (!s.HasFocus)
                 {
                     tinewpassword.TransformationMethod = passwordtrnsform;
-                    tinewpassword.SetCompoundDrawablesWithIntrinsicBounds(null, null, ContextCompat.GetDrawable(this, Resource.Drawable.Lock_24), null);
+                    btpasswdicon.SetBackgroundResource(Resource.Drawable.Lock_24);
                     tinewpassword.SetCursorVisible(false);
                 }
                 else tinewpassword.SetCursorVisible(true); 
@@ -122,7 +128,7 @@ namespace Allamvizsga2017.Activities
             {
 
                 tinewpassword.TransformationMethod = passwordtrnsform;
-                tinewpassword.SetCompoundDrawablesWithIntrinsicBounds(null, null, ContextCompat.GetDrawable(this, Resource.Drawable.Lock_24), null);
+                btpasswdicon.SetBackgroundResource(Resource.Drawable.Lock_24);
                 longclicked = false;
                 if (tinewpassword.Text != "")
                 {
