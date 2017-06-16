@@ -16,7 +16,7 @@
     <AndroidResgenFile>Resources\Resource.Designer.cs</AndroidResgenFile>
     <GenerateSerializationAssemblies>Off</GenerateSerializationAssemblies>
     <AndroidUseLatestPlatformSdk>True</AndroidUseLatestPlatformSdk>
-    <TargetFrameworkVersion>v6.0</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v7.0</TargetFrameworkVersion>
     <AndroidManifest>Properties\AndroidManifest.xml</AndroidManifest>
     <NuGetPackageImportStamp>
     </NuGetPackageImportStamp>
@@ -58,17 +58,9 @@
       <Private>True</Private>
     </Reference>
     <Reference Include="Mono.Android" />
-    <Reference Include="MPAndroidChart, Version=3.0.1.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\MPAndroidChart.3.0.1\lib\MPAndroidChart.dll</HintPath>
-      <Private>True</Private>
-    </Reference>
     <Reference Include="mscorlib" />
     <Reference Include="Newtonsoft.Json, Version=9.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
       <HintPath>..\packages\Newtonsoft.Json.9.0.1\lib\portable-net45+wp80+win8+wpa81\Newtonsoft.Json.dll</HintPath>
-      <Private>True</Private>
-    </Reference>
-    <Reference Include="Refractored.FloatingActionButton, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\Refractored.FloatingActionButton.1.3.0\lib\MonoAndroid10\Refractored.FloatingActionButton.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="SocketIoClientDotNet, Version=0.9.13.0, Culture=neutral, processorArchitecture=MSIL">
@@ -122,16 +114,12 @@
     <Compile Include="Activities\RegistrationActivity.cs" />
     <Compile Include="Activities\ForgetPasswordActivity.cs" />
     <Compile Include="Activities\ResetPasswordActivity.cs" />
-    <Compile Include="Chart\MyLineChart.cs" />
-    <Compile Include="Chart\MyLineChartComplex.cs" />
-    <Compile Include="Chart\MyPieChart.cs" />
     <Compile Include="Fragments\CustomPagerAdapter.cs" />
     <Compile Include="Activities\DeviceSettingActivity.cs" />
     <Compile Include="Fragments\DevicesListViewFragment.cs" />
     <Compile Include="Fragments\StatisticsPageFragment.cs" />
     <Compile Include="Activities\MainActivity.cs" />
     <Compile Include="Models\Amper.cs" />
-    <Compile Include="Models\AxisValueFormatter.cs" />
     <Compile Include="Models\CredentialsProvider.cs" />
     <Compile Include="Models\DeviceSelector.cs" />
     <Compile Include="Models\House.cs" />
@@ -178,9 +166,6 @@
     <AndroidResource Include="Resources\drawable\Television.png" />
     <AndroidResource Include="Resources\drawable\Vacuum_cleaner.png" />
     <AndroidResource Include="Resources\drawable\Water_heater.png" />
-    <AndroidResource Include="Resources\layout\Chartlayout.axml">
-      <SubType>Designer</SubType>
-    </AndroidResource>
     <AndroidResource Include="Resources\layout\custom_tab.axml">
       <SubType>Designer</SubType>
     </AndroidResource>

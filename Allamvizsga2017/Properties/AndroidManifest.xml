@@ -2,5 +2,5 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android" package="Allamvizsga2017.Allamvizsga2017" android:versionCode="1" android:versionName="1.0">
 	<uses-sdk android:minSdkVersion="15" />
 	<uses-permission android:name="android.permission.INTERNET" />
-	<application android:label="Allamvizsga2017" android:largeHeap="true" android:theme="@style/Theme.AppCompat.Light.NoActionBar"></application>
+	<application android:label="Allamvizsga2017" android:largeHeap="true" android:theme="@style/NoActionBar"></application>
 </manifest>
