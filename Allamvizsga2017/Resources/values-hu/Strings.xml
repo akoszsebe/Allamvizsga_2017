@@ -26,7 +26,7 @@
   <string name="textview_notifications"> Értesítések  </string>
   <string name="textview_enable"> Engedélyezze  </string>
   <string name="textview_forthishouse">Ehhez a házhoz </string>
-  <string name="textview_yourhouses"> A házaid </string>
+  <string name="textview_yourhouses"> Házaid </string>
   <string name="textview_registerhouse"> Ház Regisztrálása </string>
   <string name="textview_addsmartwatch">Okos Óra Hozzáadás </string>
   <string name="textview_searchhouse"> Ház Keresése </string>

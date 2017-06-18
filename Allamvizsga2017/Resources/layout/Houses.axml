@@ -24,8 +24,9 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:id="@+id/textView1"
-            android:gravity="center_horizontal"
-            android:background="#d4ddd8"
+            android:gravity="left"
+            android:layout_marginLeft="17dp"
+            android:textColor="@color/colorPrimary"
             android:layout_marginTop="15dp" />
         <android.support.v4.widget.SwipeRefreshLayout
             android:id="@+id/refresher"
