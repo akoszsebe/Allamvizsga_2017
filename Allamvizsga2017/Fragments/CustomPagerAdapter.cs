@@ -8,7 +8,7 @@ using Java.Lang;
 using Allamvizsga2017.Fragments;
 using Quobject.SocketIoClientDotNet.Client;
 
-namespace Allamvizsga2017
+namespace Allamvizsga2017.Fragments
 {
     public class CustomPagerAdapter : FragmentPagerAdapter
     {

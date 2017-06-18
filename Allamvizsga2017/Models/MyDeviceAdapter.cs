@@ -2,6 +2,7 @@ using System.Collections.Generic;
 using Android.Content;
 using Android.Views;
 using Android.Widget;
+using Allamvizsga2017.Activities;
 
 namespace Allamvizsga2017.Models
 {

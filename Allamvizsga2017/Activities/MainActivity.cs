@@ -8,8 +8,9 @@ using Android.Widget;
 using Quobject.SocketIoClientDotNet.Client;
 using Allamvizsga2017.Activities;
 using Android.Content;
+using Allamvizsga2017.Fragments;
 
-namespace Allamvizsga2017
+namespace Allamvizsga2017.Activities
 {
     [Activity(Label = "Allamvizsga" , ScreenOrientation = Android.Content.PM.ScreenOrientation.Portrait)]
     public class MainActivity : AppCompatActivity

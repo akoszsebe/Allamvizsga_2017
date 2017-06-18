@@ -11,7 +11,7 @@ using Android.Widget;
 using System;
 using System.Collections.Generic;
 
-namespace Allamvizsga2017
+namespace Allamvizsga2017.Activities
 {
     [Activity(Label = "DeviceSettingActivity", WindowSoftInputMode = SoftInput.StateHidden  , 
         ScreenOrientation = Android.Content.PM.ScreenOrientation.Portrait)]
