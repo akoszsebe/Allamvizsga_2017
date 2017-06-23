@@ -139,6 +139,18 @@ namespace Allamvizsga2017.Models
         public string password { get; set; }
         public bool users_house { get; set; } = false;
 
+        internal MyHouseSearchAdapter MyHouseSearchAdapter
+        {
+            get
+            {
+                throw new System.NotImplementedException();
+            }
+
+            set
+            {
+            }
+        }
+
         public ListViewItemHouse(long id, string house_id, string house_name, string password)
         {
             this.Id = id;

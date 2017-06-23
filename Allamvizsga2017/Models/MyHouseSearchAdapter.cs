@@ -11,10 +11,10 @@ namespace Allamvizsga2017.Models
     class MyHouseSearchAdapter : BaseAdapter
     {
 
-        List<ListViewItemHouse> itemList;
-        Context context;
-        Activity activity;
-        string user_email;
+        List<ListViewItemHouse> itemList { get; set; }
+        Context context { get; set; }
+        Activity activity { get; set; }
+        string user_email { get; set; }
 
         public MyHouseSearchAdapter(Activity context, string user_email)
         {
@@ -27,6 +27,18 @@ namespace Allamvizsga2017.Models
         public override int Count
         {
             get { return itemList.Count; }
+        }
+
+        public Activities.HouseSearchActivity HouseSearchActivity
+        {
+            get
+            {
+                throw new System.NotImplementedException();
+            }
+
+            set
+            {
+            }
         }
 
         public override Java.Lang.Object GetItem(int position)
