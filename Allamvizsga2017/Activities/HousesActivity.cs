@@ -67,8 +67,6 @@ namespace Allamvizsga2017.Activities
             var openFab_startoffset100 = AnimationUtils.LoadAnimation(this, Resource.Animation.fab_open_startoffset_100);
             var openFab_startoffset200 = AnimationUtils.LoadAnimation(this, Resource.Animation.fab_open_startoffset_200);
             var closeFab = AnimationUtils.LoadAnimation(this, Resource.Animation.fab_close);
-            var rotateFab = AnimationUtils.LoadAnimation(this, Resource.Animation.fab_rotate_forward);
-            var rotatebackFab = AnimationUtils.LoadAnimation(this, Resource.Animation.fab_rotate_backward);
 
             var layouttransparent = FindViewById<LinearLayout>(Resource.Id.layouttransparent);
 
@@ -76,9 +74,14 @@ namespace Allamvizsga2017.Activities
 
             fabopen.Click += delegate
             {
+                
                 if (isfabopend)
                 {
-                    fabopen.StartAnimation(rotatebackFab);
+                    fabopen.Animate()
+                     .Rotation(0f)
+                     .SetDuration(300)
+                     .SetInterpolator(new OvershootInterpolator())
+                     .Start();
                     fabsearchhouse.StartAnimation(closeFab);
                     fabsmartwatch.StartAnimation(closeFab);
                     fabregisterhouse.StartAnimation(closeFab);
@@ -97,7 +100,11 @@ namespace Allamvizsga2017.Activities
                 }
                 else
                 {
-                    fabopen.StartAnimation(rotateFab);
+                    fabopen.Animate()
+                     .Rotation(45f)
+                     .SetDuration(300)
+                     .SetInterpolator(new OvershootInterpolator())
+                     .Start();
                     fabsearchhouse.StartAnimation(openFab);
                     fabsmartwatch.StartAnimation(openFab_startoffset100);
                     fabregisterhouse.StartAnimation(openFab_startoffset200);
