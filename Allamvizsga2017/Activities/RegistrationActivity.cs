@@ -27,6 +27,7 @@ namespace Allamvizsga2017.Activities
             btlogin = FindViewById<Button>(Resource.Id.buttonLogin);
             tiemail = FindViewById<EditText>(Resource.Id.textInputEmail);
             tipasswd = FindViewById<EditText>(Resource.Id.textInputPassword);
+            var tipasswdconfirm = FindViewById<EditText>(Resource.Id.textInputConfirmPassword);
             var tvhaveaccount = FindViewById<TextView>(Resource.Id.textViewHaveAccount);
             var btpasswdicon = FindViewById<Button>(Resource.Id.buttonpasswdicon);
             var btpasswd2icon = FindViewById<Button>(Resource.Id.buttonpasswd2icon);
@@ -50,6 +51,39 @@ namespace Allamvizsga2017.Activities
                     longclicked = true;
                 }
 
+            };
+
+            var passwordtrnsform2 = tipasswdconfirm.TransformationMethod;
+            bool longclicked2 = false;
+            btpasswd2icon.Click += (v, e) =>
+            {
+                if (longclicked2)
+                {
+                    tipasswdconfirm.TransformationMethod = passwordtrnsform2;
+                    tipasswdconfirm.SetSelection(tipasswdconfirm.Text.Length);
+                    btpasswd2icon.SetBackgroundResource(Resource.Drawable.Lock_24);
+                    longclicked2 = false;
+                }
+                else
+                {
+                    tipasswdconfirm.TransformationMethod = null;
+                    tipasswdconfirm.SetSelection(tipasswdconfirm.Text.Length);
+                    btpasswd2icon.SetBackgroundResource(Resource.Drawable.Unlock_24);
+                    longclicked2 = true;
+                }
+
+            };
+
+            tipasswdconfirm.FocusChange += (e, s) =>
+            {
+                if (!s.HasFocus)
+                {
+                    tipasswdconfirm.TransformationMethod = passwordtrnsform2;
+                    btpasswd2icon.SetBackgroundResource(Resource.Drawable.Lock_24);
+                    longclicked2 = false;
+                    tipasswdconfirm.SetCursorVisible(false);
+                }
+                else tipasswdconfirm.SetCursorVisible(true);
             };
 
             tipasswd.FocusChange += (e, s) =>
