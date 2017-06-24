@@ -34,7 +34,7 @@
             android:layout_height="match_parent">
             <FrameLayout
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content">
+                android:layout_height="50dp">
                 <ListView
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
@@ -68,7 +68,8 @@
                         android:src="@drawable/add_house_icon"
                         android:visibility="invisible"
                         app:backgroundTint="@color/fab4"
-                        app:fabSize="mini" />
+                        app:fabSize="mini"
+                        app:elevation="0dp" />
                     <TextView
                         android:text="@string/textview_registerhouse"
                         android:textAppearance="?android:attr/textAppearanceLarge"
@@ -79,11 +80,13 @@
                         android:visibility="invisible"
                         android:textColor="#ffffff"
                         android:id="@+id/textView_fab_registerhouse"
-                        android:layout_marginRight="50dp" />
+                        android:layout_marginRight="60.0dp"
+                        android:padding="0dp" />
                 </FrameLayout>
                 <FrameLayout
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content">
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="2.0dp">
                     <android.support.design.widget.FloatingActionButton
                         android:id="@+id/fab_3"
                         android:layout_width="50dp"
@@ -93,7 +96,9 @@
                         android:src="@drawable/add_smartwatch_icon"
                         android:visibility="invisible"
                         app:backgroundTint="@color/fab3"
-                        app:fabSize="mini" />
+                        app:fabSize="mini"
+                        app:elevation="0dp"
+                        android:layout_marginTop="0.0dp" />
                     <TextView
                         android:text="@string/textview_addsmartwatch"
                         android:textAppearance="?android:attr/textAppearanceLarge"
@@ -104,11 +109,13 @@
                         android:gravity="center"
                         android:textColor="#ffffff"
                         android:id="@+id/textView_fab_add"
-                        android:layout_marginRight="50dp" />
+                        android:layout_marginRight="60.5dp"
+                        android:padding="0dp" />
                 </FrameLayout>
                 <FrameLayout
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content">
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="2.0dp">
                     <android.support.design.widget.FloatingActionButton
                         android:id="@+id/fab_2"
                         android:layout_width="50dp"
@@ -118,7 +125,10 @@
                         android:src="@drawable/search_icon"
                         android:visibility="invisible"
                         app:backgroundTint="@color/fab2"
-                        app:fabSize="mini" />
+                        app:fabSize="mini"
+                        app:elevation="0dp"
+                        android:layout_marginBottom="0.0dp"
+                        android:layout_marginTop="0.0dp" />
                     <TextView
                         android:text="@string/textview_searchhouse"
                         android:textAppearance="?android:attr/textAppearanceLarge"
@@ -129,7 +139,10 @@
                         android:gravity="center"
                         android:textColor="#ffffff"
                         android:id="@+id/textView_fab_search"
-                        android:layout_marginRight="50dp" />
+                        android:layout_marginRight="60.0dp"
+                        android:padding="0dp"
+                        android:layout_marginTop="0.0dp"
+                        android:layout_marginBottom="0.0dp" />
                 </FrameLayout>
                 <android.support.design.widget.FloatingActionButton
                     android:id="@+id/fab_1"
@@ -140,7 +153,8 @@
                     android:layout_marginBottom="16dp"
                     android:layout_marginRight="8dp"
                     app:backgroundTint="@color/fab1"
-                    app:fabSize="normal" />
+                    app:fabSize="normal"
+                    android:layout_marginTop="4.0dp" />
             </LinearLayout>
         </FrameLayout>
     </LinearLayout>
