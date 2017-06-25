@@ -57,7 +57,8 @@ namespace Allamvizsga2017.Models
         public static bool Register(LoginUser user)
         {
             var request = WebRequest.Create(@"" + protocol + "://" + ip + "" + port + "/setuser?user_email=" + user.Email +
-                "&password=" + user.Password);
+                "&password=" + user.Password+
+                "&number="+ user.Phonenumber);
             request.ContentType = "application/json";
             request.Method = "GET";
             request.Timeout = 12000;
@@ -715,11 +716,11 @@ namespace Allamvizsga2017.Models
             }
         }
 
-        public static bool RequestResetCode(string user_email,string phonenumber)
+        public static bool RequestResetCode(string user_email,bool inmail)
         {
             var request = WebRequest.Create(@"" + protocol + "://" + ip + "" + port + "/resetuserpassword"
             + "?user_email=" + user_email+
-            "&number=" + phonenumber);
+            "&inmail=" + inmail);
             request.ContentType = "application/json";
             request.Method = "GET";
             request.Timeout = 3000;
