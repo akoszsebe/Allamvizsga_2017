@@ -3143,6 +3143,9 @@ namespace Allamvizsga2017
 			// aapt resource value: 0x7f09001f
 			public const int input_housename = 2131296287;
 			
+			// aapt resource value: 0x7f090042
+			public const int input_housepassword = 2131296322;
+			
 			// aapt resource value: 0x7f09001d
 			public const int input_newpassword = 2131296285;
 			

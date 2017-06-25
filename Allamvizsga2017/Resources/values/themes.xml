@@ -7,6 +7,7 @@
     <item name = "android:windowNoTitle">true</item>
     <item name="colorAccent">@color/colorPrimary</item>
     <item name="colorPrimary">@color/colorPrimary</item>
+    <item name="android:divider">@color/colorPrimary</item>
   </style>
 
   <style name="MyAlertDialogStyle" parent="Theme.AppCompat.Light.Dialog.Alert">

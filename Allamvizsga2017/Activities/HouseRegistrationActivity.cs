@@ -139,7 +139,7 @@ namespace Allamvizsga2017.Activities
                         var canlogin = RestClient.RegisterHouse(tihouse_id.Text,tihouse_name.Text);
                         if (canlogin)
                         {
-                            var adduserhouse = RestClient.AddUserHouse(user_email, tihouse_id.Text);
+                            var adduserhouse = RestClient.AddUserHouse(user_email, tihouse_id.Text, tihouse_password.Text);
                             if (adduserhouse)
                             {
                                 RunOnUiThread(() =>

@@ -51,7 +51,7 @@ namespace Allamvizsga2017.Models
             var ivsettings = view.FindViewById<ImageView>(Resource.Id.imageviewUserHouseSettings);
             var ivhouseicon = view.FindViewById<ImageView>(Resource.Id.imageviewHouseColoricon);
 
-            if (itemList[position].house_name == "")
+            if (itemList[position].house_name == "" || itemList[position].house_name == null)
                 tvhousename.Text = "Id: " + itemList[position].house_id.ToString();
             else
                 tvhousename.Text = itemList[position].house_name;

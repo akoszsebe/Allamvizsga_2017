@@ -43,9 +43,9 @@ namespace Allamvizsga2017.Activities
                 Login();
             };
 
-            tiemail.FocusChange += (s,e)=>
+            tiemail.FocusChange += (s, e) =>
             {
-                if (e.HasFocus && tiemail.Text=="")
+                if (e.HasFocus && tiemail.Text == "")
                 {
                     tvemail.Visibility = ViewStates.Visible;
                     tiemail.Hint = "";
@@ -58,7 +58,7 @@ namespace Allamvizsga2017.Activities
             };
 
 
-            btusericon.Click += (v,e) =>
+            btusericon.Click += (v, e) =>
             {
                 if (longclicked)
                 {
@@ -70,11 +70,13 @@ namespace Allamvizsga2017.Activities
                 else
                 {
                     tipasswd.TransformationMethod = null;
+                    tipasswd.RequestFocus();
                     tipasswd.SetSelection(tipasswd.Text.Length);
                     btusericon.SetBackgroundResource(Resource.Drawable.Unlock_24);
                     longclicked = true;
+
                 }
-                
+
             };
 
             tipasswd.FocusChange += (e, s) =>
@@ -83,6 +85,7 @@ namespace Allamvizsga2017.Activities
                 {
                     tipasswd.TransformationMethod = passwordtrnsform;
                     btusericon.SetBackgroundResource(Resource.Drawable.Lock_24);
+                    longclicked = false;
                 }
                 if (s.HasFocus && tipasswd.Text == "")
                 {
@@ -98,23 +101,24 @@ namespace Allamvizsga2017.Activities
 
             tipasswd.KeyPress += (v, e) =>
             {
-                if (e.Event.Action == KeyEventActions.Down &&  e.Event.KeyCode == Keycode.Enter)
+                if (e.Event.Action == KeyEventActions.Down && e.Event.KeyCode == Keycode.Enter)
                 {
                     tipasswd.TransformationMethod = passwordtrnsform;
                     btusericon.SetBackgroundResource(Resource.Drawable.Lock_24);
+                    longclicked = false;
                     Login();
                     e.Handled = true;
                 }
                 else
                     e.Handled = false;
-                  
+
             };
 
             tvnoaccount.Click += delegate
             {
                 var registeractivity = new Intent(this, typeof(RegistrationActivity));
                 this.StartActivity(registeractivity);
-               
+
             };
 
             tvforgetpassword.Click += delegate
@@ -142,11 +146,32 @@ namespace Allamvizsga2017.Activities
         {
             InputMethodManager imm = (InputMethodManager)GetSystemService(Context.InputMethodService);
             imm.HideSoftInputFromWindow(this.CurrentFocus.WindowToken, 0);
+            View current = this.CurrentFocus;
+            if (current != null) current.ClearFocus();
             return base.OnTouchEvent(e);
         }
 
         private void Login()
         {
+            if (tiemail.Text.Equals(string.Empty))
+            {
+                tiemail.Error = "Email required";
+                return;
+            }
+            else
+            {
+                if (!IsValidEmail(tiemail.Text))
+                {
+                    tiemail.Error = "invalid email";
+                    return;
+                }
+            }
+            if (tipasswd.Text.Equals(string.Empty))
+            {
+                tipasswd.Error = "Password required";
+                tipasswd.RequestFocus();
+                return;
+            }
             ProgressDialog progress = new ProgressDialog(this);
             progress.Indeterminate = true;
             progress.SetProgressStyle(ProgressDialogStyle.Spinner);
@@ -156,7 +181,7 @@ namespace Allamvizsga2017.Activities
             new Thread(new ThreadStart(() =>
             {
                 var canlogin = RestClient.Login(new LoginUser(tiemail.Text, tipasswd.Text));
-                if (canlogin)
+                if (canlogin == "true")
                 {
                     RunOnUiThread(() =>
                     {
@@ -177,22 +202,45 @@ namespace Allamvizsga2017.Activities
                     {
                         progress.Dismiss();
                         Android.Support.V7.App.AlertDialog.Builder alert = new Android.Support.V7.App.AlertDialog.Builder(this, Resource.Style.MyAlertDialogStyle);
-                        alert.SetTitle("Not Registerd");
-                        alert.SetMessage("Please Register");
-                        alert.SetPositiveButton("Register", (senderAlert, args) =>
+                        alert.SetTitle("Failed");
+                        alert.SetMessage(canlogin);
+                        if (canlogin == "false")
                         {
-                            var registeractivity = new Intent(this, typeof(RegistrationActivity));
-                            this.StartActivity(registeractivity);
-                        });
-
-                        alert.SetNeutralButton("Cancel", (senderAlert, args) =>
+                            alert.SetMessage("Please Register");
+                            alert.SetPositiveButton("Register", (senderAlert, args) =>
+                            {
+                                var registeractivity = new Intent(this, typeof(RegistrationActivity));
+                                this.StartActivity(registeractivity);
+                            });
+                            alert.SetNeutralButton("Cancel", (senderAlert, args) =>
+                            {
+                            });
+                        }
+                        else
                         {
-                        });
+                            alert.SetPositiveButton("Ok", (senderAlert, args) =>
+                            {
+                            });
+                        }
+                        
                         Dialog dialog = alert.Create();
                         dialog.Show();
                     });
                 }
             })).Start();
+        }
+
+        bool IsValidEmail(string email)
+        {
+            try
+            {
+                var addr = new System.Net.Mail.MailAddress(email);
+                return addr.Address == email;
+            }
+            catch
+            {
+                return false;
+            }
         }
     }
 }

@@ -2,7 +2,7 @@ namespace Allamvizsga2017.Models
 {
     class CredentialsProvider
     {
-        public static bool Login(string email, string password)
+        public static string Login(string email, string password)
         {
            return RestClient.Login(new LoginUser(email,password));
         }

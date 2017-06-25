@@ -13,7 +13,7 @@ namespace Allamvizsga2017.Models
         static string protocol = "http";
 
 
-        public static bool Login(LoginUser user)
+        public static string Login(LoginUser user)
         {
             var request = WebRequest.Create(@""+ protocol + "://" + ip + "" + port + "/login?user_email=" + user.Email +
                 "&password=" + user.Password);
@@ -27,7 +27,7 @@ namespace Allamvizsga2017.Models
                 {
                     if (response.StatusCode != HttpStatusCode.OK)
                     {
-                        return false;
+                        return "No internet connection";
                     }
 
                     using (StreamReader reader = new StreamReader(response.GetResponseStream()))
@@ -36,12 +36,12 @@ namespace Allamvizsga2017.Models
                         if (string.IsNullOrWhiteSpace(content))
                         {
                             response.Close();
-                            return false;
+                            return "Wrong answer from the Server";
                         }
                         else
                         {
                             response.Close();
-                            return JsonConvert.DeserializeObject<bool>(content);
+                            return JsonConvert.DeserializeObject<string>(content);
                         }
                     }
                 }
@@ -50,7 +50,7 @@ namespace Allamvizsga2017.Models
             catch (Exception ex)
             {
                 Android.Util.Log.Error("MYAPP", "exception", ex);
-                return false;
+                return "Exeption ocured";
             }
         }
 
@@ -95,10 +95,11 @@ namespace Allamvizsga2017.Models
             }
         }
 
-        public static bool AddUserHouse(string user_email, string house_id)
+        public static bool AddUserHouse(string user_email, string house_id,string password)
         {
             var request = WebRequest.Create(@"" + protocol + "://" + ip + "" + port + "/setuserhouse?user_email=" + user_email +
-                "&house_id=" + house_id);
+                "&house_id=" + house_id +
+                "&password=" + password);
             request.ContentType = "application/json";
             request.Method = "GET";
             request.Timeout = 12000;
@@ -594,6 +595,47 @@ namespace Allamvizsga2017.Models
         public static bool RegisterHouse(string house_id, string house_name)
         {
             var request = WebRequest.Create(@"" + protocol + "://" + ip + "" + port + "/sethouse?house_id=" + house_id +
+                "&house_name=" + house_name);
+            request.ContentType = "application/json";
+            request.Method = "GET";
+            request.Timeout = 12000;
+
+            try
+            {
+                using (HttpWebResponse response = request.GetResponse() as HttpWebResponse)
+                {
+                    if (response.StatusCode != HttpStatusCode.OK)
+                    {
+                        return false;
+                    }
+
+                    using (StreamReader reader = new StreamReader(response.GetResponseStream()))
+                    {
+                        var content = reader.ReadToEnd();
+                        if (string.IsNullOrWhiteSpace(content))
+                        {
+                            response.Close();
+                            return false;
+                        }
+                        else
+                        {
+                            response.Close();
+                            return JsonConvert.DeserializeObject<bool>(content);
+                        }
+                    }
+                }
+
+            }
+            catch (Exception e)
+            {
+                Android.Util.Log.Error("MYAPP", "exception", e);
+                return false;
+            }
+        }
+
+        public static bool UpdateHouseName(string house_id, string house_name)
+        {
+            var request = WebRequest.Create(@"" + protocol + "://" + ip + "" + port + "/updatehousename?house_id=" + house_id +
                 "&house_name=" + house_name);
             request.ContentType = "application/json";
             request.Method = "GET";

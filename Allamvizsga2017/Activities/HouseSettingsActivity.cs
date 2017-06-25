@@ -22,6 +22,7 @@ namespace Allamvizsga2017.Activities
         string house_name { get; set; }
         string user_email { get; set; }
         string house_id { get; set; }
+        EditText tihousename { get; set; }
 
         protected override void OnCreate(Bundle savedInstanceState)
         {
@@ -41,7 +42,7 @@ namespace Allamvizsga2017.Activities
 
 
             var tehouseid = FindViewById<TextView>(Resource.Id.textViewHouseId);
-            var tihousename = FindViewById<EditText>(Resource.Id.textInputHouseName);
+            tihousename = FindViewById<EditText>(Resource.Id.textInputHouseName);
             var btswitchnotificationthishouse = FindViewById<Switch>(Resource.Id.switch1);
             var btswitchenable = FindViewById<Switch>(Resource.Id.switchEnable);
 
@@ -144,6 +145,15 @@ namespace Allamvizsga2017.Activities
                 Finish();
             if (item.ItemId == Resource.Id.menu_save)
             {
+                if (house_name == null && !tihousename.Text.Equals(string.Empty))
+                {
+                    RestClient.UpdateHouseName(house_id, tihousename.Text);
+                }
+                else 
+                if (!house_name.Equals(tihousename.Text))
+                {
+                    RestClient.UpdateHouseName(house_id, tihousename.Text);        
+                }
                 Finish();
             }
             if (item.ItemId == Resource.Id.menu_delete)

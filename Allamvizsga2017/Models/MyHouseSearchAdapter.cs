@@ -70,40 +70,61 @@ namespace Allamvizsga2017.Models
             {
                 btadd.Click += delegate
                 {
-                    ProgressDialog progress = new ProgressDialog(context);
-                    progress.Indeterminate = true;
-                    progress.SetProgressStyle(ProgressDialogStyle.Spinner);
-                    progress.SetMessage("Adding House...");
-                    progress.SetCancelable(true);
-                    progress.Show();
-                    new Thread(new ThreadStart(() =>
+                    Android.Support.V7.App.AlertDialog.Builder alert1 = new Android.Support.V7.App.AlertDialog.Builder(context, Resource.Style.MyAlertDialogStyle);
+                    alert1.SetTitle(Resource.String.input_housepassword);
+                    LinearLayout container = new LinearLayout(context);
+                    LinearLayout.LayoutParams p = new LinearLayout.LayoutParams(LinearLayout.LayoutParams.MatchParent, LinearLayout.LayoutParams.MatchParent);
+                    container.LayoutParameters = p;
+                    container.SetPadding(35, 5, 5, 5);
+                    
+                    EditText passwordinput = new EditText(context);
+                    passwordinput.SetHint(Resource.String.input_password);
+                    passwordinput.SetSingleLine();
+                    container.AddView(passwordinput);
+
+                    alert1.SetView(container);
+                    alert1.SetPositiveButton("OK", (senderAlert, args) =>
                     {
-                        var successed = RestClient.AddUserHouse(user_email, itemList[position].house_id);
-                        if (successed)
+                        if (!passwordinput.Text.Equals(string.Empty))
                         {
-                            activity.RunOnUiThread(() =>
+                            ProgressDialog progress = new ProgressDialog(context);
+                            progress.Indeterminate = true;
+                            progress.SetProgressStyle(ProgressDialogStyle.Spinner);
+                            progress.SetMessage("Adding House...");
+                            progress.SetCancelable(true);
+                            progress.Show();
+                            new Thread(new ThreadStart(() =>
                             {
-                                progress.Dismiss();
-                                btadd.LayoutParameters.Width += 10;
-                                btadd.SetImageResource(Resource.Drawable.done_green);
-                            });
-                        }
-                        else
-                        {
-                            activity.RunOnUiThread(() =>
-                            {
-                                progress.Dismiss();
-                                Android.Support.V7.App.AlertDialog.Builder alert = new Android.Support.V7.App.AlertDialog.Builder(context, Resource.Style.MyAlertDialogStyle);
-                                alert.SetTitle("House adding error");
-                                alert.SetMessage("Try again later");
-                                alert.SetPositiveButton("OK", (senderAlert, args) =>
+                                var successed = RestClient.AddUserHouse(user_email, itemList[position].house_id, passwordinput.Text);
+                                if (successed)
                                 {
-                                });
-                                Dialog dialog = alert.Create();
-                                dialog.Show();
-                            });
+                                    activity.RunOnUiThread(() =>
+                                    {
+                                        progress.Dismiss();
+                                        btadd.LayoutParameters.Width += 10;
+                                        btadd.SetImageResource(Resource.Drawable.done_green);
+                                    });
+                                }
+                                else
+                                {
+                                    activity.RunOnUiThread(() =>
+                                    {
+                                        progress.Dismiss();
+                                        Android.Support.V7.App.AlertDialog.Builder alert = new Android.Support.V7.App.AlertDialog.Builder(context, Resource.Style.MyAlertDialogStyle);
+                                        alert.SetTitle("House adding error");
+                                        alert.SetMessage("Try again later");
+                                        alert.SetPositiveButton("OK", (senderAlert2, args2) =>
+                                        {
+                                        });
+                                        Dialog dialog2 = alert.Create();
+                                        dialog2.Show();
+                                    });
+                                }
+                            })).Start();
                         }
-                    })).Start();
+                    });
+                    Dialog dialog = alert1.Create();
+                    dialog.Show();
                 };
             }
             else

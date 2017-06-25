@@ -36,7 +36,7 @@ namespace Allamvizsga2017.Activities
             //Toolbar will now take on default actionbar characteristics
             SetSupportActionBar(toolbar);
 
-            if (house_name == "")
+            if (house_name == "" || house_name == null)
                 SupportActionBar.Title = "Id: "+house_id;
             else
                 SupportActionBar.Title = house_name;

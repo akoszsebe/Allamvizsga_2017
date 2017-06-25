@@ -46,6 +46,7 @@ namespace Allamvizsga2017.Activities
                 else
                 {
                     tipasswd.TransformationMethod = null;
+                    tipasswd.RequestFocus();
                     tipasswd.SetSelection(tipasswd.Text.Length);
                     btpasswdicon.SetBackgroundResource(Resource.Drawable.Unlock_24);
                     longclicked = true;
@@ -70,6 +71,7 @@ namespace Allamvizsga2017.Activities
                     tipasswdconfirm.SetSelection(tipasswdconfirm.Text.Length);
                     btpasswd2icon.SetBackgroundResource(Resource.Drawable.Unlock_24);
                     longclicked2 = true;
+                    tipasswdconfirm.RequestFocus();
                 }
 
             };
