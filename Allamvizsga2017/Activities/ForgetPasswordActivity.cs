@@ -1,12 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-
-using Android.App;
+﻿using Android.App;
 using Android.Content;
 using Android.OS;
-using Android.Runtime;
 using Android.Views;
 using Android.Widget;
 using Android.Content.PM;
@@ -21,8 +15,8 @@ namespace Allamvizsga2017.Activities
     public class ForgetPasswordActivity : AppCompatActivity
     {
         EditText tiemail;
-        EditText phonenumber;
         Button sendrequest;
+        bool inmail = true;
 
         protected override void OnCreate(Bundle savedInstanceState)
         {
@@ -32,8 +26,28 @@ namespace Allamvizsga2017.Activities
 
 
             tiemail = FindViewById<EditText>(Resource.Id.textInputEmail);
-            phonenumber = FindViewById<EditText>(Resource.Id.textInputPhonNumber);
             sendrequest = FindViewById<Button>(Resource.Id.buttonSend);
+
+            var cbinmail = FindViewById<RadioButton>(Resource.Id.checkBox2);
+            var cbinsms = FindViewById<RadioButton>(Resource.Id.checkBox1);
+
+            cbinmail.Checked = true;
+
+            cbinmail.CheckedChange += (s, e) =>
+            {
+                if (e.IsChecked)
+                {
+                    inmail = true;
+                //    cbinmail.Checked = false;
+                //    cbinsms.Checked = true;
+                }
+                else
+                {
+                    inmail = false;
+                //    cbinmail.Checked = true;
+                //    cbinsms.Checked = false;
+                }
+            };
 
             sendrequest.Click += delegate
             {
@@ -61,7 +75,7 @@ namespace Allamvizsga2017.Activities
             {
                 if (IsValidEmail(tiemail.Text))
                 {
-                    var resetsend = RestClient.RequestResetCode(tiemail.Text, phonenumber.Text);
+                    var resetsend = RestClient.RequestResetCode(tiemail.Text, inmail);
                     if (resetsend)
                     {
                         RunOnUiThread(() =>
