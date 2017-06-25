@@ -18,15 +18,18 @@ namespace Allamvizsga2017.Activities
     {
         EditText tiemail;
         EditText tipasswd;
-        Button btlogin;
+        EditText tiphonenumber;
+        Button btregistration;
         protected override void OnCreate(Bundle bundle)
         {
             base.OnCreate(bundle);
             // Create your application here
             SetContentView(Resource.Layout.Registration);
-            btlogin = FindViewById<Button>(Resource.Id.buttonLogin);
+            btregistration = FindViewById<Button>(Resource.Id.buttonRegistration);
             tiemail = FindViewById<EditText>(Resource.Id.textInputEmail);
             tipasswd = FindViewById<EditText>(Resource.Id.textInputPassword);
+            tiphonenumber = FindViewById<EditText>(Resource.Id.textInputPhonNumber);
+            
             var tipasswdconfirm = FindViewById<EditText>(Resource.Id.textInputConfirmPassword);
             var tvhaveaccount = FindViewById<TextView>(Resource.Id.textViewHaveAccount);
             var btpasswdicon = FindViewById<Button>(Resource.Id.buttonpasswdicon);
@@ -108,7 +111,7 @@ namespace Allamvizsga2017.Activities
                     tiemail.SetCursorVisible(false);
             };
 
-            btlogin.Click += delegate
+            btregistration.Click += delegate
             {
                 ProgressDialog progress = new ProgressDialog(this);
                 progress.Indeterminate = true;
@@ -118,8 +121,8 @@ namespace Allamvizsga2017.Activities
                 progress.Show();
                 new Thread(new ThreadStart(() =>
                 {
-                    var canlogin = RestClient.Register(new LoginUser(tiemail.Text, tipasswd.Text));
-                    if (canlogin)
+                    var canregister = RestClient.Register(new LoginUser(tiemail.Text, tipasswd.Text,tiphonenumber.Text));
+                    if (canregister)
                     {
                         RunOnUiThread(() =>
                         {

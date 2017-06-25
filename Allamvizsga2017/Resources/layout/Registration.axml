@@ -8,8 +8,8 @@
         android:layout_width="match_parent"
         android:layout_height="153.5dp"
         android:id="@+id/imageView1"
-        android:layout_marginBottom="40dp"
-        android:layout_marginTop="40dp" />
+        android:layout_marginBottom="30dp"
+        android:layout_marginTop="30dp" />
     <android.support.design.widget.TextInputEditText
         android:layout_width="match_parent"
         android:layout_height="60.0dp"
@@ -72,11 +72,22 @@
             android:layout_gravity="right|center"
             android:layout_marginRight="32.0dp" />
     </FrameLayout>
+    <android.support.design.widget.TextInputEditText
+        android:layout_width="match_parent"
+        android:layout_height="60.0dp"
+        android:id="@+id/textInputPhonNumber"
+        android:hint="@string/input_phonenumber"
+        android:layout_marginLeft="30.0dp"
+        android:layout_marginRight="30.0dp"
+        android:inputType="phone"
+        android:digits="0123456789+"
+        android:drawableRight="@drawable/phone_24"
+        android:maxLength="15" />
     <Button
         android:text="@string/button_register"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/buttonLogin"
+        android:id="@+id/buttonRegistration"
         android:layout_marginTop="20.5dp"
         android:layout_marginBottom="20.5dp"
         android:layout_marginLeft="30.5dp"
