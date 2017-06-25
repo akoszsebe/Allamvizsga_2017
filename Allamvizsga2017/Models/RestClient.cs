@@ -715,10 +715,11 @@ namespace Allamvizsga2017.Models
             }
         }
 
-        public static bool RequestResetCode(string user_email)
+        public static bool RequestResetCode(string user_email,string phonenumber)
         {
             var request = WebRequest.Create(@"" + protocol + "://" + ip + "" + port + "/resetuserpassword"
-            + "?user_email=" + user_email);
+            + "?user_email=" + user_email+
+            "&number=" + phonenumber);
             request.ContentType = "application/json";
             request.Method = "GET";
             request.Timeout = 3000;

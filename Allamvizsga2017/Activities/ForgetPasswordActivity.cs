@@ -21,6 +21,7 @@ namespace Allamvizsga2017.Activities
     public class ForgetPasswordActivity : AppCompatActivity
     {
         EditText tiemail;
+        EditText phonenumber;
         Button sendrequest;
 
         protected override void OnCreate(Bundle savedInstanceState)
@@ -31,6 +32,7 @@ namespace Allamvizsga2017.Activities
 
 
             tiemail = FindViewById<EditText>(Resource.Id.textInputEmail);
+            phonenumber = FindViewById<EditText>(Resource.Id.textInputPhonNumber);
             sendrequest = FindViewById<Button>(Resource.Id.buttonSend);
 
             sendrequest.Click += delegate
@@ -57,40 +59,63 @@ namespace Allamvizsga2017.Activities
             progress.Show();
             new Thread(new ThreadStart(() =>
             {
-                var resetsend = RestClient.RequestResetCode(tiemail.Text);
-                if (resetsend)
+                if (IsValidEmail(tiemail.Text))
                 {
-                    RunOnUiThread(() =>
+                    var resetsend = RestClient.RequestResetCode(tiemail.Text, phonenumber.Text);
+                    if (resetsend)
                     {
-                        progress.Dismiss();
-                        var resetpasswordactivity = new Intent(this, typeof(ResetPasswordActivity));
-                        resetpasswordactivity.PutExtra("user_email", tiemail.Text);
-                        this.StartActivity(resetpasswordactivity);
-                        this.Finish();
-                    });
+                        RunOnUiThread(() =>
+                        {
+                            progress.Dismiss();
+                            var resetpasswordactivity = new Intent(this, typeof(ResetPasswordActivity));
+                            resetpasswordactivity.PutExtra("user_email", tiemail.Text);
+                            this.StartActivity(resetpasswordactivity);
+                            this.Finish();
+                        });
+                    }
+                    else
+                    {
+                        RunOnUiThread(() =>
+                        {
+                            progress.Dismiss();
+                            Android.Support.V7.App.AlertDialog.Builder alert = new Android.Support.V7.App.AlertDialog.Builder(this, Resource.Style.MyAlertDialogStyle);
+                            alert.SetTitle("Error");
+                            alert.SetMessage("Check your internet connection!");
+                            alert.SetPositiveButton("Rety", (senderAlert, args) =>
+                            {
+                                RequestReset();
+                            });
+
+                            alert.SetNeutralButton("Cancel", (senderAlert, args) =>
+                            {
+                            });
+                            Dialog dialog = alert.Create();
+                            dialog.Show();
+                        });
+                    }
                 }
                 else
                 {
                     RunOnUiThread(() =>
                     {
                         progress.Dismiss();
-                        Android.Support.V7.App.AlertDialog.Builder alert = new Android.Support.V7.App.AlertDialog.Builder(this, Resource.Style.MyAlertDialogStyle);
-                        alert.SetTitle("Error");
-                        alert.SetMessage("Check your internet connection!");
-                        alert.SetPositiveButton("Rety", (senderAlert, args) =>
-                        {
-                            RequestReset();
-                        });
-
-                        alert.SetNeutralButton("Cancel", (senderAlert, args) =>
-                        {
-                        });
-                        Dialog dialog = alert.Create();
-                        dialog.Show();
+                        tiemail.Error = "Email Required";
                     });
                 }
             })).Start();
         }
 
+        bool IsValidEmail(string email)
+        {
+            try
+            {
+                var addr = new System.Net.Mail.MailAddress(email);
+                return addr.Address == email;
+            }
+            catch
+            {
+                return false;
+            }
+        }
     }
 }

@@ -30,7 +30,7 @@
   <string name="textview_registerhouse"> Register House </string>
   <string name="textview_addsmartwatch">Add SmartWatch </string>
   <string name="textview_searchhouse"> Search House </string>
-  <string name="textview_resetpasswordinfo"> We just need your registered Email Id to sent you password reset code. </string>
+  <string name="textview_resetpasswordinfo"> We just need your registered Email Id and Phone Number to sent you password reset code in Email and Sms. </string>
   <string name="textview_active"> Active </string>
   <string name="textview_all"> All </string>
   <string name="textview_devicewatt"> Device Watt: </string>
@@ -44,4 +44,5 @@
   <string name="menuitem_logout"> LogOut </string>
   <string name="textview_device"> device </string>
   <string name="input_housepassword"> House Password </string>
+  <string name="input_phonenumber">Phone Number</string>
 </resources>

@@ -30,7 +30,7 @@
   <string name="textview_registerhouse"> Ház Regisztrálása </string>
   <string name="textview_addsmartwatch">Okos Óra Hozzáadás </string>
   <string name="textview_searchhouse"> Ház Keresése </string>
-  <string name="textview_resetpasswordinfo"> Csak regisztrált e-mail azonosítónkra van szüksége, hogy jelszó-visszaállító kódot küldjünk </string>
+  <string name="textview_resetpasswordinfo"> Csak regisztrált e-mail azonosítónkra és telefonszámra van szüksége, hogy jelszó-visszaállító kódot küldjünk </string>
   <string name="textview_active"> Aktív </string>
   <string name="textview_all"> Minden </string>
   <string name="textview_devicewatt"> Eszköz Watt: </string>
@@ -44,4 +44,5 @@
   <string name="menuitem_logout"> Kijelentkezés </string>
   <string name="textview_device"> eszköz </string>
   <string name="input_housepassword"> Ház Jelszava </string>
+  <string name="input_phonenumber">Telefonszám</string>
 </resources>
