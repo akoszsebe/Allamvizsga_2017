@@ -24,10 +24,19 @@ namespace Allamvizsga2017.Models
         public string Email { get; }
         public string Password { get; }
 
+        public string Phonenumber { get; }
+
         public LoginUser(string email,string password)
         {
             Email = email;
             Password = password;
+        }
+
+        public LoginUser(string email, string password,string phonenumber)
+        {
+            Email = email;
+            Password = password;
+            Phonenumber = phonenumber;
         }
     }
 }
