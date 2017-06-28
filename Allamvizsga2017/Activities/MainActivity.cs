@@ -92,6 +92,7 @@ namespace Allamvizsga2017.Activities
                 var loginactivity = new Android.Content.Intent(this, typeof(LoginActivity));
                 FinishAffinity();
                 this.StartActivity(loginactivity);
+                Xamarin.Facebook.Login.LoginManager.Instance.LogOut();
                 Finish();
             }
             return base.OnOptionsItemSelected(item);

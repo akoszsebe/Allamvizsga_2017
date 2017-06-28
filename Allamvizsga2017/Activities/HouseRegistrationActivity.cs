@@ -217,6 +217,7 @@ namespace Allamvizsga2017.Activities
                 editor.Commit();
                 FinishAffinity();
                 this.StartActivity(loginactivity);
+                Xamarin.Facebook.Login.LoginManager.Instance.LogOut();
                 Finish();
             }
             return base.OnOptionsItemSelected(item);
