@@ -21,6 +21,7 @@ namespace Allamvizsga2017.Activities
         EditText tiemail;
         EditText tipasswd;
         Button btlogin;
+        LinearLayout layoutcontainer;
 
         private ICallbackManager mCallBackManager;
 
@@ -34,6 +35,7 @@ namespace Allamvizsga2017.Activities
             btlogin = FindViewById<Button>(Resource.Id.buttonLogin);
             tiemail = FindViewById<EditText>(Resource.Id.textInputEmail);
             tipasswd = FindViewById<EditText>(Resource.Id.textInputPassword);
+            layoutcontainer = FindViewById<LinearLayout>(Resource.Id.layoutcontainer);
             var tvnoaccount = FindViewById<TextView>(Resource.Id.textViewNoAccount);
             var tvforgetpassword = FindViewById<TextView>(Resource.Id.textViewForgetPassword);
             var tvemail = FindViewById<TextView>(Resource.Id.textViewEmail);
@@ -145,10 +147,13 @@ namespace Allamvizsga2017.Activities
                 var forgetpassword = new Intent(this, typeof(ForgetPasswordActivity));
                 this.StartActivity(forgetpassword);
             };
+
+            layoutcontainer.Visibility = ViewStates.Invisible;
         }
 
         protected override void OnStart()
         {
+            layoutcontainer.Visibility = ViewStates.Invisible;
             ISharedPreferences sharedPref = GetSharedPreferences("user_email", FileCreationMode.Private);
             string user_email = sharedPref.GetString("user_email", null);
             if (user_email != null)
@@ -156,11 +161,13 @@ namespace Allamvizsga2017.Activities
                 var housesactivity = new Intent(this, typeof(HousesActivity));
                 housesactivity.PutExtra("User_email", user_email);
                 this.StartActivity(housesactivity);
+                layoutcontainer.Visibility = ViewStates.Visible;
                 this.Finish();
             }
             else
             {
                 GetFbEmail();
+
             }
             base.OnStart();
         }
@@ -255,6 +262,7 @@ namespace Allamvizsga2017.Activities
 
         public void GetFbEmail()
         {
+            layoutcontainer.Visibility = ViewStates.Invisible;
             GraphRequest request = GraphRequest.NewMeRequest(AccessToken.CurrentAccessToken, this);
             Bundle parameters = new Bundle();
             parameters.PutString("fields", "id,name,email");
@@ -272,10 +280,12 @@ namespace Allamvizsga2017.Activities
                 {
                     var housesactivity = new Intent(this, typeof(HousesActivity));
                     housesactivity.PutExtra("User_email", result.email);
+                    housesactivity.PutExtra("User_name", result.name);
                     this.StartActivity(housesactivity);
                     this.Finish();
                 }
             }
+            layoutcontainer.Visibility = ViewStates.Visible;
         }
 
         public void OnCancel()
