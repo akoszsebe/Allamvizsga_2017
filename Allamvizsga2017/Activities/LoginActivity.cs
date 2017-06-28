@@ -12,7 +12,7 @@ using Android.Support.V4.Content;
 
 namespace Allamvizsga2017.Activities
 {
-    [Activity(Label = "Allamvizsga", MainLauncher = true, Icon = "@drawable/icon", ScreenOrientation = ScreenOrientation.Portrait)]
+    [Activity(Label = "Allamvizsga", ScreenOrientation = ScreenOrientation.Portrait)]
     public class LoginActivity : AppCompatActivity
     {
         EditText tiemail;

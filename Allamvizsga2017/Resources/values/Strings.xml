@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
   <string name="Hello">Hello World, Click Me!</string>
+  <string name="facebook_app_id">1556575697689935</string>
   <string name="ApplicationName">Allamvizsga</string>
   <string name="input_email">Email</string>
   <string name="input_password">Password</string>
