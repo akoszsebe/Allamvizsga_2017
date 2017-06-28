@@ -36,12 +36,16 @@ namespace Allamvizsga2017.Activities
             SetContentView(Resource.Layout.Houses);
 
             user_email = Intent.GetStringExtra("User_email");
+            var user_name = Intent.GetStringExtra("User_name");
 
             var toolbar = FindViewById<Android.Support.V7.Widget.Toolbar>(Resource.Id.toolbar1);
 
             SetSupportActionBar(toolbar);
             SupportActionBar.SetTitle(Resource.String.toolbar_hi);
-            SupportActionBar.Title += " " + user_email;
+            if (user_name != null)
+                SupportActionBar.Title += " " + user_name;
+            else
+                SupportActionBar.Title += " " + user_email;
 
             toolbar.SetTitleTextAppearance(this, Resource.Style.ActionBarTitle);
 
