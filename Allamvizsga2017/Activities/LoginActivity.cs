@@ -9,19 +9,26 @@ using Android.Views.InputMethods;
 using Android.Content.PM;
 using Allamvizsga2017.Models;
 using Android.Support.V4.Content;
+using Xamarin.Facebook;
+using Xamarin.Facebook.Login.Widget;
+using Xamarin.Facebook.Login;
 
 namespace Allamvizsga2017.Activities
 {
-    [Activity(Label = "Allamvizsga", ScreenOrientation = ScreenOrientation.Portrait)]
-    public class LoginActivity : AppCompatActivity
+    [Activity(Label = "Allamvizsga", MainLauncher = true, Icon = "@drawable/icon", ScreenOrientation = ScreenOrientation.Portrait)]
+    public class LoginActivity : AppCompatActivity, IFacebookCallback, GraphRequest.IGraphJSONObjectCallback
     {
         EditText tiemail;
         EditText tipasswd;
         Button btlogin;
 
+        private ICallbackManager mCallBackManager;
+
         protected override void OnCreate(Bundle bundle)
         {
             base.OnCreate(bundle);
+
+            FacebookSdk.SdkInitialize(this.ApplicationContext);
             // Create your application here
             SetContentView(Resource.Layout.Login);
             btlogin = FindViewById<Button>(Resource.Id.buttonLogin);
@@ -42,6 +49,18 @@ namespace Allamvizsga2017.Activities
                 btusericon.SetBackgroundResource(Resource.Drawable.Lock_24);
                 Login();
             };
+
+            // Login for fb 
+            LoginButton button = FindViewById<LoginButton>(Resource.Id.login_button);
+
+            button.SetReadPermissions(new System.Collections.Generic.List<string> { "public_profile", "user_friends", "email" });
+
+            mCallBackManager = CallbackManagerFactory.Create();
+
+            button.RegisterCallback(mCallBackManager, this);
+
+            LoginManager.Instance.RegisterCallback(mCallBackManager, this);
+            //
 
             tiemail.FocusChange += (s, e) =>
             {
@@ -139,6 +158,10 @@ namespace Allamvizsga2017.Activities
                 this.StartActivity(housesactivity);
                 this.Finish();
             }
+            else
+            {
+                GetFbEmail();
+            }
             base.OnStart();
         }
 
@@ -230,6 +253,55 @@ namespace Allamvizsga2017.Activities
             })).Start();
         }
 
+        public void GetFbEmail()
+        {
+            GraphRequest request = GraphRequest.NewMeRequest(AccessToken.CurrentAccessToken, this);
+            Bundle parameters = new Bundle();
+            parameters.PutString("fields", "id,name,email");
+            request.Parameters = parameters;
+            request.ExecuteAsync();
+        }
+
+        public void OnCompleted(Org.Json.JSONObject json, GraphResponse response)
+        {
+            if (json != null)
+            {
+                string data = json.ToString();
+                FacebookResult result = Newtonsoft.Json.JsonConvert.DeserializeObject<FacebookResult>(data);
+                if (result.email != null)
+                {
+                    var housesactivity = new Intent(this, typeof(HousesActivity));
+                    housesactivity.PutExtra("User_email", result.email);
+                    this.StartActivity(housesactivity);
+                    this.Finish();
+                }
+            }
+        }
+
+        public void OnCancel()
+        {
+            //throw new NotImplementedException();
+        }
+
+        public void OnError(FacebookException error)
+        {
+            //throw new NotImplementedException();
+        }
+
+        public void OnSuccess(Java.Lang.Object result)
+        {
+            LoginResult loginResult = result as LoginResult;
+            GetFbEmail();
+        }
+
+
+        protected override void OnActivityResult(int requestCode, Result resultCode, Intent data)
+        {
+            base.OnActivityResult(requestCode, resultCode, data);
+            mCallBackManager.OnActivityResult(requestCode, (int)resultCode, data);
+        }
+
+
         bool IsValidEmail(string email)
         {
             try
@@ -242,5 +314,12 @@ namespace Allamvizsga2017.Activities
                 return false;
             }
         }
+    }
+
+    internal class FacebookResult
+    {
+        public string id { get; set; }
+        public string name { get; set; }
+        public string email { get; set; }
     }
 }
