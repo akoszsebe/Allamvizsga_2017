@@ -20,11 +20,7 @@ namespace Allamvizsga2017.Activities
         private ICallbackManager mCallBackManager;
         private MyProfileTracker mProfileTracker;
 
-        private TextView mTxtFirstName;
-        private TextView mTxtLastName;
         private TextView mTxtName;
-        private ProfilePictureView mProfilePic;
-        private ShareButton mBtnShared;
         private Button mBtnGetEmail;
 
         protected override void OnCreate(Bundle bundle)
@@ -40,11 +36,7 @@ namespace Allamvizsga2017.Activities
             // Set our view from the "main" layout resource
             SetContentView(Resource.Layout.FbLoginlayout);
 
-            mTxtFirstName = FindViewById<TextView>(Resource.Id.txtFirstName);
-            mTxtLastName = FindViewById<TextView>(Resource.Id.txtLastName);
             mTxtName = FindViewById<TextView>(Resource.Id.txtName);
-            mProfilePic = FindViewById<ProfilePictureView>(Resource.Id.profilePic);
-            mBtnShared = FindViewById<ShareButton>(Resource.Id.btnShare);
             mBtnGetEmail = FindViewById<Button>(Resource.Id.btnGetEmail);
 
             LoginButton button = FindViewById<LoginButton>(Resource.Id.login_button);
@@ -61,15 +53,13 @@ namespace Allamvizsga2017.Activities
                 GraphRequest request = GraphRequest.NewMeRequest(AccessToken.CurrentAccessToken, this);
 
                 Bundle parameters = new Bundle();
-                parameters.PutString("fields", "id,name,age_range,email");
+                parameters.PutString("fields", "id,name,email");
                 request.Parameters = parameters;
                 request.ExecuteAsync();
             };
 
             LoginManager.Instance.RegisterCallback(mCallBackManager, this);
 
-            ShareLinkContent content = new ShareLinkContent.Builder().Build();
-            mBtnShared.ShareContent = content;
         }
 
         public void OnCompleted(Org.Json.JSONObject json, GraphResponse response)
@@ -77,6 +67,17 @@ namespace Allamvizsga2017.Activities
             string data = json.ToString();
             FacebookResult result = JsonConvert.DeserializeObject<FacebookResult>(data);
             mTxtName.Text = result.email;
+            if (result.email != null)
+            {
+                var housesactivity = new Intent(this, typeof(HousesActivity));
+                housesactivity.PutExtra("User_email", result.email);
+                this.StartActivity(housesactivity);
+                this.Finish();
+            }
+            else
+            {
+                mTxtName.Text = "this user cant login";
+            }
         }
 
         void client_UploadValuesCompleted(object sender, UploadValuesCompletedEventArgs e)
@@ -90,9 +91,6 @@ namespace Allamvizsga2017.Activities
             {
                 try
                 {
-                    mTxtFirstName.Text = e.mProfile.FirstName;
-                    mTxtLastName.Text = e.mProfile.LastName;
-                    mProfilePic.ProfileId = e.mProfile.Id;
                     mBtnGetEmail.CallOnClick();
                 }
 
@@ -104,11 +102,8 @@ namespace Allamvizsga2017.Activities
 
             else
             {
-                //the user must have logged out
-                mTxtFirstName.Text = "First Name";
-                mTxtLastName.Text = "Last Name";
+                //the user must have logged out       
                 mTxtName.Text = "Name";
-                mProfilePic.ProfileId = null;
             }
         }
 
@@ -117,6 +112,8 @@ namespace Allamvizsga2017.Activities
         {
             base.OnStart();
             mProfileTracker.StartTracking();
+            mBtnGetEmail.CallOnClick();
+
         }
 
         public void OnCancel()

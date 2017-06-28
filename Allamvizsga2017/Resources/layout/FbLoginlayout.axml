@@ -12,29 +12,6 @@
         android:layout_marginTop="30dp"
         android:layout_marginBottom="30dp" />
 
-    <com.facebook.login.widget.ProfilePictureView
-        android:id="@+id/profilePic"
-        android:layout_width="100dp"
-        android:layout_height="100dp"
-        android:layout_gravity="center_horizontal" />
-    <TextView
-        android:id="@+id/txtFirstName"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="First Name"
-        android:textColor="#333"
-        android:textSize="18sp"
-        android:layout_gravity="center_horizontal"
-        android:padding="5dp" />
-    <TextView
-        android:id="@+id/txtLastName"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Last Name"
-        android:textColor="#333"
-        android:textSize="18sp"
-        android:layout_gravity="center_horizontal"
-        android:padding="5dp" />
     <TextView
         android:id="@+id/txtName"
         android:layout_width="wrap_content"
@@ -44,12 +21,6 @@
         android:textSize="18sp"
         android:layout_gravity="center_horizontal"
         android:padding="5dp" />
-    <com.facebook.share.widget.ShareButton
-        android:id="@+id/btnShare"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="10dp"
-        android:layout_gravity="center_horizontal" />
     <Button
         android:id="@+id/btnGetEmail"
         android:layout_width="wrap_content"

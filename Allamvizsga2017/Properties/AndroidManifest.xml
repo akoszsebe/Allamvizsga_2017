@@ -5,6 +5,7 @@
   <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
 	<application android:label="Allamvizsga2017" android:largeHeap="true" android:theme="@style/NoActionBar">
     <meta-data android:name="com.facebook.sdk.ApplicationId" android:value="@string/facebook_app_id" />
+    <activity android:name="com.facebook.FacebookActivity" android:configChanges="keyboard|keyboardHidden|screenLayout|screenSize|orientation" android:theme="@android:style/Theme.Translucent.NoTitleBar" android:label="@string/ApplicationName" />
     <provider android:authorities="com.facebook.app.FacebookContentProvider790116467769185" android:name="com.facebook.FacebookContentProvider" android:exported="true" />
   </application>
 </manifest>
