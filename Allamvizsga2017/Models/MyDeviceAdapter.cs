@@ -59,11 +59,6 @@ namespace Allamvizsga2017.Models
                 icon_id = Resource.Drawable.unknownicon;
             }
 
-            if (itemList[position].active)
-            {
-                deviceImage.SetBackgroundResource(Resource.Drawable.active);
-            }
-
             if (itemList[position].value == -1)
             {
                 deviceName.Text = itemList[position].name;
@@ -74,7 +69,16 @@ namespace Allamvizsga2017.Models
             }
             else
             {
-                deviceName.Text = itemList[position].name + " " + itemList[position].value;
+                if (itemList[position].active)
+                {
+                    deviceName.Text = itemList[position].name + " " + itemList[position].value+"W";
+                    deviceImage.SetBackgroundResource(Resource.Drawable.active);
+                }
+                else
+                {
+                    deviceName.Text = itemList[position].name;
+                }
+
                 int tmpposition = position;
                 deviceSetting.Click += delegate
                 {
