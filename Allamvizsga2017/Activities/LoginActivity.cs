@@ -21,7 +21,6 @@ namespace Allamvizsga2017.Activities
         EditText tiemail;
         EditText tipasswd;
         Button btlogin;
-        LinearLayout layoutcontainer;
 
         private ICallbackManager mCallBackManager;
 
@@ -35,7 +34,6 @@ namespace Allamvizsga2017.Activities
             btlogin = FindViewById<Button>(Resource.Id.buttonLogin);
             tiemail = FindViewById<EditText>(Resource.Id.textInputEmail);
             tipasswd = FindViewById<EditText>(Resource.Id.textInputPassword);
-            layoutcontainer = FindViewById<LinearLayout>(Resource.Id.layoutcontainer);
             var tvnoaccount = FindViewById<TextView>(Resource.Id.textViewNoAccount);
             var tvforgetpassword = FindViewById<TextView>(Resource.Id.textViewForgetPassword);
             var tvemail = FindViewById<TextView>(Resource.Id.textViewEmail);
@@ -148,27 +146,31 @@ namespace Allamvizsga2017.Activities
                 this.StartActivity(forgetpassword);
             };
 
-            layoutcontainer.Visibility = ViewStates.Invisible;
         }
 
         protected override void OnStart()
         {
-            layoutcontainer.Visibility = ViewStates.Invisible;
             ISharedPreferences sharedPref = GetSharedPreferences("user_email", FileCreationMode.Private);
+            ISharedPreferences sharedPref1 = GetSharedPreferences("user_name", FileCreationMode.Private);
             string user_email = sharedPref.GetString("user_email", null);
+            string user_name = sharedPref1.GetString("user_name", null);
             if (user_email != null)
             {
                 var housesactivity = new Intent(this, typeof(HousesActivity));
                 housesactivity.PutExtra("User_email", user_email);
+
+                if (user_name != null)
+                {
+                    housesactivity.PutExtra("User_name", user_name);
+                }
                 this.StartActivity(housesactivity);
-                layoutcontainer.Visibility = ViewStates.Visible;
                 this.Finish();
             }
-            else
-            {
-                GetFbEmail();
-
-            }
+            //else
+            //{
+            //    GetFbEmail();
+            //
+            //}
             base.OnStart();
         }
 
@@ -217,9 +219,14 @@ namespace Allamvizsga2017.Activities
                     {
                         progress.Dismiss();
                         ISharedPreferences sharedPref = GetSharedPreferences("user_email", FileCreationMode.Private);
+                        ISharedPreferences sharedPref1 = GetSharedPreferences("user_email", FileCreationMode.Private);
                         ISharedPreferencesEditor editor = sharedPref.Edit();
+                        ISharedPreferencesEditor editor1 = sharedPref1.Edit();
                         editor.PutString("user_email", tiemail.Text);
                         editor.Commit();
+                        sharedPref1 = GetSharedPreferences("user_name", FileCreationMode.Private);
+                        editor1.PutString("user_name", null);
+                        editor1.Commit();
                         var housesactivity = new Intent(this, typeof(HousesActivity));
                         housesactivity.PutExtra("User_email", tiemail.Text);
                         this.StartActivity(housesactivity);
@@ -262,7 +269,6 @@ namespace Allamvizsga2017.Activities
 
         public void GetFbEmail()
         {
-            layoutcontainer.Visibility = ViewStates.Invisible;
             GraphRequest request = GraphRequest.NewMeRequest(AccessToken.CurrentAccessToken, this);
             Bundle parameters = new Bundle();
             parameters.PutString("fields", "id,name,email");
@@ -281,11 +287,18 @@ namespace Allamvizsga2017.Activities
                     var housesactivity = new Intent(this, typeof(HousesActivity));
                     housesactivity.PutExtra("User_email", result.email);
                     housesactivity.PutExtra("User_name", result.name);
+                    ISharedPreferences sharedPref = GetSharedPreferences("user_email", FileCreationMode.Private);
+                    ISharedPreferencesEditor editor = sharedPref.Edit();
+                    ISharedPreferences sharedPref1 = GetSharedPreferences("user_name", FileCreationMode.Private);
+                    ISharedPreferencesEditor editor1 = sharedPref1.Edit();
+                    editor.PutString("user_email", result.email);
+                    editor.Commit();
+                    editor1.PutString("user_name", result.name);
+                    editor1.Commit();
                     this.StartActivity(housesactivity);
                     this.Finish();
                 }
             }
-            layoutcontainer.Visibility = ViewStates.Visible;
         }
 
         public void OnCancel()
