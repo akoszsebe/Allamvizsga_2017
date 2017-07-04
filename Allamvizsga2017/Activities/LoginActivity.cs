@@ -21,6 +21,7 @@ namespace Allamvizsga2017.Activities
         EditText tiemail;
         EditText tipasswd;
         Button btlogin;
+        ProgressDialog progressForOauth;
 
         private ICallbackManager mCallBackManager;
 
@@ -166,11 +167,6 @@ namespace Allamvizsga2017.Activities
                 this.StartActivity(housesactivity);
                 this.Finish();
             }
-            //else
-            //{
-            //    GetFbEmail();
-            //
-            //}
             base.OnStart();
         }
 
@@ -208,7 +204,6 @@ namespace Allamvizsga2017.Activities
             progress.Indeterminate = true;
             progress.SetProgressStyle(ProgressDialogStyle.Spinner);
             progress.SetMessage("Authenticating...");
-            progress.SetCancelable(true);
             progress.Show();
             new Thread(new ThreadStart(() =>
             {
@@ -269,6 +264,11 @@ namespace Allamvizsga2017.Activities
 
         public void GetFbEmail()
         {
+            progressForOauth = new ProgressDialog(this);
+            progressForOauth.Indeterminate = true;
+            progressForOauth.SetProgressStyle(ProgressDialogStyle.Spinner);
+            progressForOauth.SetMessage("Authenticating...");
+            progressForOauth.Show();
             GraphRequest request = GraphRequest.NewMeRequest(AccessToken.CurrentAccessToken, this);
             Bundle parameters = new Bundle();
             parameters.PutString("fields", "id,name,email");
@@ -278,6 +278,7 @@ namespace Allamvizsga2017.Activities
 
         public void OnCompleted(Org.Json.JSONObject json, GraphResponse response)
         {
+            
             if (json != null)
             {
                 string data = json.ToString();
@@ -296,8 +297,13 @@ namespace Allamvizsga2017.Activities
                     editor1.PutString("user_name", result.name);
                     editor1.Commit();
                     this.StartActivity(housesactivity);
+                    progressForOauth.Dismiss();
                     this.Finish();
                 }
+            }
+            else
+            {
+                progressForOauth.Dismiss();
             }
         }
 

@@ -8,8 +8,8 @@ namespace Allamvizsga2017.Models
 {
     class RestClient
     {
-        static string ip = "allamvizsga-akoszsebe.c9users.io";//"192.168.0.106"//fekete feher szurke
-        static string port = "";//":8080";
+        static string ip = "52.57.247.98";//"allamvizsga-akoszsebe.c9users.io";//"192.168.0.106"//fekete feher szurke
+        static string port = ":8080/api";//":8080";
         static string protocol = "http";
 
 

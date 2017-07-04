@@ -82,8 +82,12 @@ namespace Allamvizsga2017.Activities
                 var loginactivity = new Android.Content.Intent(this, typeof(LoginActivity));
                 ISharedPreferences sharedPref = GetSharedPreferences("user_email", FileCreationMode.Private);
                 ISharedPreferencesEditor editor = sharedPref.Edit();
+                ISharedPreferences sharedPref1 = GetSharedPreferences("user_name", FileCreationMode.Private);
+                ISharedPreferencesEditor editor1 = sharedPref1.Edit();
                 editor.PutString("user_email", null);
                 editor.Commit();
+                editor1.PutString("user_name", null);
+                editor1.Commit();
                 FinishAffinity();
                 this.StartActivity(loginactivity);
                 Xamarin.Facebook.Login.LoginManager.Instance.LogOut();

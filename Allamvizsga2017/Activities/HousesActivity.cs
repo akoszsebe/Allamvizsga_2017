@@ -11,9 +11,6 @@ using System.Threading;
 using Android.Graphics;
 using Android.Support.Design.Widget;
 using Android.Views.Animations;
-using Allamvizsga2017.Services;
-using System.Collections;
-using System.Linq;
 
 namespace Allamvizsga2017.Activities
 {
@@ -191,10 +188,9 @@ namespace Allamvizsga2017.Activities
                 ISharedPreferences sharedPref = GetSharedPreferences("user_email", FileCreationMode.Private);
                 ISharedPreferencesEditor editor = sharedPref.Edit();
                 ISharedPreferences sharedPref1 = GetSharedPreferences("user_name", FileCreationMode.Private);
-                ISharedPreferencesEditor editor1 = sharedPref.Edit();
+                ISharedPreferencesEditor editor1 = sharedPref1.Edit();
                 editor.PutString("user_email", null);
                 editor.Commit();
-                sharedPref1 = GetSharedPreferences("user_name", FileCreationMode.Private);
                 editor1.PutString("user_name", null);
                 editor1.Commit();
                 FinishAffinity();
@@ -295,7 +291,6 @@ namespace Allamvizsga2017.Activities
                     refresher.Refreshing = false;
                 }
             });
-            int inc = 0;
             foreach (var h in houses)
             {
                 try
@@ -308,8 +303,7 @@ namespace Allamvizsga2017.Activities
                         sumwat += r.value;
                     }
 
-                    adapter.UpdateData(activedevicescount* inc, sumwat*inc, h.house_id);
-                    inc++;
+                    adapter.UpdateData(activedevicescount, sumwat, h.house_id);
                     RunOnUiThread(() => { adapter.NotifyDataSetChanged(); });
                 }
                 catch (System.Exception e)
