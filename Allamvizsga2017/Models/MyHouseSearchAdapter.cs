@@ -5,6 +5,7 @@ using Android.Views;
 using Android.Widget;
 using System.Threading;
 using Android.App;
+using Android.Views.InputMethods;
 
 namespace Allamvizsga2017.Models
 {
@@ -101,6 +102,8 @@ namespace Allamvizsga2017.Models
                                     activity.RunOnUiThread(() =>
                                     {
                                         progress.Dismiss();
+                                        InputMethodManager imm = (InputMethodManager)activity.GetSystemService(Context.InputMethodService);
+                                        imm.HideSoftInputFromWindow(passwordinput.WindowToken, 0);
                                         btadd.LayoutParameters.Width += 10;
                                         btadd.SetImageResource(Resource.Drawable.done_green);
                                     });
